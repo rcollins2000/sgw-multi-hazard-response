@@ -12,7 +12,7 @@ An AI-enabled operational decision-support prototype for a fictional US utility,
 
 1. **PRD** for the technical delivery team — [docs/04_prd.md](docs/04_prd.md) *(v1.0, complete)*
 2. **Executive briefing** — [docs/05_exec_briefing.md](docs/05_exec_briefing.md)
-3. **Lightweight prototype + 5–10 min video demo** — MVP prototype complete; walkthrough in [demo/walkthrough.md](demo/walkthrough.md), narration script in [demo/script.md](demo/script.md)
+3. **Lightweight prototype + 5–10 min video demo** — MVP prototype complete; walkthrough + narration script in [demo/walkthrough.md](demo/walkthrough.md), runbook in [demo/README.md](demo/README.md)
 
 ## Current state (2026-07-17)
 

@@ -61,7 +61,7 @@ Rough time budget: 30-40 seconds per numbered section.
 
 **Say:** "The big number is the priority score, on a 0–1 scale. Above 0.75 is critical."
 
-**What it does.** Combines the calibrated LightGBM failure probability with a consequence weighting — criticality rating (45%), service population (35%), blast-radius cluster size (20%) — into a single ranked score. Formula: `0.55·P(failure) + 0.45·consequence`.
+**What it does.** Combines the LightGBM-scored failure probability with a consequence weighting — criticality rating (45%), service population (35%), blast-radius cluster size (20%) — into a single ranked score. Formula: `0.55·P(failure) + 0.45·consequence`.
 
 **Why included.** In fair weather, ranking by hazard-conditional risk alone flattens — every score compresses toward baseline. The maintenance-planner question isn't *"which asset is most at risk right now?"* — it's *"which asset should we improve NEXT to buy down the most future harm?"*.
 
@@ -93,7 +93,7 @@ Rough time budget: 30-40 seconds per numbered section.
 
 **Say:** "Five blocks — 3 lit is medium confidence, 5 lit is very high. Never Accept a critical asset below 3 without asking the copilot."
 
-**What it does.** Discretises two signals into a 5-block gauge: (a) how far the calibrated probability sits from 0.5, and (b) how tight the calibration confidence interval is around it.
+**What it does.** Discretises the model score into a 5-block gauge based on how far it sits from 0.5, paired with a fixed demo interval width (±0.05). Production would derive the interval from real per-prediction uncertainty (e.g. quantile regression) — the current meter is a display convention, and the explainer popover says so.
 
 **Why included.** The numeric CI (`±0.05`) is precise but not glanceable. The meter is a semaphore — screen-reader-legible ("high confidence" not just "high") and doesn't rely on colour alone.
 
@@ -115,7 +115,7 @@ Rough time budget: 30-40 seconds per numbered section.
 
 **Why worthwhile.** The narrative + evidence chips turn a bare score into an actionable summary the operator can defend to their manager or auditor.
 
-**Limitations.** The LLM does NOT produce scores, forecasts, classifications, or optimisation plans — it narrates *over* those. Any structured output failure falls back to a deterministic template. Every evidence ID is verified against the source system before render (hallucinated IDs are dropped server-side).
+**Limitations.** The LLM does NOT produce scores, forecasts, classifications, or optimisation plans — it narrates *over* those. Any structured output failure falls back to a deterministic template. Evidence IDs are drawn from a structured evidence bundle built from real DB rows; on the scenario surface hallucinated IDs are additionally filtered server-side (extending that filter to the explanation endpoint is a known follow-up).
 
 **HITL touch point.** The recommendation is advisory — the operator can Accept it, Override with their own reasoning, or Defer. Every decision is audit-logged.
 
@@ -280,9 +280,9 @@ See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
 
 ## 14. Crew plan — VRP optimisation
 
-**Say:** "Crew plan runs a real vehicle-routing-problem solver — OR-Tools with Guided Local Search, Haversine distance, real crew locations. It's optimisation, not the LLM."
+**Say:** "Crew plan is the dispatch-planning surface. The optimiser is a real vehicle-routing solver — OR-Tools with Guided Local Search over Haversine distances — which runs in the backend and its eval suite today; this page is an illustrative preview of its output pattern, and wiring the live solver to it is the first Phase-2 integration."
 
-**What it does.** OR-Tools VRP solver against real geographic distances, respecting crew home bases, vehicle capacity, and preventative-priority weights. Returns tours + total cost + expected coverage.
+**What it does.** Backend: OR-Tools VRP solver against geographic distances, respecting crew home bases, stop counts, and preventative-priority weights (see `optimisation/vrp.py` + the model evals). Frontend: a preview rendering of the plan shape — tours, coverage, per-crew confidence — pending the live endpoint.
 
 **Why included.** Once the platform tells the operator WHICH assets to prioritise, the operator's next question is HOW to dispatch. VRP is the standard tool for that class of problem.
 
@@ -316,7 +316,7 @@ See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
 
 **What it does.** Three sections:
 - **Risk model** — version, ROC-AUC, Brier score, feature importances.
-- **Regional fairness** — demographic parity + equal opportunity gap across regions. Target < 0.20; currently 0.086 and 0.094 respectively.
+- **Regional fairness** — demographic parity + equal opportunity gap across regions. Target < 0.20. (Quote the live values off the Governance page at recording time — they shift with reseeds and retrains; do not hard-code them in narration.)
 - **Operator-alignment layer** — fitted-state, sample count, feature weights (diverging bars: amber = increases P(defer), green = increases P(accept)), Force retrain button.
 
 **Why included.** "Trust me" doesn't cut it for AI in critical infrastructure. Every model — including the alignment layer — has to be inspectable in one place.
@@ -373,7 +373,7 @@ See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
 - **Postgres**: 22 tables · 7 monthly `sensor_readings` partitions · 1 materialised view · 6 append-only triggers · 4 GiST spatial indexes.
 - **Ingested**: 210 assets · 300 work orders · 500 inspections · 14,448 SCADA readings · 130 dependency edges · 210 crosswalk rows · 2,880 real weather observations · 24 active NWS alerts · 2 hurricane tracks.
 - **Models**:
-  - Risk — LightGBM + isotonic calibration + Random Forest baseline. ROC-AUC 0.80. Brier 0.18.
+  - Risk — LightGBM regressor + Random Forest baseline (`lgbm-reg-v2`). MAE 0.054 · R² 0.675 — pipeline-validation metrics on documented synthetic labels, not predictive skill; say so if asked.
   - Forecasting — Prophet with M2 tidal seasonality. MAPE 0.18. 80% band coverage 0.58.
   - Anomaly — Prophet residual outlier ranking.
   - Optimisation — OR-Tools VRP + Guided Local Search.

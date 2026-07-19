@@ -477,6 +477,9 @@ Not "novel LLM prompt." Creative = **the right combination of AI techniques appl
 | 2026-07-14 | Users = SGW operational staff, not residents | See insight #1 above | Low cost to revisit |
 | 2026-07-14 | Product form: operational dashboard first, copilot second | Brief says "decision-support platform," not "assistant" | Yes |
 | 2026-07-14 | Docs-first workflow: PRD → exec briefing → prototype | The prototype exists to prove the PRD's claims. Building code before the PRD risks the code driving the story instead of the other way around | Yes but expensive after day 3 |
+| 2026-07-19 | Exec briefing (docs/05) drafted v1.0 with ●/◐/○ provenance marks on every figure; deck plan embedded as Appendix A | Phase 10 as planned — drafted after the demo was validated so both artefacts tell the same story. Provenance marks mirror the platform's own data-source labelling so the deck can't overclaim | Yes |
+| 2026-07-19 | Purged stale v1 risk-model claims from demo narration (walkthrough scenes 2, 4, 14 + numbers block): "isotonic calibration / ROC-AUC 0.80 / Brier 0.18" → lgbm-reg-v2 MAE/R² labelled as pipeline-validation metrics on synthetic labels; Crew page narrated as preview of the backend solver, not a live run | The v1→v2 classifier→regressor pivot left artefacts describing a calibrated classifier that no longer exists; narration must match shipped code or the audit story collapses. Remaining code-side fix: `routes.py` provenance string + regenerate `training_report.json` | Yes |
+| 2026-07-19 | PRD portfolio extended to nine capabilities — operator alignment (preference calibration) added as #9, matching docs/02 + docs/13 | The alignment layer shipped in code and docs/13 but was missing from the PRD's locked portfolio, violating docs-and-code-in-lockstep | Yes |
 
 ## Open questions to resolve before drafting PRD
 

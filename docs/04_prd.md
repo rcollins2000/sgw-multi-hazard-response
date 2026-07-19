@@ -158,14 +158,15 @@ Portfolio scoped to techniques with genuine prior applied work — see [00_worki
 
 | # | Capability | Model family | What it does NOT do | Human validation |
 |---|---|---|---|---|
-| 1 | Hazard-conditional risk scoring | Gradient-boosted classifier + isotonic calibration; Random Forest baseline | Does not decide response; does not classify hazards from raw weather | Operator accepts/overrides; monthly calibration audit |
-| 2 | Time-series forecasting | Prophet with weather as exogenous regressor + seasonality; ARIMA/SARIMAX for stationary sub-series | Does not classify anomalies (residual anomaly is a separate capability); does not decide operational thresholds | Uncertainty band surfaced in UI; operator reviews flagged trajectories |
-| 3 | SCADA anomaly detection | Prophet-residual — flag readings outside the forecast's uncertainty band; anomaly score = normalised residual magnitude | Does not attribute causes; does not decide dispatch | Operator confirms or dismisses; feeds back into model recalibration |
+| 1 | Hazard-conditional risk scoring | Gradient-boosted regressor (LightGBM v2) + Random Forest baseline. Classifier + isotonic calibration is Phase 2 (requires real historical failure labels). | Does not decide response; does not classify hazards from raw weather; does not emit calibrated probabilities (regressor output, not calibrated). | Operator accepts/overrides; monthly review of fit vs. hold-out |
+| 2 | Time-series forecasting | Prophet with weather as exogenous regressor + M2 semi-diurnal seasonality; ARIMA/SARIMAX kept for stationary sub-series | Does not classify anomalies (residual anomaly is a separate capability); does not decide operational thresholds. 80% band is nominal; empirical coverage ~58% on held-out Debby data (disclosed on Governance). | Uncertainty band surfaced in UI; operator reviews flagged trajectories |
+| 3 | SCADA anomaly detection | Prophet-residual + rolling-median outlier ranking — flag observations with the largest residuals against the trend | Does not attribute causes; does not decide dispatch | Operator confirms or dismisses; feeds back into model recalibration |
 | 4 | Crew pre-positioning optimisation | OR-Tools VRP / Guided Local Search under coverage + travel-time + shift-hour constraints | Does not commit dispatch; does not decide objective weights | Operator adjusts weights + accepts/overrides plan |
 | 5 | Dependency-graph cascading impact | networkx BFS traversal over `asset_dependencies` | Does not predict failures; only traverses declared dependencies | Data stewards maintain dependency graph; operator inspects chain |
 | 6 | Failure blast-radius clustering | Louvain community detection on the dependency graph | Does not decide priority; only groups by topology | Operator filters by cluster; clusters re-computed on dependency updates |
 | 7 | Regional fairness auditing (governance) | Demographic-parity + equal-opportunity gap metrics across region / domain / demographics | Does not mitigate bias directly; produces monitoring signal | Model-risk committee reviews monthly; gap thresholds trigger recalibration |
-| 8 | Copilot explanation layer | Structured-output LLM (Claude Sonnet / GPT-4 class) | **Never produces risk scores, forecasts, or optimisation plans.** Narrates and cites only. | Operator reads and can request re-generation; drift monitored via canonical eval set |
+| 8 | Copilot explanation layer | Structured-output LLM (`gpt-oss:120b` via Ollama Cloud, OpenAI fallback) | **Never produces risk scores, forecasts, or optimisation plans.** Narrates and cites only. | Operator reads and can request re-generation; drift monitored via canonical eval set |
+| 9 | Operator-preference alignment loop | Supervised preference learning — sklearn LogisticRegression + StandardScaler on `(asset features, was_deferred_or_overridden)` drawn from `audit_log`. Deliberately NOT reinforcement learning (no reward signal, no exploration on real infra, sample regime too small, audit posture demands interpretability). See [docs/13_operator_alignment.md](13_operator_alignment.md). | Does not replace the base ranking; adjustment bounded to \|Δ\| ≤ β=0.15. Cannot flip Critical to Low. Every learned weight is visible on Governance. | Every Accept/Override/Defer is HITL. Force-retrain requires operator action. Bounded correction preserves operator authority. |
 
 ### LLM boundaries (non-negotiable)
 The LLM narrates, cites evidence, drafts and answers questions over structured retrieval. It never produces the risk score, never produces the forecast, never produces the optimisation plan, never classifies hazards. This split is defensible under model-risk-management review and is what makes this a decision-support platform rather than an ops chatbot.
@@ -362,7 +363,7 @@ Model-level metrics tracked for internal validation:
 - Four hazards (hurricane, flood, heatwave, wildfire) with hazard-conditional risk scoring
 - SC/GA/NC footprint
 - One primary demo scenario (Hurricane Debby, August 2024) + one validation reference (Hurricane Idalia, August 2023)
-- All eight AI capabilities in §5 (functional, may be simplified in the prototype)
+- All nine AI capabilities in §5 (functional, may be simplified in the prototype)
 - Operator UI with accept/override + audit log
 - NOAA MVP source stack per [08_external_data_sources.md](08_external_data_sources.md)
 
