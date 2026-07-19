@@ -4,6 +4,34 @@ Running scratchpad. Newest decisions on top. Keep the *reasoning*, not just the 
 
 ---
 
+## 2026-07-19 — Operator alignment layer: preference calibration, NOT reinforcement learning
+
+User asked for "reinforcement learning to improve model prioritisation". Considered four framings before shipping.
+
+**Framings considered:**
+1. **Full RL** — policy gradient over recommendation actions with operator response as reward. Rejected: no reward signal (operator preference ≠ downstream outcome), no exploration-tolerant environment (real utility infrastructure), sample regime three orders of magnitude short (tens of decisions vs thousands needed), audit posture demands interpretability.
+2. **Contextual bandit** — online policy over asset-recommendation arms. Same rejection reasons as full RL; also introduces exploration risk on real infrastructure.
+3. **Preference calibration / RLHF-lite** — logistic regression on `(features, deferred_or_overridden)` producing `P(defer)`, applied as bounded additive nudge. **Shipped.**
+4. **Rule-based post-hoc adjustment** — hand-crafted rules from defer reasons. Rejected: doesn't scale, still needs a training signal.
+
+**Design decisions:**
+- **β = 0.15 hard cap** on nudge magnitude. Alignment can nudge, never flip. Layer stays advisory, base score stays the primary ranking signal.
+- **`min_samples = 8`** with `nunique(labels) ≥ 2` gate. Under those thresholds the layer stays `ALIGN · DORMANT` and adjustment is zero. Prevents emitting noise before there's real signal.
+- **`RETRAIN_EVERY_N = 3`** — auto-retrain cadence tight enough that the demo shows the loop closing in a single interactive session, loose enough that the operator sees stable behaviour between decisions.
+- **Version = SHA1 of training data** — any change bumps the version transparently. Auditable model provenance.
+- **Async lock around fit** — concurrent decisions don't race.
+- **Reason text captured, not yet used for training** — LLM-classified reason buckets as additional features is the obvious Phase-2 extension. Deferred to keep the demo pipeline honest about what's real.
+
+**Endpoints:** `GET /api/alignment`, `POST /api/alignment/retrain`, `GET /api/alignment/adjustments?asset_ids=…`.
+
+**Frontend surfaces:** header badge (`ALIGN · v6ed50e63 · 11n`), cockpit `aligned ↑/↓` chip on the priority score, training-signal hint under the action bar, Governance page section with diverging feature-weight bars. All four have `?` explain popovers pointing at [docs/13_operator_alignment.md](13_operator_alignment.md).
+
+**Full doc:** [docs/13_operator_alignment.md](13_operator_alignment.md) — explains why not full RL, what it is precisely, design principles, limitations, HITL touch points.
+
+**Demo framing:** [demo/walkthrough.md](../demo/walkthrough.md) §8 covers this capability with the "why RL is the wrong name" narrative.
+
+---
+
 ## 2026-07-17 — Slices 1–4: live/demo separation, provenance, streaming agent with tools, map fly-to, personas
 
 Four concurrent slices requested by user. All shipped and verified end-to-end via Playwright.

@@ -137,10 +137,112 @@ export function GovernancePage() {
         </Card>
       </section>
 
+      <section className="mt-6">
+        <Card
+          title="Operator-alignment layer · preference learning"
+        >
+          <AlignmentSection state={alignment} busy={alignmentBusy} onRetrain={retrainAlignment} />
+        </Card>
+      </section>
+
       <p className="mt-6 text-xs text-[color:var(--color-muted-foreground)]">
         Note: risk labels are synthesised from features for the fictional utility. Documented as such in the training report.
         Production replaces with real historical incident joins.
       </p>
+    </div>
+  );
+}
+
+function AlignmentSection({
+  state,
+  busy,
+  onRetrain,
+}: Readonly<{
+  state: AlignmentState | null;
+  busy: boolean;
+  onRetrain: () => void;
+}>) {
+  if (!state) {
+    return (
+      <div className="text-sm text-[color:var(--color-muted-foreground)]">
+        Alignment endpoint unreachable — the layer is currently dormant.
+      </div>
+    );
+  }
+  const report = state.report;
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <Kv k="Fitted" v={state.is_fitted ? "yes" : "no"} />
+        <Kv k="β (max nudge)" v={state.beta.toFixed(2)} />
+        <Kv k="Decisions seen" v={state.n_decisions_seen} />
+        <Kv k="Trained at n" v={state.n_decisions_at_last_train} />
+        {report && (
+          <>
+            <Kv k="Version" v={report.version} />
+            <Kv k="Samples" v={`${report.n_samples} (${report.n_defers} defer · ${report.n_accepts} accept)`} />
+            <Kv k="Fit score" v={report.fit_score.toFixed(2)} />
+            <Kv k="Trained" v={fmtRelative(report.trained_at)} />
+          </>
+        )}
+      </div>
+      {report ? (
+        <div>
+          <div className="mb-2 text-xs uppercase tracking-wide text-[color:var(--color-muted-foreground)]">
+            Feature weights (StandardScaler space)
+          </div>
+          <div className="space-y-1.5">
+            {Object.entries(report.feature_weights)
+              .sort((a, b) => Math.abs(b[1]) - Math.abs(a[1]))
+              .map(([name, w]) => {
+                const positive = w >= 0;
+                const magnitude = Math.min(1, Math.abs(w));
+                return (
+                  <div key={name} className="grid grid-cols-[240px_1fr_60px] items-center gap-2 text-xs">
+                    <span className="font-mono text-[color:var(--color-muted-foreground)]">{name}</span>
+                    <div className="relative h-1.5 overflow-hidden rounded bg-[color:var(--color-muted)]">
+                      <div
+                        className="absolute top-0 h-full"
+                        style={{
+                          left: positive ? "50%" : `${50 - magnitude * 50}%`,
+                          width: `${magnitude * 50}%`,
+                          background: positive ? "#f5a524" : "#3fd47a",
+                        }}
+                      />
+                      <div className="absolute top-0 left-1/2 h-full w-px bg-[color:var(--color-border)]" />
+                    </div>
+                    <span className="font-mono tabular-nums text-right" style={{ color: positive ? "#f5a524" : "#3fd47a" }}>
+                      {positive ? "+" : ""}
+                      {w.toFixed(3)}
+                    </span>
+                  </div>
+                );
+              })}
+          </div>
+          <div className="mt-2 text-[11px] leading-[1.5] text-[color:var(--color-muted-foreground)]">
+            Positive weight (amber) → higher feature value increases P(defer). Negative (green) → higher value increases P(accept).
+            Weights are in StandardScaler-normalised space so magnitudes are directly comparable.
+          </div>
+        </div>
+      ) : (
+        <div className="text-sm text-[color:var(--color-muted-foreground)]">
+          Model is dormant — waiting for at least {state.min_samples} operator decisions with distinct outcomes.
+          {" "}Log a mix of Accepts and Defers on the cockpit and the layer will fit automatically.
+        </div>
+      )}
+      <div className="flex items-center gap-2">
+        <button
+          onClick={onRetrain}
+          disabled={busy}
+          className="cursor-pointer rounded border border-[color:var(--color-border)] bg-[color:var(--color-panel-3)] px-3 py-1.5 text-xs font-medium disabled:opacity-40"
+          data-testid="alignment-retrain-governance"
+        >
+          {busy ? "Retraining…" : "Force retrain"}
+        </button>
+        <span className="text-[10px] text-[color:var(--color-muted-foreground)]">
+          Reads every operator_* audit row, joins to STATE.features by asset_id, fits sklearn LogisticRegression.
+        </span>
+      </div>
     </div>
   );
 }
