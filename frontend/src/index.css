@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+/*
+  SGW Storm Cockpit v2 palette.
+  Amber is the signature CTA/attention colour. Purple/blue is retained but
+  demoted from primary — used only for calm-state secondary controls.
+  IBM Plex Sans is the display face; IBM Plex Mono is used for numeric,
+  identifier, and eyebrow-label surfaces so the "engineering-grade" tone
+  reads at a glance.
+*/
+@theme {
+  /* Surface + neutrals — cockpit-dim base (slightly bluer than v1) */
+  --color-background: #0a0b0d;
+  --color-foreground: #e8eaed;
+  --color-panel: #0c0e11;
+  --color-panel-2: #0e1013;
+  --color-panel-3: #101215;
+  --color-muted: #14171b;
+  --color-muted-foreground: #c8ccd2;
+  --color-subtle: #8b9199;
+  --color-faint: #5a616b;
+  --color-border: #1e2228;
+  --color-border-2: #14171b;
+  --color-border-3: #101215;
+
+  /* Signature amber — CTA / focus / warning */
+  --color-signature: #f5a524;
+  --color-signature-2: #ffc65c;
+  --color-signature-soft: #f5a52418;
+  --color-signature-ink: #1a1204;
+
+  /* Retained blue palette — secondary controls, tooltips, and calm state */
+  --color-primary: #3b82f6;
+  --color-primary-2: #1d4ed8;
+  --color-primary-foreground: #ffffff;
+  --color-primary-soft: #12203a;
+  --color-primary-ink: #93c5fd;
+
+  /* Risk ramp — colourblind-safe amber → rose */
+  --color-risk-critical: #e0245e;
+  --color-risk-high: #f2711c;
+  --color-risk-moderate: #f5a524;
+  --color-risk-low: #64748b;
+
+  /* Semantic (kept for compatibility) */
+  --color-critical: #e0245e;
+  --color-warning: #f5a524;
+  --color-success: #3fd47a;
+
+  /* Hazard palette */
+  --color-storm: #a78bfa;
+  --color-storm-bg: #2e1065;
+  --color-storm-border: #4c1d95;
+  --color-flood: #38bdf8;
+  --color-flood-bg: #082f49;
+  --color-flood-2: #7dd3fc;
+  --color-anomaly: #f5a524;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2228;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes sgwpulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+@keyframes sgwblink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Typography utilities used across the cockpit. */
+.sgw-mono {
+  font-family: "IBM Plex Mono", ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+.sgw-num {
+  font-variant-numeric: tabular-nums;
+}
+/*
+  Cockpit eyebrow labels — spaced monospaced caps.
+  Any label that categorises a section should use `.sgw-lbl` so all headings
+  read as one horizontal typographic beat.
+*/
+.sgw-lbl {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* Watchlist row — subtle hover reveal without shifting layout. */
+.watch-row:hover {
+  background: #14171b !important;
+}
+.watch-row:hover .wr-name {
+  color: #fff !important;
+}
+
+input[type="range"] {
+  accent-color: var(--color-signature);
+}
+
+/* Storm-name label on the map — subtle white pill so it reads over both
+   the light OSM tiles and the coastal blue. */
+.leaflet-tooltip.storm-label {
+  background: #7f1d1d;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+.leaflet-tooltip.storm-label::before {
+  display: none;
+}
+
+/* Popups & tooltips on dark theme */
+.leaflet-popup-content-wrapper,
+.leaflet-tooltip:not(.storm-label) {
+  background: #14171b;
+  color: #e8eaed;
+  border-radius: 4px;
+  border: 1px solid #1e2228;
+}
+.leaflet-popup-tip {
+  background: #14171b;
+}
+.leaflet-tooltip:not(.storm-label)::before {
+  border-top-color: #14171b !important;
+  border-bottom-color: #14171b !important;
+  border-left-color: #14171b !important;
+  border-right-color: #14171b !important;
+}

@@ -1,0 +1,461 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.03008102334816,
+                32.67185504985071
+              ],
+              [
+                -79.77977665480121,
+                32.67185504985071
+              ],
+              [
+                -79.77977665480121,
+                32.92239915469465
+              ],
+              [
+                -80.03008102334816,
+                32.92239915469465
+              ],
+              [
+                -80.03008102334816,
+                32.67185504985071
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-flood_zone-COAST_EAST",
+        "hazard_type": "flood_zone",
+        "severity_band": "high",
+        "source": "FEMA_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -79.8444516330094,
+                32.6525477544333
+              ],
+              [
+                -79.68297494481955,
+                32.6525477544333
+              ],
+              [
+                -79.68297494481955,
+                32.84877112628982
+              ],
+              [
+                -79.8444516330094,
+                32.84877112628982
+              ],
+              [
+                -79.8444516330094,
+                32.6525477544333
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-storm_surge-COAST_EAST",
+        "hazard_type": "storm_surge",
+        "severity_band": "moderate",
+        "source": "NHC_SLOSH_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.1057525356704,
+                32.61569566207932
+              ],
+              [
+                -79.83762462312566,
+                32.61569566207932
+              ],
+              [
+                -79.83762462312566,
+                32.85809825599493
+              ],
+              [
+                -80.1057525356704,
+                32.85809825599493
+              ],
+              [
+                -80.1057525356704,
+                32.61569566207932
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-wildfire_risk-COAST_EAST",
+        "hazard_type": "wildfire_risk",
+        "severity_band": "moderate",
+        "source": "SPC_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.09933150002063,
+                32.49947864856222
+              ],
+              [
+                -79.92469458989977,
+                32.49947864856222
+              ],
+              [
+                -79.92469458989977,
+                32.717715208555816
+              ],
+              [
+                -80.09933150002063,
+                32.717715208555816
+              ],
+              [
+                -80.09933150002063,
+                32.49947864856222
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-extreme_heat-COAST_EAST",
+        "hazard_type": "extreme_heat",
+        "severity_band": "low",
+        "source": "CPC_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -81.29348952719462,
+                31.41850575500027
+              ],
+              [
+                -81.11365500243821,
+                31.41850575500027
+              ],
+              [
+                -81.11365500243821,
+                31.622170403145926
+              ],
+              [
+                -81.29348952719462,
+                31.622170403145926
+              ],
+              [
+                -81.29348952719462,
+                31.41850575500027
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-flood_zone-LOWER_DELTA",
+        "hazard_type": "flood_zone",
+        "severity_band": "extreme",
+        "source": "FEMA_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -81.04067302175301,
+                31.223723802721437
+              ],
+              [
+                -80.83191098022402,
+                31.223723802721437
+              ],
+              [
+                -80.83191098022402,
+                31.39739102707904
+              ],
+              [
+                -81.04067302175301,
+                31.39739102707904
+              ],
+              [
+                -81.04067302175301,
+                31.223723802721437
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-storm_surge-LOWER_DELTA",
+        "hazard_type": "storm_surge",
+        "severity_band": "extreme",
+        "source": "NHC_SLOSH_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -81.25914922589722,
+                31.112076072922058
+              ],
+              [
+                -80.9857231947286,
+                31.112076072922058
+              ],
+              [
+                -80.9857231947286,
+                31.288188010259887
+              ],
+              [
+                -81.25914922589722,
+                31.288188010259887
+              ],
+              [
+                -81.25914922589722,
+                31.112076072922058
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-wildfire_risk-LOWER_DELTA",
+        "hazard_type": "wildfire_risk",
+        "severity_band": "high",
+        "source": "SPC_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -81.08231681958847,
+                31.239696633504263
+              ],
+              [
+                -80.89930724658936,
+                31.239696633504263
+              ],
+              [
+                -80.89930724658936,
+                31.53744269938662
+              ],
+              [
+                -81.08231681958847,
+                31.53744269938662
+              ],
+              [
+                -81.08231681958847,
+                31.239696633504263
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-extreme_heat-LOWER_DELTA",
+        "hazard_type": "extreme_heat",
+        "severity_band": "moderate",
+        "source": "CPC_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.69517232494029,
+                35.26091825907649
+              ],
+              [
+                -80.48883377316285,
+                35.26091825907649
+              ],
+              [
+                -80.48883377316285,
+                35.480609972783526
+              ],
+              [
+                -80.69517232494029,
+                35.480609972783526
+              ],
+              [
+                -80.69517232494029,
+                35.26091825907649
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-flood_zone-INLAND_NORTH",
+        "hazard_type": "flood_zone",
+        "severity_band": "extreme",
+        "source": "FEMA_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.8269838505549,
+                35.187185453145894
+              ],
+              [
+                -80.64116060203371,
+                35.187185453145894
+              ],
+              [
+                -80.64116060203371,
+                35.436852495878306
+              ],
+              [
+                -80.8269838505549,
+                35.436852495878306
+              ],
+              [
+                -80.8269838505549,
+                35.187185453145894
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-storm_surge-INLAND_NORTH",
+        "hazard_type": "storm_surge",
+        "severity_band": "extreme",
+        "source": "NHC_SLOSH_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.7940256271453,
+                35.33348509702227
+              ],
+              [
+                -80.51039199472659,
+                35.33348509702227
+              ],
+              [
+                -80.51039199472659,
+                35.556425598614645
+              ],
+              [
+                -80.7940256271453,
+                35.556425598614645
+              ],
+              [
+                -80.7940256271453,
+                35.33348509702227
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-wildfire_risk-INLAND_NORTH",
+        "hazard_type": "wildfire_risk",
+        "severity_band": "extreme",
+        "source": "SPC_placeholder"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                -80.74998702337786,
+                35.299231461708665
+              ],
+              [
+                -80.56117719626644,
+                35.299231461708665
+              ],
+              [
+                -80.56117719626644,
+                35.56455703105913
+              ],
+              [
+                -80.74998702337786,
+                35.56455703105913
+              ],
+              [
+                -80.74998702337786,
+                35.299231461708665
+              ]
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "hazard_zone_id": "HZ-extreme_heat-INLAND_NORTH",
+        "hazard_type": "extreme_heat",
+        "severity_band": "low",
+        "source": "CPC_placeholder"
+      }
+    }
+  ]
+}

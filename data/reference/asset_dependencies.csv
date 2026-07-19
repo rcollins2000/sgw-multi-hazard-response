@@ -1,0 +1,131 @@
+upstream_asset_id,downstream_asset_id,dependency_type,consequence_if_lost
+SGW-TRA-CO0000,SGW-MAJ-CO0029,Fuel supply,Runtime limited to on-site fuel
+SGW-TRA-CO0003,SGW-WAT-CO0060,Control signal,Loss of remote control
+SGW-TRA-CO0003,SGW-WAT-CO0045,Electrical supply,Backup power required
+SGW-TRA-CO0004,SGW-WAT-CO0019,Fuel supply,Runtime limited to on-site fuel
+SGW-TRA-CO0004,SGW-WAT-CO0060,Electrical supply,Backup power required
+SGW-DIS-CO0005,SGW-RES-CO0039,Electrical supply,Backup power required
+SGW-DIS-CO0005,SGW-CON-CO0034,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-CO0012,SGW-WAT-CO0002,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-CO0012,SGW-WAT-CO0009,Control signal,Loss of remote control
+SGW-EME-CO0012,SGW-CON-CO0037,Control signal,Loss of remote control
+SGW-TRA-CO0015,SGW-WAT-CO0007,Fuel supply,Runtime limited to on-site fuel
+SGW-TRA-CO0015,SGW-CON-CO0034,Fuel supply,Runtime limited to on-site fuel
+SGW-TRA-CO0015,SGW-WAT-CO0019,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-CO0016,SGW-RES-CO0042,Control signal,Loss of remote control
+SGW-EME-CO0016,SGW-WAT-CO0007,Control signal,Loss of remote control
+SGW-EME-CO0017,SGW-WAT-CO0010,Control signal,Loss of remote control
+SGW-EME-CO0017,SGW-RES-CO0039,Water pressure,Pressure loss for downstream assets
+SGW-ELE-CO0020,SGW-MAJ-CO0029,Water pressure,Pressure loss for downstream assets
+SGW-TRA-CO0021,SGW-WAT-CO0060,Electrical supply,Backup power required
+SGW-TRA-CO0021,SGW-CON-CO0064,Electrical supply,Backup power required
+SGW-TRA-CO0022,SGW-WAT-CO0007,Electrical supply,Backup power required
+SGW-TRA-CO0025,SGW-MAJ-CO0013,Water pressure,Pressure loss for downstream assets
+SGW-ELE-CO0030,SGW-RES-CO0062,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-CO0031,SGW-WAS-CO0023,Control signal,Loss of remote control
+SGW-ELE-CO0031,SGW-MAJ-CO0054,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-CO0031,SGW-RES-CO0062,Electrical supply,Backup power required
+SGW-TRA-CO0038,SGW-CON-CO0037,Electrical supply,Backup power required
+SGW-DIS-CO0041,SGW-MAJ-CO0001,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-CO0041,SGW-RES-CO0057,Electrical supply,Backup power required
+SGW-TRA-CO0043,SGW-MAJ-CO0001,Electrical supply,Backup power required
+SGW-EME-CO0044,SGW-WAT-CO0009,Control signal,Loss of remote control
+SGW-DIS-CO0050,SGW-MAJ-CO0059,Water pressure,Pressure loss for downstream assets
+SGW-ELE-CO0051,SGW-WAT-CO0027,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-CO0061,SGW-WAS-CO0011,Electrical supply,Backup power required
+SGW-TRA-CO0065,SGW-MAJ-CO0013,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-CO0066,SGW-RES-CO0042,Electrical supply,Backup power required
+SGW-EME-CO0066,SGW-WAT-CO0007,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-CO0067,SGW-WAT-CO0010,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-LO0001,SGW-WAT-LO0015,Electrical supply,Backup power required
+SGW-ELE-LO0003,SGW-WAT-LO0054,Control signal,Loss of remote control
+SGW-DIS-LO0012,SGW-WAS-LO0053,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-LO0020,SGW-WAT-LO0054,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-LO0023,SGW-MAJ-LO0046,Water pressure,Pressure loss for downstream assets
+SGW-ELE-LO0023,SGW-WAT-LO0055,Electrical supply,Backup power required
+SGW-EME-LO0027,SGW-MAJ-LO0019,Water pressure,Pressure loss for downstream assets
+SGW-TRA-LO0034,SGW-RES-LO0026,Control signal,Loss of remote control
+SGW-DIS-LO0040,SGW-WAT-LO0015,Control signal,Loss of remote control
+SGW-DIS-LO0047,SGW-CON-LO0010,Control signal,Loss of remote control
+SGW-DIS-LO0047,SGW-RES-LO0018,Water pressure,Pressure loss for downstream assets
+SGW-DIS-LO0047,SGW-WAT-LO0015,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-LO0049,SGW-WAT-LO0039,Water pressure,Pressure loss for downstream assets
+SGW-ELE-LO0049,SGW-CON-LO0022,Water pressure,Pressure loss for downstream assets
+SGW-ELE-LO0049,SGW-WAT-LO0055,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-LO0052,SGW-WAS-LO0053,Electrical supply,Backup power required
+SGW-EME-LO0052,SGW-MAJ-LO0030,Electrical supply,Backup power required
+SGW-EME-LO0052,SGW-CON-LO0050,Water pressure,Pressure loss for downstream assets
+SGW-TRA-LO0056,SGW-WAT-LO0006,Control signal,Loss of remote control
+SGW-DIS-LO0057,SGW-MAJ-LO0030,Control signal,Loss of remote control
+SGW-ELE-LO0062,SGW-CON-LO0031,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-LO0064,SGW-RES-LO0061,Electrical supply,Backup power required
+SGW-DIS-LO0068,SGW-MAJ-LO0019,Control signal,Loss of remote control
+SGW-ELE-LO0069,SGW-WAT-LO0016,Water pressure,Pressure loss for downstream assets
+SGW-ELE-LO0069,SGW-WAS-LO0007,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-IN0009,SGW-WAT-IN0002,Water pressure,Pressure loss for downstream assets
+SGW-DIS-IN0012,SGW-CON-IN0023,Electrical supply,Backup power required
+SGW-ELE-IN0014,SGW-RES-IN0041,Water pressure,Pressure loss for downstream assets
+SGW-ELE-IN0014,SGW-CON-IN0018,Electrical supply,Backup power required
+SGW-EME-IN0015,SGW-RES-IN0041,Water pressure,Pressure loss for downstream assets
+SGW-EME-IN0015,SGW-CON-IN0043,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-IN0026,SGW-WAT-IN0035,Electrical supply,Backup power required
+SGW-EME-IN0026,SGW-WAS-IN0066,Control signal,Loss of remote control
+SGW-EME-IN0026,SGW-MAJ-IN0037,Electrical supply,Backup power required
+SGW-DIS-IN0027,SGW-RES-IN0040,Electrical supply,Backup power required
+SGW-DIS-IN0034,SGW-WAS-IN0042,Water pressure,Pressure loss for downstream assets
+SGW-DIS-IN0036,SGW-RES-IN0041,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-IN0036,SGW-MAJ-IN0037,Water pressure,Pressure loss for downstream assets
+SGW-DIS-IN0036,SGW-MAJ-IN0058,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-IN0039,SGW-WAT-IN0003,Control signal,Loss of remote control
+SGW-DIS-IN0039,SGW-MAJ-IN0011,Water pressure,Pressure loss for downstream assets
+SGW-TRA-IN0044,SGW-RES-IN0040,Water pressure,Pressure loss for downstream assets
+SGW-TRA-IN0044,SGW-WAS-IN0053,Water pressure,Pressure loss for downstream assets
+SGW-TRA-IN0044,SGW-WAT-IN0051,Electrical supply,Backup power required
+SGW-ELE-IN0048,SGW-RES-IN0017,Control signal,Loss of remote control
+SGW-DIS-IN0049,SGW-RES-IN0038,Electrical supply,Backup power required
+SGW-DIS-IN0049,SGW-WAT-IN0002,Fuel supply,Runtime limited to on-site fuel
+SGW-DIS-IN0052,SGW-RES-IN0001,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-IN0054,SGW-WAT-IN0047,Water pressure,Pressure loss for downstream assets
+SGW-EME-IN0055,SGW-CON-IN0018,Fuel supply,Runtime limited to on-site fuel
+SGW-EME-IN0055,SGW-RES-IN0061,Electrical supply,Backup power required
+SGW-TRA-IN0056,SGW-MAJ-IN0058,Control signal,Loss of remote control
+SGW-TRA-IN0056,SGW-RES-IN0019,Electrical supply,Backup power required
+SGW-DIS-IN0059,SGW-WAT-IN0003,Electrical supply,Backup power required
+SGW-DIS-IN0059,SGW-MAJ-IN0067,Fuel supply,Runtime limited to on-site fuel
+SGW-ELE-IN0060,SGW-MAJ-IN0058,Control signal,Loss of remote control
+SGW-EME-IN0065,SGW-WAS-IN0028,Water pressure,Pressure loss for downstream assets
+SGW-TRA-IN0068,SGW-WAS-IN0000,Electrical supply,Backup power required
+SGW-TRA-IN0068,SGW-WAS-IN0030,Water pressure,Pressure loss for downstream assets
+SGW-TRA-IN0068,SGW-WAT-IN0045,Control signal,Loss of remote control
+SGW-EME-IN0069,SGW-CON-IN0043,Electrical supply,Backup power required
+SGW-EME-IN0069,SGW-WAS-IN0042,Fuel supply,Runtime limited to on-site fuel
+SGW-WAT-CO0009,SGW-CON-CO0034,Water pressure,Downstream operations impacted
+SGW-RES-LO0026,SGW-CON-LO0022,Water pressure,Downstream operations impacted
+SGW-RES-LO0000,SGW-CON-LO0050,Water pressure,Downstream operations impacted
+SGW-WAS-IN0000,SGW-CON-IN0025,Water pressure,Downstream operations impacted
+SGW-WAT-IN0062,SGW-CON-IN0024,Water pressure,Downstream operations impacted
+SGW-WAS-IN0028,SGW-CON-IN0024,Water pressure,Downstream operations impacted
+SGW-WAT-CO0060,SGW-CON-CO0034,Water pressure,Downstream operations impacted
+SGW-MAJ-LO0043,SGW-CON-LO0031,Water pressure,Downstream operations impacted
+SGW-MAJ-LO0024,SGW-CON-LO0010,Water pressure,Downstream operations impacted
+SGW-WAT-IN0010,SGW-CON-IN0018,Water pressure,Downstream operations impacted
+SGW-WAT-IN0047,SGW-CON-IN0024,Water pressure,Downstream operations impacted
+SGW-MAJ-CO0001,SGW-CON-CO0064,Water pressure,Downstream operations impacted
+SGW-RES-LO0004,SGW-CON-LO0010,Water pressure,Downstream operations impacted
+SGW-WAS-IN0046,SGW-CON-IN0018,Water pressure,Downstream operations impacted
+SGW-WAT-LO0041,SGW-CON-LO0063,Water pressure,Downstream operations impacted
+SGW-WAS-IN0008,SGW-CON-IN0043,Water pressure,Downstream operations impacted
+SGW-WAS-CO0011,SGW-CON-CO0047,Water pressure,Downstream operations impacted
+SGW-MAJ-IN0013,SGW-CON-IN0025,Water pressure,Downstream operations impacted
+SGW-MAJ-LO0009,SGW-CON-LO0044,Water pressure,Downstream operations impacted
+SGW-MAJ-LO0066,SGW-CON-LO0037,Water pressure,Downstream operations impacted
+SGW-MAJ-IN0058,SGW-CON-IN0025,Water pressure,Downstream operations impacted
+SGW-MAJ-CO0013,SGW-CON-CO0037,Water pressure,Downstream operations impacted
+SGW-WAT-CO0068,SGW-CON-CO0063,Water pressure,Downstream operations impacted
+SGW-MAJ-IN0057,SGW-CON-IN0043,Water pressure,Downstream operations impacted
+SGW-WAT-CO0002,SGW-CON-CO0034,Water pressure,Downstream operations impacted
+SGW-MAJ-CO0029,SGW-CON-CO0063,Water pressure,Downstream operations impacted
+SGW-MAJ-LO0046,SGW-CON-LO0037,Water pressure,Downstream operations impacted
+SGW-RES-IN0017,SGW-CON-IN0023,Water pressure,Downstream operations impacted
+SGW-WAT-LO0059,SGW-CON-LO0050,Water pressure,Downstream operations impacted
+SGW-RES-IN0001,SGW-CON-IN0024,Water pressure,Downstream operations impacted

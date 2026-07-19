@@ -1,0 +1,100 @@
+[project]
+name = "sgw-platform"
+version = "0.1.0"
+description = "SGW Multi-Hazard Readiness & Response — AECOM take-home"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Reuben Collins" }]
+
+dependencies = [
+    # API
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    # DB
+    "sqlalchemy[asyncio]>=2.0",
+    "alembic>=1.14",
+    "asyncpg>=0.30",
+    "geoalchemy2>=0.15",
+    "psycopg2-binary>=2.9",  # for alembic offline mode
+    # Observability
+    "structlog>=24.4",
+    "prometheus-client>=0.21",
+    # HTTP
+    "httpx>=0.28",
+    # Geospatial
+    "geopandas>=1.0",
+    "shapely>=2.0",
+    "pyproj>=3.7",
+    # ML
+    "lightgbm>=4.5",
+    "scikit-learn>=1.5",
+    "pandas>=2.2",
+    "numpy>=2.0",
+    "prophet>=1.1.6",
+    # Optimisation
+    "ortools>=9.11",
+    # Graph
+    "networkx>=3.4",
+    "python-louvain>=0.16",
+    # LLM
+    "openai>=1.55",
+    # Utility
+    "python-dateutil>=2.9",
+    "tenacity>=9.0",
+    "typer>=0.15",
+    "ollama>=0.6.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "pytest-cov>=6.0",
+    "testcontainers[postgres]>=4.8",
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "types-python-dateutil",
+    "types-requests",
+    "vcrpy>=6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sgw_platform"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP", "SIM", "RUF"]
+ignore = ["E501"]  # line-length handled by formatter
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["B", "SIM", "RUF002"]
+"scripts/**/*.py" = ["B008"]  # typer.Option is intentionally a default
+"src/**/models/*.py" = ["RUF012"]  # SQLAlchemy __table_args__ pattern is not a ClassVar
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["alembic/"]
+
+[[tool.mypy.overrides]]
+module = ["prophet.*", "ortools.*", "geoalchemy2.*", "community.*", "shapely.*", "geopandas.*", "networkx.*", "lightgbm.*", "sklearn.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["src/sgw_platform"]
+branch = true

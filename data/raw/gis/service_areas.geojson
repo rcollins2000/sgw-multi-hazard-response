@@ -1,0 +1,590 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.89400984476057,
+              32.56601267409888
+            ],
+            [
+              -79.83550332909672,
+              32.56601267409888
+            ],
+            [
+              -79.83550332909672,
+              32.69141393267231
+            ],
+            [
+              -79.89400984476057,
+              32.69141393267231
+            ],
+            [
+              -79.89400984476057,
+              32.56601267409888
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-COAST_EAST-00",
+        "service_area_name": "Coastal East (SC) District 1",
+        "population": 407792,
+        "priority_facilities": 14,
+        "hospitals": 2,
+        "emergency_shelters": 6,
+        "primary_asset_id": "SGW-WAT-CO0019"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.14587568022367,
+              32.56022327798869
+            ],
+            [
+              -80.06888358560732,
+              32.56022327798869
+            ],
+            [
+              -80.06888358560732,
+              32.64341337767032
+            ],
+            [
+              -80.14587568022367,
+              32.64341337767032
+            ],
+            [
+              -80.14587568022367,
+              32.56022327798869
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-COAST_EAST-01",
+        "service_area_name": "Coastal East (SC) District 2",
+        "population": 73598,
+        "priority_facilities": 6,
+        "hospitals": 0,
+        "emergency_shelters": 3,
+        "primary_asset_id": "SGW-CON-CO0034"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.02835464451421,
+              32.76874718563693
+            ],
+            [
+              -79.92686174270496,
+              32.76874718563693
+            ],
+            [
+              -79.92686174270496,
+              32.82114233691792
+            ],
+            [
+              -80.02835464451421,
+              32.82114233691792
+            ],
+            [
+              -80.02835464451421,
+              32.76874718563693
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-COAST_EAST-02",
+        "service_area_name": "Coastal East (SC) District 3",
+        "population": 205553,
+        "priority_facilities": 19,
+        "hospitals": 0,
+        "emergency_shelters": 10,
+        "primary_asset_id": "SGW-WAS-CO0011"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.95389675592605,
+              32.67603977462256
+            ],
+            [
+              -79.86766820583853,
+              32.67603977462256
+            ],
+            [
+              -79.86766820583853,
+              32.751061456778125
+            ],
+            [
+              -79.95389675592605,
+              32.751061456778125
+            ],
+            [
+              -79.95389675592605,
+              32.67603977462256
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-COAST_EAST-03",
+        "service_area_name": "Coastal East (SC) District 4",
+        "population": 428509,
+        "priority_facilities": 4,
+        "hospitals": 5,
+        "emergency_shelters": 9,
+        "primary_asset_id": "SGW-EME-CO0049"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.84223459611962,
+              32.912185597001326
+            ],
+            [
+              -79.73359934442968,
+              32.912185597001326
+            ],
+            [
+              -79.73359934442968,
+              32.972535547808405
+            ],
+            [
+              -79.84223459611962,
+              32.972535547808405
+            ],
+            [
+              -79.84223459611962,
+              32.912185597001326
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-COAST_EAST-04",
+        "service_area_name": "Coastal East (SC) District 5",
+        "population": 108867,
+        "priority_facilities": 6,
+        "hospitals": 2,
+        "emergency_shelters": 5,
+        "primary_asset_id": "SGW-RES-CO0048"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -81.17266972518586,
+              31.08640969802713
+            ],
+            [
+              -81.11260483709476,
+              31.08640969802713
+            ],
+            [
+              -81.11260483709476,
+              31.159525122619417
+            ],
+            [
+              -81.17266972518586,
+              31.159525122619417
+            ],
+            [
+              -81.17266972518586,
+              31.08640969802713
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-LOWER_DELTA-00",
+        "service_area_name": "Lower Delta (GA) District 1",
+        "population": 273876,
+        "priority_facilities": 4,
+        "hospitals": 2,
+        "emergency_shelters": 5,
+        "primary_asset_id": "SGW-WAT-LO0038"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.92205922795081,
+              31.353449598705648
+            ],
+            [
+              -80.82256293554407,
+              31.353449598705648
+            ],
+            [
+              -80.82256293554407,
+              31.467449853749944
+            ],
+            [
+              -80.92205922795081,
+              31.467449853749944
+            ],
+            [
+              -80.92205922795081,
+              31.353449598705648
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-LOWER_DELTA-01",
+        "service_area_name": "Lower Delta (GA) District 2",
+        "population": 76084,
+        "priority_facilities": 6,
+        "hospitals": 2,
+        "emergency_shelters": 1,
+        "primary_asset_id": "SGW-CON-LO0058"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.92768214631465,
+              31.14786401993837
+            ],
+            [
+              -80.81325908376968,
+              31.14786401993837
+            ],
+            [
+              -80.81325908376968,
+              31.28435319537326
+            ],
+            [
+              -80.92768214631465,
+              31.28435319537326
+            ],
+            [
+              -80.92768214631465,
+              31.14786401993837
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-LOWER_DELTA-02",
+        "service_area_name": "Lower Delta (GA) District 3",
+        "population": 250803,
+        "priority_facilities": 12,
+        "hospitals": 3,
+        "emergency_shelters": 11,
+        "primary_asset_id": "SGW-EME-LO0042"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.89954975872065,
+              31.041225500468165
+            ],
+            [
+              -80.82106994007565,
+              31.041225500468165
+            ],
+            [
+              -80.82106994007565,
+              31.1948989711101
+            ],
+            [
+              -80.89954975872065,
+              31.1948989711101
+            ],
+            [
+              -80.89954975872065,
+              31.041225500468165
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-LOWER_DELTA-03",
+        "service_area_name": "Lower Delta (GA) District 4",
+        "population": 271139,
+        "priority_facilities": 12,
+        "hospitals": 1,
+        "emergency_shelters": 7,
+        "primary_asset_id": "SGW-RES-LO0025"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.92420737736164,
+              31.146263637016503
+            ],
+            [
+              -80.800812445241,
+              31.146263637016503
+            ],
+            [
+              -80.800812445241,
+              31.245184514563555
+            ],
+            [
+              -80.92420737736164,
+              31.245184514563555
+            ],
+            [
+              -80.92420737736164,
+              31.146263637016503
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-LOWER_DELTA-04",
+        "service_area_name": "Lower Delta (GA) District 5",
+        "population": 190858,
+        "priority_facilities": 14,
+        "hospitals": 2,
+        "emergency_shelters": 7,
+        "primary_asset_id": "SGW-CON-LO0031"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.69948023422502,
+              35.44299096549156
+            ],
+            [
+              -80.63550422837976,
+              35.44299096549156
+            ],
+            [
+              -80.63550422837976,
+              35.60266275657921
+            ],
+            [
+              -80.69948023422502,
+              35.60266275657921
+            ],
+            [
+              -80.69948023422502,
+              35.44299096549156
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-INLAND_NORTH-00",
+        "service_area_name": "Inland North (NC) District 1",
+        "population": 377413,
+        "priority_facilities": 19,
+        "hospitals": 0,
+        "emergency_shelters": 12,
+        "primary_asset_id": "SGW-CON-IN0023"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.66549618584196,
+              35.39586694802331
+            ],
+            [
+              -80.57288159132489,
+              35.39586694802331
+            ],
+            [
+              -80.57288159132489,
+              35.47082669298155
+            ],
+            [
+              -80.66549618584196,
+              35.47082669298155
+            ],
+            [
+              -80.66549618584196,
+              35.39586694802331
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-INLAND_NORTH-01",
+        "service_area_name": "Inland North (NC) District 2",
+        "population": 449373,
+        "priority_facilities": 15,
+        "hospitals": 5,
+        "emergency_shelters": 8,
+        "primary_asset_id": "SGW-WAS-IN0008"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.8155713397477,
+              35.24188446293692
+            ],
+            [
+              -80.74524953755598,
+              35.24188446293692
+            ],
+            [
+              -80.74524953755598,
+              35.30038165107163
+            ],
+            [
+              -80.8155713397477,
+              35.30038165107163
+            ],
+            [
+              -80.8155713397477,
+              35.24188446293692
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-INLAND_NORTH-02",
+        "service_area_name": "Inland North (NC) District 3",
+        "population": 433703,
+        "priority_facilities": 14,
+        "hospitals": 0,
+        "emergency_shelters": 8,
+        "primary_asset_id": "SGW-EME-IN0054"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.39869799862127,
+              35.29129712132728
+            ],
+            [
+              -80.31060138694174,
+              35.29129712132728
+            ],
+            [
+              -80.31060138694174,
+              35.39209063849082
+            ],
+            [
+              -80.39869799862127,
+              35.39209063849082
+            ],
+            [
+              -80.39869799862127,
+              35.29129712132728
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-INLAND_NORTH-03",
+        "service_area_name": "Inland North (NC) District 4",
+        "population": 305026,
+        "priority_facilities": 3,
+        "hospitals": 2,
+        "emergency_shelters": 12,
+        "primary_asset_id": "SGW-WAS-IN0053"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -80.4605400643402,
+              35.33966347836678
+            ],
+            [
+              -80.34395842029889,
+              35.33966347836678
+            ],
+            [
+              -80.34395842029889,
+              35.38986131045289
+            ],
+            [
+              -80.4605400643402,
+              35.38986131045289
+            ],
+            [
+              -80.4605400643402,
+              35.33966347836678
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "service_area_id": "SA-INLAND_NORTH-04",
+        "service_area_name": "Inland North (NC) District 5",
+        "population": 364772,
+        "priority_facilities": 13,
+        "hospitals": 1,
+        "emergency_shelters": 11,
+        "primary_asset_id": "SGW-WAT-IN0031"
+      }
+    }
+  ]
+}

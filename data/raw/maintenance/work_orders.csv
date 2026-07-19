@@ -1,0 +1,301 @@
+work_order_id,asset_id,work_type,description,priority,created_at_source,due_date,status,estimated_hours,assigned_team
+WO-90000,SGW-RES-IN0007,Corrective,Service controllers,Low,2026-05-14T00:00:00+00:00,2026-05-28,Scheduled,34.6,Team C
+WO-90001,SGW-DIS-IN0012,Emergency,Inspect controllers,Medium,2026-06-19T00:00:00+00:00,2026-07-25,Completed,32.7,Team C
+WO-90002,SGW-RES-IN0017,Preventive,Replace controllers,Low,2026-07-15T00:00:00+00:00,2026-08-10,Scheduled,15.6,Team B
+WO-90003,SGW-MAJ-LO0060,Emergency,Replace insulation,Medium,2026-06-19T00:00:00+00:00,2026-07-07,In progress,22.0,Team B
+WO-90004,SGW-WAT-IN0002,Emergency,Service bearings,Low,2026-05-22T00:00:00+00:00,2026-07-21,In progress,3.1,Team C
+WO-90005,SGW-WAT-CO0002,Corrective,Replace wiring,Critical,2026-07-02T00:00:00+00:00,2026-08-10,Completed,17.0,
+WO-90006,SGW-MAJ-LO0036,Emergency,Replace seals,Medium,2026-06-26T00:00:00+00:00,2026-08-22,Completed,12.4,Team C
+WO-90007,SGW-RES-CO0057,Inspection,Replace wiring,Medium,2026-07-08T00:00:00+00:00,2026-09-02,Completed,22.4,Team A
+WO-90008,SGW-TRA-IN0006,Inspection,Service insulation,High,2026-05-15T00:00:00+00:00,2026-05-24,Completed,18.2,Team B
+WO-90009,SGW-WAT-LO0038,Corrective,Service seals,Medium,2026-05-14T00:00:00+00:00,2026-06-12,Completed,4.4,Team A
+WO-90010,SGW-MAJ-IN0058,Corrective,Service insulation,High,2026-05-31T00:00:00+00:00,2026-06-17,Completed,31.6,Team B
+WO-90011,SGW-WAS-IN0066,Inspection,Service insulation,Medium,2026-05-08T00:00:00+00:00,2026-06-04,Overdue,12.4,Team C
+WO-90012,SGW-RES-LO0061,Corrective,Test seals,Critical,2026-05-13T00:00:00+00:00,2026-06-30,Scheduled,34.8,Team B
+WO-90013,SGW-CON-CO0037,Corrective,Test wiring,Low,2026-06-11T00:00:00+00:00,2026-07-28,Scheduled,17.2,
+WO-90014,SGW-WAT-CO0019,Emergency,Service controllers,Medium,2026-05-12T00:00:00+00:00,2026-06-19,Scheduled,1.1,Team A
+WO-90015,SGW-WAT-IN0047,Inspection,Inspect insulation,Medium,2026-06-28T00:00:00+00:00,2026-08-01,Completed,20.3,Team C
+WO-90016,SGW-ELE-LO0002,Corrective,Test controllers,High,2026-06-13T00:00:00+00:00,2026-08-07,Scheduled,4.9,
+WO-90017,SGW-TRA-CO0004,Corrective,Test wiring,Low,2026-05-16T00:00:00+00:00,2026-06-19,Scheduled,27.9,Team B
+WO-90018,SGW-EME-IN0026,Corrective,Service seals,High,2026-06-08T00:00:00+00:00,2026-07-01,Scheduled,26.9,Team B
+WO-90019,SGW-MAJ-CO0013,Inspection,Replace wiring,High,2026-06-20T00:00:00+00:00,2026-08-11,Scheduled,9.3,Team A
+WO-90020,SGW-DIS-CO0033,Corrective,Test seals,Low,2026-07-15T00:00:00+00:00,2026-08-12,Completed,39.5,
+WO-90021,SGW-MAJ-IN0037,Emergency,Inspect bearings,Medium,2026-05-17T00:00:00+00:00,2026-07-09,Completed,5.0,Team C
+WO-90022,SGW-WAT-LO0006,Emergency,Replace bearings,Low,2026-05-18T00:00:00+00:00,2026-06-30,Scheduled,26.4,
+WO-90023,SGW-MAJ-LO0019,Corrective,Test insulation,High,2026-05-28T00:00:00+00:00,2026-06-17,Scheduled,4.9,Team A
+WO-90024,SGW-WAT-IN0010,Inspection,Test controllers,High,2026-06-19T00:00:00+00:00,2026-07-11,Scheduled,4.3,Team C
+WO-90025,SGW-DIS-IN0059,Inspection,Replace insulation,High,2026-05-04T00:00:00+00:00,2026-05-23,Completed,12.5,Team A
+WO-90026,SGW-ELE-IN0060,Emergency,Test seals,Medium,2026-05-31T00:00:00+00:00,2026-07-17,In progress,21.6,Team A
+WO-90027,SGW-CON-LO0022,Corrective,Test insulation,Medium,2026-06-10T00:00:00+00:00,2026-07-21,Completed,30.7,Team A
+WO-90028,SGW-TRA-CO0004,Preventive,Inspect controllers,Medium,2026-07-15T00:00:00+00:00,2026-07-25,Overdue,16.5,Team C
+WO-90029,SGW-DIS-IN0020,Emergency,Test wiring,Low,2026-07-04T00:00:00+00:00,2026-08-14,In progress,7.0,Team A
+WO-90030,SGW-MAJ-LO0009,Corrective,Replace insulation,Medium,2026-05-11T00:00:00+00:00,2026-06-24,Completed,33.5,Team A
+WO-90031,SGW-MAJ-LO0009,Corrective,Inspect bearings,Low,2026-06-25T00:00:00+00:00,2026-07-29,Scheduled,24.9,Team A
+WO-90032,SGW-MAJ-LO0009,Preventive,Inspect bearings,High,2026-05-23T00:00:00+00:00,2026-06-09,In progress,14.5,Team C
+WO-90033,SGW-RES-CO0042,Corrective,Service seals,High,2026-06-17T00:00:00+00:00,2026-06-25,Scheduled,17.7,Team A
+WO-90034,SGW-ELE-CO0067,Preventive,Test wiring,Medium,2026-07-13T00:00:00+00:00,2026-07-23,In progress,23.1,Team C
+WO-90035,SGW-ELE-CO0040,Preventive,Inspect bearings,High,2026-06-02T00:00:00+00:00,2026-06-09,Scheduled,34.7,Team B
+WO-90036,SGW-WAS-CO0011,Inspection,Test bearings,Low,2026-06-30T00:00:00+00:00,2026-07-09,In progress,36.6,
+WO-90037,SGW-RES-CO0057,Corrective,Test controllers,Medium,2026-06-11T00:00:00+00:00,2026-06-22,In progress,5.7,Team A
+WO-90038,SGW-WAT-CO0045,Preventive,Test seals,High,2026-05-29T00:00:00+00:00,2026-06-23,Completed,13.1,Team A
+WO-90039,SGW-RES-IN0001,Preventive,Service bearings,Medium,2026-06-28T00:00:00+00:00,2026-08-24,Scheduled,25.3,
+WO-90040,SGW-MAJ-LO0024,Emergency,Replace insulation,High,2026-07-15T00:00:00+00:00,2026-08-06,Scheduled,37.4,Team A
+WO-90041,SGW-MAJ-CO0059,Inspection,Inspect controllers,Low,2026-07-09T00:00:00+00:00,2026-08-27,Scheduled,29.8,Team C
+WO-90042,SGW-WAS-CO0026,Corrective,Test wiring,Critical,2026-05-27T00:00:00+00:00,2026-06-12,Completed,4.6,Team B
+WO-90043,SGW-CON-LO0063,Inspection,Test seals,Medium,2026-06-22T00:00:00+00:00,2026-07-31,Scheduled,33.0,Team A
+WO-90044,SGW-MAJ-IN0011,Preventive,Test bearings,Medium,2026-07-12T00:00:00+00:00,2026-08-04,Completed,37.1,
+WO-90045,SGW-DIS-IN0039,Inspection,Test controllers,Medium,2026-06-11T00:00:00+00:00,2026-06-30,Scheduled,31.0,Team A
+WO-90046,SGW-RES-CO0039,Corrective,Test wiring,Medium,2026-05-14T00:00:00+00:00,2026-05-28,In progress,38.6,Team B
+WO-90047,SGW-WAT-LO0045,Emergency,Service seals,Low,2026-06-09T00:00:00+00:00,2026-08-06,Completed,33.2,Team A
+WO-90048,SGW-CON-CO0055,Corrective,Inspect bearings,Critical,2026-06-11T00:00:00+00:00,2026-07-13,In progress,27.4,Team C
+WO-90049,SGW-EME-IN0069,Preventive,Test wiring,Medium,2026-05-23T00:00:00+00:00,2026-07-04,Scheduled,19.0,Team B
+WO-90050,SGW-ELE-CO0031,Preventive,Replace bearings,Low,2026-05-02T00:00:00+00:00,2026-06-03,Scheduled,25.6,Team A
+WO-90051,SGW-DIS-IN0009,Inspection,Inspect seals,Critical,2026-07-15T00:00:00+00:00,2026-08-03,Overdue,18.3,Team B
+WO-90052,SGW-WAS-CO0023,Preventive,Inspect wiring,Low,2026-06-12T00:00:00+00:00,2026-07-25,In progress,29.3,
+WO-90053,SGW-WAT-CO0007,Emergency,Replace controllers,Medium,2026-06-18T00:00:00+00:00,2026-07-06,Scheduled,18.4,Team B
+WO-90054,SGW-RES-CO0008,Inspection,Test wiring,High,2026-06-01T00:00:00+00:00,2026-07-08,Scheduled,11.9,Team B
+WO-90055,SGW-CON-LO0037,Corrective,Inspect wiring,High,2026-05-26T00:00:00+00:00,2026-06-24,In progress,31.5,Team C
+WO-90056,SGW-DIS-IN0004,Inspection,Test controllers,Low,2026-07-04T00:00:00+00:00,2026-07-31,In progress,2.1,Team C
+WO-90057,SGW-MAJ-CO0014,Inspection,Replace bearings,Low,2026-06-30T00:00:00+00:00,2026-08-18,Scheduled,21.8,Team A
+WO-90058,SGW-EME-IN0055,Emergency,Service bearings,Low,2026-05-29T00:00:00+00:00,2026-07-12,Scheduled,29.8,Team C
+WO-90059,SGW-MAJ-IN0011,Inspection,Replace insulation,Critical,2026-05-04T00:00:00+00:00,2026-07-03,Overdue,35.4,
+WO-90060,SGW-DIS-LO0068,Corrective,Test seals,Low,2026-06-09T00:00:00+00:00,2026-06-30,Completed,1.8,
+WO-90061,SGW-TRA-CO0000,Corrective,Replace controllers,High,2026-06-12T00:00:00+00:00,2026-08-09,Completed,13.6,Team A
+WO-90062,SGW-CON-CO0037,Corrective,Inspect insulation,High,2026-07-15T00:00:00+00:00,2026-07-26,Scheduled,37.7,
+WO-90063,SGW-WAT-IN0010,Inspection,Service controllers,Low,2026-05-13T00:00:00+00:00,2026-05-30,Completed,18.0,
+WO-90064,SGW-EME-IN0026,Corrective,Service bearings,High,2026-06-10T00:00:00+00:00,2026-08-08,Scheduled,13.0,Team C
+WO-90065,SGW-WAS-CO0032,Preventive,Test insulation,Low,2026-05-23T00:00:00+00:00,2026-07-07,Scheduled,32.5,Team B
+WO-90066,SGW-CON-IN0023,Preventive,Test bearings,Medium,2026-07-12T00:00:00+00:00,2026-07-23,Scheduled,39.3,Team B
+WO-90067,SGW-WAS-IN0022,Inspection,Test seals,Medium,2026-05-12T00:00:00+00:00,2026-06-03,Completed,14.7,Team A
+WO-90068,SGW-TRA-IN0044,Preventive,Test wiring,High,2026-05-01T00:00:00+00:00,2026-05-18,Completed,20.2,
+WO-90069,SGW-MAJ-LO0019,Emergency,Inspect wiring,High,2026-07-09T00:00:00+00:00,2026-08-21,Completed,27.8,Team B
+WO-90070,SGW-WAT-LO0045,Preventive,Service seals,Medium,2026-05-10T00:00:00+00:00,2026-05-23,Scheduled,7.6,
+WO-90071,SGW-DIS-CO0041,Preventive,Service insulation,Critical,2026-05-10T00:00:00+00:00,2026-06-16,Completed,17.8,Team B
+WO-90072,SGW-EME-IN0015,Corrective,Inspect seals,Medium,2026-06-25T00:00:00+00:00,2026-07-14,In progress,22.6,Team C
+WO-90073,SGW-WAT-IN0029,Inspection,Replace seals,Low,2026-06-06T00:00:00+00:00,2026-07-19,In progress,20.1,Team A
+WO-90074,SGW-CON-LO0022,Emergency,Inspect controllers,High,2026-05-01T00:00:00+00:00,2026-06-17,Completed,8.8,Team A
+WO-90075,SGW-WAT-CO0052,Inspection,Inspect wiring,High,2026-05-22T00:00:00+00:00,2026-06-17,Completed,19.4,Team C
+WO-90076,SGW-WAS-CO0023,Emergency,Replace controllers,High,2026-07-09T00:00:00+00:00,2026-08-08,Scheduled,2.7,
+WO-90077,SGW-ELE-LO0049,Corrective,Service insulation,Low,2026-06-03T00:00:00+00:00,2026-07-28,Completed,4.8,Team C
+WO-90078,SGW-WAS-IN0066,Emergency,Replace insulation,Low,2026-07-09T00:00:00+00:00,2026-08-09,Completed,17.3,
+WO-90079,SGW-TRA-IN0006,Emergency,Service seals,Medium,2026-05-31T00:00:00+00:00,2026-07-22,Scheduled,23.3,Team B
+WO-90080,SGW-ELE-CO0030,Corrective,Replace bearings,High,2026-06-27T00:00:00+00:00,2026-07-12,Scheduled,4.1,
+WO-90081,SGW-ELE-CO0051,Inspection,Service seals,Low,2026-05-19T00:00:00+00:00,2026-06-30,Scheduled,13.7,Team C
+WO-90082,SGW-CON-LO0063,Preventive,Test seals,Medium,2026-06-28T00:00:00+00:00,2026-07-14,In progress,23.7,Team A
+WO-90083,SGW-WAT-CO0027,Preventive,Service insulation,High,2026-07-12T00:00:00+00:00,2026-08-14,Scheduled,26.5,
+WO-90084,SGW-WAT-CO0009,Inspection,Test bearings,High,2026-05-23T00:00:00+00:00,2026-07-12,Completed,2.5,Team C
+WO-90085,SGW-DIS-IN0036,Preventive,Test controllers,High,2026-05-31T00:00:00+00:00,2026-06-08,Scheduled,32.0,Team C
+WO-90086,SGW-ELE-LO0001,Preventive,Replace bearings,Medium,2026-07-02T00:00:00+00:00,2026-08-25,In progress,33.2,Team C
+WO-90087,SGW-WAS-IN0046,Preventive,Replace wiring,Medium,2026-06-23T00:00:00+00:00,2026-08-21,In progress,19.9,Team C
+WO-90088,SGW-MAJ-CO0014,Corrective,Inspect controllers,High,2026-07-05T00:00:00+00:00,2026-08-06,Scheduled,34.2,Team A
+WO-90089,SGW-EME-CO0044,Corrective,Inspect bearings,Low,2026-05-25T00:00:00+00:00,2026-06-04,Overdue,28.5,Team C
+WO-90090,SGW-MAJ-LO0024,Emergency,Inspect seals,Medium,2026-06-29T00:00:00+00:00,2026-08-06,In progress,7.9,
+WO-90091,SGW-WAT-IN0010,Inspection,Service bearings,High,2026-07-10T00:00:00+00:00,2026-08-02,Completed,27.9,Team C
+WO-90092,SGW-WAT-CO0007,Preventive,Replace insulation,High,2026-06-19T00:00:00+00:00,2026-07-09,Completed,26.2,Team B
+WO-90093,SGW-WAT-CO0068,Preventive,Inspect wiring,Critical,2026-06-22T00:00:00+00:00,2026-08-09,Scheduled,32.2,Team B
+WO-90094,SGW-CON-CO0064,Inspection,Test wiring,High,2026-06-09T00:00:00+00:00,2026-07-15,Scheduled,19.2,
+WO-90095,SGW-DIS-IN0009,Preventive,Service insulation,High,2026-05-14T00:00:00+00:00,2026-06-28,Scheduled,27.7,
+WO-90096,SGW-EME-CO0016,Inspection,Service controllers,Medium,2026-06-13T00:00:00+00:00,2026-08-04,Overdue,26.4,Team B
+WO-90097,SGW-TRA-CO0038,Corrective,Inspect insulation,Medium,2026-07-06T00:00:00+00:00,2026-08-02,Completed,29.1,
+WO-90098,SGW-EME-LO0005,Emergency,Test wiring,High,2026-06-03T00:00:00+00:00,2026-07-17,Completed,23.3,Team B
+WO-90099,SGW-CON-LO0017,Emergency,Service insulation,Medium,2026-05-29T00:00:00+00:00,2026-06-15,Completed,35.2,Team B
+WO-90100,SGW-EME-LO0005,Emergency,Replace controllers,High,2026-05-13T00:00:00+00:00,2026-06-24,Completed,8.1,Team C
+WO-90101,SGW-DIS-IN0027,Corrective,Service bearings,High,2026-05-12T00:00:00+00:00,2026-06-07,In progress,35.6,Team C
+WO-90102,SGW-EME-CO0066,Inspection,Test seals,Medium,2026-07-14T00:00:00+00:00,2026-08-30,In progress,37.8,Team A
+WO-90103,SGW-CON-LO0050,Preventive,Test insulation,Medium,2026-05-25T00:00:00+00:00,2026-06-04,Completed,6.9,Team B
+WO-90104,SGW-CON-LO0017,Emergency,Replace controllers,High,2026-06-22T00:00:00+00:00,2026-07-10,Completed,20.0,Team B
+WO-90105,SGW-CON-LO0010,Preventive,Test controllers,Medium,2026-05-08T00:00:00+00:00,2026-07-03,Scheduled,30.8,
+WO-90106,SGW-RES-IN0061,Corrective,Test wiring,Medium,2026-05-12T00:00:00+00:00,2026-06-18,Scheduled,2.5,Team B
+WO-90107,SGW-WAT-IN0047,Preventive,Service insulation,Low,2026-06-17T00:00:00+00:00,2026-08-06,Scheduled,29.6,Team B
+WO-90108,SGW-MAJ-IN0037,Inspection,Replace seals,Medium,2026-06-14T00:00:00+00:00,2026-07-28,Scheduled,3.5,Team A
+WO-90109,SGW-WAT-LO0006,Emergency,Service wiring,High,2026-06-07T00:00:00+00:00,2026-06-22,Scheduled,36.2,Team C
+WO-90110,SGW-DIS-IN0052,Corrective,Test seals,Medium,2026-05-25T00:00:00+00:00,2026-07-17,Overdue,9.2,Team A
+WO-90111,SGW-WAT-IN0010,Corrective,Inspect controllers,High,2026-07-04T00:00:00+00:00,2026-08-30,Scheduled,35.2,Team C
+WO-90112,SGW-MAJ-IN0057,Preventive,Inspect seals,High,2026-07-08T00:00:00+00:00,2026-07-16,Scheduled,5.5,
+WO-90113,SGW-EME-LO0027,Inspection,Test bearings,Medium,2026-05-16T00:00:00+00:00,2026-07-05,Completed,12.7,Team A
+WO-90114,SGW-WAT-IN0029,Inspection,Replace wiring,High,2026-07-06T00:00:00+00:00,2026-07-19,In progress,25.1,Team C
+WO-90115,SGW-MAJ-CO0029,Emergency,Replace insulation,Low,2026-05-14T00:00:00+00:00,2026-06-06,Completed,39.0,Team C
+WO-90116,SGW-RES-IN0040,Inspection,Replace seals,Medium,2026-06-22T00:00:00+00:00,2026-07-12,Completed,19.7,Team B
+WO-90117,SGW-TRA-CO0000,Preventive,Inspect insulation,High,2026-05-02T00:00:00+00:00,2026-05-18,Overdue,31.4,Team A
+WO-90118,SGW-WAT-IN0045,Inspection,Replace wiring,Critical,2026-05-13T00:00:00+00:00,2026-06-07,Scheduled,3.0,Team B
+WO-90119,SGW-WAT-CO0010,Inspection,Service wiring,High,2026-06-07T00:00:00+00:00,2026-06-20,Completed,35.7,Team A
+WO-90120,SGW-WAS-CO0035,Inspection,Service wiring,Critical,2026-05-22T00:00:00+00:00,2026-06-15,Completed,4.6,Team C
+WO-90121,SGW-WAT-CO0046,Emergency,Test wiring,Medium,2026-05-15T00:00:00+00:00,2026-06-15,Completed,19.7,
+WO-90122,SGW-EME-IN0026,Preventive,Replace seals,Critical,2026-05-22T00:00:00+00:00,2026-06-08,Scheduled,36.5,
+WO-90123,SGW-EME-IN0065,Emergency,Replace insulation,Medium,2026-07-12T00:00:00+00:00,2026-08-10,Completed,34.6,Team B
+WO-90124,SGW-WAS-LO0053,Preventive,Test wiring,Low,2026-07-02T00:00:00+00:00,2026-07-25,Completed,1.5,Team B
+WO-90125,SGW-WAT-IN0031,Preventive,Test bearings,Medium,2026-06-13T00:00:00+00:00,2026-08-01,Completed,16.0,Team A
+WO-90126,SGW-WAT-CO0002,Emergency,Test bearings,Low,2026-05-21T00:00:00+00:00,2026-06-28,Scheduled,13.9,Team C
+WO-90127,SGW-EME-CO0012,Corrective,Test wiring,High,2026-07-04T00:00:00+00:00,2026-07-16,In progress,32.2,
+WO-90128,SGW-TRA-CO0022,Emergency,Service seals,Critical,2026-07-03T00:00:00+00:00,2026-08-26,Completed,5.0,
+WO-90129,SGW-WAT-CO0009,Preventive,Inspect insulation,Critical,2026-07-11T00:00:00+00:00,2026-08-27,Scheduled,20.8,Team B
+WO-90130,SGW-DIS-IN0027,Inspection,Service seals,High,2026-06-28T00:00:00+00:00,2026-08-03,Scheduled,30.9,
+WO-90131,SGW-CON-IN0043,Emergency,Inspect seals,High,2026-06-16T00:00:00+00:00,2026-07-07,Scheduled,14.9,Team C
+WO-90132,SGW-WAS-IN0000,Inspection,Inspect seals,High,2026-07-06T00:00:00+00:00,2026-08-13,Scheduled,29.0,
+WO-90133,SGW-WAT-CO0027,Corrective,Replace seals,Critical,2026-06-02T00:00:00+00:00,2026-07-04,Scheduled,33.2,Team B
+WO-90134,SGW-CON-IN0043,Preventive,Test seals,Critical,2026-06-13T00:00:00+00:00,2026-08-12,Completed,5.8,
+WO-90135,SGW-DIS-LO0047,Corrective,Test seals,Medium,2026-07-15T00:00:00+00:00,2026-07-25,In progress,17.9,
+WO-90136,SGW-MAJ-LO0060,Corrective,Replace seals,Medium,2026-05-23T00:00:00+00:00,2026-07-07,Completed,13.6,
+WO-90137,SGW-CON-LO0037,Inspection,Test controllers,Critical,2026-06-01T00:00:00+00:00,2026-07-06,Completed,6.4,Team C
+WO-90138,SGW-DIS-IN0039,Inspection,Replace bearings,Medium,2026-07-10T00:00:00+00:00,2026-08-31,Scheduled,14.5,Team B
+WO-90139,SGW-RES-IN0041,Inspection,Inspect controllers,Medium,2026-05-23T00:00:00+00:00,2026-07-06,In progress,27.0,
+WO-90140,SGW-WAT-IN0032,Inspection,Test seals,Medium,2026-07-08T00:00:00+00:00,2026-07-16,Scheduled,3.1,Team A
+WO-90141,SGW-ELE-CO0051,Corrective,Service controllers,Low,2026-06-04T00:00:00+00:00,2026-06-14,Completed,12.5,Team A
+WO-90142,SGW-MAJ-LO0021,Preventive,Replace insulation,Medium,2026-06-27T00:00:00+00:00,2026-08-05,Completed,32.2,Team C
+WO-90143,SGW-MAJ-IN0037,Emergency,Test wiring,Critical,2026-05-07T00:00:00+00:00,2026-06-26,Scheduled,22.5,Team A
+WO-90144,SGW-MAJ-IN0050,Corrective,Test bearings,Critical,2026-06-02T00:00:00+00:00,2026-07-24,Completed,15.3,Team B
+WO-90145,SGW-MAJ-IN0058,Inspection,Test bearings,Critical,2026-05-25T00:00:00+00:00,2026-06-05,Scheduled,7.8,Team A
+WO-90146,SGW-RES-LO0026,Emergency,Service insulation,Medium,2026-05-06T00:00:00+00:00,2026-05-23,In progress,10.9,Team C
+WO-90147,SGW-ELE-LO0049,Preventive,Replace controllers,Medium,2026-05-20T00:00:00+00:00,2026-07-15,Overdue,25.0,Team C
+WO-90148,SGW-WAT-LO0055,Inspection,Inspect controllers,Medium,2026-07-13T00:00:00+00:00,2026-07-31,In progress,31.7,Team B
+WO-90149,SGW-MAJ-LO0036,Emergency,Inspect controllers,Medium,2026-07-09T00:00:00+00:00,2026-07-29,Completed,13.9,Team C
+WO-90150,SGW-CON-CO0055,Emergency,Inspect seals,High,2026-07-07T00:00:00+00:00,2026-08-11,Scheduled,26.0,Team B
+WO-90151,SGW-WAT-CO0010,Emergency,Inspect wiring,Medium,2026-06-11T00:00:00+00:00,2026-08-03,Scheduled,36.5,Team C
+WO-90152,SGW-RES-LO0061,Emergency,Test seals,Medium,2026-07-05T00:00:00+00:00,2026-08-22,Scheduled,21.0,Team A
+WO-90153,SGW-RES-CO0042,Preventive,Inspect bearings,High,2026-07-08T00:00:00+00:00,2026-09-02,Scheduled,27.7,Team A
+WO-90154,SGW-WAT-CO0052,Emergency,Inspect bearings,Low,2026-07-08T00:00:00+00:00,2026-08-29,Scheduled,4.4,Team A
+WO-90155,SGW-WAT-CO0045,Preventive,Replace controllers,Medium,2026-06-02T00:00:00+00:00,2026-07-07,Completed,17.9,Team A
+WO-90156,SGW-WAT-LO0029,Preventive,Inspect insulation,Low,2026-05-16T00:00:00+00:00,2026-05-27,Scheduled,20.6,Team C
+WO-90157,SGW-RES-IN0061,Preventive,Service wiring,Medium,2026-06-08T00:00:00+00:00,2026-08-06,Completed,19.5,Team B
+WO-90158,SGW-CON-CO0034,Inspection,Replace controllers,High,2026-06-20T00:00:00+00:00,2026-08-16,Completed,26.3,Team A
+WO-90159,SGW-RES-IN0001,Corrective,Inspect seals,Low,2026-07-11T00:00:00+00:00,2026-08-25,Scheduled,22.4,Team A
+WO-90160,SGW-WAT-LO0008,Inspection,Replace wiring,Critical,2026-05-27T00:00:00+00:00,2026-07-05,Scheduled,8.2,Team C
+WO-90161,SGW-EME-CO0049,Corrective,Inspect insulation,Medium,2026-05-15T00:00:00+00:00,2026-06-26,Scheduled,27.2,Team C
+WO-90162,SGW-TRA-CO0025,Emergency,Service controllers,Low,2026-05-26T00:00:00+00:00,2026-07-13,Scheduled,12.1,Team A
+WO-90163,SGW-EME-CO0049,Emergency,Test controllers,High,2026-06-10T00:00:00+00:00,2026-07-06,Completed,6.9,Team C
+WO-90164,SGW-WAS-IN0066,Emergency,Replace seals,Medium,2026-06-10T00:00:00+00:00,2026-08-06,Scheduled,29.9,
+WO-90165,SGW-RES-LO0000,Corrective,Service wiring,Medium,2026-06-16T00:00:00+00:00,2026-07-15,Completed,20.0,Team A
+WO-90166,SGW-EME-CO0044,Inspection,Replace insulation,Low,2026-05-11T00:00:00+00:00,2026-07-03,Completed,4.0,Team A
+WO-90167,SGW-TRA-CO0004,Preventive,Test insulation,Medium,2026-07-04T00:00:00+00:00,2026-07-13,In progress,22.2,
+WO-90168,SGW-DIS-IN0027,Inspection,Test bearings,High,2026-05-20T00:00:00+00:00,2026-07-03,Completed,12.3,
+WO-90169,SGW-CON-LO0058,Preventive,Test controllers,Medium,2026-07-05T00:00:00+00:00,2026-08-23,Scheduled,38.6,Team B
+WO-90170,SGW-WAS-IN0053,Corrective,Test bearings,Low,2026-07-05T00:00:00+00:00,2026-08-17,Completed,38.7,
+WO-90171,SGW-MAJ-LO0021,Corrective,Test bearings,Low,2026-05-06T00:00:00+00:00,2026-06-05,Scheduled,27.1,Team C
+WO-90172,SGW-WAT-LO0029,Emergency,Inspect seals,Critical,2026-06-30T00:00:00+00:00,2026-07-27,Scheduled,38.8,Team C
+WO-90173,SGW-DIS-IN0049,Corrective,Test wiring,Medium,2026-06-03T00:00:00+00:00,2026-07-21,Completed,4.0,Team C
+WO-90174,SGW-RES-LO0026,Emergency,Service controllers,Medium,2026-05-29T00:00:00+00:00,2026-07-05,Completed,1.3,Team B
+WO-90175,SGW-EME-LO0042,Corrective,Inspect insulation,High,2026-05-22T00:00:00+00:00,2026-06-11,Scheduled,7.1,Team A
+WO-90176,SGW-WAT-IN0029,Emergency,Service seals,Medium,2026-05-30T00:00:00+00:00,2026-07-06,In progress,24.0,
+WO-90177,SGW-DIS-CO0005,Preventive,Replace insulation,Medium,2026-06-01T00:00:00+00:00,2026-06-16,Completed,2.5,Team B
+WO-90178,SGW-MAJ-CO0014,Inspection,Replace insulation,Critical,2026-05-22T00:00:00+00:00,2026-07-06,Overdue,25.9,Team C
+WO-90179,SGW-TRA-CO0021,Emergency,Test wiring,Low,2026-05-28T00:00:00+00:00,2026-07-27,In progress,6.6,Team B
+WO-90180,SGW-RES-IN0019,Inspection,Replace controllers,Critical,2026-07-05T00:00:00+00:00,2026-08-19,In progress,10.0,
+WO-90181,SGW-DIS-CO0033,Preventive,Replace insulation,High,2026-05-14T00:00:00+00:00,2026-06-22,Completed,33.2,Team A
+WO-90182,SGW-WAT-CO0045,Preventive,Inspect seals,Medium,2026-06-30T00:00:00+00:00,2026-07-15,Overdue,22.0,Team A
+WO-90183,SGW-MAJ-IN0058,Emergency,Service seals,High,2026-06-25T00:00:00+00:00,2026-07-29,Scheduled,32.3,
+WO-90184,SGW-MAJ-LO0019,Preventive,Test bearings,Medium,2026-07-15T00:00:00+00:00,2026-09-09,Scheduled,34.5,Team C
+WO-90185,SGW-MAJ-IN0013,Emergency,Service bearings,Low,2026-07-09T00:00:00+00:00,2026-09-01,Completed,23.5,Team A
+WO-90186,SGW-CON-LO0063,Emergency,Replace controllers,Medium,2026-05-01T00:00:00+00:00,2026-05-14,Scheduled,26.4,Team C
+WO-90187,SGW-EME-CO0066,Emergency,Service insulation,Medium,2026-07-08T00:00:00+00:00,2026-08-27,Scheduled,8.9,
+WO-90188,SGW-WAT-CO0045,Emergency,Service controllers,Medium,2026-06-17T00:00:00+00:00,2026-08-12,Completed,29.7,Team A
+WO-90189,SGW-WAT-IN0051,Emergency,Replace seals,Medium,2026-05-30T00:00:00+00:00,2026-07-01,Completed,32.2,Team A
+WO-90190,SGW-DIS-CO0041,Preventive,Inspect bearings,Medium,2026-06-19T00:00:00+00:00,2026-08-03,In progress,3.5,Team B
+WO-90191,SGW-MAJ-LO0024,Preventive,Test wiring,High,2026-05-11T00:00:00+00:00,2026-06-20,Scheduled,38.6,Team A
+WO-90192,SGW-MAJ-IN0058,Emergency,Test seals,Medium,2026-05-23T00:00:00+00:00,2026-07-11,Overdue,21.2,Team B
+WO-90193,SGW-RES-CO0008,Corrective,Replace seals,Medium,2026-07-05T00:00:00+00:00,2026-08-22,Scheduled,7.1,Team C
+WO-90194,SGW-DIS-IN0059,Inspection,Test wiring,Medium,2026-06-21T00:00:00+00:00,2026-07-31,Scheduled,28.4,Team A
+WO-90195,SGW-WAS-IN0000,Inspection,Service controllers,Medium,2026-06-06T00:00:00+00:00,2026-06-25,In progress,16.8,Team A
+WO-90196,SGW-EME-CO0066,Emergency,Inspect insulation,Low,2026-05-23T00:00:00+00:00,2026-06-17,Scheduled,5.6,Team C
+WO-90197,SGW-WAS-LO0067,Inspection,Test wiring,Medium,2026-07-13T00:00:00+00:00,2026-09-07,Scheduled,14.2,
+WO-90198,SGW-DIS-IN0034,Preventive,Test seals,Medium,2026-06-28T00:00:00+00:00,2026-07-29,Completed,39.8,Team B
+WO-90199,SGW-MAJ-IN0064,Emergency,Service insulation,Medium,2026-06-10T00:00:00+00:00,2026-07-31,Completed,10.7,Team A
+WO-90200,SGW-MAJ-LO0032,Preventive,Replace wiring,Medium,2026-06-13T00:00:00+00:00,2026-07-03,Completed,11.5,Team B
+WO-90201,SGW-DIS-LO0057,Corrective,Replace controllers,Medium,2026-05-26T00:00:00+00:00,2026-06-14,Completed,33.6,Team C
+WO-90202,SGW-RES-CO0039,Preventive,Inspect wiring,High,2026-05-14T00:00:00+00:00,2026-07-08,Completed,38.4,
+WO-90203,SGW-RES-LO0025,Emergency,Service wiring,Low,2026-06-10T00:00:00+00:00,2026-08-04,Overdue,11.9,Team B
+WO-90204,SGW-DIS-IN0052,Corrective,Inspect insulation,High,2026-07-13T00:00:00+00:00,2026-08-19,Overdue,2.3,Team C
+WO-90205,SGW-MAJ-LO0030,Emergency,Inspect insulation,Medium,2026-05-23T00:00:00+00:00,2026-07-13,Scheduled,27.3,
+WO-90206,SGW-WAS-IN0008,Inspection,Service insulation,High,2026-05-13T00:00:00+00:00,2026-05-31,In progress,10.2,
+WO-90207,SGW-WAS-IN0016,Inspection,Replace wiring,Medium,2026-06-13T00:00:00+00:00,2026-07-16,Completed,15.5,
+WO-90208,SGW-ELE-LO0001,Corrective,Replace insulation,High,2026-06-27T00:00:00+00:00,2026-08-25,Scheduled,11.5,Team B
+WO-90209,SGW-WAT-IN0002,Emergency,Replace bearings,High,2026-06-25T00:00:00+00:00,2026-08-18,Scheduled,32.4,Team B
+WO-90210,SGW-CON-LO0037,Corrective,Service wiring,Medium,2026-07-03T00:00:00+00:00,2026-08-14,Completed,2.9,Team A
+WO-90211,SGW-DIS-IN0036,Preventive,Replace controllers,Medium,2026-05-21T00:00:00+00:00,2026-07-07,Scheduled,30.0,Team C
+WO-90212,SGW-CON-LO0022,Inspection,Service seals,Medium,2026-06-16T00:00:00+00:00,2026-07-15,Completed,38.6,Team B
+WO-90213,SGW-RES-IN0007,Corrective,Service controllers,Medium,2026-07-13T00:00:00+00:00,2026-08-21,In progress,29.7,Team A
+WO-90214,SGW-EME-LO0027,Emergency,Replace bearings,High,2026-06-06T00:00:00+00:00,2026-07-04,In progress,24.9,
+WO-90215,SGW-MAJ-CO0018,Corrective,Service bearings,Medium,2026-05-11T00:00:00+00:00,2026-06-28,Scheduled,11.4,
+WO-90216,SGW-WAT-CO0069,Inspection,Test wiring,Low,2026-06-26T00:00:00+00:00,2026-07-04,Scheduled,10.2,Team C
+WO-90217,SGW-MAJ-IN0050,Corrective,Replace wiring,Low,2026-05-11T00:00:00+00:00,2026-05-22,Overdue,19.5,Team A
+WO-90218,SGW-ELE-CO0006,Preventive,Inspect controllers,High,2026-06-20T00:00:00+00:00,2026-07-02,Completed,35.5,Team C
+WO-90219,SGW-MAJ-CO0058,Inspection,Test bearings,Low,2026-06-01T00:00:00+00:00,2026-07-31,Scheduled,2.4,Team C
+WO-90220,SGW-DIS-LO0013,Emergency,Service insulation,Medium,2026-06-30T00:00:00+00:00,2026-08-20,In progress,24.0,
+WO-90221,SGW-RES-IN0021,Emergency,Service controllers,Medium,2026-07-12T00:00:00+00:00,2026-08-02,Completed,18.2,Team C
+WO-90222,SGW-WAS-LO0035,Corrective,Service seals,Low,2026-06-03T00:00:00+00:00,2026-08-01,Completed,6.3,Team C
+WO-90223,SGW-CON-LO0050,Preventive,Test wiring,Medium,2026-07-08T00:00:00+00:00,2026-09-02,In progress,12.4,Team B
+WO-90224,SGW-WAS-IN0063,Inspection,Replace wiring,High,2026-05-01T00:00:00+00:00,2026-06-04,Scheduled,7.4,
+WO-90225,SGW-RES-LO0026,Inspection,Inspect wiring,High,2026-05-29T00:00:00+00:00,2026-07-08,Completed,36.5,Team C
+WO-90226,SGW-ELE-LO0002,Inspection,Test bearings,High,2026-07-08T00:00:00+00:00,2026-07-26,Scheduled,5.3,
+WO-90227,SGW-CON-IN0018,Inspection,Test bearings,Medium,2026-06-27T00:00:00+00:00,2026-07-13,Scheduled,21.9,Team B
+WO-90228,SGW-WAS-CO0026,Inspection,Replace wiring,High,2026-06-06T00:00:00+00:00,2026-06-27,Scheduled,1.6,Team B
+WO-90229,SGW-CON-LO0017,Inspection,Test controllers,Medium,2026-06-23T00:00:00+00:00,2026-08-19,Scheduled,4.1,Team B
+WO-90230,SGW-MAJ-CO0014,Emergency,Inspect insulation,Medium,2026-06-04T00:00:00+00:00,2026-06-23,Completed,10.8,
+WO-90231,SGW-TRA-CO0003,Corrective,Test wiring,Medium,2026-05-16T00:00:00+00:00,2026-05-25,Scheduled,29.7,Team A
+WO-90232,SGW-CON-LO0063,Emergency,Test controllers,Critical,2026-05-27T00:00:00+00:00,2026-06-13,Completed,2.6,Team A
+WO-90233,SGW-CON-CO0064,Inspection,Replace controllers,High,2026-07-01T00:00:00+00:00,2026-08-19,Scheduled,5.4,
+WO-90234,SGW-DIS-LO0013,Corrective,Service insulation,Low,2026-05-02T00:00:00+00:00,2026-06-28,Scheduled,38.8,
+WO-90235,SGW-DIS-IN0036,Inspection,Inspect bearings,Low,2026-05-20T00:00:00+00:00,2026-06-01,Completed,14.2,Team A
+WO-90236,SGW-TRA-CO0015,Corrective,Inspect bearings,Medium,2026-06-15T00:00:00+00:00,2026-07-12,Overdue,31.8,Team C
+WO-90237,SGW-WAS-IN0066,Corrective,Inspect wiring,Medium,2026-06-26T00:00:00+00:00,2026-07-11,Scheduled,2.5,
+WO-90238,SGW-WAT-IN0003,Emergency,Replace insulation,Low,2026-06-07T00:00:00+00:00,2026-07-06,Scheduled,19.3,Team B
+WO-90239,SGW-EME-CO0017,Corrective,Test controllers,High,2026-07-07T00:00:00+00:00,2026-08-17,Scheduled,1.0,
+WO-90240,SGW-WAT-IN0047,Preventive,Service insulation,Medium,2026-05-24T00:00:00+00:00,2026-07-16,Scheduled,38.7,
+WO-90241,SGW-RES-CO0048,Emergency,Replace insulation,Medium,2026-07-07T00:00:00+00:00,2026-08-09,Completed,5.3,Team A
+WO-90242,SGW-WAS-CO0011,Corrective,Inspect bearings,Low,2026-05-17T00:00:00+00:00,2026-06-05,Scheduled,23.3,
+WO-90243,SGW-WAS-IN0028,Inspection,Inspect controllers,Medium,2026-07-02T00:00:00+00:00,2026-08-23,Scheduled,37.3,Team B
+WO-90244,SGW-DIS-IN0027,Preventive,Test seals,Medium,2026-07-02T00:00:00+00:00,2026-08-25,Overdue,17.2,Team C
+WO-90245,SGW-WAS-IN0063,Inspection,Inspect seals,High,2026-05-08T00:00:00+00:00,2026-05-19,Overdue,38.5,Team A
+WO-90246,SGW-TRA-CO0025,Emergency,Replace bearings,Medium,2026-05-30T00:00:00+00:00,2026-06-21,In progress,38.0,
+WO-90247,SGW-WAT-IN0051,Inspection,Test wiring,High,2026-05-14T00:00:00+00:00,2026-05-31,Completed,22.4,Team C
+WO-90248,SGW-WAS-IN0028,Emergency,Service controllers,Medium,2026-05-21T00:00:00+00:00,2026-06-17,Completed,17.1,
+WO-90249,SGW-WAT-IN0045,Corrective,Replace wiring,High,2026-06-11T00:00:00+00:00,2026-08-04,Scheduled,38.5,
+WO-90250,SGW-CON-LO0031,Preventive,Service insulation,Low,2026-05-01T00:00:00+00:00,2026-05-16,Overdue,12.8,Team C
+WO-90251,SGW-WAT-CO0056,Inspection,Inspect controllers,Critical,2026-05-28T00:00:00+00:00,2026-07-06,In progress,37.1,Team B
+WO-90252,SGW-WAS-CO0024,Emergency,Service bearings,Low,2026-05-05T00:00:00+00:00,2026-06-04,Completed,10.7,Team C
+WO-90253,SGW-MAJ-IN0067,Preventive,Test insulation,Critical,2026-06-08T00:00:00+00:00,2026-07-31,Scheduled,13.7,
+WO-90254,SGW-EME-CO0044,Preventive,Service seals,High,2026-07-02T00:00:00+00:00,2026-08-14,Scheduled,31.4,Team C
+WO-90255,SGW-MAJ-LO0019,Emergency,Inspect bearings,High,2026-06-25T00:00:00+00:00,2026-08-09,Overdue,25.7,
+WO-90256,SGW-MAJ-CO0013,Preventive,Service insulation,Medium,2026-06-09T00:00:00+00:00,2026-07-06,In progress,9.6,Team A
+WO-90257,SGW-WAT-IN0032,Emergency,Inspect bearings,Medium,2026-06-20T00:00:00+00:00,2026-08-16,Scheduled,6.2,Team A
+WO-90258,SGW-RES-LO0051,Preventive,Test controllers,Low,2026-07-13T00:00:00+00:00,2026-08-21,In progress,28.2,Team B
+WO-90259,SGW-WAS-LO0053,Corrective,Test wiring,High,2026-07-11T00:00:00+00:00,2026-07-30,In progress,39.9,Team B
+WO-90260,SGW-RES-CO0062,Inspection,Test controllers,High,2026-05-10T00:00:00+00:00,2026-06-22,Scheduled,27.2,
+WO-90261,SGW-ELE-LO0023,Corrective,Service controllers,Medium,2026-06-14T00:00:00+00:00,2026-06-22,Completed,7.6,Team C
+WO-90262,SGW-RES-IN0017,Corrective,Test seals,Critical,2026-06-26T00:00:00+00:00,2026-07-17,Scheduled,15.6,Team A
+WO-90263,SGW-MAJ-CO0028,Corrective,Replace controllers,Low,2026-05-07T00:00:00+00:00,2026-06-27,Completed,12.9,
+WO-90264,SGW-DIS-CO0005,Corrective,Replace bearings,Medium,2026-06-12T00:00:00+00:00,2026-08-06,Scheduled,19.8,Team B
+WO-90265,SGW-MAJ-IN0037,Emergency,Inspect controllers,Low,2026-05-03T00:00:00+00:00,2026-05-28,Scheduled,28.2,Team C
+WO-90266,SGW-MAJ-CO0013,Preventive,Inspect wiring,High,2026-06-29T00:00:00+00:00,2026-08-17,Completed,26.7,Team A
+WO-90267,SGW-TRA-CO0004,Emergency,Replace wiring,Medium,2026-06-07T00:00:00+00:00,2026-07-29,Scheduled,13.3,Team A
+WO-90268,SGW-CON-CO0047,Emergency,Inspect seals,Medium,2026-05-26T00:00:00+00:00,2026-07-05,Scheduled,20.1,Team B
+WO-90269,SGW-TRA-CO0004,Inspection,Service controllers,Medium,2026-06-14T00:00:00+00:00,2026-07-23,Scheduled,3.4,Team C
+WO-90270,SGW-WAT-LO0029,Inspection,Replace bearings,Medium,2026-05-04T00:00:00+00:00,2026-06-05,Completed,4.4,
+WO-90271,SGW-CON-LO0063,Emergency,Replace insulation,Low,2026-05-30T00:00:00+00:00,2026-06-25,Overdue,13.8,Team B
+WO-90272,SGW-WAT-CO0052,Corrective,Replace controllers,High,2026-05-18T00:00:00+00:00,2026-06-27,Overdue,17.8,Team B
+WO-90273,SGW-DIS-IN0027,Corrective,Service seals,Medium,2026-07-12T00:00:00+00:00,2026-09-03,Scheduled,13.4,Team B
+WO-90274,SGW-WAS-IN0046,Inspection,Test wiring,Medium,2026-05-04T00:00:00+00:00,2026-06-27,Overdue,35.9,Team C
+WO-90275,SGW-TRA-CO0038,Preventive,Replace bearings,Low,2026-05-25T00:00:00+00:00,2026-07-10,Completed,24.6,Team B
+WO-90276,SGW-DIS-IN0012,Corrective,Inspect controllers,Low,2026-05-30T00:00:00+00:00,2026-07-25,In progress,20.6,
+WO-90277,SGW-WAS-IN0042,Corrective,Test wiring,Medium,2026-06-17T00:00:00+00:00,2026-07-04,Scheduled,2.3,Team A
+WO-90278,SGW-WAT-CO0069,Corrective,Replace bearings,Low,2026-06-22T00:00:00+00:00,2026-07-27,Completed,20.1,Team C
+WO-90279,SGW-DIS-LO0047,Emergency,Test seals,High,2026-06-01T00:00:00+00:00,2026-07-30,Scheduled,13.2,Team A
+WO-90280,SGW-CON-LO0063,Emergency,Test seals,High,2026-05-14T00:00:00+00:00,2026-06-05,In progress,16.4,Team A
+WO-90281,SGW-WAT-IN0002,Preventive,Replace controllers,Medium,2026-06-19T00:00:00+00:00,2026-07-15,Completed,12.2,Team B
+WO-90282,SGW-WAT-LO0038,Preventive,Replace wiring,High,2026-06-07T00:00:00+00:00,2026-07-12,Scheduled,20.5,Team B
+WO-90283,SGW-DIS-IN0059,Corrective,Test wiring,Medium,2026-07-14T00:00:00+00:00,2026-07-22,Scheduled,24.0,Team B
+WO-90284,SGW-MAJ-LO0046,Inspection,Service bearings,High,2026-05-12T00:00:00+00:00,2026-05-26,Scheduled,28.5,Team C
+WO-90285,SGW-TRA-CO0021,Emergency,Replace wiring,Medium,2026-07-07T00:00:00+00:00,2026-07-16,Completed,36.6,Team B
+WO-90286,SGW-DIS-CO0041,Corrective,Inspect wiring,Medium,2026-05-19T00:00:00+00:00,2026-07-11,Completed,18.4,Team B
+WO-90287,SGW-ELE-CO0030,Corrective,Inspect insulation,High,2026-05-17T00:00:00+00:00,2026-05-24,In progress,34.4,Team A
+WO-90288,SGW-EME-IN0015,Corrective,Replace insulation,High,2026-07-03T00:00:00+00:00,2026-08-08,In progress,4.1,Team A
+WO-90289,SGW-RES-CO0062,Inspection,Replace seals,Low,2026-07-10T00:00:00+00:00,2026-07-20,Completed,2.4,Team A
+WO-90290,SGW-WAS-IN0030,Inspection,Service seals,Low,2026-07-13T00:00:00+00:00,2026-08-15,Overdue,7.3,Team C
+WO-90291,SGW-WAS-IN0016,Corrective,Test insulation,Medium,2026-07-13T00:00:00+00:00,2026-07-22,Scheduled,12.7,Team C
+WO-90292,SGW-EME-LO0027,Emergency,Inspect controllers,Medium,2026-05-09T00:00:00+00:00,2026-05-23,Completed,11.7,
+WO-90293,SGW-EME-LO0064,Corrective,Inspect seals,Medium,2026-05-27T00:00:00+00:00,2026-07-13,In progress,4.4,Team C
+WO-90294,SGW-WAT-LO0039,Inspection,Service bearings,High,2026-06-10T00:00:00+00:00,2026-07-18,In progress,25.6,
+WO-90295,SGW-WAS-IN0066,Corrective,Service bearings,Low,2026-05-24T00:00:00+00:00,2026-06-01,In progress,32.1,Team B
+WO-90296,SGW-MAJ-IN0064,Emergency,Inspect controllers,Medium,2026-06-23T00:00:00+00:00,2026-08-20,Completed,1.4,Team B
+WO-90297,SGW-DIS-IN0036,Inspection,Inspect controllers,Medium,2026-06-06T00:00:00+00:00,2026-07-18,Scheduled,1.2,Team C
+WO-90298,SGW-CON-LO0017,Preventive,Replace bearings,Medium,2026-06-20T00:00:00+00:00,2026-07-18,Overdue,19.7,
+WO-90299,SGW-MAJ-IN0064,Corrective,Test bearings,High,2026-05-05T00:00:00+00:00,2026-06-15,Completed,19.0,

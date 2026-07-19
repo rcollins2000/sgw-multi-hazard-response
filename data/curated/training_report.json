@@ -1,0 +1,144 @@
+{
+  "trained_at": "2026-07-17T11:45:48.354399+00:00",
+  "risk_model": {
+    "model_family": "hazard_risk",
+    "model_version": "lgbm-cal-v1-hurricane",
+    "label_source": "synthetic_from_features_documented",
+    "metrics": {
+      "brier_score": 0.17491377338346148,
+      "roc_auc": 0.8039314516129032,
+      "baseline_brier": 0.15474285714285718,
+      "baseline_roc_auc": 0.8674395161290324,
+      "positive_rate_train": 0.5034013605442177,
+      "positive_rate_test": 0.49206349206349204,
+      "n_train": 147,
+      "n_test": 63
+    },
+    "top_features": {
+      "min_dist_to_surge_zone_m": 0.18816067653276955,
+      "condition_score": 0.1331923890063425,
+      "criticality_rating": 0.10993657505285412,
+      "ground_elevation_ft": 0.10782241014799154,
+      "min_dist_to_wildfire_zone_m": 0.09725158562367865,
+      "min_dist_to_heat_zone_m": 0.07822410147991543,
+      "service_population": 0.07610993657505286,
+      "avg_recent_condition": 0.07188160676532769
+    }
+  },
+  "fairness": {
+    "group_column": "region",
+    "demographic_parity_gap": 0.05714285714285716,
+    "equal_opportunity_gap": 0.11428571428571432,
+    "per_group": [
+      {
+        "group": "COAST_EAST",
+        "positive_rate": 0.5857142857142857,
+        "base_rate": 0.5571428571428572,
+        "tpr": 0.8974358974358975,
+        "n": 70
+      },
+      {
+        "group": "INLAND_NORTH",
+        "positive_rate": 0.6,
+        "base_rate": 0.44285714285714284,
+        "tpr": 1.0,
+        "n": 70
+      },
+      {
+        "group": "LOWER_DELTA",
+        "positive_rate": 0.5428571428571428,
+        "base_rate": 0.5,
+        "tpr": 0.8857142857142857,
+        "n": 70
+      }
+    ]
+  },
+  "forecast": {
+    "target": "coops_8665530_debby_water_level_ft",
+    "train_size": 1656,
+    "test_size": 24,
+    "mape": 0.17851885891034114,
+    "coverage_80": 0.5833333333333334,
+    "next_24h": [
+      {
+        "ds": "2024-08-10 22:30:00",
+        "yhat": 1.7637371257853078,
+        "yhat_lower": 0.7079780550523362,
+        "yhat_upper": 2.93002023251903
+      },
+      {
+        "ds": "2024-08-10 23:30:00",
+        "yhat": 1.6859109199883027,
+        "yhat_lower": 0.5024526071755993,
+        "yhat_upper": 2.891617725106969
+      },
+      {
+        "ds": "2024-08-11 00:30:00",
+        "yhat": 1.997758111120466,
+        "yhat_lower": 0.7624983868567965,
+        "yhat_upper": 3.3249503514024252
+      },
+      {
+        "ds": "2024-08-11 01:30:00",
+        "yhat": 2.798221455524186,
+        "yhat_lower": 1.4610382025078648,
+        "yhat_upper": 4.199608168473287
+      },
+      {
+        "ds": "2024-08-11 02:30:00",
+        "yhat": 3.8020663361436187,
+        "yhat_lower": 2.4247578232191334,
+        "yhat_upper": 5.290992893832152
+      },
+      {
+        "ds": "2024-08-11 03:30:00",
+        "yhat": 4.636772889859218,
+        "yhat_lower": 3.2044899299671123,
+        "yhat_upper": 6.1005782939396065
+      }
+    ]
+  },
+  "anomaly": {
+    "n_points": 1680,
+    "n_anomalies": 24,
+    "max_score": 1.212751992661026,
+    "example_flags": [
+      {
+        "ds": "2024-08-09 05:42:00",
+        "y": 4.102,
+        "yhat": 4.706214101531074,
+        "score": 1.0497441022771083
+      },
+      {
+        "ds": "2024-08-09 05:48:00",
+        "y": 3.984,
+        "yhat": 4.6073035165326015,
+        "score": 1.0198006380567315
+      },
+      {
+        "ds": "2024-08-09 05:54:00",
+        "y": 3.856,
+        "yhat": 4.505084389709426,
+        "score": 1.089788106687539
+      },
+      {
+        "ds": "2024-08-09 06:00:00",
+        "y": 3.765,
+        "yhat": 4.399948428940751,
+        "score": 1.0653051891519423
+      },
+      {
+        "ds": "2024-08-09 06:06:00",
+        "y": 3.65,
+        "yhat": 4.292305285482497,
+        "score": 1.0848463061375724
+      }
+    ]
+  },
+  "graph": {
+    "n_nodes": 150,
+    "n_edges": 130,
+    "n_clusters": 26,
+    "modularity": 0.9013905325443785
+  }
+}

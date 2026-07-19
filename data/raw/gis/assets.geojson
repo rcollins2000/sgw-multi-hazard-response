@@ -1,0 +1,6305 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.187495,
+          32.673763
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0000",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 001",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.673763,
+        "longitude": -80.187495,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 89,
+        "commissioned_year": 1979,
+        "design_capacity": 277.2,
+        "capacity_unit": "kV",
+        "service_population": 221708,
+        "flood_zone": "X",
+        "ground_elevation_ft": 13.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-02-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.898991,
+          32.80256
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0001",
+        "asset_name": "Coastal East (SC) Major Pipeline 002",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.80256,
+        "longitude": -79.898991,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 84,
+        "commissioned_year": 2010,
+        "design_capacity": 277.0,
+        "capacity_unit": "MGD",
+        "service_population": 116074,
+        "flood_zone": "A",
+        "ground_elevation_ft": 236.5,
+        "backup_power": null,
+        "last_inspection_date": "2026-03-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.029875,
+          32.619966
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0002",
+        "asset_name": "Coastal East (SC) Water Pumping Station 003",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.619966,
+        "longitude": -80.029875,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 75,
+        "commissioned_year": 2013,
+        "design_capacity": 425.3,
+        "capacity_unit": "MGD",
+        "service_population": 139185,
+        "flood_zone": "X",
+        "ground_elevation_ft": 292.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.92398,
+          32.923232
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0003",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 004",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.923232,
+        "longitude": -79.92398,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 73,
+        "commissioned_year": 2004,
+        "design_capacity": 187.2,
+        "capacity_unit": "kV",
+        "service_population": 101314,
+        "flood_zone": "X",
+        "ground_elevation_ft": 20.2,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-01-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.772341,
+          32.939918
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0004",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 005",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.939918,
+        "longitude": -79.772341,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 1989,
+        "design_capacity": 191.4,
+        "capacity_unit": "kV",
+        "service_population": 110342,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 281.3,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.93293,
+          32.660165
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-CO0005",
+        "asset_name": "Coastal East (SC) Distribution Feeder 006",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.660165,
+        "longitude": -79.93293,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 59,
+        "commissioned_year": 1994,
+        "design_capacity": 494.9,
+        "capacity_unit": "kV",
+        "service_population": 292502,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 274.5,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.797477,
+          32.730524
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0006",
+        "asset_name": "Coastal East (SC) Electrical Substation 007",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.730524,
+        "longitude": -79.797477,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 98,
+        "commissioned_year": 1969,
+        "design_capacity": 164.2,
+        "capacity_unit": "MVA",
+        "service_population": 262240,
+        "flood_zone": "A",
+        "ground_elevation_ft": 354.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-03-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.130185,
+          32.885245
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0007",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 008",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.885245,
+        "longitude": -80.130185,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 59,
+        "commissioned_year": 1999,
+        "design_capacity": 296.4,
+        "capacity_unit": "MGD",
+        "service_population": 209900,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 89.3,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-09-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.154545,
+          32.571202
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0008",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 009",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.571202,
+        "longitude": -80.154545,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 82,
+        "commissioned_year": 1972,
+        "design_capacity": 302.2,
+        "capacity_unit": "MG",
+        "service_population": 202228,
+        "flood_zone": "A",
+        "ground_elevation_ft": 239.2,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-09-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.714461,
+          32.937351
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0009",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 010",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.937351,
+        "longitude": -79.714461,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 89,
+        "commissioned_year": 1965,
+        "design_capacity": 66.1,
+        "capacity_unit": "MGD",
+        "service_population": 282027,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 307.9,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-04-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.982617,
+          32.754176
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0010",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 011",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.754176,
+        "longitude": -79.982617,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 68,
+        "commissioned_year": 2011,
+        "design_capacity": 97.5,
+        "capacity_unit": "MGD",
+        "service_population": 56289,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 337.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.818745,
+          32.792721
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0011",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 012",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.792721,
+        "longitude": -79.818745,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 87,
+        "commissioned_year": 2014,
+        "design_capacity": 460.1,
+        "capacity_unit": "MGD",
+        "service_population": 170451,
+        "flood_zone": "A",
+        "ground_elevation_ft": 9.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-12-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.171037,
+          32.945104
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0012",
+        "asset_name": "Coastal East (SC) Emergency Generator 013",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.945104,
+        "longitude": -80.171037,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 64,
+        "commissioned_year": 1970,
+        "design_capacity": 382.7,
+        "capacity_unit": "kW",
+        "service_population": 66434,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 264.6,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-01-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.763783,
+          32.740412
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0013",
+        "asset_name": "Coastal East (SC) Major Pipeline 014",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.740412,
+        "longitude": -79.763783,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 70,
+        "commissioned_year": 1978,
+        "design_capacity": 380.1,
+        "capacity_unit": "MGD",
+        "service_population": 105961,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 160.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.974257,
+          32.661558
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0014",
+        "asset_name": "Coastal East (SC) Major Pipeline 015",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.661558,
+        "longitude": -79.974257,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 1969,
+        "design_capacity": 117.9,
+        "capacity_unit": "MGD",
+        "service_population": 37720,
+        "flood_zone": "X",
+        "ground_elevation_ft": 93.1,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.942922,
+          32.675315
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0015",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 016",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.675315,
+        "longitude": -79.942922,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 64,
+        "commissioned_year": 1996,
+        "design_capacity": 74.8,
+        "capacity_unit": "kV",
+        "service_population": 299891,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 190.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-11-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.152837,
+          32.846542
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0016",
+        "asset_name": "Coastal East (SC) Emergency Generator 017",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.846542,
+        "longitude": -80.152837,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 46,
+        "commissioned_year": 1987,
+        "design_capacity": 339.9,
+        "capacity_unit": "kW",
+        "service_population": 52099,
+        "flood_zone": "X",
+        "ground_elevation_ft": 162.2,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-04-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.104205,
+          32.791329
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0017",
+        "asset_name": "Coastal East (SC) Emergency Generator 018",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.791329,
+        "longitude": -80.104205,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 74,
+        "commissioned_year": 1973,
+        "design_capacity": 146.5,
+        "capacity_unit": "kW",
+        "service_population": 131470,
+        "flood_zone": "X",
+        "ground_elevation_ft": 178.4,
+        "backup_power": null,
+        "last_inspection_date": "2026-05-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.781986,
+          32.986048
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0018",
+        "asset_name": "Coastal East (SC) Major Pipeline 019",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.986048,
+        "longitude": -79.781986,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 78,
+        "commissioned_year": 2013,
+        "design_capacity": 114.7,
+        "capacity_unit": "MGD",
+        "service_population": 210760,
+        "flood_zone": "X",
+        "ground_elevation_ft": 67.5,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.736741,
+          32.903308
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0019",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 020",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.903308,
+        "longitude": -79.736741,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 84,
+        "commissioned_year": 1983,
+        "design_capacity": 479.1,
+        "capacity_unit": "MGD",
+        "service_population": 291882,
+        "flood_zone": "A",
+        "ground_elevation_ft": 63.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-02-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.91041,
+          32.793988
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0020",
+        "asset_name": "Coastal East (SC) Electrical Substation 021",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.793988,
+        "longitude": -79.91041,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 86,
+        "commissioned_year": 2012,
+        "design_capacity": 460.5,
+        "capacity_unit": "MVA",
+        "service_population": 278963,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 24.6,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.902482,
+          32.853846
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0021",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 022",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.853846,
+        "longitude": -79.902482,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 75,
+        "commissioned_year": 1980,
+        "design_capacity": 471.4,
+        "capacity_unit": "kV",
+        "service_population": 299173,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 232.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.990388,
+          32.812653
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0022",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 023",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.812653,
+        "longitude": -79.990388,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 68,
+        "commissioned_year": 1998,
+        "design_capacity": 164.0,
+        "capacity_unit": "kV",
+        "service_population": 139758,
+        "flood_zone": "A",
+        "ground_elevation_ft": 54.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.735491,
+          32.97108
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0023",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 024",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.97108,
+        "longitude": -79.735491,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 92,
+        "commissioned_year": 1965,
+        "design_capacity": 499.2,
+        "capacity_unit": "MGD",
+        "service_population": 52918,
+        "flood_zone": "X",
+        "ground_elevation_ft": 216.0,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-03-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.759568,
+          32.945672
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0024",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 025",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.945672,
+        "longitude": -79.759568,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 52,
+        "commissioned_year": 1988,
+        "design_capacity": 158.2,
+        "capacity_unit": "MGD",
+        "service_population": 277817,
+        "flood_zone": "X",
+        "ground_elevation_ft": 267.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.730535,
+          32.610431
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0025",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 026",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.610431,
+        "longitude": -79.730535,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 77,
+        "commissioned_year": 1972,
+        "design_capacity": 373.8,
+        "capacity_unit": "kV",
+        "service_population": 81999,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 114.1,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-05-30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.098201,
+          32.835407
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0026",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 027",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.835407,
+        "longitude": -80.098201,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 69,
+        "commissioned_year": 1981,
+        "design_capacity": 34.9,
+        "capacity_unit": "MGD",
+        "service_population": 222575,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 19.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-03-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.119209,
+          32.748826
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0027",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 028",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.748826,
+        "longitude": -80.119209,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 100,
+        "commissioned_year": 2010,
+        "design_capacity": 14.7,
+        "capacity_unit": "MGD",
+        "service_population": 39949,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 219.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.125953,
+          32.60735
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0028",
+        "asset_name": "Coastal East (SC) Major Pipeline 029",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.60735,
+        "longitude": -80.125953,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 100,
+        "commissioned_year": 1984,
+        "design_capacity": 29.5,
+        "capacity_unit": "MGD",
+        "service_population": 188095,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 273.5,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.757933,
+          32.73287
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0029",
+        "asset_name": "Coastal East (SC) Major Pipeline 030",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.73287,
+        "longitude": -79.757933,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 53,
+        "commissioned_year": 2004,
+        "design_capacity": 463.6,
+        "capacity_unit": "MGD",
+        "service_population": 124618,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 390.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.11032,
+          32.966019
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0030",
+        "asset_name": "Coastal East (SC) Electrical Substation 031",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.966019,
+        "longitude": -80.11032,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 79,
+        "commissioned_year": 2015,
+        "design_capacity": 407.3,
+        "capacity_unit": "MVA",
+        "service_population": 140383,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 315.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.770703,
+          32.650095
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0031",
+        "asset_name": "Coastal East (SC) Electrical Substation 032",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.650095,
+        "longitude": -79.770703,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 41,
+        "commissioned_year": 2017,
+        "design_capacity": 181.3,
+        "capacity_unit": "MVA",
+        "service_population": 119825,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 11.4,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.060698,
+          32.581239
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0032",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 033",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.581239,
+        "longitude": -80.060698,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 2014,
+        "design_capacity": 490.8,
+        "capacity_unit": "MGD",
+        "service_population": 281631,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 375.8,
+        "backup_power": null,
+        "last_inspection_date": "2026-01-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.909705,
+          32.992598
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-CO0033",
+        "asset_name": "Coastal East (SC) Distribution Feeder 034",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.992598,
+        "longitude": -79.909705,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 58,
+        "commissioned_year": 1967,
+        "design_capacity": 222.9,
+        "capacity_unit": "kV",
+        "service_population": 164957,
+        "flood_zone": "A",
+        "ground_elevation_ft": 243.3,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.104961,
+          32.569974
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0034",
+        "asset_name": "Coastal East (SC) Control Centre 035",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.569974,
+        "longitude": -80.104961,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 86,
+        "commissioned_year": 1992,
+        "design_capacity": 362.5,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 147.0,
+        "backup_power": null,
+        "last_inspection_date": "2025-06-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.888422,
+          32.848524
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-CO0035",
+        "asset_name": "Coastal East (SC) Wastewater Treatment Plant 036",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "COAST_EAST",
+        "latitude": 32.848524,
+        "longitude": -79.888422,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 61,
+        "commissioned_year": 1972,
+        "design_capacity": 157.2,
+        "capacity_unit": "MGD",
+        "service_population": 162654,
+        "flood_zone": "A",
+        "ground_elevation_ft": 131.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.10408,
+          32.849218
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-CO0036",
+        "asset_name": "Coastal East (SC) Distribution Feeder 037",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.849218,
+        "longitude": -80.10408,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 86,
+        "commissioned_year": 1989,
+        "design_capacity": 157.5,
+        "capacity_unit": "kV",
+        "service_population": 287776,
+        "flood_zone": "X",
+        "ground_elevation_ft": 122.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-10-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.896669,
+          32.695012
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0037",
+        "asset_name": "Coastal East (SC) Control Centre 038",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.695012,
+        "longitude": -79.896669,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 58,
+        "commissioned_year": 1993,
+        "design_capacity": 114.7,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "A",
+        "ground_elevation_ft": 317.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-06-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.058107,
+          32.848734
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0038",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 039",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.848734,
+        "longitude": -80.058107,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 80,
+        "commissioned_year": 2004,
+        "design_capacity": 339.7,
+        "capacity_unit": "kV",
+        "service_population": 118276,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 60.6,
+        "backup_power": null,
+        "last_inspection_date": "2026-01-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.894363,
+          32.89582
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0039",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 040",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.89582,
+        "longitude": -79.894363,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 47,
+        "commissioned_year": 1994,
+        "design_capacity": 318.6,
+        "capacity_unit": "MG",
+        "service_population": 102440,
+        "flood_zone": "A",
+        "ground_elevation_ft": 198.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.75367,
+          32.937198
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0040",
+        "asset_name": "Coastal East (SC) Electrical Substation 041",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.937198,
+        "longitude": -79.75367,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 75,
+        "commissioned_year": 1971,
+        "design_capacity": 351.0,
+        "capacity_unit": "MVA",
+        "service_population": 244057,
+        "flood_zone": "X",
+        "ground_elevation_ft": 223.8,
+        "backup_power": null,
+        "last_inspection_date": "2025-10-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.799292,
+          32.85041
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-CO0041",
+        "asset_name": "Coastal East (SC) Distribution Feeder 042",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.85041,
+        "longitude": -79.799292,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 96,
+        "commissioned_year": 2000,
+        "design_capacity": 475.5,
+        "capacity_unit": "kV",
+        "service_population": 232535,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 326.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-08-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.751396,
+          32.884645
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0042",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 043",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.884645,
+        "longitude": -79.751396,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 70,
+        "commissioned_year": 1995,
+        "design_capacity": 145.9,
+        "capacity_unit": "MG",
+        "service_population": 273811,
+        "flood_zone": "A",
+        "ground_elevation_ft": 251.4,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.843228,
+          32.655522
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0043",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 044",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.655522,
+        "longitude": -79.843228,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 41,
+        "commissioned_year": 1986,
+        "design_capacity": 274.7,
+        "capacity_unit": "kV",
+        "service_population": 73047,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 94.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-06-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.167886,
+          32.73342
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0044",
+        "asset_name": "Coastal East (SC) Emergency Generator 045",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.73342,
+        "longitude": -80.167886,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 96,
+        "commissioned_year": 1999,
+        "design_capacity": 200.8,
+        "capacity_unit": "kW",
+        "service_population": 10740,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 153.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.823262,
+          32.934052
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0045",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 046",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.934052,
+        "longitude": -79.823262,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 80,
+        "commissioned_year": 2018,
+        "design_capacity": 376.3,
+        "capacity_unit": "MGD",
+        "service_population": 286830,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 359.3,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-02-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.982082,
+          32.563061
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0046",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 047",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.563061,
+        "longitude": -79.982082,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 77,
+        "commissioned_year": 1986,
+        "design_capacity": 421.8,
+        "capacity_unit": "MGD",
+        "service_population": 67413,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 214.6,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-08-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.8685,
+          32.587776
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0047",
+        "asset_name": "Coastal East (SC) Control Centre 048",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.587776,
+        "longitude": -79.8685,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 47,
+        "commissioned_year": 1992,
+        "design_capacity": 236.2,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X",
+        "ground_elevation_ft": 105.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-02-13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.036577,
+          32.892553
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0048",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 049",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.892553,
+        "longitude": -80.036577,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 84,
+        "commissioned_year": 1989,
+        "design_capacity": 419.1,
+        "capacity_unit": "MG",
+        "service_population": 247076,
+        "flood_zone": "X",
+        "ground_elevation_ft": 300.1,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.874928,
+          32.901555
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0049",
+        "asset_name": "Coastal East (SC) Emergency Generator 050",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.901555,
+        "longitude": -79.874928,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 65,
+        "commissioned_year": 2006,
+        "design_capacity": 25.2,
+        "capacity_unit": "kW",
+        "service_population": 130147,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 336.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-01-30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.963219,
+          32.601475
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-CO0050",
+        "asset_name": "Coastal East (SC) Distribution Feeder 051",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.601475,
+        "longitude": -79.963219,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 69,
+        "commissioned_year": 1978,
+        "design_capacity": 306.9,
+        "capacity_unit": "kV",
+        "service_population": 60548,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 386.0,
+        "backup_power": null,
+        "last_inspection_date": "2025-08-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.735556,
+          32.809109
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0051",
+        "asset_name": "Coastal East (SC) Electrical Substation 052",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.809109,
+        "longitude": -79.735556,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 84,
+        "commissioned_year": 1989,
+        "design_capacity": 360.4,
+        "capacity_unit": "MVA",
+        "service_population": 40344,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 276.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-04-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.774853,
+          32.820185
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0052",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 053",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.820185,
+        "longitude": -79.774853,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 66,
+        "commissioned_year": 1972,
+        "design_capacity": 271.0,
+        "capacity_unit": "MGD",
+        "service_population": 194785,
+        "flood_zone": "X",
+        "ground_elevation_ft": 203.4,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-05-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.788835,
+          32.597492
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0053",
+        "asset_name": "Coastal East (SC) Water Pumping Station 054",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.597492,
+        "longitude": -79.788835,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 68,
+        "commissioned_year": 1988,
+        "design_capacity": 416.1,
+        "capacity_unit": "MGD",
+        "service_population": 80711,
+        "flood_zone": "A",
+        "ground_elevation_ft": 72.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.812679,
+          32.759193
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0054",
+        "asset_name": "Coastal East (SC) Major Pipeline 055",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.759193,
+        "longitude": -79.812679,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 66,
+        "commissioned_year": 2017,
+        "design_capacity": 417.1,
+        "capacity_unit": "MGD",
+        "service_population": 45936,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 352.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-10-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.894834,
+          32.720545
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0055",
+        "asset_name": "Coastal East (SC) Control Centre 056",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.720545,
+        "longitude": -79.894834,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 99,
+        "commissioned_year": 1966,
+        "design_capacity": 169.3,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "A",
+        "ground_elevation_ft": 86.4,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-12-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.75984,
+          32.865533
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0056",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 057",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.865533,
+        "longitude": -79.75984,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 1982,
+        "design_capacity": 128.3,
+        "capacity_unit": "MGD",
+        "service_population": 213585,
+        "flood_zone": "A",
+        "ground_elevation_ft": 223.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-06-13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.877049,
+          32.77087
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0057",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 058",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.77087,
+        "longitude": -79.877049,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 68,
+        "commissioned_year": 2015,
+        "design_capacity": 154.2,
+        "capacity_unit": "MG",
+        "service_population": 212522,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 123.9,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.934539,
+          32.741477
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0058",
+        "asset_name": "Coastal East (SC) Major Pipeline 059",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.741477,
+        "longitude": -79.934539,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 2012,
+        "design_capacity": 160.2,
+        "capacity_unit": "MGD",
+        "service_population": 121368,
+        "flood_zone": "X",
+        "ground_elevation_ft": 289.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-04-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.724561,
+          32.860574
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-CO0059",
+        "asset_name": "Coastal East (SC) Major Pipeline 060",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.860574,
+        "longitude": -79.724561,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 83,
+        "commissioned_year": 1977,
+        "design_capacity": 247.3,
+        "capacity_unit": "MGD",
+        "service_population": 275560,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 114.6,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.086258,
+          32.630749
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0060",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 061",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.630749,
+        "longitude": -80.086258,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 73,
+        "commissioned_year": 1965,
+        "design_capacity": 36.7,
+        "capacity_unit": "MGD",
+        "service_population": 153663,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 255.9,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.912968,
+          32.761229
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0061",
+        "asset_name": "Coastal East (SC) Electrical Substation 062",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.761229,
+        "longitude": -79.912968,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 73,
+        "commissioned_year": 1993,
+        "design_capacity": 483.1,
+        "capacity_unit": "MVA",
+        "service_population": 132871,
+        "flood_zone": "A",
+        "ground_elevation_ft": 47.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.162959,
+          32.833251
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-CO0062",
+        "asset_name": "Coastal East (SC) Reservoir Storage Tank 063",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.833251,
+        "longitude": -80.162959,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 83,
+        "commissioned_year": 1968,
+        "design_capacity": 51.7,
+        "capacity_unit": "MG",
+        "service_population": 130623,
+        "flood_zone": "X",
+        "ground_elevation_ft": 224.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-07-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.80463,
+          32.651559
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0063",
+        "asset_name": "Coastal East (SC) Control Centre 064",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.651559,
+        "longitude": -79.80463,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 36,
+        "commissioned_year": 1998,
+        "design_capacity": 455.2,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 344.3,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-12-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.889486,
+          32.824334
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-CO0064",
+        "asset_name": "Coastal East (SC) Control Centre 065",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "COAST_EAST",
+        "latitude": 32.824334,
+        "longitude": -79.889486,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 71,
+        "commissioned_year": 2012,
+        "design_capacity": 139.7,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X",
+        "ground_elevation_ft": 64.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-08-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.121734,
+          32.733833
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-CO0065",
+        "asset_name": "Coastal East (SC) Transmission Line Segment 066",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.733833,
+        "longitude": -80.121734,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 49,
+        "commissioned_year": 2009,
+        "design_capacity": 152.7,
+        "capacity_unit": "kV",
+        "service_population": 121860,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 283.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.738044,
+          32.904523
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-CO0066",
+        "asset_name": "Coastal East (SC) Emergency Generator 067",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.904523,
+        "longitude": -79.738044,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 73,
+        "commissioned_year": 2005,
+        "design_capacity": 66.2,
+        "capacity_unit": "kW",
+        "service_population": 118364,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 363.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-04-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.117039,
+          32.688425
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-CO0067",
+        "asset_name": "Coastal East (SC) Electrical Substation 068",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "COAST_EAST",
+        "latitude": 32.688425,
+        "longitude": -80.117039,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 60,
+        "commissioned_year": 2012,
+        "design_capacity": 461.4,
+        "capacity_unit": "MVA",
+        "service_population": 230742,
+        "flood_zone": "X",
+        "ground_elevation_ft": 188.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.728662,
+          32.775212
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0068",
+        "asset_name": "Coastal East (SC) Water Pumping Station 069",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.775212,
+        "longitude": -79.728662,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 44,
+        "commissioned_year": 1996,
+        "design_capacity": 369.9,
+        "capacity_unit": "MGD",
+        "service_population": 131764,
+        "flood_zone": "X",
+        "ground_elevation_ft": 38.3,
+        "backup_power": null,
+        "last_inspection_date": "2025-06-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.911877,
+          32.893399
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-CO0069",
+        "asset_name": "Coastal East (SC) Water Treatment Plant 070",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "COAST_EAST",
+        "latitude": 32.893399,
+        "longitude": -79.911877,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 51,
+        "commissioned_year": 1976,
+        "design_capacity": 329.2,
+        "capacity_unit": "MGD",
+        "service_population": 146334,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 398.8,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-07-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.815472,
+          31.282006
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0000",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 001",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.282006,
+        "longitude": -80.815472,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 55,
+        "commissioned_year": 1991,
+        "design_capacity": 171.6,
+        "capacity_unit": "MG",
+        "service_population": 260268,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 265.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-08-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.072587,
+          31.18871
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0001",
+        "asset_name": "Lower Delta (GA) Electrical Substation 002",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.18871,
+        "longitude": -81.072587,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 44,
+        "commissioned_year": 1985,
+        "design_capacity": 388.5,
+        "capacity_unit": "MVA",
+        "service_population": 270296,
+        "flood_zone": "X",
+        "ground_elevation_ft": 263.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-11-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.206209,
+          31.217068
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0002",
+        "asset_name": "Lower Delta (GA) Electrical Substation 003",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.217068,
+        "longitude": -81.206209,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 65,
+        "commissioned_year": 2013,
+        "design_capacity": 140.9,
+        "capacity_unit": "MVA",
+        "service_population": 69188,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 176.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-03-31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.813427,
+          31.365323
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0003",
+        "asset_name": "Lower Delta (GA) Electrical Substation 004",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.365323,
+        "longitude": -80.813427,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 71,
+        "commissioned_year": 1980,
+        "design_capacity": 162.3,
+        "capacity_unit": "MVA",
+        "service_population": 7669,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 164.4,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-04-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.82647,
+          31.388626
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0004",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 005",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.388626,
+        "longitude": -80.82647,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 66,
+        "commissioned_year": 1974,
+        "design_capacity": 144.0,
+        "capacity_unit": "MG",
+        "service_population": 253468,
+        "flood_zone": "A",
+        "ground_elevation_ft": 99.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.839066,
+          31.304945
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-LO0005",
+        "asset_name": "Lower Delta (GA) Emergency Generator 006",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.304945,
+        "longitude": -80.839066,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 52,
+        "commissioned_year": 1973,
+        "design_capacity": 145.4,
+        "capacity_unit": "kW",
+        "service_population": 218049,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 373.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-05-31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.936975,
+          31.502486
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0006",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 007",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.502486,
+        "longitude": -80.936975,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 61,
+        "commissioned_year": 2002,
+        "design_capacity": 273.9,
+        "capacity_unit": "MGD",
+        "service_population": 181444,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 221.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.865199,
+          31.588465
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-LO0007",
+        "asset_name": "Lower Delta (GA) Wastewater Treatment Plant 008",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "LOWER_DELTA",
+        "latitude": 31.588465,
+        "longitude": -80.865199,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 70,
+        "commissioned_year": 1980,
+        "design_capacity": 124.4,
+        "capacity_unit": "MGD",
+        "service_population": 215864,
+        "flood_zone": "X",
+        "ground_elevation_ft": 128.6,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.106961,
+          31.398213
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0008",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 009",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.398213,
+        "longitude": -81.106961,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 92,
+        "commissioned_year": 2017,
+        "design_capacity": 71.9,
+        "capacity_unit": "MGD",
+        "service_population": 174560,
+        "flood_zone": "X",
+        "ground_elevation_ft": 349.9,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.844779,
+          31.009209
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0009",
+        "asset_name": "Lower Delta (GA) Major Pipeline 010",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.009209,
+        "longitude": -80.844779,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 100,
+        "commissioned_year": 1974,
+        "design_capacity": 330.8,
+        "capacity_unit": "MGD",
+        "service_population": 81429,
+        "flood_zone": "X",
+        "ground_elevation_ft": 188.9,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-12-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.953648,
+          31.389902
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0010",
+        "asset_name": "Lower Delta (GA) Control Centre 011",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.389902,
+        "longitude": -80.953648,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 61,
+        "commissioned_year": 2019,
+        "design_capacity": 477.5,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "A",
+        "ground_elevation_ft": 349.2,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.182615,
+          31.41064
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-LO0011",
+        "asset_name": "Lower Delta (GA) Transmission Line Segment 012",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.41064,
+        "longitude": -81.182615,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 53,
+        "commissioned_year": 1983,
+        "design_capacity": 375.9,
+        "capacity_unit": "kV",
+        "service_population": 228026,
+        "flood_zone": "X",
+        "ground_elevation_ft": 304.6,
+        "backup_power": null,
+        "last_inspection_date": "2025-10-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.952999,
+          31.542054
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0012",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 013",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.542054,
+        "longitude": -80.952999,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 83,
+        "commissioned_year": 1967,
+        "design_capacity": 221.0,
+        "capacity_unit": "kV",
+        "service_population": 128529,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 166.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.260516,
+          31.522504
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0013",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 014",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.522504,
+        "longitude": -81.260516,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 74,
+        "commissioned_year": 2004,
+        "design_capacity": 253.9,
+        "capacity_unit": "kV",
+        "service_population": 75534,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 185.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.96658,
+          31.539345
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0014",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 015",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.539345,
+        "longitude": -80.96658,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 66,
+        "commissioned_year": 1994,
+        "design_capacity": 226.4,
+        "capacity_unit": "MGD",
+        "service_population": 181675,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 121.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.071582,
+          31.181273
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0015",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 016",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.181273,
+        "longitude": -81.071582,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 62,
+        "commissioned_year": 1989,
+        "design_capacity": 62.3,
+        "capacity_unit": "MGD",
+        "service_population": 200444,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 144.9,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.28903,
+          31.498023
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0016",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 017",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.498023,
+        "longitude": -81.28903,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 49,
+        "commissioned_year": 1990,
+        "design_capacity": 374.9,
+        "capacity_unit": "MGD",
+        "service_population": 26213,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 298.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-02-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.899034,
+          31.131403
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0017",
+        "asset_name": "Lower Delta (GA) Control Centre 018",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.131403,
+        "longitude": -80.899034,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 60,
+        "commissioned_year": 1977,
+        "design_capacity": 342.1,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 252.0,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.283318,
+          31.218917
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0018",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 019",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.218917,
+        "longitude": -81.283318,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 63,
+        "commissioned_year": 1973,
+        "design_capacity": 96.1,
+        "capacity_unit": "MG",
+        "service_population": 69789,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 350.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-09-03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.843257,
+          31.498284
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0019",
+        "asset_name": "Lower Delta (GA) Major Pipeline 020",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.498284,
+        "longitude": -80.843257,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 93,
+        "commissioned_year": 1981,
+        "design_capacity": 472.7,
+        "capacity_unit": "MGD",
+        "service_population": 155239,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 322.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.922924,
+          31.135369
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0020",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 021",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.135369,
+        "longitude": -80.922924,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 100,
+        "commissioned_year": 2008,
+        "design_capacity": 404.2,
+        "capacity_unit": "kV",
+        "service_population": 192271,
+        "flood_zone": "X",
+        "ground_elevation_ft": 316.7,
+        "backup_power": null,
+        "last_inspection_date": "2026-01-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.238206,
+          31.221151
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0021",
+        "asset_name": "Lower Delta (GA) Major Pipeline 022",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.221151,
+        "longitude": -81.238206,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 65,
+        "commissioned_year": 2012,
+        "design_capacity": 296.4,
+        "capacity_unit": "MGD",
+        "service_population": 195259,
+        "flood_zone": "X",
+        "ground_elevation_ft": 270.6,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-05-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.857883,
+          31.336844
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0022",
+        "asset_name": "Lower Delta (GA) Control Centre 023",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.336844,
+        "longitude": -80.857883,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 95,
+        "commissioned_year": 2004,
+        "design_capacity": 455.6,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 260.4,
+        "backup_power": null,
+        "last_inspection_date": "2026-03-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.826869,
+          31.182619
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0023",
+        "asset_name": "Lower Delta (GA) Electrical Substation 024",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.182619,
+        "longitude": -80.826869,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 80,
+        "commissioned_year": 1996,
+        "design_capacity": 125.1,
+        "capacity_unit": "MVA",
+        "service_population": 282329,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 156.7,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.090437,
+          31.445361
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0024",
+        "asset_name": "Lower Delta (GA) Major Pipeline 025",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.445361,
+        "longitude": -81.090437,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 54,
+        "commissioned_year": 1974,
+        "design_capacity": 311.7,
+        "capacity_unit": "MGD",
+        "service_population": 147164,
+        "flood_zone": "X",
+        "ground_elevation_ft": 276.7,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-10-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.824722,
+          31.51327
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0025",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 026",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.51327,
+        "longitude": -80.824722,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 46,
+        "commissioned_year": 1971,
+        "design_capacity": 190.0,
+        "capacity_unit": "MG",
+        "service_population": 188548,
+        "flood_zone": "X",
+        "ground_elevation_ft": 160.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.254163,
+          31.127263
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0026",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 027",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.127263,
+        "longitude": -81.254163,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 96,
+        "commissioned_year": 2005,
+        "design_capacity": 129.3,
+        "capacity_unit": "MG",
+        "service_population": 66520,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 83.7,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-08-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.893474,
+          31.139799
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-LO0027",
+        "asset_name": "Lower Delta (GA) Emergency Generator 028",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.139799,
+        "longitude": -80.893474,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 73,
+        "commissioned_year": 2014,
+        "design_capacity": 451.3,
+        "capacity_unit": "kW",
+        "service_population": 1986,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 343.6,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.174673,
+          31.104698
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0028",
+        "asset_name": "Lower Delta (GA) Major Pipeline 029",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.104698,
+        "longitude": -81.174673,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 79,
+        "commissioned_year": 2007,
+        "design_capacity": 396.3,
+        "capacity_unit": "MGD",
+        "service_population": 170249,
+        "flood_zone": "X",
+        "ground_elevation_ft": 71.3,
+        "backup_power": null,
+        "last_inspection_date": "2026-03-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.036957,
+          31.447399
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0029",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 030",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.447399,
+        "longitude": -81.036957,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 80,
+        "commissioned_year": 1995,
+        "design_capacity": 187.4,
+        "capacity_unit": "MGD",
+        "service_population": 57675,
+        "flood_zone": "A",
+        "ground_elevation_ft": 202.5,
+        "backup_power": null,
+        "last_inspection_date": "2025-06-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.149185,
+          31.386004
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0030",
+        "asset_name": "Lower Delta (GA) Major Pipeline 031",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.386004,
+        "longitude": -81.149185,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 54,
+        "commissioned_year": 1966,
+        "design_capacity": 346.2,
+        "capacity_unit": "MGD",
+        "service_population": 257542,
+        "flood_zone": "A",
+        "ground_elevation_ft": 31.2,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.225833,
+          31.075715
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0031",
+        "asset_name": "Lower Delta (GA) Control Centre 032",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.075715,
+        "longitude": -81.225833,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 72,
+        "commissioned_year": 2004,
+        "design_capacity": 278.7,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 153.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-10-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.997287,
+          31.059507
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0032",
+        "asset_name": "Lower Delta (GA) Major Pipeline 033",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.059507,
+        "longitude": -80.997287,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 52,
+        "commissioned_year": 2009,
+        "design_capacity": 280.2,
+        "capacity_unit": "MGD",
+        "service_population": 113234,
+        "flood_zone": "A",
+        "ground_elevation_ft": 181.7,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.88629,
+          31.239238
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-LO0033",
+        "asset_name": "Lower Delta (GA) Wastewater Treatment Plant 034",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "LOWER_DELTA",
+        "latitude": 31.239238,
+        "longitude": -80.88629,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 44,
+        "commissioned_year": 2011,
+        "design_capacity": 219.1,
+        "capacity_unit": "MGD",
+        "service_population": 134135,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 381.5,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.884114,
+          31.055938
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-LO0034",
+        "asset_name": "Lower Delta (GA) Transmission Line Segment 035",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.055938,
+        "longitude": -80.884114,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 64,
+        "commissioned_year": 1971,
+        "design_capacity": 39.4,
+        "capacity_unit": "kV",
+        "service_population": 294933,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 133.2,
+        "backup_power": null,
+        "last_inspection_date": "2025-11-03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.863196,
+          31.564678
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-LO0035",
+        "asset_name": "Lower Delta (GA) Wastewater Treatment Plant 036",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "LOWER_DELTA",
+        "latitude": 31.564678,
+        "longitude": -80.863196,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 75,
+        "commissioned_year": 1992,
+        "design_capacity": 363.3,
+        "capacity_unit": "MGD",
+        "service_population": 151300,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 126.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-08-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.193631,
+          31.394042
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0036",
+        "asset_name": "Lower Delta (GA) Major Pipeline 037",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.394042,
+        "longitude": -81.193631,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 58,
+        "commissioned_year": 1979,
+        "design_capacity": 66.3,
+        "capacity_unit": "MGD",
+        "service_population": 146549,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 92.0,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-08-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.993213,
+          31.385619
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0037",
+        "asset_name": "Lower Delta (GA) Control Centre 038",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.385619,
+        "longitude": -80.993213,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 85,
+        "commissioned_year": 1966,
+        "design_capacity": 332.3,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 13.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.839231,
+          31.210614
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0038",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 039",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.210614,
+        "longitude": -80.839231,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 56,
+        "commissioned_year": 1976,
+        "design_capacity": 79.5,
+        "capacity_unit": "MGD",
+        "service_population": 16573,
+        "flood_zone": "X",
+        "ground_elevation_ft": 299.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.073177,
+          31.094446
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0039",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 040",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.094446,
+        "longitude": -81.073177,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 63,
+        "commissioned_year": 1984,
+        "design_capacity": 390.6,
+        "capacity_unit": "MGD",
+        "service_population": 298082,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 35.8,
+        "backup_power": null,
+        "last_inspection_date": "2026-03-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.922782,
+          31.029857
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0040",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 041",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.029857,
+        "longitude": -80.922782,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 1970,
+        "design_capacity": 226.6,
+        "capacity_unit": "kV",
+        "service_population": 143718,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 302.5,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.244555,
+          31.406931
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0041",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 042",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.406931,
+        "longitude": -81.244555,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 55,
+        "commissioned_year": 2002,
+        "design_capacity": 336.9,
+        "capacity_unit": "MGD",
+        "service_population": 24311,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 159.3,
+        "backup_power": null,
+        "last_inspection_date": "2026-05-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.14929,
+          31.12674
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-LO0042",
+        "asset_name": "Lower Delta (GA) Emergency Generator 043",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.12674,
+        "longitude": -81.14929,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 68,
+        "commissioned_year": 1973,
+        "design_capacity": 253.7,
+        "capacity_unit": "kW",
+        "service_population": 226287,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 53.4,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-09-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.883323,
+          31.48372
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0043",
+        "asset_name": "Lower Delta (GA) Major Pipeline 044",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.48372,
+        "longitude": -80.883323,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 77,
+        "commissioned_year": 1969,
+        "design_capacity": 373.6,
+        "capacity_unit": "MGD",
+        "service_population": 229204,
+        "flood_zone": "X",
+        "ground_elevation_ft": 185.0,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.085358,
+          31.242654
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0044",
+        "asset_name": "Lower Delta (GA) Control Centre 045",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.242654,
+        "longitude": -81.085358,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 72,
+        "commissioned_year": 2005,
+        "design_capacity": 169.1,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 185.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-04-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.877758,
+          31.14599
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0045",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 046",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.14599,
+        "longitude": -80.877758,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 72,
+        "commissioned_year": 2002,
+        "design_capacity": 48.5,
+        "capacity_unit": "MGD",
+        "service_population": 163173,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 90.2,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-04-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.983388,
+          31.318363
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0046",
+        "asset_name": "Lower Delta (GA) Major Pipeline 047",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.318363,
+        "longitude": -80.983388,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 55,
+        "commissioned_year": 1977,
+        "design_capacity": 411.3,
+        "capacity_unit": "MGD",
+        "service_population": 77932,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 42.9,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-02-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.998801,
+          31.456129
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0047",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 048",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.456129,
+        "longitude": -80.998801,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 89,
+        "commissioned_year": 2006,
+        "design_capacity": 476.1,
+        "capacity_unit": "kV",
+        "service_population": 259559,
+        "flood_zone": "A",
+        "ground_elevation_ft": 302.3,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.978504,
+          31.591919
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0048",
+        "asset_name": "Lower Delta (GA) Control Centre 049",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.591919,
+        "longitude": -80.978504,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 64,
+        "commissioned_year": 1985,
+        "design_capacity": 43.5,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "A",
+        "ground_elevation_ft": 253.3,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-03"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.124029,
+          31.044514
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0049",
+        "asset_name": "Lower Delta (GA) Electrical Substation 050",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.044514,
+        "longitude": -81.124029,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 63,
+        "commissioned_year": 1994,
+        "design_capacity": 37.9,
+        "capacity_unit": "MVA",
+        "service_population": 151011,
+        "flood_zone": "X",
+        "ground_elevation_ft": 258.6,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.046466,
+          31.277627
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0050",
+        "asset_name": "Lower Delta (GA) Control Centre 051",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.277627,
+        "longitude": -81.046466,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 69,
+        "commissioned_year": 2000,
+        "design_capacity": 455.4,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 261.4,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.049316,
+          31.574633
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0051",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 052",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.574633,
+        "longitude": -81.049316,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 65,
+        "commissioned_year": 1993,
+        "design_capacity": 450.6,
+        "capacity_unit": "MG",
+        "service_population": 180560,
+        "flood_zone": "X",
+        "ground_elevation_ft": 202.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-05-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.946189,
+          31.594592
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-LO0052",
+        "asset_name": "Lower Delta (GA) Emergency Generator 053",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.594592,
+        "longitude": -80.946189,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 77,
+        "commissioned_year": 1998,
+        "design_capacity": 148.6,
+        "capacity_unit": "kW",
+        "service_population": 214812,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 272.2,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-13"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.267044,
+          31.056704
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-LO0053",
+        "asset_name": "Lower Delta (GA) Wastewater Treatment Plant 054",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "LOWER_DELTA",
+        "latitude": 31.056704,
+        "longitude": -81.267044,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 82,
+        "commissioned_year": 2008,
+        "design_capacity": 133.5,
+        "capacity_unit": "MGD",
+        "service_population": 79338,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 34.4,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-12-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.816152,
+          31.419088
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0054",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 055",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.419088,
+        "longitude": -80.816152,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 68,
+        "commissioned_year": 1990,
+        "design_capacity": 283.9,
+        "capacity_unit": "MGD",
+        "service_population": 172716,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 268.7,
+        "backup_power": null,
+        "last_inspection_date": "2025-07-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.045756,
+          31.010938
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0055",
+        "asset_name": "Lower Delta (GA) Water Pumping Station 056",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.010938,
+        "longitude": -81.045756,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 63,
+        "commissioned_year": 1984,
+        "design_capacity": 115.0,
+        "capacity_unit": "MGD",
+        "service_population": 255446,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 92.2,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.152104,
+          31.472872
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-LO0056",
+        "asset_name": "Lower Delta (GA) Transmission Line Segment 057",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.472872,
+        "longitude": -81.152104,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 85,
+        "commissioned_year": 1997,
+        "design_capacity": 28.5,
+        "capacity_unit": "kV",
+        "service_population": 177061,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 54.2,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-03-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.209577,
+          31.415707
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0057",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 058",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.415707,
+        "longitude": -81.209577,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 43,
+        "commissioned_year": 2004,
+        "design_capacity": 91.1,
+        "capacity_unit": "kV",
+        "service_population": 229966,
+        "flood_zone": "X",
+        "ground_elevation_ft": 165.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-10-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.157536,
+          31.449122
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0058",
+        "asset_name": "Lower Delta (GA) Control Centre 059",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.449122,
+        "longitude": -81.157536,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 72,
+        "commissioned_year": 1993,
+        "design_capacity": 394.3,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 148.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.910938,
+          31.301744
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-LO0059",
+        "asset_name": "Lower Delta (GA) Water Treatment Plant 060",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.301744,
+        "longitude": -80.910938,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 100,
+        "commissioned_year": 1991,
+        "design_capacity": 410.3,
+        "capacity_unit": "MGD",
+        "service_population": 73060,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 22.8,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-11-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.832853,
+          31.426841
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0060",
+        "asset_name": "Lower Delta (GA) Major Pipeline 061",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.426841,
+        "longitude": -80.832853,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 64,
+        "commissioned_year": 1998,
+        "design_capacity": 143.7,
+        "capacity_unit": "MGD",
+        "service_population": 269644,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 332.8,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-08"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.857685,
+          31.558283
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-LO0061",
+        "asset_name": "Lower Delta (GA) Reservoir Storage Tank 062",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.558283,
+        "longitude": -80.857685,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 94,
+        "commissioned_year": 1991,
+        "design_capacity": 256.0,
+        "capacity_unit": "MG",
+        "service_population": 124115,
+        "flood_zone": "A",
+        "ground_elevation_ft": 397.8,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-02-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.140658,
+          31.05945
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0062",
+        "asset_name": "Lower Delta (GA) Electrical Substation 063",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.05945,
+        "longitude": -81.140658,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 72,
+        "commissioned_year": 2010,
+        "design_capacity": 150.6,
+        "capacity_unit": "MVA",
+        "service_population": 248202,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 304.0,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-15"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.297374,
+          31.047535
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-LO0063",
+        "asset_name": "Lower Delta (GA) Control Centre 064",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "LOWER_DELTA",
+        "latitude": 31.047535,
+        "longitude": -81.297374,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 62,
+        "commissioned_year": 1981,
+        "design_capacity": 83.3,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 212.1,
+        "backup_power": null,
+        "last_inspection_date": "2026-01-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.149424,
+          31.02865
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-LO0064",
+        "asset_name": "Lower Delta (GA) Emergency Generator 065",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.02865,
+        "longitude": -81.149424,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 66,
+        "commissioned_year": 1991,
+        "design_capacity": 420.0,
+        "capacity_unit": "kW",
+        "service_population": 262554,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 215.3,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-05-30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.154364,
+          31.000939
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0065",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 066",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.000939,
+        "longitude": -81.154364,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 66,
+        "commissioned_year": 1987,
+        "design_capacity": 214.1,
+        "capacity_unit": "kV",
+        "service_population": 45386,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 389.9,
+        "backup_power": null,
+        "last_inspection_date": "2025-09-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.046336,
+          31.592999
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-LO0066",
+        "asset_name": "Lower Delta (GA) Major Pipeline 067",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "LOWER_DELTA",
+        "latitude": 31.592999,
+        "longitude": -81.046336,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 73,
+        "commissioned_year": 2000,
+        "design_capacity": 199.6,
+        "capacity_unit": "MGD",
+        "service_population": 196217,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 299.4,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-04-28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.179437,
+          31.394263
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-LO0067",
+        "asset_name": "Lower Delta (GA) Wastewater Treatment Plant 068",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "LOWER_DELTA",
+        "latitude": 31.394263,
+        "longitude": -81.179437,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 66,
+        "commissioned_year": 1971,
+        "design_capacity": 370.2,
+        "capacity_unit": "MGD",
+        "service_population": 174835,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 19.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.884808,
+          31.41081
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-LO0068",
+        "asset_name": "Lower Delta (GA) Distribution Feeder 069",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.41081,
+        "longitude": -80.884808,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 73,
+        "commissioned_year": 2009,
+        "design_capacity": 360.9,
+        "capacity_unit": "kV",
+        "service_population": 240455,
+        "flood_zone": "X",
+        "ground_elevation_ft": 118.8,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.142202,
+          31.186046
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-LO0069",
+        "asset_name": "Lower Delta (GA) Electrical Substation 070",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "LOWER_DELTA",
+        "latitude": 31.186046,
+        "longitude": -81.142202,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 77,
+        "commissioned_year": 1990,
+        "design_capacity": 276.1,
+        "capacity_unit": "MVA",
+        "service_population": 133309,
+        "flood_zone": "X",
+        "ground_elevation_ft": 301.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-01-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.382717,
+          35.123902
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0000",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 001",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.123902,
+        "longitude": -80.382717,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 80,
+        "commissioned_year": 2006,
+        "design_capacity": 445.8,
+        "capacity_unit": "MGD",
+        "service_population": 231048,
+        "flood_zone": "A",
+        "ground_elevation_ft": 136.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-09-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.679592,
+          35.498645
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0001",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 002",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.498645,
+        "longitude": -80.679592,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 80,
+        "commissioned_year": 1982,
+        "design_capacity": 366.3,
+        "capacity_unit": "MG",
+        "service_population": 41880,
+        "flood_zone": "A",
+        "ground_elevation_ft": 241.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-08-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.707273,
+          35.140034
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0002",
+        "asset_name": "Inland North (NC) Water Treatment Plant 003",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.140034,
+        "longitude": -80.707273,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 47,
+        "commissioned_year": 2007,
+        "design_capacity": 91.7,
+        "capacity_unit": "MGD",
+        "service_population": 233235,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 180.0,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.735267,
+          35.590014
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0003",
+        "asset_name": "Inland North (NC) Water Pumping Station 004",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.590014,
+        "longitude": -80.735267,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 77,
+        "commissioned_year": 1968,
+        "design_capacity": 322.4,
+        "capacity_unit": "MGD",
+        "service_population": 190979,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 320.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-05-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.390798,
+          35.439044
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0004",
+        "asset_name": "Inland North (NC) Distribution Feeder 005",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.439044,
+        "longitude": -80.390798,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 93,
+        "commissioned_year": 1993,
+        "design_capacity": 189.5,
+        "capacity_unit": "kV",
+        "service_population": 201225,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 14.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-06-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.330706,
+          35.286007
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0005",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 006",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.286007,
+        "longitude": -80.330706,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 80,
+        "commissioned_year": 2013,
+        "design_capacity": 77.5,
+        "capacity_unit": "MG",
+        "service_population": 192887,
+        "flood_zone": "A",
+        "ground_elevation_ft": 127.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-01-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.884452,
+          35.193024
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-IN0006",
+        "asset_name": "Inland North (NC) Transmission Line Segment 007",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.193024,
+        "longitude": -80.884452,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 59,
+        "commissioned_year": 1998,
+        "design_capacity": 137.5,
+        "capacity_unit": "kV",
+        "service_population": 234475,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 398.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.779893,
+          35.167864
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0007",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 008",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.167864,
+        "longitude": -80.779893,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 65,
+        "commissioned_year": 1969,
+        "design_capacity": 450.4,
+        "capacity_unit": "MG",
+        "service_population": 233866,
+        "flood_zone": "X",
+        "ground_elevation_ft": 324.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-06-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.474276,
+          35.374999
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0008",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 009",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.374999,
+        "longitude": -80.474276,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 84,
+        "commissioned_year": 1983,
+        "design_capacity": 464.4,
+        "capacity_unit": "MGD",
+        "service_population": 91773,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 204.5,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.757958,
+          35.347011
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0009",
+        "asset_name": "Inland North (NC) Distribution Feeder 010",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.347011,
+        "longitude": -80.757958,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 50,
+        "commissioned_year": 1988,
+        "design_capacity": 190.8,
+        "capacity_unit": "kV",
+        "service_population": 289721,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 245.6,
+        "backup_power": null,
+        "last_inspection_date": "2026-04-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.661104,
+          35.458467
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0010",
+        "asset_name": "Inland North (NC) Water Treatment Plant 011",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.458467,
+        "longitude": -80.661104,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 73,
+        "commissioned_year": 1995,
+        "design_capacity": 46.1,
+        "capacity_unit": "MGD",
+        "service_population": 166713,
+        "flood_zone": "X",
+        "ground_elevation_ft": 181.1,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-03-28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.516124,
+          35.190982
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0011",
+        "asset_name": "Inland North (NC) Major Pipeline 012",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.190982,
+        "longitude": -80.516124,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 42,
+        "commissioned_year": 1973,
+        "design_capacity": 456.2,
+        "capacity_unit": "MGD",
+        "service_population": 29552,
+        "flood_zone": "X",
+        "ground_elevation_ft": 208.2,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-03-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.706404,
+          35.454666
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0012",
+        "asset_name": "Inland North (NC) Distribution Feeder 013",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.454666,
+        "longitude": -80.706404,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 57,
+        "commissioned_year": 1987,
+        "design_capacity": 48.6,
+        "capacity_unit": "kV",
+        "service_population": 103418,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 111.2,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.843943,
+          35.420494
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0013",
+        "asset_name": "Inland North (NC) Major Pipeline 014",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.420494,
+        "longitude": -80.843943,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 68,
+        "commissioned_year": 2002,
+        "design_capacity": 85.6,
+        "capacity_unit": "MGD",
+        "service_population": 177509,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 18.4,
+        "backup_power": null,
+        "last_inspection_date": "2026-04-21"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.330872,
+          35.485511
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-IN0014",
+        "asset_name": "Inland North (NC) Electrical Substation 015",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.485511,
+        "longitude": -80.330872,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 71,
+        "commissioned_year": 1981,
+        "design_capacity": 323.1,
+        "capacity_unit": "MVA",
+        "service_population": 261615,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 117.3,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-09-27"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.417187,
+          35.442495
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0015",
+        "asset_name": "Inland North (NC) Emergency Generator 016",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.442495,
+        "longitude": -80.417187,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 54,
+        "commissioned_year": 1984,
+        "design_capacity": 347.4,
+        "capacity_unit": "kW",
+        "service_population": 83379,
+        "flood_zone": "A",
+        "ground_elevation_ft": 167.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-02-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.536004,
+          35.256291
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0016",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 017",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.256291,
+        "longitude": -80.536004,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 83,
+        "commissioned_year": 2010,
+        "design_capacity": 205.4,
+        "capacity_unit": "MGD",
+        "service_population": 194769,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 225.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-01-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.826487,
+          35.324798
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0017",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 018",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.324798,
+        "longitude": -80.826487,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 68,
+        "commissioned_year": 1974,
+        "design_capacity": 152.2,
+        "capacity_unit": "MG",
+        "service_population": 201905,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 168.4,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-12-16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.467323,
+          35.194917
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-IN0018",
+        "asset_name": "Inland North (NC) Control Centre 019",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "INLAND_NORTH",
+        "latitude": 35.194917,
+        "longitude": -80.467323,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 52,
+        "commissioned_year": 1975,
+        "design_capacity": 161.2,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X",
+        "ground_elevation_ft": 37.8,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-09-16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.319988,
+          35.207572
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0019",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 020",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.207572,
+        "longitude": -80.319988,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 68,
+        "commissioned_year": 1987,
+        "design_capacity": 147.9,
+        "capacity_unit": "MG",
+        "service_population": 247223,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 215.6,
+        "backup_power": null,
+        "last_inspection_date": "2025-10-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.370527,
+          35.463754
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0020",
+        "asset_name": "Inland North (NC) Distribution Feeder 021",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.463754,
+        "longitude": -80.370527,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 74,
+        "commissioned_year": 2013,
+        "design_capacity": 285.3,
+        "capacity_unit": "kV",
+        "service_population": 190566,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 116.9,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-09-16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.441358,
+          35.23986
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0021",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 022",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.23986,
+        "longitude": -80.441358,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 71,
+        "commissioned_year": 2004,
+        "design_capacity": 68.2,
+        "capacity_unit": "MG",
+        "service_population": 51188,
+        "flood_zone": "A",
+        "ground_elevation_ft": 150.5,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.447021,
+          35.199529
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0022",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 023",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.199529,
+        "longitude": -80.447021,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 74,
+        "commissioned_year": 1997,
+        "design_capacity": 359.7,
+        "capacity_unit": "MGD",
+        "service_population": 248878,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 183.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-12-16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.708882,
+          35.296477
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-IN0023",
+        "asset_name": "Inland North (NC) Control Centre 024",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "INLAND_NORTH",
+        "latitude": 35.296477,
+        "longitude": -80.708882,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 71,
+        "commissioned_year": 2004,
+        "design_capacity": 156.6,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 203.9,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.720126,
+          35.507874
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-IN0024",
+        "asset_name": "Inland North (NC) Control Centre 025",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "INLAND_NORTH",
+        "latitude": 35.507874,
+        "longitude": -80.720126,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 82,
+        "commissioned_year": 1988,
+        "design_capacity": 160.8,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X",
+        "ground_elevation_ft": 239.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.553419,
+          35.4607
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-IN0025",
+        "asset_name": "Inland North (NC) Control Centre 026",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "INLAND_NORTH",
+        "latitude": 35.4607,
+        "longitude": -80.553419,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 79,
+        "commissioned_year": 2002,
+        "design_capacity": 266.9,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 310.3,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-03-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.881058,
+          35.574103
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0026",
+        "asset_name": "Inland North (NC) Emergency Generator 027",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.574103,
+        "longitude": -80.881058,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 55,
+        "commissioned_year": 1972,
+        "design_capacity": 212.4,
+        "capacity_unit": "kW",
+        "service_population": 107397,
+        "flood_zone": "A",
+        "ground_elevation_ft": 201.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-05-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.58879,
+          35.380443
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0027",
+        "asset_name": "Inland North (NC) Distribution Feeder 028",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.380443,
+        "longitude": -80.58879,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 75,
+        "commissioned_year": 2007,
+        "design_capacity": 194.6,
+        "capacity_unit": "kV",
+        "service_population": 91297,
+        "flood_zone": "A",
+        "ground_elevation_ft": 365.0,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.494479,
+          35.533827
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0028",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 029",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.533827,
+        "longitude": -80.494479,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 62,
+        "commissioned_year": 2008,
+        "design_capacity": 104.2,
+        "capacity_unit": "MGD",
+        "service_population": 129747,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 224.1,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-12-31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.477059,
+          35.44512
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0029",
+        "asset_name": "Inland North (NC) Water Treatment Plant 030",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.44512,
+        "longitude": -80.477059,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 50,
+        "commissioned_year": 1996,
+        "design_capacity": 180.9,
+        "capacity_unit": "MGD",
+        "service_population": 143870,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 50.5,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-11-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.327235,
+          35.502308
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0030",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 031",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.502308,
+        "longitude": -80.327235,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 75,
+        "commissioned_year": 1983,
+        "design_capacity": 462.8,
+        "capacity_unit": "MGD",
+        "service_population": 134950,
+        "flood_zone": "A",
+        "ground_elevation_ft": 87.2,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-08-18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.817636,
+          35.407839
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0031",
+        "asset_name": "Inland North (NC) Water Treatment Plant 032",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.407839,
+        "longitude": -80.817636,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 68,
+        "commissioned_year": 2002,
+        "design_capacity": 34.9,
+        "capacity_unit": "MGD",
+        "service_population": 278918,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 255.9,
+        "backup_power": null,
+        "last_inspection_date": "2026-04-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.701824,
+          35.336202
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0032",
+        "asset_name": "Inland North (NC) Water Pumping Station 033",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.336202,
+        "longitude": -80.701824,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 88,
+        "commissioned_year": 2008,
+        "design_capacity": 465.3,
+        "capacity_unit": "MGD",
+        "service_population": 213836,
+        "flood_zone": "A",
+        "ground_elevation_ft": 192.0,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-01-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.728751,
+          35.129581
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0033",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 034",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.129581,
+        "longitude": -80.728751,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 70,
+        "commissioned_year": 2014,
+        "design_capacity": 291.3,
+        "capacity_unit": "MGD",
+        "service_population": 281073,
+        "flood_zone": "X",
+        "ground_elevation_ft": 365.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-10-31"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.339646,
+          35.11817
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0034",
+        "asset_name": "Inland North (NC) Distribution Feeder 035",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.11817,
+        "longitude": -80.339646,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 34,
+        "commissioned_year": 2018,
+        "design_capacity": 481.4,
+        "capacity_unit": "kV",
+        "service_population": 152264,
+        "flood_zone": "X",
+        "ground_elevation_ft": 5.7,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.627391,
+          35.420656
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0035",
+        "asset_name": "Inland North (NC) Water Treatment Plant 036",
+        "asset_type": "water_treatment_plant",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.420656,
+        "longitude": -80.627391,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 71,
+        "commissioned_year": 1998,
+        "design_capacity": 469.9,
+        "capacity_unit": "MGD",
+        "service_population": 264852,
+        "flood_zone": "A",
+        "ground_elevation_ft": 110.6,
+        "backup_power": null,
+        "last_inspection_date": "2025-12-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.461328,
+          35.424143
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0036",
+        "asset_name": "Inland North (NC) Distribution Feeder 037",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.424143,
+        "longitude": -80.461328,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 67,
+        "commissioned_year": 2010,
+        "design_capacity": 288.2,
+        "capacity_unit": "kV",
+        "service_population": 101772,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 245.2,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.703244,
+          35.300417
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0037",
+        "asset_name": "Inland North (NC) Major Pipeline 038",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.300417,
+        "longitude": -80.703244,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 43,
+        "commissioned_year": 1971,
+        "design_capacity": 78.9,
+        "capacity_unit": "MGD",
+        "service_population": 170160,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 4.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-02-01"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.447746,
+          35.577017
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0038",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 039",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.577017,
+        "longitude": -80.447746,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 59,
+        "commissioned_year": 1984,
+        "design_capacity": 186.2,
+        "capacity_unit": "MG",
+        "service_population": 124390,
+        "flood_zone": "X",
+        "ground_elevation_ft": 267.8,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-12-26"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.65675,
+          35.35126
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0039",
+        "asset_name": "Inland North (NC) Distribution Feeder 040",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.35126,
+        "longitude": -80.65675,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 64,
+        "commissioned_year": 2010,
+        "design_capacity": 348.2,
+        "capacity_unit": "kV",
+        "service_population": 155184,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 246.6,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.808089,
+          35.473867
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0040",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 041",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.473867,
+        "longitude": -80.808089,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 60,
+        "commissioned_year": 2003,
+        "design_capacity": 381.1,
+        "capacity_unit": "MG",
+        "service_population": 115010,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 272.8,
+        "backup_power": null,
+        "last_inspection_date": "2025-09-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.583096,
+          35.280892
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0041",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 042",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.280892,
+        "longitude": -80.583096,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 38,
+        "commissioned_year": 2001,
+        "design_capacity": 416.1,
+        "capacity_unit": "MG",
+        "service_population": 265520,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 229.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.387308,
+          35.32092
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0042",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 043",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.32092,
+        "longitude": -80.387308,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 64,
+        "commissioned_year": 2008,
+        "design_capacity": 260.1,
+        "capacity_unit": "MGD",
+        "service_population": 29669,
+        "flood_zone": "A",
+        "ground_elevation_ft": 54.5,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.865358,
+          35.331189
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-CON-IN0043",
+        "asset_name": "Inland North (NC) Control Centre 044",
+        "asset_type": "control_centre",
+        "utility_domain": "operations",
+        "region": "INLAND_NORTH",
+        "latitude": 35.331189,
+        "longitude": -80.865358,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 66,
+        "commissioned_year": 2016,
+        "design_capacity": 20.7,
+        "capacity_unit": "sites",
+        "service_population": null,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 326.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-08-09"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.872826,
+          35.272264
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-IN0044",
+        "asset_name": "Inland North (NC) Transmission Line Segment 045",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.272264,
+        "longitude": -80.872826,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 99,
+        "commissioned_year": 1969,
+        "design_capacity": 493.2,
+        "capacity_unit": "kV",
+        "service_population": 248001,
+        "flood_zone": "X",
+        "ground_elevation_ft": 116.3,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-03-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.675323,
+          35.545667
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0045",
+        "asset_name": "Inland North (NC) Water Pumping Station 046",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.545667,
+        "longitude": -80.675323,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 81,
+        "commissioned_year": 1993,
+        "design_capacity": 454.3,
+        "capacity_unit": "MGD",
+        "service_population": 197446,
+        "flood_zone": "X",
+        "ground_elevation_ft": 273.7,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-07-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.82882,
+          35.596423
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0046",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 047",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.596423,
+        "longitude": -80.82882,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 68,
+        "commissioned_year": 1990,
+        "design_capacity": 11.7,
+        "capacity_unit": "MGD",
+        "service_population": 12419,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 186.3,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-09-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.405984,
+          35.223756
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0047",
+        "asset_name": "Inland North (NC) Water Pumping Station 048",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.223756,
+        "longitude": -80.405984,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 59,
+        "commissioned_year": 1987,
+        "design_capacity": 102.4,
+        "capacity_unit": "MGD",
+        "service_population": 59663,
+        "flood_zone": "X",
+        "ground_elevation_ft": 324.2,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-07-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.7556,
+          35.133645
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-IN0048",
+        "asset_name": "Inland North (NC) Electrical Substation 049",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.133645,
+        "longitude": -80.7556,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 50,
+        "commissioned_year": 2003,
+        "design_capacity": 33.9,
+        "capacity_unit": "MVA",
+        "service_population": 23692,
+        "flood_zone": "A",
+        "ground_elevation_ft": 176.7,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2026-05-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.597662,
+          35.244632
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0049",
+        "asset_name": "Inland North (NC) Distribution Feeder 050",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.244632,
+        "longitude": -80.597662,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 56,
+        "commissioned_year": 2017,
+        "design_capacity": 292.3,
+        "capacity_unit": "kV",
+        "service_population": 168620,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 122.1,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-06-28"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.767374,
+          35.25025
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0050",
+        "asset_name": "Inland North (NC) Major Pipeline 051",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.25025,
+        "longitude": -80.767374,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 49,
+        "commissioned_year": 1968,
+        "design_capacity": 95.8,
+        "capacity_unit": "MGD",
+        "service_population": 224476,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 199.3,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2025-07-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.428517,
+          35.259367
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0051",
+        "asset_name": "Inland North (NC) Water Pumping Station 052",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.259367,
+        "longitude": -80.428517,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 56,
+        "commissioned_year": 1991,
+        "design_capacity": 156.9,
+        "capacity_unit": "MGD",
+        "service_population": 96905,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 190.5,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-12-30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.416534,
+          35.557371
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0052",
+        "asset_name": "Inland North (NC) Distribution Feeder 053",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.557371,
+        "longitude": -80.416534,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 54,
+        "commissioned_year": 2000,
+        "design_capacity": 200.3,
+        "capacity_unit": "kV",
+        "service_population": 134191,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 133.4,
+        "backup_power": null,
+        "last_inspection_date": "2025-10-14"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.844522,
+          35.462292
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0053",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 054",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.462292,
+        "longitude": -80.844522,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 79,
+        "commissioned_year": 1977,
+        "design_capacity": 194.8,
+        "capacity_unit": "MGD",
+        "service_population": 21234,
+        "flood_zone": "X",
+        "ground_elevation_ft": 76.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-09-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.378316,
+          35.266482
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0054",
+        "asset_name": "Inland North (NC) Emergency Generator 055",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.266482,
+        "longitude": -80.378316,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 79,
+        "commissioned_year": 1965,
+        "design_capacity": 376.0,
+        "capacity_unit": "kW",
+        "service_population": 251592,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 278.9,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-11-10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.568752,
+          35.487757
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0055",
+        "asset_name": "Inland North (NC) Emergency Generator 056",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.487757,
+        "longitude": -80.568752,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 92,
+        "commissioned_year": 1989,
+        "design_capacity": 327.9,
+        "capacity_unit": "kW",
+        "service_population": 162202,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 145.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-10-06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.41831,
+          35.461207
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-IN0056",
+        "asset_name": "Inland North (NC) Transmission Line Segment 057",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.461207,
+        "longitude": -80.41831,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 82,
+        "commissioned_year": 2013,
+        "design_capacity": 212.8,
+        "capacity_unit": "kV",
+        "service_population": 295424,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 297.0,
+        "backup_power": null,
+        "last_inspection_date": "2026-01-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.339145,
+          35.389571
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0057",
+        "asset_name": "Inland North (NC) Major Pipeline 058",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.389571,
+        "longitude": -80.339145,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 62,
+        "commissioned_year": 1991,
+        "design_capacity": 106.1,
+        "capacity_unit": "MGD",
+        "service_population": 121096,
+        "flood_zone": "A",
+        "ground_elevation_ft": 228.8,
+        "backup_power": "diesel_generator",
+        "last_inspection_date": "2025-09-19"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.507235,
+          35.442423
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0058",
+        "asset_name": "Inland North (NC) Major Pipeline 059",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.442423,
+        "longitude": -80.507235,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 46,
+        "commissioned_year": 1981,
+        "design_capacity": 372.4,
+        "capacity_unit": "MGD",
+        "service_population": 242107,
+        "flood_zone": "AE",
+        "ground_elevation_ft": 293.6,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-03-07"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.467812,
+          35.344158
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-DIS-IN0059",
+        "asset_name": "Inland North (NC) Distribution Feeder 060",
+        "asset_type": "distribution_feeder",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.344158,
+        "longitude": -80.467812,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 71,
+        "commissioned_year": 1999,
+        "design_capacity": 479.0,
+        "capacity_unit": "kV",
+        "service_population": 275197,
+        "flood_zone": "X",
+        "ground_elevation_ft": 335.9,
+        "backup_power": null,
+        "last_inspection_date": "2025-06-24"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.441397,
+          35.306196
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-ELE-IN0060",
+        "asset_name": "Inland North (NC) Electrical Substation 061",
+        "asset_type": "electrical_substation",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.306196,
+        "longitude": -80.441397,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 77,
+        "commissioned_year": 2018,
+        "design_capacity": 117.2,
+        "capacity_unit": "MVA",
+        "service_population": 239580,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 26.1,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.890561,
+          35.366106
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-RES-IN0061",
+        "asset_name": "Inland North (NC) Reservoir Storage Tank 062",
+        "asset_type": "reservoir_storage_tank",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.366106,
+        "longitude": -80.890561,
+        "operational_status": "operational",
+        "criticality_rating": 1,
+        "condition_score": 73,
+        "commissioned_year": 1991,
+        "design_capacity": 269.4,
+        "capacity_unit": "MG",
+        "service_population": 144543,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 391.0,
+        "backup_power": null,
+        "last_inspection_date": "2025-09-17"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.416299,
+          35.554887
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAT-IN0062",
+        "asset_name": "Inland North (NC) Water Pumping Station 063",
+        "asset_type": "water_pumping_station",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.554887,
+        "longitude": -80.416299,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 58,
+        "commissioned_year": 1971,
+        "design_capacity": 313.7,
+        "capacity_unit": "MGD",
+        "service_population": 132839,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 108.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2026-04-22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.324421,
+          35.329499
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0063",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 064",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.329499,
+        "longitude": -80.324421,
+        "operational_status": "operational",
+        "criticality_rating": 5,
+        "condition_score": 68,
+        "commissioned_year": 1980,
+        "design_capacity": 120.7,
+        "capacity_unit": "MGD",
+        "service_population": 42766,
+        "flood_zone": "X",
+        "ground_elevation_ft": 39.2,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-11-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.614397,
+          35.418374
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0064",
+        "asset_name": "Inland North (NC) Major Pipeline 065",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.418374,
+        "longitude": -80.614397,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 53,
+        "commissioned_year": 2009,
+        "design_capacity": 394.3,
+        "capacity_unit": "MGD",
+        "service_population": 297171,
+        "flood_zone": "X",
+        "ground_elevation_ft": 358.1,
+        "backup_power": null,
+        "last_inspection_date": "2026-02-04"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.359236,
+          35.446144
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0065",
+        "asset_name": "Inland North (NC) Emergency Generator 066",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.446144,
+        "longitude": -80.359236,
+        "operational_status": "operational",
+        "criticality_rating": 3,
+        "condition_score": 70,
+        "commissioned_year": 2001,
+        "design_capacity": 32.8,
+        "capacity_unit": "kW",
+        "service_population": 39479,
+        "flood_zone": "VE",
+        "ground_elevation_ft": 359.9,
+        "backup_power": null,
+        "last_inspection_date": "2026-03-02"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.890605,
+          35.203579
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-WAS-IN0066",
+        "asset_name": "Inland North (NC) Wastewater Treatment Plant 067",
+        "asset_type": "wastewater_treatment_plant",
+        "utility_domain": "wastewater",
+        "region": "INLAND_NORTH",
+        "latitude": 35.203579,
+        "longitude": -80.890605,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 66,
+        "commissioned_year": 1974,
+        "design_capacity": 47.7,
+        "capacity_unit": "MGD",
+        "service_population": 85670,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 97.7,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-06-20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.700962,
+          35.477805
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-MAJ-IN0067",
+        "asset_name": "Inland North (NC) Major Pipeline 068",
+        "asset_type": "major_pipeline",
+        "utility_domain": "water",
+        "region": "INLAND_NORTH",
+        "latitude": 35.477805,
+        "longitude": -80.700962,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 55,
+        "commissioned_year": 1973,
+        "design_capacity": 347.8,
+        "capacity_unit": "MGD",
+        "service_population": 41618,
+        "flood_zone": "X500",
+        "ground_elevation_ft": 298.7,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-05-05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.637747,
+          35.519337
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-TRA-IN0068",
+        "asset_name": "Inland North (NC) Transmission Line Segment 069",
+        "asset_type": "transmission_line_segment",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.519337,
+        "longitude": -80.637747,
+        "operational_status": "operational",
+        "criticality_rating": 4,
+        "condition_score": 54,
+        "commissioned_year": 1986,
+        "design_capacity": 484.8,
+        "capacity_unit": "kV",
+        "service_population": 171615,
+        "flood_zone": "X",
+        "ground_elevation_ft": 254.4,
+        "backup_power": "battery_ups",
+        "last_inspection_date": "2025-09-23"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.686513,
+          35.570571
+        ]
+      },
+      "properties": {
+        "asset_id": "SGW-EME-IN0069",
+        "asset_name": "Inland North (NC) Emergency Generator 070",
+        "asset_type": "emergency_generator",
+        "utility_domain": "electrical",
+        "region": "INLAND_NORTH",
+        "latitude": 35.570571,
+        "longitude": -80.686513,
+        "operational_status": "operational",
+        "criticality_rating": 2,
+        "condition_score": 56,
+        "commissioned_year": 1992,
+        "design_capacity": 297.1,
+        "capacity_unit": "kW",
+        "service_population": 199767,
+        "flood_zone": "X",
+        "ground_elevation_ft": 309.3,
+        "backup_power": "gas_generator",
+        "last_inspection_date": "2026-01-26"
+      }
+    }
+  ]
+}

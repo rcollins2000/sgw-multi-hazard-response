@@ -1,0 +1,501 @@
+inspection_id,asset_id,inspected_at,inspection_type,condition_score,defect_found,severity,notes
+INS-70000,SGW-MAJ-IN0050,2026-05-04,Process safety,58,False,,No material defects
+INS-70001,SGW-WAT-CO0053,2024-11-16,Process safety,67,False,,No material defects
+INS-70002,SGW-TRA-CO0038,2025-09-16,Process safety,91,False,,Minor corrosion
+INS-70003,SGW-TRA-IN0006,2024-10-18,Vibration,73,False,,No material defects
+INS-70004,SGW-ELE-IN0060,2025-08-19,Process safety,72,False,,No material defects
+INS-70005,SGW-DIS-LO0057,2025-10-30,Process safety,65,False,,Minor corrosion
+INS-70006,SGW-EME-LO0064,2025-08-25,Process safety,79,True,Low,Requires follow-up
+INS-70007,SGW-WAT-LO0059,2026-06-05,Vibration,54,False,,Minor corrosion
+INS-70008,SGW-RES-CO0048,2025-07-17,Vibration,71,False,,No material defects
+INS-70009,SGW-ELE-LO0062,2024-08-07,Thermal,84,False,,No material defects
+INS-70010,SGW-DIS-LO0047,2025-05-30,Vibration,82,False,,No material defects
+INS-70011,SGW-WAT-IN0035,2024-10-30,Process safety,81,False,,Requires follow-up
+INS-70012,SGW-WAS-CO0011,2026-03-17,Process safety,95,False,,Minor corrosion
+INS-70013,SGW-DIS-LO0012,2025-12-07,Process safety,77,True,High,Vibration above spec
+INS-70014,SGW-MAJ-IN0057,2025-04-05,Process safety,80,False,,No material defects
+INS-70015,SGW-RES-IN0019,2024-12-04,Thermal,82,False,,Vibration above spec
+INS-70016,SGW-WAS-IN0000,2025-08-08,Process safety,68,False,,Vibration above spec
+INS-70017,SGW-WAS-IN0016,2025-07-19,Annual,71,False,,Minor corrosion
+INS-70018,SGW-WAT-CO0007,2025-03-05,Annual,78,False,,Requires follow-up
+INS-70019,SGW-MAJ-LO0030,2025-12-29,Vibration,77,False,,Requires follow-up
+INS-70020,SGW-RES-IN0017,2025-07-01,Thermal,70,False,,No material defects
+INS-70021,SGW-WAS-IN0053,2025-03-11,Annual,57,False,,Requires follow-up
+INS-70022,SGW-WAS-CO0024,2025-03-21,Visual,46,False,,Minor corrosion
+INS-70023,SGW-RES-IN0017,2025-10-09,Visual,80,False,,Minor corrosion
+INS-70024,SGW-DIS-IN0039,2024-08-18,Process safety,72,False,,Requires follow-up
+INS-70025,SGW-MAJ-CO0028,2025-07-06,Thermal,75,False,,Vibration above spec
+INS-70026,SGW-TRA-IN0056,2025-07-09,Thermal,62,False,,No material defects
+INS-70027,SGW-DIS-LO0013,2024-12-08,Process safety,74,False,,Requires follow-up
+INS-70028,SGW-MAJ-LO0032,2024-11-03,Vibration,75,False,,Requires follow-up
+INS-70029,SGW-MAJ-LO0028,2026-04-24,Vibration,82,False,,Requires follow-up
+INS-70030,SGW-ELE-IN0060,2025-04-11,Process safety,66,False,,No material defects
+INS-70031,SGW-DIS-IN0049,2024-11-20,Annual,72,False,,Requires follow-up
+INS-70032,SGW-DIS-LO0013,2024-12-09,Visual,88,True,Low,No material defects
+INS-70033,SGW-WAT-IN0035,2024-10-28,Visual,100,False,,Vibration above spec
+INS-70034,SGW-TRA-LO0056,2024-09-08,Annual,76,False,,No material defects
+INS-70035,SGW-WAS-IN0053,2026-01-31,Visual,81,False,,Vibration above spec
+INS-70036,SGW-WAT-LO0029,2024-10-08,Thermal,81,False,,Vibration above spec
+INS-70037,SGW-RES-IN0005,2024-08-04,Visual,98,False,,Vibration above spec
+INS-70038,SGW-TRA-CO0022,2024-11-11,Vibration,69,True,Moderate,No material defects
+INS-70039,SGW-MAJ-LO0024,2024-12-15,Annual,78,False,,Vibration above spec
+INS-70040,SGW-MAJ-CO0028,2025-09-15,Thermal,60,False,,Vibration above spec
+INS-70041,SGW-WAS-IN0042,2025-06-04,Visual,81,False,,Minor corrosion
+INS-70042,SGW-WAT-IN0029,2026-01-04,Thermal,53,False,,Vibration above spec
+INS-70043,SGW-MAJ-LO0036,2026-01-24,Thermal,67,False,,Minor corrosion
+INS-70044,SGW-WAT-CO0002,2026-04-18,Thermal,72,False,,Requires follow-up
+INS-70045,SGW-CON-CO0034,2026-04-05,Visual,61,True,Moderate,Requires follow-up
+INS-70046,SGW-RES-IN0019,2025-12-28,Visual,62,False,,Vibration above spec
+INS-70047,SGW-RES-CO0057,2025-12-22,Annual,70,False,,Requires follow-up
+INS-70048,SGW-WAT-IN0047,2025-10-31,Process safety,62,False,,Vibration above spec
+INS-70049,SGW-RES-CO0008,2026-05-23,Process safety,83,False,,No material defects
+INS-70050,SGW-WAS-IN0008,2025-02-22,Annual,87,False,,Vibration above spec
+INS-70051,SGW-ELE-LO0049,2025-01-17,Vibration,90,True,Low,Minor corrosion
+INS-70052,SGW-CON-LO0050,2024-09-23,Annual,68,False,,Vibration above spec
+INS-70053,SGW-WAS-IN0016,2026-05-07,Vibration,61,False,,No material defects
+INS-70054,SGW-CON-LO0050,2025-03-23,Visual,65,False,,Vibration above spec
+INS-70055,SGW-MAJ-IN0064,2025-09-02,Annual,70,False,,Vibration above spec
+INS-70056,SGW-WAS-IN0046,2024-11-30,Visual,61,False,,Vibration above spec
+INS-70057,SGW-MAJ-IN0067,2024-09-29,Visual,67,True,Low,Minor corrosion
+INS-70058,SGW-WAT-LO0059,2026-04-13,Process safety,74,False,,Vibration above spec
+INS-70059,SGW-TRA-CO0065,2026-06-16,Vibration,91,False,,Minor corrosion
+INS-70060,SGW-MAJ-IN0011,2026-01-27,Process safety,78,False,,Minor corrosion
+INS-70061,SGW-WAT-LO0054,2025-12-27,Annual,66,False,,Vibration above spec
+INS-70062,SGW-TRA-CO0021,2026-02-02,Thermal,85,False,,Requires follow-up
+INS-70063,SGW-MAJ-IN0057,2025-06-03,Visual,57,True,High,Minor corrosion
+INS-70064,SGW-WAT-CO0053,2024-11-16,Process safety,83,False,,No material defects
+INS-70065,SGW-MAJ-CO0013,2026-01-10,Visual,78,False,,Vibration above spec
+INS-70066,SGW-RES-LO0051,2025-01-01,Visual,68,True,Moderate,No material defects
+INS-70067,SGW-ELE-LO0003,2025-03-28,Process safety,76,False,,No material defects
+INS-70068,SGW-WAS-CO0024,2025-01-02,Visual,61,False,,Vibration above spec
+INS-70069,SGW-WAT-LO0015,2025-09-27,Annual,63,False,,Vibration above spec
+INS-70070,SGW-DIS-IN0027,2024-11-09,Thermal,73,False,,Minor corrosion
+INS-70071,SGW-CON-LO0063,2025-07-20,Thermal,59,False,,Vibration above spec
+INS-70072,SGW-WAS-IN0000,2026-06-20,Annual,80,False,,No material defects
+INS-70073,SGW-WAT-IN0035,2025-03-31,Process safety,75,False,,Vibration above spec
+INS-70074,SGW-EME-CO0049,2026-05-27,Annual,90,True,Low,No material defects
+INS-70075,SGW-RES-IN0041,2026-02-28,Vibration,80,True,Low,Requires follow-up
+INS-70076,SGW-WAS-IN0028,2024-09-05,Thermal,89,False,,Vibration above spec
+INS-70077,SGW-EME-LO0005,2025-03-09,Annual,63,False,,Requires follow-up
+INS-70078,SGW-RES-LO0000,2025-04-19,Process safety,74,False,,Vibration above spec
+INS-70079,SGW-MAJ-IN0058,2026-04-28,Process safety,95,False,,No material defects
+INS-70080,SGW-EME-CO0066,2025-10-02,Annual,47,True,High,Requires follow-up
+INS-70081,SGW-WAT-CO0045,2024-09-08,Thermal,76,False,,Requires follow-up
+INS-70082,SGW-CON-CO0055,2024-10-10,Visual,73,False,,No material defects
+INS-70083,SGW-MAJ-CO0018,2024-11-22,Visual,69,False,,No material defects
+INS-70084,SGW-DIS-LO0057,2026-01-29,Annual,91,False,,Vibration above spec
+INS-70085,SGW-TRA-CO0038,2024-07-14,Visual,67,False,,No material defects
+INS-70086,SGW-RES-LO0061,2025-02-13,Visual,86,False,,No material defects
+INS-70087,SGW-DIS-LO0068,2025-11-11,Visual,57,True,Low,Vibration above spec
+INS-70088,SGW-WAT-LO0015,2024-08-01,Annual,54,False,,No material defects
+INS-70089,SGW-ELE-LO0023,2024-12-30,Process safety,52,False,,No material defects
+INS-70090,SGW-DIS-LO0047,2025-09-07,Thermal,45,False,,Minor corrosion
+INS-70091,SGW-WAT-LO0006,2024-07-18,Annual,64,False,,Vibration above spec
+INS-70092,SGW-WAT-LO0054,2026-04-05,Visual,74,False,,Minor corrosion
+INS-70093,SGW-ELE-CO0006,2024-10-31,Visual,68,True,Low,Vibration above spec
+INS-70094,SGW-DIS-LO0057,2024-12-31,Visual,77,False,,Vibration above spec
+INS-70095,SGW-MAJ-CO0014,2025-07-20,Annual,74,False,,Requires follow-up
+INS-70096,SGW-ELE-CO0030,2025-11-26,Vibration,57,False,,Minor corrosion
+INS-70097,SGW-DIS-IN0049,2024-11-14,Annual,79,True,Low,Minor corrosion
+INS-70098,SGW-WAT-LO0055,2024-08-30,Vibration,92,True,Low,No material defects
+INS-70099,SGW-EME-CO0044,2024-09-21,Process safety,80,True,Low,Requires follow-up
+INS-70100,SGW-WAS-IN0016,2026-01-07,Annual,77,False,,Requires follow-up
+INS-70101,SGW-DIS-IN0012,2024-10-08,Thermal,69,True,Moderate,Vibration above spec
+INS-70102,SGW-MAJ-IN0067,2024-08-05,Annual,90,False,,Minor corrosion
+INS-70103,SGW-DIS-LO0012,2025-11-24,Vibration,72,False,,Minor corrosion
+INS-70104,SGW-WAT-LO0015,2026-04-27,Thermal,75,True,Moderate,Minor corrosion
+INS-70105,SGW-EME-LO0042,2025-10-24,Annual,67,False,,Minor corrosion
+INS-70106,SGW-TRA-CO0025,2024-09-21,Thermal,88,False,,No material defects
+INS-70107,SGW-MAJ-CO0001,2025-12-29,Vibration,76,False,,Vibration above spec
+INS-70108,SGW-MAJ-LO0036,2024-07-20,Visual,72,False,,Vibration above spec
+INS-70109,SGW-CON-LO0063,2025-03-26,Thermal,67,False,,No material defects
+INS-70110,SGW-DIS-IN0012,2025-12-28,Vibration,91,False,,Vibration above spec
+INS-70111,SGW-MAJ-LO0019,2025-04-28,Thermal,69,True,Low,No material defects
+INS-70112,SGW-DIS-LO0065,2026-03-25,Vibration,61,False,,Minor corrosion
+INS-70113,SGW-RES-LO0000,2026-05-07,Thermal,74,True,High,Requires follow-up
+INS-70114,SGW-DIS-LO0057,2026-01-01,Annual,85,True,Low,Requires follow-up
+INS-70115,SGW-CON-CO0064,2025-07-23,Visual,78,False,,No material defects
+INS-70116,SGW-WAS-CO0026,2026-05-08,Thermal,76,False,,No material defects
+INS-70117,SGW-MAJ-CO0018,2025-11-02,Vibration,77,False,,Vibration above spec
+INS-70118,SGW-CON-LO0037,2025-12-09,Process safety,75,False,,Minor corrosion
+INS-70119,SGW-TRA-CO0025,2025-10-31,Thermal,80,False,,Requires follow-up
+INS-70120,SGW-WAT-CO0056,2026-04-16,Visual,87,False,,Minor corrosion
+INS-70121,SGW-WAS-IN0016,2025-03-22,Process safety,79,True,Low,Requires follow-up
+INS-70122,SGW-TRA-IN0044,2025-12-14,Process safety,76,False,,No material defects
+INS-70123,SGW-ELE-LO0001,2026-02-11,Visual,80,True,Moderate,Requires follow-up
+INS-70124,SGW-TRA-CO0043,2025-07-14,Process safety,58,True,High,Minor corrosion
+INS-70125,SGW-RES-IN0007,2024-12-11,Annual,62,False,,Requires follow-up
+INS-70126,SGW-CON-LO0063,2025-02-15,Thermal,55,False,,Vibration above spec
+INS-70127,SGW-TRA-CO0003,2025-04-18,Thermal,62,False,,Minor corrosion
+INS-70128,SGW-DIS-LO0013,2025-04-12,Vibration,100,False,,No material defects
+INS-70129,SGW-MAJ-LO0036,2026-05-16,Visual,66,True,High,No material defects
+INS-70130,SGW-WAT-LO0038,2025-01-03,Annual,66,False,,No material defects
+INS-70131,SGW-MAJ-IN0037,2025-05-10,Thermal,77,False,,Vibration above spec
+INS-70132,SGW-EME-LO0005,2025-10-29,Annual,92,False,,Minor corrosion
+INS-70133,SGW-RES-IN0040,2025-03-17,Vibration,76,False,,No material defects
+INS-70134,SGW-MAJ-LO0046,2025-03-13,Visual,84,False,,Requires follow-up
+INS-70135,SGW-RES-IN0040,2024-09-20,Annual,97,True,Moderate,Vibration above spec
+INS-70136,SGW-DIS-LO0065,2026-05-28,Process safety,69,False,,Minor corrosion
+INS-70137,SGW-RES-IN0061,2024-07-29,Process safety,59,True,High,No material defects
+INS-70138,SGW-RES-LO0061,2024-08-09,Annual,83,False,,No material defects
+INS-70139,SGW-ELE-LO0023,2025-06-20,Vibration,82,True,High,No material defects
+INS-70140,SGW-WAT-IN0003,2025-12-03,Process safety,75,True,Moderate,Minor corrosion
+INS-70141,SGW-DIS-IN0052,2025-11-12,Process safety,80,False,,Requires follow-up
+INS-70142,SGW-RES-LO0000,2026-05-06,Process safety,61,True,Low,Requires follow-up
+INS-70143,SGW-RES-IN0041,2025-01-02,Vibration,79,False,,Vibration above spec
+INS-70144,SGW-WAT-LO0045,2024-10-03,Annual,84,False,,No material defects
+INS-70145,SGW-ELE-CO0020,2025-05-26,Process safety,98,False,,No material defects
+INS-70146,SGW-WAT-CO0027,2026-01-13,Thermal,50,False,,No material defects
+INS-70147,SGW-EME-LO0005,2025-04-30,Vibration,75,False,,Minor corrosion
+INS-70148,SGW-RES-LO0051,2025-07-10,Annual,73,False,,Minor corrosion
+INS-70149,SGW-CON-LO0063,2024-09-08,Vibration,79,False,,Vibration above spec
+INS-70150,SGW-DIS-IN0027,2024-09-07,Visual,59,False,,Requires follow-up
+INS-70151,SGW-DIS-LO0047,2025-08-23,Process safety,64,False,,Minor corrosion
+INS-70152,SGW-WAT-IN0062,2025-10-07,Process safety,95,True,Low,Minor corrosion
+INS-70153,SGW-DIS-LO0020,2025-09-12,Thermal,71,False,,Minor corrosion
+INS-70154,SGW-WAS-IN0042,2024-12-29,Thermal,84,False,,Minor corrosion
+INS-70155,SGW-DIS-CO0041,2025-10-30,Process safety,59,True,High,Minor corrosion
+INS-70156,SGW-EME-LO0042,2025-10-07,Thermal,72,False,,Vibration above spec
+INS-70157,SGW-RES-LO0018,2026-01-30,Vibration,73,False,,Minor corrosion
+INS-70158,SGW-MAJ-LO0066,2025-08-26,Annual,63,True,Low,Requires follow-up
+INS-70159,SGW-TRA-LO0011,2026-01-22,Vibration,82,True,High,Vibration above spec
+INS-70160,SGW-CON-IN0025,2025-09-01,Process safety,94,False,,Minor corrosion
+INS-70161,SGW-MAJ-IN0064,2024-11-29,Visual,71,False,,Vibration above spec
+INS-70162,SGW-DIS-IN0036,2026-03-07,Annual,84,False,,Vibration above spec
+INS-70163,SGW-ELE-CO0006,2025-05-15,Thermal,86,False,,Requires follow-up
+INS-70164,SGW-MAJ-LO0021,2026-03-28,Vibration,64,False,,Minor corrosion
+INS-70165,SGW-ELE-IN0060,2025-09-19,Annual,62,True,High,Requires follow-up
+INS-70166,SGW-WAS-IN0033,2024-08-12,Vibration,64,False,,No material defects
+INS-70167,SGW-WAS-IN0030,2025-06-26,Visual,83,False,,Vibration above spec
+INS-70168,SGW-MAJ-LO0028,2025-06-14,Process safety,55,True,High,No material defects
+INS-70169,SGW-CON-CO0055,2025-04-02,Visual,100,False,,Requires follow-up
+INS-70170,SGW-ELE-LO0003,2026-01-14,Visual,73,False,,No material defects
+INS-70171,SGW-DIS-CO0036,2025-11-30,Vibration,62,False,,Vibration above spec
+INS-70172,SGW-EME-CO0016,2024-11-03,Annual,92,False,,Vibration above spec
+INS-70173,SGW-MAJ-LO0036,2026-01-02,Vibration,75,False,,Minor corrosion
+INS-70174,SGW-ELE-CO0051,2025-12-22,Process safety,71,False,,Vibration above spec
+INS-70175,SGW-DIS-IN0009,2025-08-23,Visual,73,False,,Minor corrosion
+INS-70176,SGW-ELE-CO0006,2026-06-28,Process safety,96,True,Moderate,No material defects
+INS-70177,SGW-DIS-IN0027,2024-08-18,Visual,68,False,,Minor corrosion
+INS-70178,SGW-WAT-LO0055,2024-07-26,Annual,82,False,,No material defects
+INS-70179,SGW-MAJ-IN0013,2025-06-25,Vibration,81,False,,Requires follow-up
+INS-70180,SGW-EME-CO0066,2024-09-25,Annual,61,False,,No material defects
+INS-70181,SGW-EME-CO0066,2026-01-15,Thermal,88,False,,Vibration above spec
+INS-70182,SGW-CON-LO0048,2024-07-21,Thermal,85,True,High,Vibration above spec
+INS-70183,SGW-EME-CO0012,2025-09-07,Annual,78,False,,Minor corrosion
+INS-70184,SGW-TRA-IN0056,2024-09-25,Annual,69,True,Moderate,Vibration above spec
+INS-70185,SGW-WAT-IN0035,2025-08-26,Process safety,70,False,,No material defects
+INS-70186,SGW-MAJ-LO0066,2024-11-14,Thermal,89,False,,Vibration above spec
+INS-70187,SGW-DIS-IN0059,2025-02-19,Thermal,76,False,,No material defects
+INS-70188,SGW-CON-CO0055,2026-01-23,Thermal,79,False,,No material defects
+INS-70189,SGW-MAJ-LO0036,2025-03-16,Annual,60,False,,Minor corrosion
+INS-70190,SGW-TRA-CO0004,2025-02-24,Process safety,83,False,,Vibration above spec
+INS-70191,SGW-EME-CO0044,2025-08-23,Annual,84,True,Low,Minor corrosion
+INS-70192,SGW-MAJ-IN0037,2026-02-05,Process safety,79,False,,No material defects
+INS-70193,SGW-WAT-LO0038,2024-07-23,Annual,79,False,,No material defects
+INS-70194,SGW-TRA-CO0004,2025-02-20,Annual,76,False,,No material defects
+INS-70195,SGW-CON-LO0050,2026-03-01,Annual,77,False,,No material defects
+INS-70196,SGW-WAS-LO0007,2024-08-16,Annual,80,True,Low,Minor corrosion
+INS-70197,SGW-CON-CO0047,2024-08-13,Annual,48,False,,Minor corrosion
+INS-70198,SGW-WAT-IN0051,2025-09-19,Process safety,60,False,,Minor corrosion
+INS-70199,SGW-WAT-LO0059,2024-11-24,Vibration,93,True,Low,Minor corrosion
+INS-70200,SGW-CON-IN0043,2025-12-16,Thermal,87,False,,No material defects
+INS-70201,SGW-MAJ-CO0054,2025-01-30,Visual,66,False,,Vibration above spec
+INS-70202,SGW-RES-IN0038,2024-11-04,Annual,79,True,Moderate,Requires follow-up
+INS-70203,SGW-MAJ-CO0054,2025-01-20,Annual,85,True,Moderate,No material defects
+INS-70204,SGW-ELE-LO0049,2026-03-10,Visual,76,False,,No material defects
+INS-70205,SGW-TRA-CO0021,2025-07-30,Visual,56,False,,Vibration above spec
+INS-70206,SGW-MAJ-LO0046,2024-10-24,Visual,76,False,,Requires follow-up
+INS-70207,SGW-RES-CO0048,2026-04-20,Visual,87,False,,Vibration above spec
+INS-70208,SGW-WAT-CO0045,2026-06-17,Visual,69,False,,No material defects
+INS-70209,SGW-ELE-CO0030,2026-02-04,Vibration,64,False,,No material defects
+INS-70210,SGW-DIS-IN0049,2026-01-09,Thermal,66,True,Moderate,No material defects
+INS-70211,SGW-MAJ-CO0059,2025-04-22,Process safety,88,False,,Vibration above spec
+INS-70212,SGW-WAS-IN0053,2024-09-09,Process safety,58,False,,Requires follow-up
+INS-70213,SGW-WAT-LO0054,2025-01-23,Visual,77,False,,No material defects
+INS-70214,SGW-ELE-CO0031,2025-10-17,Thermal,70,False,,No material defects
+INS-70215,SGW-ELE-IN0048,2026-05-07,Visual,70,False,,No material defects
+INS-70216,SGW-WAT-CO0045,2025-06-04,Process safety,84,False,,No material defects
+INS-70217,SGW-EME-IN0054,2026-04-13,Vibration,88,False,,Requires follow-up
+INS-70218,SGW-WAT-IN0062,2025-03-10,Visual,65,True,Moderate,No material defects
+INS-70219,SGW-EME-IN0055,2026-05-29,Annual,75,False,,Requires follow-up
+INS-70220,SGW-WAT-LO0045,2025-08-12,Visual,71,False,,Vibration above spec
+INS-70221,SGW-RES-IN0040,2026-01-13,Thermal,75,False,,Vibration above spec
+INS-70222,SGW-CON-IN0043,2025-05-28,Annual,62,False,,Requires follow-up
+INS-70223,SGW-RES-LO0051,2024-12-02,Vibration,69,False,,No material defects
+INS-70224,SGW-MAJ-LO0030,2025-10-04,Visual,66,False,,Vibration above spec
+INS-70225,SGW-DIS-LO0012,2026-04-29,Annual,67,True,Low,Vibration above spec
+INS-70226,SGW-MAJ-LO0019,2024-11-10,Process safety,65,True,Moderate,Requires follow-up
+INS-70227,SGW-MAJ-LO0019,2026-05-04,Thermal,83,False,,Minor corrosion
+INS-70228,SGW-CON-IN0025,2025-08-15,Annual,79,False,,Minor corrosion
+INS-70229,SGW-DIS-CO0005,2024-12-26,Visual,70,False,,Requires follow-up
+INS-70230,SGW-RES-IN0005,2025-01-19,Process safety,88,False,,No material defects
+INS-70231,SGW-TRA-LO0011,2025-06-09,Process safety,76,False,,No material defects
+INS-70232,SGW-WAS-IN0066,2025-02-15,Thermal,67,True,High,Vibration above spec
+INS-70233,SGW-RES-CO0042,2024-10-09,Visual,87,False,,Minor corrosion
+INS-70234,SGW-DIS-LO0057,2024-09-18,Annual,82,False,,Vibration above spec
+INS-70235,SGW-ELE-CO0067,2026-05-13,Vibration,62,False,,Requires follow-up
+INS-70236,SGW-EME-IN0065,2025-11-11,Annual,71,False,,Vibration above spec
+INS-70237,SGW-WAT-CO0069,2026-04-23,Vibration,59,False,,Requires follow-up
+INS-70238,SGW-WAT-LO0039,2025-11-28,Annual,69,False,,Vibration above spec
+INS-70239,SGW-DIS-LO0040,2024-08-20,Thermal,66,False,,Requires follow-up
+INS-70240,SGW-MAJ-LO0032,2025-10-16,Visual,67,False,,No material defects
+INS-70241,SGW-DIS-IN0020,2025-01-18,Vibration,61,False,,Requires follow-up
+INS-70242,SGW-MAJ-CO0054,2024-08-23,Visual,73,False,,Requires follow-up
+INS-70243,SGW-DIS-IN0004,2024-09-27,Thermal,91,True,Moderate,Requires follow-up
+INS-70244,SGW-CON-CO0037,2025-10-27,Process safety,81,True,Low,Minor corrosion
+INS-70245,SGW-WAS-LO0035,2025-09-30,Thermal,64,False,,Vibration above spec
+INS-70246,SGW-WAT-IN0035,2024-10-23,Thermal,80,True,Low,Vibration above spec
+INS-70247,SGW-CON-LO0048,2025-02-18,Visual,80,False,,Requires follow-up
+INS-70248,SGW-CON-IN0025,2026-05-24,Process safety,81,True,Moderate,Minor corrosion
+INS-70249,SGW-CON-IN0024,2026-05-18,Visual,82,False,,No material defects
+INS-70250,SGW-MAJ-CO0014,2026-04-06,Process safety,92,False,,Requires follow-up
+INS-70251,SGW-ELE-LO0023,2024-08-12,Annual,55,False,,Requires follow-up
+INS-70252,SGW-WAT-IN0045,2026-02-07,Vibration,72,True,High,Vibration above spec
+INS-70253,SGW-DIS-LO0057,2026-03-30,Annual,47,True,Moderate,Vibration above spec
+INS-70254,SGW-DIS-IN0009,2025-05-27,Thermal,82,False,,No material defects
+INS-70255,SGW-EME-CO0044,2025-11-23,Visual,71,False,,Requires follow-up
+INS-70256,SGW-TRA-CO0065,2024-11-04,Vibration,54,True,Moderate,Requires follow-up
+INS-70257,SGW-RES-LO0051,2024-07-31,Process safety,95,True,Low,Vibration above spec
+INS-70258,SGW-RES-LO0051,2025-06-19,Annual,59,False,,No material defects
+INS-70259,SGW-DIS-IN0049,2024-08-21,Annual,54,False,,Minor corrosion
+INS-70260,SGW-CON-CO0064,2024-12-12,Process safety,89,False,,Minor corrosion
+INS-70261,SGW-MAJ-LO0043,2025-05-29,Visual,64,True,Moderate,Vibration above spec
+INS-70262,SGW-WAS-CO0023,2025-11-01,Thermal,89,False,,Requires follow-up
+INS-70263,SGW-WAT-IN0062,2026-05-27,Annual,66,False,,Requires follow-up
+INS-70264,SGW-CON-LO0050,2025-05-04,Process safety,70,False,,No material defects
+INS-70265,SGW-DIS-CO0041,2024-07-15,Annual,50,False,,Vibration above spec
+INS-70266,SGW-CON-LO0037,2024-10-22,Vibration,73,False,,No material defects
+INS-70267,SGW-EME-IN0055,2026-05-08,Thermal,61,False,,Requires follow-up
+INS-70268,SGW-WAT-IN0062,2024-09-12,Visual,78,True,High,No material defects
+INS-70269,SGW-MAJ-CO0028,2026-01-20,Thermal,84,True,High,Requires follow-up
+INS-70270,SGW-WAT-IN0062,2025-08-07,Thermal,73,False,,Vibration above spec
+INS-70271,SGW-MAJ-IN0064,2025-09-15,Visual,93,True,Moderate,Minor corrosion
+INS-70272,SGW-MAJ-LO0030,2025-06-09,Vibration,79,False,,Minor corrosion
+INS-70273,SGW-TRA-CO0022,2025-03-14,Thermal,100,True,Low,Requires follow-up
+INS-70274,SGW-CON-IN0018,2025-04-17,Thermal,84,False,,No material defects
+INS-70275,SGW-TRA-CO0003,2025-01-08,Visual,81,False,,Requires follow-up
+INS-70276,SGW-ELE-CO0030,2025-11-13,Thermal,95,False,,Vibration above spec
+INS-70277,SGW-ELE-LO0003,2025-02-09,Visual,67,False,,Minor corrosion
+INS-70278,SGW-MAJ-IN0013,2025-11-22,Process safety,73,False,,Minor corrosion
+INS-70279,SGW-TRA-LO0034,2026-02-01,Process safety,67,True,Low,Requires follow-up
+INS-70280,SGW-CON-CO0063,2025-06-17,Visual,86,False,,Vibration above spec
+INS-70281,SGW-MAJ-IN0037,2025-05-19,Visual,81,False,,Requires follow-up
+INS-70282,SGW-ELE-IN0048,2024-10-27,Annual,71,False,,Minor corrosion
+INS-70283,SGW-CON-LO0050,2025-07-03,Vibration,73,False,,No material defects
+INS-70284,SGW-MAJ-CO0001,2025-10-14,Visual,71,False,,Vibration above spec
+INS-70285,SGW-DIS-CO0033,2024-12-05,Thermal,86,True,Moderate,Minor corrosion
+INS-70286,SGW-CON-LO0058,2025-02-11,Visual,82,False,,Requires follow-up
+INS-70287,SGW-DIS-CO0036,2025-10-07,Annual,82,True,Low,Requires follow-up
+INS-70288,SGW-ELE-LO0001,2025-06-26,Process safety,82,False,,Vibration above spec
+INS-70289,SGW-ELE-LO0062,2025-08-14,Thermal,69,False,,Vibration above spec
+INS-70290,SGW-ELE-IN0048,2025-02-12,Thermal,49,False,,Requires follow-up
+INS-70291,SGW-MAJ-CO0013,2025-12-19,Thermal,65,True,Low,No material defects
+INS-70292,SGW-CON-LO0050,2025-10-07,Visual,38,True,Moderate,No material defects
+INS-70293,SGW-MAJ-LO0043,2025-06-30,Vibration,90,False,,Requires follow-up
+INS-70294,SGW-DIS-LO0047,2025-02-11,Thermal,78,True,Moderate,Minor corrosion
+INS-70295,SGW-TRA-CO0043,2025-01-26,Vibration,78,False,,Minor corrosion
+INS-70296,SGW-DIS-IN0009,2026-06-26,Vibration,86,False,,Minor corrosion
+INS-70297,SGW-TRA-IN0056,2025-02-05,Process safety,99,False,,No material defects
+INS-70298,SGW-ELE-LO0002,2024-08-02,Annual,62,False,,No material defects
+INS-70299,SGW-DIS-LO0012,2026-01-24,Visual,84,True,High,Requires follow-up
+INS-70300,SGW-MAJ-LO0046,2024-09-25,Vibration,69,False,,No material defects
+INS-70301,SGW-DIS-IN0027,2024-10-01,Process safety,66,False,,Minor corrosion
+INS-70302,SGW-MAJ-CO0054,2026-05-12,Process safety,73,False,,No material defects
+INS-70303,SGW-WAS-IN0000,2024-10-22,Visual,78,False,,Vibration above spec
+INS-70304,SGW-WAT-CO0045,2025-10-28,Visual,94,False,,Minor corrosion
+INS-70305,SGW-WAT-LO0029,2025-05-14,Thermal,87,False,,No material defects
+INS-70306,SGW-WAT-LO0006,2025-02-13,Process safety,88,False,,Vibration above spec
+INS-70307,SGW-WAS-IN0030,2026-03-24,Vibration,65,False,,Minor corrosion
+INS-70308,SGW-WAT-LO0055,2025-03-31,Visual,73,False,,No material defects
+INS-70309,SGW-WAS-IN0053,2025-04-24,Vibration,91,False,,Minor corrosion
+INS-70310,SGW-WAT-LO0041,2024-09-23,Annual,42,False,,Minor corrosion
+INS-70311,SGW-CON-IN0025,2024-07-28,Visual,72,False,,No material defects
+INS-70312,SGW-RES-LO0004,2025-03-08,Visual,64,False,,Vibration above spec
+INS-70313,SGW-CON-CO0063,2025-01-11,Vibration,100,False,,No material defects
+INS-70314,SGW-RES-IN0001,2026-04-13,Vibration,84,False,,No material defects
+INS-70315,SGW-CON-LO0048,2024-08-23,Process safety,82,False,,Vibration above spec
+INS-70316,SGW-TRA-CO0065,2024-11-08,Vibration,94,True,Moderate,Minor corrosion
+INS-70317,SGW-RES-IN0061,2025-12-26,Annual,77,False,,No material defects
+INS-70318,SGW-MAJ-LO0036,2025-08-30,Visual,75,False,,Vibration above spec
+INS-70319,SGW-CON-LO0017,2025-12-21,Annual,61,True,High,Vibration above spec
+INS-70320,SGW-WAT-IN0032,2026-03-14,Annual,80,False,,Minor corrosion
+INS-70321,SGW-DIS-IN0027,2025-02-27,Visual,75,False,,Requires follow-up
+INS-70322,SGW-WAS-LO0007,2024-10-05,Vibration,63,False,,Requires follow-up
+INS-70323,SGW-EME-IN0065,2025-08-25,Thermal,88,True,Low,Minor corrosion
+INS-70324,SGW-MAJ-CO0028,2026-06-14,Thermal,80,False,,Minor corrosion
+INS-70325,SGW-EME-IN0026,2025-10-26,Vibration,68,False,,Minor corrosion
+INS-70326,SGW-TRA-CO0022,2025-08-26,Thermal,72,False,,Minor corrosion
+INS-70327,SGW-RES-CO0039,2024-07-11,Visual,75,False,,Requires follow-up
+INS-70328,SGW-DIS-CO0005,2025-03-27,Thermal,68,False,,Requires follow-up
+INS-70329,SGW-MAJ-CO0013,2025-07-24,Visual,96,True,Moderate,Requires follow-up
+INS-70330,SGW-ELE-IN0048,2024-11-15,Vibration,78,False,,Requires follow-up
+INS-70331,SGW-WAT-LO0054,2025-01-21,Vibration,74,False,,Requires follow-up
+INS-70332,SGW-MAJ-CO0059,2026-04-29,Visual,61,False,,Vibration above spec
+INS-70333,SGW-CON-IN0025,2025-04-29,Annual,67,False,,Requires follow-up
+INS-70334,SGW-RES-IN0019,2024-09-07,Visual,84,False,,Minor corrosion
+INS-70335,SGW-CON-LO0050,2025-07-13,Vibration,76,False,,Minor corrosion
+INS-70336,SGW-WAT-IN0010,2024-07-29,Vibration,86,False,,Requires follow-up
+INS-70337,SGW-DIS-CO0033,2025-09-03,Visual,59,False,,Requires follow-up
+INS-70338,SGW-WAT-IN0032,2024-08-31,Visual,82,False,,Minor corrosion
+INS-70339,SGW-ELE-LO0002,2024-07-23,Visual,52,False,,Minor corrosion
+INS-70340,SGW-EME-CO0044,2025-12-08,Visual,85,True,Moderate,Vibration above spec
+INS-70341,SGW-WAT-CO0060,2025-11-28,Annual,82,False,,Vibration above spec
+INS-70342,SGW-EME-CO0066,2025-06-30,Thermal,86,False,,No material defects
+INS-70343,SGW-WAS-IN0066,2026-04-26,Annual,52,False,,Minor corrosion
+INS-70344,SGW-ELE-CO0030,2024-12-02,Process safety,96,True,Low,Vibration above spec
+INS-70345,SGW-TRA-CO0038,2024-07-24,Vibration,74,False,,No material defects
+INS-70346,SGW-RES-IN0040,2026-05-10,Visual,84,False,,No material defects
+INS-70347,SGW-WAT-CO0027,2024-10-13,Annual,45,False,,No material defects
+INS-70348,SGW-WAT-LO0059,2026-03-15,Annual,93,True,Low,Vibration above spec
+INS-70349,SGW-RES-IN0041,2025-04-04,Visual,55,False,,No material defects
+INS-70350,SGW-RES-CO0039,2024-09-06,Thermal,80,False,,Requires follow-up
+INS-70351,SGW-TRA-IN0056,2026-06-24,Visual,80,True,Moderate,Vibration above spec
+INS-70352,SGW-WAT-LO0059,2026-01-06,Process safety,72,True,High,Minor corrosion
+INS-70353,SGW-TRA-CO0038,2025-01-04,Thermal,62,False,,Minor corrosion
+INS-70354,SGW-EME-IN0065,2025-04-17,Visual,98,False,,Vibration above spec
+INS-70355,SGW-WAT-CO0007,2025-04-03,Annual,57,True,High,No material defects
+INS-70356,SGW-TRA-CO0021,2025-07-19,Thermal,64,False,,No material defects
+INS-70357,SGW-WAT-IN0029,2024-09-12,Vibration,79,True,Low,Vibration above spec
+INS-70358,SGW-CON-LO0037,2025-05-15,Vibration,88,False,,Vibration above spec
+INS-70359,SGW-RES-LO0018,2026-06-22,Vibration,61,False,,Minor corrosion
+INS-70360,SGW-DIS-IN0039,2025-05-13,Thermal,87,False,,Requires follow-up
+INS-70361,SGW-RES-IN0038,2025-07-12,Visual,64,False,,Minor corrosion
+INS-70362,SGW-WAS-LO0007,2026-04-05,Process safety,60,True,Low,Vibration above spec
+INS-70363,SGW-MAJ-CO0054,2026-03-27,Process safety,87,False,,Vibration above spec
+INS-70364,SGW-WAS-IN0053,2024-09-18,Annual,86,True,Moderate,Minor corrosion
+INS-70365,SGW-MAJ-IN0058,2025-08-23,Vibration,65,False,,No material defects
+INS-70366,SGW-WAT-IN0047,2026-04-30,Process safety,67,False,,No material defects
+INS-70367,SGW-WAS-IN0053,2024-09-02,Visual,66,False,,Vibration above spec
+INS-70368,SGW-TRA-IN0006,2026-06-25,Thermal,87,False,,Minor corrosion
+INS-70369,SGW-MAJ-LO0019,2025-08-28,Vibration,41,False,,Minor corrosion
+INS-70370,SGW-WAS-IN0042,2025-06-09,Thermal,86,False,,Minor corrosion
+INS-70371,SGW-DIS-IN0059,2025-06-26,Thermal,83,False,,Requires follow-up
+INS-70372,SGW-WAS-LO0035,2026-04-08,Visual,85,True,Moderate,No material defects
+INS-70373,SGW-MAJ-LO0024,2024-08-06,Vibration,66,False,,Requires follow-up
+INS-70374,SGW-ELE-CO0067,2024-11-09,Visual,93,False,,Requires follow-up
+INS-70375,SGW-WAT-IN0047,2025-04-30,Thermal,74,False,,Minor corrosion
+INS-70376,SGW-WAT-LO0054,2025-03-19,Vibration,78,True,Low,Requires follow-up
+INS-70377,SGW-RES-LO0051,2026-05-28,Vibration,70,False,,Vibration above spec
+INS-70378,SGW-ELE-CO0030,2024-10-22,Annual,86,False,,No material defects
+INS-70379,SGW-CON-LO0063,2026-01-25,Process safety,85,True,Moderate,Vibration above spec
+INS-70380,SGW-EME-LO0005,2025-02-18,Thermal,85,True,Low,Vibration above spec
+INS-70381,SGW-ELE-LO0002,2025-11-22,Visual,87,True,Low,No material defects
+INS-70382,SGW-WAS-IN0000,2025-07-08,Annual,61,True,High,Requires follow-up
+INS-70383,SGW-WAT-LO0016,2025-06-09,Vibration,82,False,,Minor corrosion
+INS-70384,SGW-EME-IN0055,2026-02-09,Visual,76,False,,Minor corrosion
+INS-70385,SGW-WAS-IN0046,2025-08-01,Vibration,57,True,High,Requires follow-up
+INS-70386,SGW-WAT-LO0029,2025-11-04,Process safety,45,False,,Requires follow-up
+INS-70387,SGW-ELE-IN0048,2025-09-19,Thermal,67,False,,No material defects
+INS-70388,SGW-TRA-IN0006,2024-09-23,Process safety,69,False,,No material defects
+INS-70389,SGW-EME-CO0049,2024-10-05,Annual,72,False,,Minor corrosion
+INS-70390,SGW-DIS-IN0052,2025-02-28,Annual,95,False,,Minor corrosion
+INS-70391,SGW-TRA-CO0004,2025-09-22,Thermal,94,False,,Requires follow-up
+INS-70392,SGW-TRA-CO0021,2024-12-31,Visual,63,False,,No material defects
+INS-70393,SGW-CON-LO0017,2025-04-09,Annual,67,True,High,Vibration above spec
+INS-70394,SGW-EME-LO0027,2025-10-10,Annual,65,True,Low,Vibration above spec
+INS-70395,SGW-TRA-IN0056,2026-03-31,Visual,72,True,High,Minor corrosion
+INS-70396,SGW-TRA-CO0015,2024-10-09,Thermal,79,False,,Requires follow-up
+INS-70397,SGW-TRA-CO0025,2025-08-07,Process safety,75,True,Moderate,Requires follow-up
+INS-70398,SGW-ELE-CO0030,2026-05-08,Vibration,63,True,High,Requires follow-up
+INS-70399,SGW-MAJ-CO0029,2025-09-28,Visual,67,True,High,Requires follow-up
+INS-70400,SGW-EME-CO0016,2025-02-20,Thermal,76,True,High,No material defects
+INS-70401,SGW-CON-CO0063,2024-12-09,Thermal,73,False,,Vibration above spec
+INS-70402,SGW-RES-IN0005,2025-05-10,Vibration,84,False,,Vibration above spec
+INS-70403,SGW-DIS-LO0068,2026-01-09,Vibration,100,False,,Requires follow-up
+INS-70404,SGW-WAT-IN0002,2025-03-25,Visual,91,True,High,Minor corrosion
+INS-70405,SGW-TRA-CO0000,2026-04-30,Visual,70,False,,Vibration above spec
+INS-70406,SGW-MAJ-IN0013,2025-10-17,Visual,98,False,,Minor corrosion
+INS-70407,SGW-DIS-IN0009,2025-01-24,Thermal,74,False,,No material defects
+INS-70408,SGW-WAT-LO0006,2026-03-31,Annual,84,False,,Vibration above spec
+INS-70409,SGW-DIS-LO0040,2025-11-27,Process safety,58,False,,Vibration above spec
+INS-70410,SGW-WAS-IN0022,2025-10-06,Visual,72,False,,Vibration above spec
+INS-70411,SGW-CON-LO0017,2025-11-27,Vibration,92,False,,Vibration above spec
+INS-70412,SGW-TRA-CO0004,2024-07-22,Annual,74,True,Low,Minor corrosion
+INS-70413,SGW-WAS-LO0035,2024-12-08,Visual,74,False,,Requires follow-up
+INS-70414,SGW-WAS-LO0067,2026-04-08,Annual,50,False,,Requires follow-up
+INS-70415,SGW-WAT-IN0032,2026-02-24,Visual,68,False,,Vibration above spec
+INS-70416,SGW-WAT-LO0029,2025-12-31,Annual,83,False,,Minor corrosion
+INS-70417,SGW-MAJ-LO0043,2026-06-21,Annual,83,True,Moderate,Vibration above spec
+INS-70418,SGW-EME-CO0049,2026-03-30,Process safety,78,False,,Requires follow-up
+INS-70419,SGW-CON-LO0022,2026-05-24,Vibration,67,False,,Minor corrosion
+INS-70420,SGW-MAJ-CO0001,2025-12-12,Visual,82,False,,Requires follow-up
+INS-70421,SGW-TRA-CO0043,2024-12-12,Vibration,81,True,High,Minor corrosion
+INS-70422,SGW-EME-CO0016,2024-11-05,Annual,94,True,Low,Vibration above spec
+INS-70423,SGW-EME-CO0049,2024-08-05,Vibration,95,True,High,Vibration above spec
+INS-70424,SGW-DIS-IN0034,2024-12-04,Annual,90,False,,No material defects
+INS-70425,SGW-DIS-LO0012,2025-04-14,Visual,68,False,,Vibration above spec
+INS-70426,SGW-ELE-CO0031,2024-08-03,Visual,61,False,,Minor corrosion
+INS-70427,SGW-EME-CO0012,2025-09-19,Vibration,90,False,,Requires follow-up
+INS-70428,SGW-CON-LO0010,2026-06-25,Process safety,88,False,,No material defects
+INS-70429,SGW-ELE-IN0048,2025-11-11,Visual,82,False,,No material defects
+INS-70430,SGW-CON-CO0063,2025-12-11,Process safety,90,True,Low,Requires follow-up
+INS-70431,SGW-DIS-LO0040,2026-06-06,Process safety,81,False,,Vibration above spec
+INS-70432,SGW-CON-CO0063,2026-03-12,Process safety,86,False,,Minor corrosion
+INS-70433,SGW-MAJ-CO0018,2024-10-24,Annual,55,False,,Requires follow-up
+INS-70434,SGW-WAS-IN0008,2026-02-23,Annual,85,True,High,No material defects
+INS-70435,SGW-ELE-IN0060,2026-02-20,Visual,69,True,Low,Vibration above spec
+INS-70436,SGW-WAS-IN0016,2024-09-27,Annual,68,False,,Vibration above spec
+INS-70437,SGW-EME-LO0027,2025-05-15,Visual,61,True,Low,No material defects
+INS-70438,SGW-MAJ-LO0046,2025-06-02,Visual,87,False,,Vibration above spec
+INS-70439,SGW-EME-IN0026,2024-08-08,Visual,63,False,,Vibration above spec
+INS-70440,SGW-WAT-IN0010,2025-12-15,Annual,71,True,Low,Minor corrosion
+INS-70441,SGW-CON-IN0023,2025-01-25,Visual,72,False,,Requires follow-up
+INS-70442,SGW-WAT-IN0045,2024-10-03,Thermal,77,False,,Minor corrosion
+INS-70443,SGW-MAJ-LO0009,2024-11-09,Process safety,77,False,,Vibration above spec
+INS-70444,SGW-DIS-IN0009,2024-12-23,Thermal,58,False,,Vibration above spec
+INS-70445,SGW-MAJ-LO0024,2026-06-22,Thermal,78,False,,No material defects
+INS-70446,SGW-WAT-CO0060,2025-01-27,Vibration,82,False,,Minor corrosion
+INS-70447,SGW-ELE-CO0051,2024-09-13,Annual,65,False,,Vibration above spec
+INS-70448,SGW-RES-CO0048,2024-08-16,Visual,66,False,,Vibration above spec
+INS-70449,SGW-RES-IN0017,2025-08-28,Thermal,68,False,,No material defects
+INS-70450,SGW-MAJ-LO0046,2026-05-18,Annual,63,False,,Requires follow-up
+INS-70451,SGW-RES-IN0019,2025-11-24,Process safety,60,True,High,Requires follow-up
+INS-70452,SGW-WAT-CO0052,2025-05-17,Annual,71,True,Low,No material defects
+INS-70453,SGW-DIS-CO0036,2025-09-06,Vibration,78,False,,Vibration above spec
+INS-70454,SGW-WAS-CO0011,2026-05-31,Process safety,86,True,High,Minor corrosion
+INS-70455,SGW-WAT-LO0016,2024-12-10,Thermal,97,True,Low,Minor corrosion
+INS-70456,SGW-ELE-CO0067,2026-03-19,Thermal,59,True,Low,Vibration above spec
+INS-70457,SGW-WAT-CO0053,2025-08-22,Process safety,89,False,,Vibration above spec
+INS-70458,SGW-WAT-IN0029,2026-01-06,Vibration,93,False,,No material defects
+INS-70459,SGW-ELE-CO0030,2026-02-03,Thermal,58,False,,Minor corrosion
+INS-70460,SGW-EME-CO0049,2025-01-01,Process safety,69,False,,Minor corrosion
+INS-70461,SGW-WAS-CO0011,2024-10-08,Vibration,86,False,,Vibration above spec
+INS-70462,SGW-WAT-IN0062,2026-01-29,Annual,68,False,,Minor corrosion
+INS-70463,SGW-MAJ-LO0060,2024-11-09,Thermal,67,False,,No material defects
+INS-70464,SGW-ELE-IN0060,2025-03-06,Vibration,88,False,,Vibration above spec
+INS-70465,SGW-DIS-LO0057,2025-01-15,Process safety,80,False,,Vibration above spec
+INS-70466,SGW-EME-LO0064,2024-07-19,Visual,59,False,,No material defects
+INS-70467,SGW-WAT-CO0053,2025-11-18,Visual,77,False,,Minor corrosion
+INS-70468,SGW-CON-LO0031,2025-11-19,Visual,49,False,,Vibration above spec
+INS-70469,SGW-TRA-CO0065,2024-12-14,Annual,62,True,Moderate,Requires follow-up
+INS-70470,SGW-ELE-LO0062,2025-07-05,Annual,58,True,Moderate,Requires follow-up
+INS-70471,SGW-ELE-LO0049,2025-04-14,Visual,78,False,,Vibration above spec
+INS-70472,SGW-WAT-CO0069,2025-06-04,Visual,76,True,Moderate,No material defects
+INS-70473,SGW-EME-LO0005,2025-02-02,Annual,92,False,,Vibration above spec
+INS-70474,SGW-MAJ-CO0058,2026-03-22,Process safety,82,True,Low,Vibration above spec
+INS-70475,SGW-CON-CO0064,2025-08-25,Process safety,76,False,,Minor corrosion
+INS-70476,SGW-RES-IN0040,2024-10-20,Vibration,76,False,,Vibration above spec
+INS-70477,SGW-ELE-LO0002,2025-07-11,Visual,74,False,,Requires follow-up
+INS-70478,SGW-WAS-IN0008,2024-08-28,Vibration,100,True,Moderate,Minor corrosion
+INS-70479,SGW-MAJ-CO0058,2025-11-28,Vibration,73,False,,Requires follow-up
+INS-70480,SGW-TRA-IN0044,2025-03-15,Annual,72,False,,Requires follow-up
+INS-70481,SGW-WAT-CO0053,2025-04-07,Vibration,82,False,,No material defects
+INS-70482,SGW-RES-LO0025,2026-02-08,Thermal,68,False,,Requires follow-up
+INS-70483,SGW-MAJ-IN0067,2024-08-25,Process safety,93,False,,Minor corrosion
+INS-70484,SGW-CON-LO0037,2025-04-21,Visual,76,False,,Vibration above spec
+INS-70485,SGW-DIS-LO0013,2024-11-06,Annual,56,True,Low,Minor corrosion
+INS-70486,SGW-WAT-LO0014,2024-11-26,Vibration,88,False,,Requires follow-up
+INS-70487,SGW-EME-LO0027,2025-12-03,Annual,66,False,,Requires follow-up
+INS-70488,SGW-RES-CO0048,2025-03-01,Vibration,91,True,Moderate,No material defects
+INS-70489,SGW-TRA-CO0043,2026-03-16,Thermal,70,False,,No material defects
+INS-70490,SGW-DIS-IN0036,2024-10-21,Thermal,83,False,,Requires follow-up
+INS-70491,SGW-ELE-LO0002,2025-12-02,Vibration,100,True,Low,Requires follow-up
+INS-70492,SGW-MAJ-CO0014,2025-06-18,Thermal,62,False,,Requires follow-up
+INS-70493,SGW-ELE-CO0040,2026-03-09,Visual,98,True,Moderate,No material defects
+INS-70494,SGW-WAT-LO0029,2025-12-01,Thermal,66,True,High,Requires follow-up
+INS-70495,SGW-ELE-CO0040,2024-10-20,Process safety,95,False,,Minor corrosion
+INS-70496,SGW-CON-LO0058,2024-07-29,Thermal,81,False,,No material defects
+INS-70497,SGW-MAJ-LO0032,2024-10-19,Vibration,75,False,,Vibration above spec
+INS-70498,SGW-RES-IN0005,2025-02-13,Vibration,80,False,,Requires follow-up
+INS-70499,SGW-RES-LO0018,2024-07-13,Process safety,76,False,,Requires follow-up

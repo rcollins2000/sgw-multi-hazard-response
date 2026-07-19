@@ -1,0 +1,115 @@
+# Local .gitignore for the AECOM take-home project.
+# Travels with the project when it's extracted from rough_work/ into its own repo.
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# ---- Virtual environments ----
+venv/
+env/
+ENV/
+.venv/
+
+# ---- Node / frontend ----
+node_modules/
+.pnpm-store/
+.vite/
+frontend/dist/
+frontend/coverage/
+playwright-report/
+test-results/
+
+# ---- Python tooling caches ----
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- IDE / editor ----
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---- Claude Code local config (agents + status.md are committed; the rest is local tooling) ----
+.claude/design/
+.claude/skills/
+.claude/settings.local.json
+.claude/history/
+.claude/logs/
+
+# ---- Playwright CLI scratch (screenshots, YAML page snapshots, console logs) ----
+.playwright/
+.playwright-cli/
+**/.playwright-cli/
+
+# ---- Scratch / working dirs not intended for the public repo ----
+plan/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Secrets ----
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ---- Trained model artefacts (regenerable from code + data) ----
+*.pkl
+*.joblib
+*.h5
+*.onnx
+prototype/**/models/*.bin
+
+# ---- Logs ----
+*.log
+
+# ==============================================================
+# Large NOAA / geospatial raw sources (redistributable from NOAA)
+# Rule: raw downloads are ignored; clipped WGS84 fixtures are committed.
+# ==============================================================
+
+# Raw rasters and archives before clipping / reprojection — never commit
+data/raw/**/*.tif
+data/raw/**/*.tiff
+data/raw/**/*.zip
+data/raw/**/*.tar
+data/raw/**/*.tar.gz
+data/raw/**/*.gz
+
+# Raw shapefile bundles (unclipped, native projection) — organise raw pulls under _downloads/
+data/raw/**/_downloads/
+data/raw/gis/state_plane/
+data/raw/gis/albers/
+data/raw/gis/web_mercator/
+
+# National Water Model (Phase 2) — NetCDF is very large
+data/raw/**/*.nc
+data/raw/**/*.nc4
+
+# NCEP HRRR / GFS (Phase 2) — GRIB2 is very large
+data/raw/**/*.grib
+data/raw/**/*.grib2
+data/raw/**/*.gr2
+
+# Local S3 caches for anonymous NOAA Open Data pulls
+data/cache/
+.aws_cache/
+
+# Large derived artefacts
+prototype/**/*.parquet
+prototype/**/*.feather

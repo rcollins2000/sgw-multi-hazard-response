@@ -1,0 +1,2407 @@
+{
+  "source": "NWS_alerts_active",
+  "states": [
+    "SC",
+    "GA",
+    "NC"
+  ],
+  "count": 25,
+  "alerts": [
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.9fe72e8780a5e97fe8ed75c83b4d673636f1c54c.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T06:49:00-04:00",
+      "expires_at": "2026-07-17T15:00:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 6:49AM EDT until July 17 at 7:00PM EDT by NWS Charleston SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9fe72e8780a5e97fe8ed75c83b4d673636f1c54c.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.9fe72e8780a5e97fe8ed75c83b4d673636f1c54c.001.1",
+          "areaDesc": "Inland Berkeley; Charleston; Tidal Berkeley",
+          "geocode": {
+            "SAME": [
+              "045015",
+              "045019"
+            ],
+            "UGC": [
+              "SCZ045",
+              "SCZ150",
+              "SCZ152"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ045",
+            "https://api.weather.gov/zones/forecast/SCZ150",
+            "https://api.weather.gov/zones/forecast/SCZ152"
+          ],
+          "references": [
+            {
+              "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7fb197b1ddd276677bd425fb93de4e946d026aa6.001.1",
+              "identifier": "urn:oid:2.49.0.1.840.0.7fb197b1ddd276677bd425fb93de4e946d026aa6.001.1",
+              "sender": "w-nws.webmaster@noaa.gov",
+              "sent": "2026-07-17T02:08:00-04:00"
+            }
+          ],
+          "sent": "2026-07-17T06:49:00-04:00",
+          "effective": "2026-07-17T06:49:00-04:00",
+          "onset": "2026-07-17T11:00:00-04:00",
+          "expires": "2026-07-17T15:00:00-04:00",
+          "ends": "2026-07-17T19:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Update",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Charleston SC",
+          "headline": "Heat Advisory issued July 17 at 6:49AM EDT until July 17 at 7:00PM EDT by NWS Charleston SC",
+          "description": "* WHAT...Heat index values up to 110 expected.\n\n* WHERE...Charleston, Inland Berkeley, and Tidal Berkeley Counties.\n\n* WHEN...From 11 AM this morning to 7 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWCHS"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KCHS 171049"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY REMAINS IN EFFECT FROM 11 AM THIS MORNING TO 7 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.CON.KCHS.HT.Y.0013.260717T1500Z-260717T2300Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T19:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:20:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wilmington NC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+          "areaDesc": "Robeson; Bladen; Columbus; Inland Pender; Coastal Pender; Inland New Hanover; Coastal New Hanover; Inland Brunswick; Coastal Brunswick; Marlboro; Darlington; Dillon; Florence; Marion; Williamsburg; Coastal Horry; Inland Georgetown; Coastal Georgetown; Central Horry; Northern Horry",
+          "geocode": {
+            "SAME": [
+              "037155",
+              "037017",
+              "037047",
+              "037141",
+              "037129",
+              "037019",
+              "045069",
+              "045031",
+              "045033",
+              "045041",
+              "045067",
+              "045089",
+              "045051",
+              "045043"
+            ],
+            "UGC": [
+              "NCZ087",
+              "NCZ096",
+              "NCZ099",
+              "NCZ105",
+              "NCZ106",
+              "NCZ107",
+              "NCZ108",
+              "NCZ109",
+              "NCZ110",
+              "SCZ017",
+              "SCZ023",
+              "SCZ024",
+              "SCZ032",
+              "SCZ033",
+              "SCZ039",
+              "SCZ054",
+              "SCZ055",
+              "SCZ056",
+              "SCZ058",
+              "SCZ059"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ087",
+            "https://api.weather.gov/zones/forecast/NCZ096",
+            "https://api.weather.gov/zones/forecast/NCZ099",
+            "https://api.weather.gov/zones/forecast/NCZ105",
+            "https://api.weather.gov/zones/forecast/NCZ106",
+            "https://api.weather.gov/zones/forecast/NCZ107",
+            "https://api.weather.gov/zones/forecast/NCZ108",
+            "https://api.weather.gov/zones/forecast/NCZ109",
+            "https://api.weather.gov/zones/forecast/NCZ110",
+            "https://api.weather.gov/zones/forecast/SCZ017",
+            "https://api.weather.gov/zones/forecast/SCZ023",
+            "https://api.weather.gov/zones/forecast/SCZ024",
+            "https://api.weather.gov/zones/forecast/SCZ032",
+            "https://api.weather.gov/zones/forecast/SCZ033",
+            "https://api.weather.gov/zones/forecast/SCZ039",
+            "https://api.weather.gov/zones/forecast/SCZ054",
+            "https://api.weather.gov/zones/forecast/SCZ055",
+            "https://api.weather.gov/zones/forecast/SCZ056",
+            "https://api.weather.gov/zones/forecast/SCZ058",
+            "https://api.weather.gov/zones/forecast/SCZ059"
+          ],
+          "references": [],
+          "sent": "2026-07-17T02:20:00-04:00",
+          "effective": "2026-07-17T02:20:00-04:00",
+          "onset": "2026-07-17T11:00:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": "2026-07-17T20:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Wilmington NC",
+          "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wilmington NC",
+          "description": "* WHAT...Heat index values up to 109 expected.\n\n* WHERE...Portions of southeast North Carolina and northeast South\nCarolina.\n\n* WHEN...From 11 AM this morning to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWILM"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KILM 170620"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM 11 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.NEW.KILM.HT.Y.0015.260717T1500Z-260718T0000Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T20:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:45:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.001.1",
+          "areaDesc": "York; Chester",
+          "geocode": {
+            "SAME": [
+              "045091",
+              "045023"
+            ],
+            "UGC": [
+              "SCZ009",
+              "SCZ014"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ009",
+            "https://api.weather.gov/zones/forecast/SCZ014"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:45:00-04:00",
+          "effective": "2026-07-17T00:45:00-04:00",
+          "onset": "2026-07-17T00:45:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The South Carolina Department of Environmental Services (SCDES) has\nissued a Code Orange Ground Level Ozone Action Day for the Catawba\nregion of South Carolina, from 10 AM this morning to 8 PM EDT this\nevening.\n\nDominant high pressure will ensure minimal cloud cover and light and\nvariable winds. Long-range wildfire smoke will also transport ozone\nprecursors into the area. These factors will allow for sufficient\nozone production, compounding with weak dispersion characteristics\nof an already pollutant-loaded atmosphere.\n\n\nAn ozone action day means that atmospheric conditions will likely\nproduce unhealthy concentrations of ground level ozone air pollution.\nA Code Orange forecast indicates that ground level ozone\nconcentrations are expected to be unhealthy for sensitive groups,\nwhich includes people with lung disease, older adults, and children.\nSensitive groups should reduce prolonged or heavy outdoor exertion,\ntake more breaks, and do less intense activities, especially during\nafternoon and early evening hours. You can help prevent ozone\npollution by walking or riding your bicycle, taking your lunch to\nwork, reducing idling, conserving energy, and keeping your vehicle\nproperly tuned. For additional information, please visit the South\nCarolina Department of Environmental Services website at\nhttp://www.des.sc.gov/ozone or the Environmental Protection Agency\nAirNow website at https://www.airnow.gov.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170445"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:20:00-04:00",
+      "expires_at": "2026-07-18T00:30:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.001.1",
+          "areaDesc": "York; Chester",
+          "geocode": {
+            "SAME": [
+              "045091",
+              "045023"
+            ],
+            "UGC": [
+              "SCZ009",
+              "SCZ014"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ009",
+            "https://api.weather.gov/zones/forecast/SCZ014"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:20:00-04:00",
+          "effective": "2026-07-17T00:20:00-04:00",
+          "onset": "2026-07-17T00:20:00-04:00",
+          "expires": "2026-07-18T00:30:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The South Carolina Department of Environmental Services (SCDES) has\nissued a Code Orange Ground Level Ozone Action Day for the Catawba\nregion of South Carolina, from 10 AM this morning to 8 PM EDT this\nevening.\n\nDominant high pressure will ensure minimal cloud cover and light and\nvariable winds. Long-range wildfire smoke will also transport ozone\nprecursors into the area. These factors will allow for sufficient\nozone production, compounding with weak dispersion characteristics\nof an already pollutant-loaded atmosphere.\n\nAn ozone action day means that atmospheric conditions will likely\nproduce unhealthy concentrations of ground level ozone air pollution.\nA Code Orange forecast indicates that ground level ozone\nconcentrations are expected to be unhealthy for sensitive groups,\nwhich includes people with lung disease, older adults, and children.\nSensitive groups should reduce prolonged or heavy outdoor exertion,\ntake more breaks, and do less intense activities, especially during\nafternoon and early evening hours. You can help prevent ozone\npollution by walking or riding your bicycle, taking your lunch to\nwork, reducing idling, conserving energy, and keeping your vehicle\nproperly tuned. For additional information, please visit the South\nCarolina Department of Environmental Services website at\nhttp://www.des.sc.gov/ozone or the Environmental Protection Agency\nAirNow website at https://www.airnow.gov.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170420"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:06:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.002.1",
+          "areaDesc": "York; Chester",
+          "geocode": {
+            "SAME": [
+              "045091",
+              "045023"
+            ],
+            "UGC": [
+              "SCZ009",
+              "SCZ014"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ009",
+            "https://api.weather.gov/zones/forecast/SCZ014"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:06:00-04:00",
+          "effective": "2026-07-16T20:06:00-04:00",
+          "onset": "2026-07-16T20:06:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The South Carolina Department of Environmental Services (SCDES) has\nissued a Code Orange Ground Level Ozone Action Day for the Catawba\nregion of South Carolina, from 10 AM to 8 PM EDT Friday.\n\nDominant high pressure will ensure minimal cloud cover and light and\nvariable winds. Long-range wildfire smoke will also transport ozone\nprecursors into the area. These factors will allow for sufficient\nozone production, compounding with weak dispersion characteristics\nof an already pollutant-loaded atmosphere.\n\nAn ozone action day means that atmospheric conditions will likely\nproduce unhealthy concentrations of ground level ozone air\npollution. A Code Orange forecast indicates that ground level ozone\nconcentrations are expected to be unhealthy for sensitive groups,\nwhich includes people with lung disease, older adults, and children.\nSensitive groups should reduce prolonged or heavy outdoor exertion,\ntake more breaks, and do less intense activities, especially during\nafternoon and early evening hours. You can help prevent ozone\npollution by walking or riding your bicycle, taking your lunch to\nwork, reducing idling, conserving energy, and keeping your vehicle\nproperly tuned. For additional information, please visit the South\nCarolina Department of Environmental Services website at\nhttp://www.des.sc.gov/ozone or the Environmental Protection Agency\nAirNow website at https://www.airnow.gov.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170006 CCA"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:02:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.002.1",
+          "areaDesc": "York; Chester",
+          "geocode": {
+            "SAME": [
+              "045091",
+              "045023"
+            ],
+            "UGC": [
+              "SCZ009",
+              "SCZ014"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ009",
+            "https://api.weather.gov/zones/forecast/SCZ014"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:02:00-04:00",
+          "effective": "2026-07-16T20:02:00-04:00",
+          "onset": "2026-07-16T20:02:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The South Carolina Department of Environmental Services (SCDES) has\nissued a Code Orange Ground Level Ozone Action Day for the Catawba\nregion of South Carolina, from 10 AM to 8 PM EDT Friday.\n\nDominant high pressure will ensure minimal cloud cover and light and\nvariable winds. Long-range wildfire smoke will also transport ozone\nprecursors into the area. These factors will allow for sufficient\nozone production, compounding with weak dispersion characteristics\nof an already pollutant-loaded atmosphere.\n\nAn ozone action day means that atmospheric conditions will likely\nproduce unhealthy concentrations of ground level ozone air\npollution. A Code Orange forecast indicates that ground level ozone\nconcentrations are expected to be unhealthy for sensitive groups,\nwhich includes people with lung disease, older adults, and children.\nSensitive groups should reduce prolonged or heavy outdoor exertion,\ntake more breaks, and do less intense activities, especially during\nafternoon and early evening hours. You can help prevent ozone\npollution by walking or riding your bicycle, taking your lunch to\nwork, reducing idling, conserving energy, and keeping your vehicle\nproperly tuned. For additional information, please visit the South\nCarolina Department of Environmental Services website at\nhttp://www.des.sc.gov/ozone or the Environmental Protection Agency\nAirNow website at https://www.airnow.gov.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170002"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.63103cb864bb5e0d0c1f621f7fe140741aabe002.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T15:32:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 3:32PM EDT by NWS Columbia SC",
+      "affected_regions": [
+        "SC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.63103cb864bb5e0d0c1f621f7fe140741aabe002.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.63103cb864bb5e0d0c1f621f7fe140741aabe002.001.1",
+          "areaDesc": "Northern Lancaster; Southern Lancaster",
+          "geocode": {
+            "SAME": [
+              "045057"
+            ],
+            "UGC": [
+              "SCZ115",
+              "SCZ116"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/SCZ115",
+            "https://api.weather.gov/zones/forecast/SCZ116"
+          ],
+          "references": [],
+          "sent": "2026-07-16T15:32:00-04:00",
+          "effective": "2026-07-16T15:32:00-04:00",
+          "onset": "2026-07-16T15:32:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Columbia SC",
+          "headline": "Air Quality Alert issued July 16 at 3:32PM EDT by NWS Columbia SC",
+          "description": "The South Carolina Department of Environmental Services has issued a\nCode Orange Ozone Action Day for the Catawba region of South\nCarolina.\n\nAn ozone action day means that atmospheric conditions will likely\nproduce unhealthy concentrations of ground level ozone air\npollution. A Code Orange forecast indicates that ground level ozone\nconcentrations are expected to be unhealthy for sensitive groups,\nwhich includes people with lung disease, older adults, and children.\nSensitive groups should reduce prolonged or heavy outdoor exertion,\ntake more breaks, and do less intense activities, especially during\nafternoon and early evening hours. You can help prevent ozone\npollution by walking or riding your bicycle, taking your lunch to\nwork, reducing idling, conserving energy, and keeping your vehicle\nproperly tuned.  For additional information, please visit the South\nCarolina Department of Environmental Services ozone web site at\nhttp://www.des.sc.gov/ozone or the Environmental Protection Agency\nAirNow website at https://www.airnow.gov.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQACAE"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KCAE 161932"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.e543e521dfdb8cc951a68df94cfce7780182da93.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:30:00-04:00",
+      "expires_at": "2026-07-17T10:30:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:30AM EDT until July 17 at 8:00PM EDT by NWS Peachtree City GA",
+      "affected_regions": [
+        "GA"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.e543e521dfdb8cc951a68df94cfce7780182da93.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.e543e521dfdb8cc951a68df94cfce7780182da93.001.1",
+          "areaDesc": "Banks; Jackson; Madison; Barrow; Clarke; Oconee; Oglethorpe; Wilkes; Walton; Newton; Morgan; Greene; Taliaferro; Jasper; Putnam; Hancock; Warren; Jones; Baldwin; Washington; Glascock; Jefferson; Wilkinson; Johnson; Emanuel; Laurens; Treutlen; Wheeler; Montgomery; Toombs",
+          "geocode": {
+            "SAME": [
+              "013011",
+              "013157",
+              "013195",
+              "013013",
+              "013059",
+              "013219",
+              "013221",
+              "013317",
+              "013297",
+              "013217",
+              "013211",
+              "013133",
+              "013265",
+              "013159",
+              "013237",
+              "013141",
+              "013301",
+              "013169",
+              "013009",
+              "013303",
+              "013125",
+              "013163",
+              "013319",
+              "013167",
+              "013107",
+              "013175",
+              "013283",
+              "013309",
+              "013209",
+              "013279"
+            ],
+            "UGC": [
+              "GAZ024",
+              "GAZ025",
+              "GAZ027",
+              "GAZ035",
+              "GAZ036",
+              "GAZ037",
+              "GAZ038",
+              "GAZ039",
+              "GAZ047",
+              "GAZ048",
+              "GAZ049",
+              "GAZ050",
+              "GAZ051",
+              "GAZ059",
+              "GAZ060",
+              "GAZ061",
+              "GAZ062",
+              "GAZ072",
+              "GAZ073",
+              "GAZ074",
+              "GAZ075",
+              "GAZ076",
+              "GAZ084",
+              "GAZ085",
+              "GAZ086",
+              "GAZ097",
+              "GAZ098",
+              "GAZ111",
+              "GAZ112",
+              "GAZ113"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/GAZ024",
+            "https://api.weather.gov/zones/forecast/GAZ025",
+            "https://api.weather.gov/zones/forecast/GAZ027",
+            "https://api.weather.gov/zones/forecast/GAZ035",
+            "https://api.weather.gov/zones/forecast/GAZ036",
+            "https://api.weather.gov/zones/forecast/GAZ037",
+            "https://api.weather.gov/zones/forecast/GAZ038",
+            "https://api.weather.gov/zones/forecast/GAZ039",
+            "https://api.weather.gov/zones/forecast/GAZ047",
+            "https://api.weather.gov/zones/forecast/GAZ048",
+            "https://api.weather.gov/zones/forecast/GAZ049",
+            "https://api.weather.gov/zones/forecast/GAZ050",
+            "https://api.weather.gov/zones/forecast/GAZ051",
+            "https://api.weather.gov/zones/forecast/GAZ059",
+            "https://api.weather.gov/zones/forecast/GAZ060",
+            "https://api.weather.gov/zones/forecast/GAZ061",
+            "https://api.weather.gov/zones/forecast/GAZ062",
+            "https://api.weather.gov/zones/forecast/GAZ072",
+            "https://api.weather.gov/zones/forecast/GAZ073",
+            "https://api.weather.gov/zones/forecast/GAZ074",
+            "https://api.weather.gov/zones/forecast/GAZ075",
+            "https://api.weather.gov/zones/forecast/GAZ076",
+            "https://api.weather.gov/zones/forecast/GAZ084",
+            "https://api.weather.gov/zones/forecast/GAZ085",
+            "https://api.weather.gov/zones/forecast/GAZ086",
+            "https://api.weather.gov/zones/forecast/GAZ097",
+            "https://api.weather.gov/zones/forecast/GAZ098",
+            "https://api.weather.gov/zones/forecast/GAZ111",
+            "https://api.weather.gov/zones/forecast/GAZ112",
+            "https://api.weather.gov/zones/forecast/GAZ113"
+          ],
+          "references": [],
+          "sent": "2026-07-17T02:30:00-04:00",
+          "effective": "2026-07-17T02:30:00-04:00",
+          "onset": "2026-07-17T12:00:00-04:00",
+          "expires": "2026-07-17T10:30:00-04:00",
+          "ends": "2026-07-17T20:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Peachtree City GA",
+          "headline": "Heat Advisory issued July 17 at 2:30AM EDT until July 17 at 8:00PM EDT by NWS Peachtree City GA",
+          "description": "* WHAT...Heat index values up to 108 expected.\n\n* WHERE...Portions of central, east central, north central,\nnortheast, and southeast Georgia.\n\n* WHEN...From noon today to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWFFC"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KFFC 170630"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM NOON TODAY TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.NEW.KFFC.HT.Y.0014.260717T1600Z-260718T0000Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T20:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ff5da802d34a3bf1594c3695de7084c3721f5e3e.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T05:14:00-04:00",
+      "expires_at": "2026-07-17T16:00:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 5:14AM EDT by NWS Blacksburg VA",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ff5da802d34a3bf1594c3695de7084c3721f5e3e.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ff5da802d34a3bf1594c3695de7084c3721f5e3e.002.1",
+          "areaDesc": "Stokes; Rockingham; Caswell",
+          "geocode": {
+            "SAME": [
+              "037169",
+              "037157",
+              "037033"
+            ],
+            "UGC": [
+              "NCZ004",
+              "NCZ005",
+              "NCZ006"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ004",
+            "https://api.weather.gov/zones/forecast/NCZ005",
+            "https://api.weather.gov/zones/forecast/NCZ006"
+          ],
+          "references": [],
+          "sent": "2026-07-17T05:14:00-04:00",
+          "effective": "2026-07-17T05:14:00-04:00",
+          "onset": "2026-07-17T05:14:00-04:00",
+          "expires": "2026-07-17T16:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Blacksburg VA",
+          "headline": "Air Quality Alert issued July 17 at 5:14AM EDT by NWS Blacksburg VA",
+          "description": "Forsyth County Office of Environmental Assistance and Protection\nWinston-Salem NC has issued a Code Orange Air Quality Action Day for\nthe Triad region for Ground Level Ozone, from 10 AM this morning to\n8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nwww.co.forsyth.nc.us/eap/dailyforecast.aspx",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQARNK"
+            ],
+            "WMOidentifier": [
+              "AEUS71 KRNK 170914"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.002.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:26:00-04:00",
+      "expires_at": "2026-07-17T10:30:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:26AM EDT until July 17 at 9:00PM EDT by NWS Raleigh NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.002.1",
+          "areaDesc": "Durham; Wake; Johnston; Wilson; Harnett; Wayne; Cumberland; Sampson",
+          "geocode": {
+            "SAME": [
+              "037063",
+              "037183",
+              "037101",
+              "037195",
+              "037085",
+              "037191",
+              "037051",
+              "037163"
+            ],
+            "UGC": [
+              "NCZ025",
+              "NCZ041",
+              "NCZ042",
+              "NCZ043",
+              "NCZ077",
+              "NCZ078",
+              "NCZ088",
+              "NCZ089"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ025",
+            "https://api.weather.gov/zones/forecast/NCZ041",
+            "https://api.weather.gov/zones/forecast/NCZ042",
+            "https://api.weather.gov/zones/forecast/NCZ043",
+            "https://api.weather.gov/zones/forecast/NCZ077",
+            "https://api.weather.gov/zones/forecast/NCZ078",
+            "https://api.weather.gov/zones/forecast/NCZ088",
+            "https://api.weather.gov/zones/forecast/NCZ089"
+          ],
+          "references": [
+            {
+              "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ffb5755179fddc987becfa0b6d1b601d4f66d8df.001.1",
+              "identifier": "urn:oid:2.49.0.1.840.0.ffb5755179fddc987becfa0b6d1b601d4f66d8df.001.1",
+              "sender": "w-nws.webmaster@noaa.gov",
+              "sent": "2026-07-17T02:20:00-04:00"
+            }
+          ],
+          "sent": "2026-07-17T02:26:00-04:00",
+          "effective": "2026-07-17T02:26:00-04:00",
+          "onset": "2026-07-17T12:00:00-04:00",
+          "expires": "2026-07-17T10:30:00-04:00",
+          "ends": "2026-07-17T21:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Update",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Raleigh NC",
+          "headline": "Heat Advisory issued July 17 at 2:26AM EDT until July 17 at 9:00PM EDT by NWS Raleigh NC",
+          "description": "* WHAT...Heat index values up to 106 expected.\n\n* WHERE...Cumberland, Durham, Harnett, Johnston, Sampson, Wake,\nWayne, and Wilson Counties.\n\n* WHEN...From noon today to 9 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWRAH"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KRAH 170626"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY REMAINS IN EFFECT FROM NOON TODAY TO 9 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.CON.KRAH.HT.Y.0015.260717T1600Z-260718T0100Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T21:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:26:00-04:00",
+      "expires_at": "2026-07-17T10:30:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:26AM EDT until July 17 at 9:00PM EDT by NWS Raleigh NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.530bd316deb6b559a346e1f539db8c00a6d2f662.001.1",
+          "areaDesc": "Warren; Halifax; Franklin; Nash; Edgecombe",
+          "geocode": {
+            "SAME": [
+              "037185",
+              "037083",
+              "037069",
+              "037127",
+              "037065"
+            ],
+            "UGC": [
+              "NCZ010",
+              "NCZ011",
+              "NCZ026",
+              "NCZ027",
+              "NCZ028"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ010",
+            "https://api.weather.gov/zones/forecast/NCZ011",
+            "https://api.weather.gov/zones/forecast/NCZ026",
+            "https://api.weather.gov/zones/forecast/NCZ027",
+            "https://api.weather.gov/zones/forecast/NCZ028"
+          ],
+          "references": [],
+          "sent": "2026-07-17T02:26:00-04:00",
+          "effective": "2026-07-17T02:26:00-04:00",
+          "onset": "2026-07-17T12:00:00-04:00",
+          "expires": "2026-07-17T10:30:00-04:00",
+          "ends": "2026-07-17T21:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Raleigh NC",
+          "headline": "Heat Advisory issued July 17 at 2:26AM EDT until July 17 at 9:00PM EDT by NWS Raleigh NC",
+          "description": "* WHAT...Heat index values up to 105 expected.\n\n* WHERE...Edgecombe, Franklin, Halifax, Nash, and Warren Counties.\n\n* WHEN...From noon today to 9 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWRAH"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KRAH 170626"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM NOON TODAY TO 9 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.EXA.KRAH.HT.Y.0015.260717T1600Z-260718T0100Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T21:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:20:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wilmington NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.8ed26d3308db4ec2e9c8bc7dd1261927312048f3.001.1",
+          "areaDesc": "Robeson; Bladen; Columbus; Inland Pender; Coastal Pender; Inland New Hanover; Coastal New Hanover; Inland Brunswick; Coastal Brunswick; Marlboro; Darlington; Dillon; Florence; Marion; Williamsburg; Coastal Horry; Inland Georgetown; Coastal Georgetown; Central Horry; Northern Horry",
+          "geocode": {
+            "SAME": [
+              "037155",
+              "037017",
+              "037047",
+              "037141",
+              "037129",
+              "037019",
+              "045069",
+              "045031",
+              "045033",
+              "045041",
+              "045067",
+              "045089",
+              "045051",
+              "045043"
+            ],
+            "UGC": [
+              "NCZ087",
+              "NCZ096",
+              "NCZ099",
+              "NCZ105",
+              "NCZ106",
+              "NCZ107",
+              "NCZ108",
+              "NCZ109",
+              "NCZ110",
+              "SCZ017",
+              "SCZ023",
+              "SCZ024",
+              "SCZ032",
+              "SCZ033",
+              "SCZ039",
+              "SCZ054",
+              "SCZ055",
+              "SCZ056",
+              "SCZ058",
+              "SCZ059"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ087",
+            "https://api.weather.gov/zones/forecast/NCZ096",
+            "https://api.weather.gov/zones/forecast/NCZ099",
+            "https://api.weather.gov/zones/forecast/NCZ105",
+            "https://api.weather.gov/zones/forecast/NCZ106",
+            "https://api.weather.gov/zones/forecast/NCZ107",
+            "https://api.weather.gov/zones/forecast/NCZ108",
+            "https://api.weather.gov/zones/forecast/NCZ109",
+            "https://api.weather.gov/zones/forecast/NCZ110",
+            "https://api.weather.gov/zones/forecast/SCZ017",
+            "https://api.weather.gov/zones/forecast/SCZ023",
+            "https://api.weather.gov/zones/forecast/SCZ024",
+            "https://api.weather.gov/zones/forecast/SCZ032",
+            "https://api.weather.gov/zones/forecast/SCZ033",
+            "https://api.weather.gov/zones/forecast/SCZ039",
+            "https://api.weather.gov/zones/forecast/SCZ054",
+            "https://api.weather.gov/zones/forecast/SCZ055",
+            "https://api.weather.gov/zones/forecast/SCZ056",
+            "https://api.weather.gov/zones/forecast/SCZ058",
+            "https://api.weather.gov/zones/forecast/SCZ059"
+          ],
+          "references": [],
+          "sent": "2026-07-17T02:20:00-04:00",
+          "effective": "2026-07-17T02:20:00-04:00",
+          "onset": "2026-07-17T11:00:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": "2026-07-17T20:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Wilmington NC",
+          "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wilmington NC",
+          "description": "* WHAT...Heat index values up to 109 expected.\n\n* WHERE...Portions of southeast North Carolina and northeast South\nCarolina.\n\n* WHEN...From 11 AM this morning to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWILM"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KILM 170620"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM 11 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.NEW.KILM.HT.Y.0015.260717T1500Z-260718T0000Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T20:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.29c1e303ec366b77a38ae46cb74c73fa6a705186.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T02:20:00-04:00",
+      "expires_at": "2026-07-17T11:00:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wakefield VA",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.29c1e303ec366b77a38ae46cb74c73fa6a705186.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.29c1e303ec366b77a38ae46cb74c73fa6a705186.001.1",
+          "areaDesc": "Northampton; Hertford; Gates; Pasquotank; Camden; Western Currituck; Bertie; Chowan; Perquimans",
+          "geocode": {
+            "SAME": [
+              "037131",
+              "037091",
+              "037073",
+              "037139",
+              "037029",
+              "037053",
+              "037015",
+              "037041",
+              "037143"
+            ],
+            "UGC": [
+              "NCZ012",
+              "NCZ013",
+              "NCZ014",
+              "NCZ015",
+              "NCZ016",
+              "NCZ017",
+              "NCZ030",
+              "NCZ031",
+              "NCZ032"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ012",
+            "https://api.weather.gov/zones/forecast/NCZ013",
+            "https://api.weather.gov/zones/forecast/NCZ014",
+            "https://api.weather.gov/zones/forecast/NCZ015",
+            "https://api.weather.gov/zones/forecast/NCZ016",
+            "https://api.weather.gov/zones/forecast/NCZ017",
+            "https://api.weather.gov/zones/forecast/NCZ030",
+            "https://api.weather.gov/zones/forecast/NCZ031",
+            "https://api.weather.gov/zones/forecast/NCZ032"
+          ],
+          "references": [],
+          "sent": "2026-07-17T02:20:00-04:00",
+          "effective": "2026-07-17T02:20:00-04:00",
+          "onset": "2026-07-17T11:00:00-04:00",
+          "expires": "2026-07-17T11:00:00-04:00",
+          "ends": "2026-07-17T20:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Wakefield VA",
+          "headline": "Heat Advisory issued July 17 at 2:20AM EDT until July 17 at 8:00PM EDT by NWS Wakefield VA",
+          "description": "* WHAT...Heat index values up to 105 to 109 expected.\n\n* WHERE...Bertie, Camden, Chowan, Gates, Hertford, Northampton,\nPasquotank, Perquimans, and Western Currituck Counties.\n\n* WHEN...From 11 AM this morning to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to early morning\nor evening. Take action when you see symptoms of heat exhaustion and\nheat stroke.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWAKQ"
+            ],
+            "WMOidentifier": [
+              "WWUS71 KAKQ 170620"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM 11 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.NEW.KAKQ.HT.Y.0010.260717T1500Z-260718T0000Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T20:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.2887e98e19d67ef5029cd299ae45622115db9310.001.1",
+      "hazard_type": "heatwave",
+      "severity": "moderate",
+      "urgency": "expected",
+      "issued_at": "2026-07-17T01:47:00-04:00",
+      "expires_at": "2026-07-17T17:00:00-04:00",
+      "headline": "Heat Advisory issued July 17 at 1:47AM EDT until July 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2887e98e19d67ef5029cd299ae45622115db9310.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.2887e98e19d67ef5029cd299ae45622115db9310.001.1",
+          "areaDesc": "Martin; Pitt; Washington; Tyrrell; Mainland Dare; Greene; Beaufort; Mainland Hyde; Duplin; Lenoir; Jones; Pamlico; Northern Craven; Southern Craven; West Carteret; East Carteret; Inland Onslow; Coastal Onslow; Ocracoke Island; Hatteras Island",
+          "geocode": {
+            "SAME": [
+              "037117",
+              "037147",
+              "037187",
+              "037177",
+              "037055",
+              "037079",
+              "037013",
+              "037095",
+              "037061",
+              "037107",
+              "037103",
+              "037137",
+              "037049",
+              "037031",
+              "037133"
+            ],
+            "UGC": [
+              "NCZ029",
+              "NCZ044",
+              "NCZ045",
+              "NCZ046",
+              "NCZ047",
+              "NCZ079",
+              "NCZ080",
+              "NCZ081",
+              "NCZ090",
+              "NCZ091",
+              "NCZ092",
+              "NCZ094",
+              "NCZ193",
+              "NCZ194",
+              "NCZ195",
+              "NCZ196",
+              "NCZ198",
+              "NCZ199",
+              "NCZ204",
+              "NCZ205"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ029",
+            "https://api.weather.gov/zones/forecast/NCZ044",
+            "https://api.weather.gov/zones/forecast/NCZ045",
+            "https://api.weather.gov/zones/forecast/NCZ046",
+            "https://api.weather.gov/zones/forecast/NCZ047",
+            "https://api.weather.gov/zones/forecast/NCZ079",
+            "https://api.weather.gov/zones/forecast/NCZ080",
+            "https://api.weather.gov/zones/forecast/NCZ081",
+            "https://api.weather.gov/zones/forecast/NCZ090",
+            "https://api.weather.gov/zones/forecast/NCZ091",
+            "https://api.weather.gov/zones/forecast/NCZ092",
+            "https://api.weather.gov/zones/forecast/NCZ094",
+            "https://api.weather.gov/zones/forecast/NCZ193",
+            "https://api.weather.gov/zones/forecast/NCZ194",
+            "https://api.weather.gov/zones/forecast/NCZ195",
+            "https://api.weather.gov/zones/forecast/NCZ196",
+            "https://api.weather.gov/zones/forecast/NCZ198",
+            "https://api.weather.gov/zones/forecast/NCZ199",
+            "https://api.weather.gov/zones/forecast/NCZ204",
+            "https://api.weather.gov/zones/forecast/NCZ205"
+          ],
+          "references": [],
+          "sent": "2026-07-17T01:47:00-04:00",
+          "effective": "2026-07-17T01:47:00-04:00",
+          "onset": "2026-07-17T11:00:00-04:00",
+          "expires": "2026-07-17T17:00:00-04:00",
+          "ends": "2026-07-17T20:00:00-04:00",
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Moderate",
+          "certainty": "Likely",
+          "urgency": "Expected",
+          "event": "Heat Advisory",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Newport/Morehead City NC",
+          "headline": "Heat Advisory issued July 17 at 1:47AM EDT until July 17 at 8:00PM EDT by NWS Newport/Morehead City NC",
+          "description": "* WHAT...Heat index values of 105 to 109 degrees expected for most.\nSouthern coast may briefly experience heat index values in excess\nof 110 degrees.\n\n* WHERE...Most of eastern North Carolina.\n\n* WHEN...From 11 AM this morning to 8 PM EDT this evening.\n\n* IMPACTS...Hot temperatures and high humidity may cause heat\nillnesses.",
+          "instruction": "Drink plenty of fluids, stay in an air-conditioned room, stay out of\nthe sun, and check up on relatives and neighbors.\n\nTake extra precautions when outside. Wear lightweight and loose\nfitting clothing. Try to limit strenuous activities to early morning\nor evening. Take action when you see symptoms of heat exhaustion and\nheat stroke.",
+          "response": "Execute",
+          "note": null,
+          "parameters": {
+            "AWIPSidentifier": [
+              "NPWMHX"
+            ],
+            "WMOidentifier": [
+              "WWUS72 KMHX 170547"
+            ],
+            "NWSheadline": [
+              "HEAT ADVISORY IN EFFECT FROM 11 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ],
+            "VTEC": [
+              "/O.NEW.KMHX.HT.Y.0014.260717T1500Z-260718T0000Z/"
+            ],
+            "eventEndingTime": [
+              "2026-07-17T20:00:00-04:00"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "HTY"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.003.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:45:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.003.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.003.1",
+          "areaDesc": "Gaston; Mecklenburg",
+          "geocode": {
+            "SAME": [
+              "037071",
+              "037119"
+            ],
+            "UGC": [
+              "NCZ070",
+              "NCZ071"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ070",
+            "https://api.weather.gov/zones/forecast/NCZ071"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:45:00-04:00",
+          "effective": "2026-07-17T00:45:00-04:00",
+          "onset": "2026-07-17T00:45:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The North Carolina Department of Environmental Quality in Raleigh NC\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for Gaston and Mecklenburg Counties, from 10 AM this morning\nto 8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the North\nCarolina Division of Air Quality Web site at\nhttps://airquality.climate.ncsu.edu/.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170445"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:45:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.4ae0ef84d9fb07d3a75243f6d9ea09ecac45b886.002.1",
+          "areaDesc": "Davie",
+          "geocode": {
+            "SAME": [
+              "037059"
+            ],
+            "UGC": [
+              "NCZ037"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ037"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:45:00-04:00",
+          "effective": "2026-07-17T00:45:00-04:00",
+          "onset": "2026-07-17T00:45:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:45AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The Forsyth County Environmental Affairs Department in Winston Salem\nNC has issued a Code Orange Air Quality Action Day for Ground Level\nOzone for the Davie County Triad area, from 10 AM this morning to\n8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nhttps://forsyth.cc/EAP/dailyforecast.aspx.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170445"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.003.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:20:00-04:00",
+      "expires_at": "2026-07-18T00:30:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.003.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.003.1",
+          "areaDesc": "Gaston; Mecklenburg",
+          "geocode": {
+            "SAME": [
+              "037071",
+              "037119"
+            ],
+            "UGC": [
+              "NCZ070",
+              "NCZ071"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ070",
+            "https://api.weather.gov/zones/forecast/NCZ071"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:20:00-04:00",
+          "effective": "2026-07-17T00:20:00-04:00",
+          "onset": "2026-07-17T00:20:00-04:00",
+          "expires": "2026-07-18T00:30:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The North Carolina Department of Environmental Quality in Raleigh NC\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for Gaston and Mecklenburg Counties, from 10 AM this morning\nto 8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the North\nCarolina Division of Air Quality Web site at\nhttps://airquality.climate.ncsu.edu/.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170420"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:20:00-04:00",
+      "expires_at": "2026-07-18T00:30:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.eda68f8efcb24db9d7e2e7d5d29281cfae26265e.002.1",
+          "areaDesc": "Davie",
+          "geocode": {
+            "SAME": [
+              "037059"
+            ],
+            "UGC": [
+              "NCZ037"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ037"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:20:00-04:00",
+          "effective": "2026-07-17T00:20:00-04:00",
+          "onset": "2026-07-17T00:20:00-04:00",
+          "expires": "2026-07-18T00:30:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 17 at 12:20AM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The Forsyth County Environmental Affairs Department in Winston Salem\nNC has issued a Code Orange Air Quality Action Day for Ground Level\nOzone for the Davie County Triad area, from 10 AM this morning to\n8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nhttps://forsyth.cc/EAP/dailyforecast.aspx.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170420"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.d0b6b29adbd364bbb340fb76668de13f4f6088aa.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-17T00:08:00-04:00",
+      "expires_at": "2026-07-17T16:00:00-04:00",
+      "headline": "Air Quality Alert issued July 17 at 12:08AM EDT by NWS Blacksburg VA",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d0b6b29adbd364bbb340fb76668de13f4f6088aa.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.d0b6b29adbd364bbb340fb76668de13f4f6088aa.002.1",
+          "areaDesc": "Stokes; Rockingham; Caswell",
+          "geocode": {
+            "SAME": [
+              "037169",
+              "037157",
+              "037033"
+            ],
+            "UGC": [
+              "NCZ004",
+              "NCZ005",
+              "NCZ006"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ004",
+            "https://api.weather.gov/zones/forecast/NCZ005",
+            "https://api.weather.gov/zones/forecast/NCZ006"
+          ],
+          "references": [],
+          "sent": "2026-07-17T00:08:00-04:00",
+          "effective": "2026-07-17T00:08:00-04:00",
+          "onset": "2026-07-17T00:08:00-04:00",
+          "expires": "2026-07-17T16:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Blacksburg VA",
+          "headline": "Air Quality Alert issued July 17 at 12:08AM EDT by NWS Blacksburg VA",
+          "description": "Forsyth County Office of Environmental Assistance and Protection\nWinston-Salem NC has issued a Code Orange Air Quality Action Day for\nthe Triad region for Ground Level Ozone, from 10 AM this morning to\n8 PM EDT this evening.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nwww.co.forsyth.nc.us/eap/dailyforecast.aspx",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQARNK"
+            ],
+            "WMOidentifier": [
+              "AEUS71 KRNK 170408"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM THIS MORNING TO 8 PM EDT THIS EVENING"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:06:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.001.1",
+          "areaDesc": "Davie",
+          "geocode": {
+            "SAME": [
+              "037059"
+            ],
+            "UGC": [
+              "NCZ037"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ037"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:06:00-04:00",
+          "effective": "2026-07-16T20:06:00-04:00",
+          "onset": "2026-07-16T20:06:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The Forsyth County Environmental Affairs Department in Winston Salem\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for the Davie County Triad area, until midnight EDT tonight.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nhttps://forsyth.cc/EAP/dailyforecast.aspx.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170006 CCA"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT UNTIL MIDNIGHT TONIGHT AND AGAIN FROM 10 AM TO 8 PM FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.003.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:06:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.003.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ff250de96de03c72de795898c1695d05dc3c204d.003.1",
+          "areaDesc": "Gaston; Mecklenburg",
+          "geocode": {
+            "SAME": [
+              "037071",
+              "037119"
+            ],
+            "UGC": [
+              "NCZ070",
+              "NCZ071"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ070",
+            "https://api.weather.gov/zones/forecast/NCZ071"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:06:00-04:00",
+          "effective": "2026-07-16T20:06:00-04:00",
+          "onset": "2026-07-16T20:06:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:06PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The North Carolina Department of Environmental Quality in Raleigh\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for Mecklenburg and Gaston Counties, from 10 AM to 8 PM EDT\nFriday.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the North\nCarolina Division of Air Quality Web site at\nhttps://airquality.climate.ncsu.edu/.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170006 CCA"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.003.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:02:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.003.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.003.1",
+          "areaDesc": "Gaston; Mecklenburg",
+          "geocode": {
+            "SAME": [
+              "037071",
+              "037119"
+            ],
+            "UGC": [
+              "NCZ070",
+              "NCZ071"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ070",
+            "https://api.weather.gov/zones/forecast/NCZ071"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:02:00-04:00",
+          "effective": "2026-07-16T20:02:00-04:00",
+          "onset": "2026-07-16T20:02:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The North Carolina Department of Environmental Quality in Raleigh\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for Gaston County, from 10 AM to 8 PM EDT Friday.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the North\nCarolina Division of Air Quality Web site at\nhttps://airquality.climate.ncsu.edu/.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170002"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:02:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.ef6b998c7132892c32db9b47d30dbfa131365180.001.1",
+          "areaDesc": "Davie",
+          "geocode": {
+            "SAME": [
+              "037059"
+            ],
+            "UGC": [
+              "NCZ037"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ037"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:02:00-04:00",
+          "effective": "2026-07-16T20:02:00-04:00",
+          "onset": "2026-07-16T20:02:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Greenville-Spartanburg SC",
+          "headline": "Air Quality Alert issued July 16 at 8:02PM EDT by NWS Greenville-Spartanburg SC",
+          "description": "The Forsyth County Environmental Affairs Department in Winston Salem\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone for the Davie County Triad area, until midnight EDT tonight.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Environmental Affairs Department Web site at\nhttps://forsyth.cc/EAP/dailyforecast.aspx.",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQAGSP"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KGSP 170002"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT UNTIL MIDNIGHT TONIGHT AND AGAIN FROM 10 AM TO 8 PM FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.001.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:00:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:00PM EDT by NWS Raleigh NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.001.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.001.1",
+          "areaDesc": "Forsyth; Guilford; Alamance; Davidson; Randolph",
+          "geocode": {
+            "SAME": [
+              "037067",
+              "037081",
+              "037001",
+              "037057",
+              "037151"
+            ],
+            "UGC": [
+              "NCZ021",
+              "NCZ022",
+              "NCZ023",
+              "NCZ038",
+              "NCZ039"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ021",
+            "https://api.weather.gov/zones/forecast/NCZ022",
+            "https://api.weather.gov/zones/forecast/NCZ023",
+            "https://api.weather.gov/zones/forecast/NCZ038",
+            "https://api.weather.gov/zones/forecast/NCZ039"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:00:00-04:00",
+          "effective": "2026-07-16T20:00:00-04:00",
+          "onset": "2026-07-16T20:00:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Raleigh NC",
+          "headline": "Air Quality Alert issued July 16 at 8:00PM EDT by NWS Raleigh NC",
+          "description": "The Forsyth County Office of Environmental Assistance and Protection\nin Winston Salem NC has issued a Code Orange Air Quality Action Day\nfor Ground Level Ozone, from 10 AM to 8 PM EDT Friday.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the Forsyth\nCounty Office of Environmental Assistance and Protection at\nwww.forsyth.cc/EAP/dailyforecast.aspx",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQARAH"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KRAH 170000"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alert_id": "urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.002.1",
+      "hazard_type": "other",
+      "severity": "unknown",
+      "urgency": "unknown",
+      "issued_at": "2026-07-16T20:00:00-04:00",
+      "expires_at": "2026-07-17T20:00:00-04:00",
+      "headline": "Air Quality Alert issued July 16 at 8:00PM EDT by NWS Raleigh NC",
+      "affected_regions": [
+        "NC"
+      ],
+      "raw": {
+        "properties": {
+          "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.002.1",
+          "@type": "wx:Alert",
+          "id": "urn:oid:2.49.0.1.840.0.de098be422eecf52a515049dabd9266be3f2e128.002.1",
+          "areaDesc": "Granville; Durham; Wake",
+          "geocode": {
+            "SAME": [
+              "037077",
+              "037063",
+              "037183"
+            ],
+            "UGC": [
+              "NCZ008",
+              "NCZ025",
+              "NCZ041"
+            ]
+          },
+          "affectedZones": [
+            "https://api.weather.gov/zones/forecast/NCZ008",
+            "https://api.weather.gov/zones/forecast/NCZ025",
+            "https://api.weather.gov/zones/forecast/NCZ041"
+          ],
+          "references": [],
+          "sent": "2026-07-16T20:00:00-04:00",
+          "effective": "2026-07-16T20:00:00-04:00",
+          "onset": "2026-07-16T20:00:00-04:00",
+          "expires": "2026-07-17T20:00:00-04:00",
+          "ends": null,
+          "status": "Actual",
+          "messageType": "Alert",
+          "category": "Met",
+          "severity": "Unknown",
+          "certainty": "Unknown",
+          "urgency": "Unknown",
+          "event": "Air Quality Alert",
+          "sender": "w-nws.webmaster@noaa.gov",
+          "senderName": "NWS Raleigh NC",
+          "headline": "Air Quality Alert issued July 16 at 8:00PM EDT by NWS Raleigh NC",
+          "description": "The North Carolina Department of Environmental Quality in Raleigh NC\nhas issued a Code Orange Air Quality Action Day for Ground Level\nOzone, from 10 AM to 8 PM EDT Friday.\n\nAn Air Quality Action Day means that Ground Level Ozone\nconcentrations within the region may approach or exceed unhealthy\nstandards. For additional information, please visit the North\nCarolina Division of Air Quality Web site at\nhttps://airquality.climate.ncsu.edu",
+          "instruction": null,
+          "response": "Monitor",
+          "note": "Non-Weather Emergency Message. Not sent to IPAWS.",
+          "parameters": {
+            "AWIPSidentifier": [
+              "AQARAH"
+            ],
+            "WMOidentifier": [
+              "AEUS72 KRAH 170000"
+            ],
+            "NWSheadline": [
+              "AIR QUALITY ALERT IN EFFECT FROM 10 AM TO 8 PM EDT FRIDAY"
+            ],
+            "BLOCKCHANNEL": [
+              "EAS",
+              "NWEM",
+              "CMAS"
+            ]
+          },
+          "scope": "Public",
+          "code": "IPAWSv1.0",
+          "language": "en-US",
+          "web": "http://www.weather.gov",
+          "eventCode": {
+            "SAME": [
+              "NWS"
+            ],
+            "NationalWeatherService": [
+              "AQA"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

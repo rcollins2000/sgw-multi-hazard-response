@@ -1,0 +1,76 @@
+report_id,asset_id,crew_id,submitted_at,observation_type,severity,access_status,notes,photo_reference
+FR-55000,SGW-RES-IN0019,CREW-LO-100,2026-07-16T17:05:00+00:00,Debris,High,Blocked,Water approx 8 inches above access road,FR-55000_01.jpg
+FR-55001,SGW-MAJ-CO0059,CREW-LO-100,2026-07-15T19:48:00+00:00,Flooding,Critical,Blocked,Water approx 8 inches above access road,FR-55001_01.jpg
+FR-55002,SGW-RES-IN0005,CREW-LO-104,2026-07-16T08:34:00+00:00,Debris,High,Blocked,Tree limb within 3 feet of conductor,FR-55002_01.jpg
+FR-55003,SGW-ELE-LO0001,CREW-LO-100,2026-07-16T11:27:00+00:00,Vegetation,Critical,Restricted,Fence damage; asset intact,FR-55003_01.jpg
+FR-55004,SGW-DIS-IN0059,CREW-CO-001,2026-07-16T13:03:00+00:00,Vegetation,Low,Accessible,Water approx 8 inches above access road,FR-55004_01.jpg
+FR-55005,SGW-CON-LO0010,CREW-CO-004,2026-07-14T07:34:00+00:00,Normal,Moderate,Accessible,Tree limb within 3 feet of conductor,FR-55005_01.jpg
+FR-55006,SGW-DIS-IN0036,CREW-IN-200,2026-07-15T20:29:00+00:00,Vandalism,Moderate,Restricted,Water approx 8 inches above access road,FR-55006_01.jpg
+FR-55007,SGW-DIS-IN0004,CREW-IN-202,2026-07-14T23:47:00+00:00,Flooding,Low,Restricted,No material defects identified,FR-55007_01.jpg
+FR-55008,SGW-MAJ-IN0064,CREW-LO-100,2026-07-15T09:08:00+00:00,Flooding,Critical,Accessible,Water approx 8 inches above access road,FR-55008_01.jpg
+FR-55009,SGW-RES-CO0057,CREW-IN-204,2026-07-15T11:09:00+00:00,Normal,Low,Accessible,Tree limb within 3 feet of conductor,FR-55009_01.jpg
+FR-55010,SGW-ELE-IN0048,CREW-IN-200,2026-07-14T07:07:00+00:00,Vandalism,Moderate,Accessible,Fence damage; asset intact,FR-55010_01.jpg
+FR-55011,SGW-MAJ-CO0018,CREW-IN-203,2026-07-15T10:47:00+00:00,Vegetation,Critical,Restricted,Tree limb within 3 feet of conductor,FR-55011_01.jpg
+FR-55012,SGW-ELE-LO0062,CREW-CO-004,2026-07-14T00:45:00+00:00,Flooding,Low,Restricted,Water approx 8 inches above access road,FR-55012_01.jpg
+FR-55013,SGW-DIS-CO0005,CREW-CO-004,2026-07-16T08:17:00+00:00,Vegetation,High,Restricted,Fence damage; asset intact,FR-55013_01.jpg
+FR-55014,SGW-CON-LO0048,CREW-LO-101,2026-07-15T04:48:00+00:00,Vegetation,High,Blocked,No material defects identified,FR-55014_01.jpg
+FR-55015,SGW-MAJ-LO0019,CREW-CO-002,2026-07-16T01:19:00+00:00,Vandalism,Low,Blocked,Fence damage; asset intact,FR-55015_01.jpg
+FR-55016,SGW-ELE-IN0014,CREW-CO-002,2026-07-15T14:30:00+00:00,Vandalism,Moderate,Restricted,No material defects identified,FR-55016_01.jpg
+FR-55017,SGW-WAT-LO0038,CREW-CO-000,2026-07-14T11:21:00+00:00,Equipment fault,Moderate,Blocked,No material defects identified,FR-55017_01.jpg
+FR-55018,SGW-ELE-IN0014,CREW-LO-100,2026-07-14T10:48:00+00:00,Flooding,Critical,Accessible,Cooling fan stopped; temperature rising,FR-55018_01.jpg
+FR-55019,SGW-WAS-IN0030,CREW-IN-204,2026-07-14T14:34:00+00:00,Vandalism,Moderate,Blocked,Tree limb within 3 feet of conductor,FR-55019_01.jpg
+FR-55020,SGW-TRA-CO0015,CREW-LO-103,2026-07-14T16:02:00+00:00,Vegetation,Moderate,Blocked,Water approx 8 inches above access road,FR-55020_01.jpg
+FR-55021,SGW-WAT-LO0008,CREW-CO-003,2026-07-14T14:51:00+00:00,Vegetation,Critical,Restricted,Water approx 8 inches above access road,FR-55021_01.jpg
+FR-55022,SGW-MAJ-IN0058,CREW-LO-102,2026-07-15T11:03:00+00:00,Flooding,Moderate,Blocked,Tree limb within 3 feet of conductor,FR-55022_01.jpg
+FR-55023,SGW-WAS-LO0053,CREW-IN-202,2026-07-16T18:06:00+00:00,Normal,High,Accessible,Water approx 8 inches above access road,FR-55023_01.jpg
+FR-55024,SGW-DIS-IN0020,CREW-CO-000,2026-07-15T07:13:00+00:00,Equipment fault,High,Accessible,Fence damage; asset intact,FR-55024_01.jpg
+FR-55025,SGW-DIS-LO0047,CREW-LO-101,2026-07-16T16:25:00+00:00,Flooding,Low,Restricted,No material defects identified,FR-55025_01.jpg
+FR-55026,SGW-TRA-CO0025,CREW-LO-101,2026-07-16T21:37:00+00:00,Vegetation,Critical,Restricted,No material defects identified,FR-55026_01.jpg
+FR-55027,SGW-MAJ-IN0011,CREW-LO-101,2026-07-15T14:37:00+00:00,Vegetation,High,Blocked,Fence damage; asset intact,FR-55027_01.jpg
+FR-55028,SGW-EME-IN0015,CREW-IN-204,2026-07-15T00:34:00+00:00,Vegetation,High,Accessible,Fence damage; asset intact,FR-55028_01.jpg
+FR-55029,SGW-MAJ-CO0058,CREW-CO-002,2026-07-16T21:25:00+00:00,Flooding,High,Accessible,No material defects identified,FR-55029_01.jpg
+FR-55030,SGW-RES-IN0021,CREW-CO-002,2026-07-15T13:07:00+00:00,Normal,High,Restricted,No material defects identified,FR-55030_01.jpg
+FR-55031,SGW-WAS-IN0042,CREW-LO-104,2026-07-14T21:27:00+00:00,Debris,Moderate,Blocked,Tree limb within 3 feet of conductor,FR-55031_01.jpg
+FR-55032,SGW-RES-IN0007,CREW-CO-001,2026-07-15T12:20:00+00:00,Vegetation,Critical,Blocked,Tree limb within 3 feet of conductor,FR-55032_01.jpg
+FR-55033,SGW-DIS-CO0005,CREW-IN-204,2026-07-14T00:40:00+00:00,Debris,High,Restricted,Tree limb within 3 feet of conductor,FR-55033_01.jpg
+FR-55034,SGW-EME-IN0054,CREW-IN-203,2026-07-15T10:49:00+00:00,Vandalism,Low,Blocked,Cooling fan stopped; temperature rising,FR-55034_01.jpg
+FR-55035,SGW-CON-IN0024,CREW-IN-201,2026-07-15T15:29:00+00:00,Debris,High,Blocked,No material defects identified,FR-55035_01.jpg
+FR-55036,SGW-WAT-IN0003,CREW-CO-000,2026-07-16T17:04:00+00:00,Equipment fault,Moderate,Blocked,No material defects identified,FR-55036_01.jpg
+FR-55037,SGW-CON-LO0037,CREW-IN-202,2026-07-15T10:46:00+00:00,Debris,Moderate,Accessible,No material defects identified,FR-55037_01.jpg
+FR-55038,SGW-DIS-LO0065,CREW-CO-000,2026-07-15T19:54:00+00:00,Equipment fault,Low,Accessible,Tree limb within 3 feet of conductor,FR-55038_01.jpg
+FR-55039,SGW-MAJ-CO0028,CREW-LO-104,2026-07-14T13:36:00+00:00,Debris,Moderate,Restricted,Cooling fan stopped; temperature rising,FR-55039_01.jpg
+FR-55040,SGW-WAS-LO0067,CREW-LO-104,2026-07-16T12:56:00+00:00,Vegetation,Moderate,Restricted,No material defects identified,FR-55040_01.jpg
+FR-55041,SGW-WAT-LO0038,CREW-IN-201,2026-07-16T06:39:00+00:00,Flooding,High,Accessible,Fence damage; asset intact,FR-55041_01.jpg
+FR-55042,SGW-ELE-CO0030,CREW-LO-104,2026-07-15T01:54:00+00:00,Vegetation,Low,Restricted,Cooling fan stopped; temperature rising,FR-55042_01.jpg
+FR-55043,SGW-CON-LO0017,CREW-LO-104,2026-07-15T04:45:00+00:00,Flooding,Moderate,Blocked,No material defects identified,FR-55043_01.jpg
+FR-55044,SGW-TRA-CO0003,CREW-LO-103,2026-07-16T00:28:00+00:00,Vandalism,High,Restricted,Tree limb within 3 feet of conductor,FR-55044_01.jpg
+FR-55045,SGW-RES-IN0007,CREW-CO-001,2026-07-14T03:34:00+00:00,Normal,Moderate,Blocked,No material defects identified,FR-55045_01.jpg
+FR-55046,SGW-WAT-IN0047,CREW-IN-202,2026-07-15T05:01:00+00:00,Normal,Moderate,Blocked,No material defects identified,FR-55046_01.jpg
+FR-55047,SGW-WAT-LO0054,CREW-CO-000,2026-07-15T17:22:00+00:00,Vegetation,High,Restricted,No material defects identified,FR-55047_01.jpg
+FR-55048,SGW-MAJ-CO0028,CREW-CO-004,2026-07-14T04:38:00+00:00,Vegetation,High,Restricted,Water approx 8 inches above access road,FR-55048_01.jpg
+FR-55049,SGW-CON-CO0034,CREW-LO-100,2026-07-14T02:29:00+00:00,Normal,Low,Restricted,Tree limb within 3 feet of conductor,FR-55049_01.jpg
+FR-55050,SGW-TRA-CO0065,CREW-LO-104,2026-07-15T14:31:00+00:00,Flooding,Moderate,Blocked,Fence damage; asset intact,FR-55050_01.jpg
+FR-55051,SGW-WAS-LO0067,CREW-LO-100,2026-07-16T14:34:00+00:00,Vegetation,Low,Restricted,Cooling fan stopped; temperature rising,FR-55051_01.jpg
+FR-55052,SGW-WAT-LO0055,CREW-CO-004,2026-07-15T12:28:00+00:00,Normal,Moderate,Restricted,Tree limb within 3 feet of conductor,FR-55052_01.jpg
+FR-55053,SGW-WAT-IN0047,CREW-LO-100,2026-07-16T16:38:00+00:00,Vandalism,Critical,Blocked,No material defects identified,FR-55053_01.jpg
+FR-55054,SGW-WAT-CO0053,CREW-CO-003,2026-07-15T22:11:00+00:00,Normal,Low,Accessible,Water approx 8 inches above access road,FR-55054_01.jpg
+FR-55055,SGW-RES-IN0041,CREW-IN-204,2026-07-15T21:35:00+00:00,Flooding,Critical,Restricted,Cooling fan stopped; temperature rising,FR-55055_01.jpg
+FR-55056,SGW-DIS-IN0059,CREW-CO-000,2026-07-16T13:20:00+00:00,Equipment fault,Moderate,Blocked,No material defects identified,FR-55056_01.jpg
+FR-55057,SGW-DIS-CO0033,CREW-LO-103,2026-07-14T19:30:00+00:00,Vandalism,Moderate,Restricted,Fence damage; asset intact,FR-55057_01.jpg
+FR-55058,SGW-WAT-IN0002,CREW-LO-102,2026-07-14T08:13:00+00:00,Normal,Moderate,Restricted,Cooling fan stopped; temperature rising,FR-55058_01.jpg
+FR-55059,SGW-ELE-IN0048,CREW-IN-204,2026-07-16T10:12:00+00:00,Vandalism,Low,Restricted,No material defects identified,FR-55059_01.jpg
+FR-55060,SGW-MAJ-IN0067,CREW-LO-104,2026-07-14T04:14:00+00:00,Normal,Low,Restricted,No material defects identified,FR-55060_01.jpg
+FR-55061,SGW-DIS-IN0034,CREW-IN-204,2026-07-15T17:48:00+00:00,Vegetation,Moderate,Blocked,Fence damage; asset intact,FR-55061_01.jpg
+FR-55062,SGW-EME-IN0065,CREW-CO-004,2026-07-15T02:50:00+00:00,Normal,Moderate,Accessible,No material defects identified,FR-55062_01.jpg
+FR-55063,SGW-ELE-IN0014,CREW-IN-203,2026-07-16T06:21:00+00:00,Flooding,Moderate,Accessible,No material defects identified,FR-55063_01.jpg
+FR-55064,SGW-TRA-LO0056,CREW-IN-203,2026-07-16T15:45:00+00:00,Normal,Moderate,Accessible,Tree limb within 3 feet of conductor,FR-55064_01.jpg
+FR-55065,SGW-WAT-LO0055,CREW-CO-001,2026-07-16T09:21:00+00:00,Vegetation,Moderate,Accessible,Fence damage; asset intact,FR-55065_01.jpg
+FR-55066,SGW-MAJ-CO0028,CREW-LO-101,2026-07-15T02:21:00+00:00,Normal,Moderate,Restricted,Water approx 8 inches above access road,FR-55066_01.jpg
+FR-55067,SGW-WAT-IN0035,CREW-LO-102,2026-07-14T23:42:00+00:00,Vegetation,Moderate,Restricted,Water approx 8 inches above access road,FR-55067_01.jpg
+FR-55068,SGW-TRA-CO0025,CREW-LO-101,2026-07-14T10:05:00+00:00,Vegetation,Moderate,Restricted,Fence damage; asset intact,FR-55068_01.jpg
+FR-55069,SGW-TRA-CO0015,CREW-LO-102,2026-07-16T21:34:00+00:00,Equipment fault,Low,Restricted,Water approx 8 inches above access road,FR-55069_01.jpg
+FR-55070,SGW-DIS-CO0005,CREW-LO-103,2026-07-14T08:38:00+00:00,Equipment fault,Low,Blocked,Tree limb within 3 feet of conductor,FR-55070_01.jpg
+FR-55071,SGW-ELE-IN0048,CREW-LO-104,2026-07-14T02:30:00+00:00,Equipment fault,Low,Restricted,Tree limb within 3 feet of conductor,FR-55071_01.jpg
+FR-55072,SGW-MAJ-CO0059,CREW-CO-002,2026-07-16T11:00:00+00:00,Debris,High,Accessible,Tree limb within 3 feet of conductor,FR-55072_01.jpg
+FR-55073,SGW-RES-IN0019,CREW-CO-004,2026-07-14T13:20:00+00:00,Debris,Low,Blocked,No material defects identified,FR-55073_01.jpg
+FR-55074,SGW-WAT-IN0032,CREW-LO-104,2026-07-16T00:07:00+00:00,Debris,Moderate,Accessible,Cooling fan stopped; temperature rising,FR-55074_01.jpg

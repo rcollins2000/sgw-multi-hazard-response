@@ -1,0 +1,112 @@
+# SGW platform — local dev orchestration.
+# Bring up: `make dev` (or `docker-compose up`).
+# Postgres data persists in the named volume `postgres_data`.
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    container_name: sgw_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sgw}
+      POSTGRES_USER: ${POSTGRES_USER:-sgw}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-sgw_dev_only}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/00_init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sgw} -d ${POSTGRES_DB:-sgw}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    networks:
+      - sgw_net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: sgw_backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-sgw}:${POSTGRES_PASSWORD:-sgw_dev_only}@postgres:5432/${POSTGRES_DB:-sgw}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.6}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_FORMAT: ${LOG_FORMAT:-json}
+      BACKEND_CORS_ORIGINS: http://localhost:5173
+      NOAA_CACHE_DIR: /data/cache/noaa
+      FEATURE_LLM_ENABLED: ${FEATURE_LLM_ENABLED:-true}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./data:/data
+    command: uv run uvicorn sgw_platform.api.main:app --reload --host 0.0.0.0 --port 8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - sgw_net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sgw_frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      VITE_API_BASE_URL: http://localhost:8000
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: pnpm dev --host 0.0.0.0
+    networks:
+      - sgw_net
+
+  # Optional observability stack — enable with `docker-compose --profile obs up`
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: sgw_prometheus
+    profiles: ["obs"]
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./infra/observability/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    networks:
+      - sgw_net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: sgw_grafana
+    profiles: ["obs"]
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: sgw_dev_only
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./infra/observability/grafana-dashboards:/etc/grafana/provisioning/dashboards:ro
+    networks:
+      - sgw_net
+
+volumes:
+  postgres_data:
+  grafana_data:
+
+networks:
+  sgw_net:
+    driver: bridge
