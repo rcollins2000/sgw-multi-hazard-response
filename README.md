@@ -29,7 +29,7 @@ All three deliverables — plus a short index — are collected in [deliverables
 
 | # | Deliverable | Where |
 |---|---|---|
-| 1 | **PRD** for the technical delivery team | [deliverables/1_PRD.md](deliverables/1_PRD.md) *(canonical source: [docs/03_prd.md](docs/03_prd.md))* |
+| 1 | **PRD** for the technical delivery team | [deliverables/1_PRD.pdf](deliverables/1_PRD.pdf) *(markdown source: [docs/03_prd_concise.md](docs/03_prd_concise.md); fuller working draft: [docs/03_prd.md](docs/03_prd.md))* |
 | 2 | **Executive briefing** | [deliverables/2_Executive_Briefing.pptx](deliverables/2_Executive_Briefing.pptx) *(reviewer-oriented markdown: [docs/04_exec_briefing.md](docs/04_exec_briefing.md))* |
 | 3 | **Prototype + demo video** | Prototype runs via `docker compose`; video on OneDrive: [SGW_demo.mp4](https://1drv.ms/v/c/08ca4f10a993019e/IQDyoMkYPgiCTIYgWvPU371UAcY7qOY_hOlZzdRn9y_Ho-4) |
 
