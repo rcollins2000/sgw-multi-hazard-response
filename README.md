@@ -263,7 +263,6 @@ Concrete next moves, prioritised by expected impact:
 
 ## Repo tour
 
-- **[CLAUDE.md](CLAUDE.md)** — project instructions, guardrails, stack, conventions
 - **[PLAN.md](PLAN.md)** — phase-gated execution plan with tests at every stage
 - **[Makefile](Makefile)** — common commands: `make install`, `make dev`, `make test`, `make demo`
 - **[.env.example](.env.example)** — copy to `.env` and fill in credentials
@@ -318,7 +317,6 @@ The platform's LLM layer is built the same way the rest of the code is — with 
 This repo was built with AI assistance. It's included in the submission for auditability — see **[.claude/README.md](.claude/README.md)** for the framing:
 
 - **[.claude/agents/](.claude/agents/)** — three task-scoped subagents (`test-orchestrator`, `dev-tracker`, `demo-scribe`), each with defined tool policies and non-goals. Same pattern as the platform's copilot.
-- **[CLAUDE.md](CLAUDE.md)** — the engineering charter: locked stack, non-negotiable design principles, coding conventions. Read at the start of every session.
 
 ## Notes for reviewers
 

@@ -2,7 +2,7 @@
 
 **Status:** Adopted as the primary landing UX. Replaces the v1 dense operator dashboard.
 **Source bundle:** [.claude/design/refres_v1/SGW Cockpit v2.dc.html](../.claude/design/refres_v1/) (exported from claude.ai/design)
-**Companion:** [CLAUDE.md](../CLAUDE.md) design principles, [docs/03_prd.md](03_prd.md) §5 LLM boundaries
+**Companion:** CLAUDE.md (kept local, gitignored) design principles, [docs/03_prd.md](03_prd.md) §5 LLM boundaries
 
 ## What changed and why
 
@@ -102,7 +102,7 @@ The old sidebar is deliberately gone. The cockpit's thesis is "one decision at a
 
 ## Non-negotiable design principles enforced by the code
 
-Cross-referenced with [CLAUDE.md](../CLAUDE.md):
+Cross-referenced with CLAUDE.md (kept local, gitignored):
 
 1. **LLM as copilot, not producer.** `CopilotPullQuote` renders only the recommendation string + evidence chips. It has no numeric slot. The risk score, confidence meter, drivers, and sparkline all live outside the pull-quote and are populated by structured backend endpoints.
 2. **Every recommendation is advisory.** The action bar is always visible below the pull-quote — Accept / Override / Defer are peer buttons, none is auto-applied.

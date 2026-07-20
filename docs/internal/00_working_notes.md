@@ -158,7 +158,7 @@ Hero screenshot: `frontend/v11-hero.png` — full dashboard + Charleston major p
 
 ## 2026-07-17 — MVP prototype complete: Phases 0–7 tested end-to-end
 
-All phases through frontend now working. See [.claude/status.md](../.claude/status.md) for the full gate report and [demo/README.md](../demo/README.md) for how to run the demo.
+All phases through frontend now working. See .claude/status.md (kept local, gitignored) for the full gate report and [demo/README.md](../demo/README.md) for how to run the demo.
 
 **Working live against real APIs / real fixtures:**
 - Postgres 16 + PostGIS 3.4 with 22 tables + partitions + materialised view + hash-chained audit
@@ -194,7 +194,7 @@ User asked to swap from OpenAI to Ollama Cloud for the initial LLM integration. 
 2. Structured output via `format=<json_schema>` alone → **model invented its own schema** (returned `alert_message`, `category`, `location`, `wind_speed_mph`, `storm_surge_ft` instead of the required `hazard_type`, `severity`, `confidence`).
 3. Structured output with `format=<json_schema>` **AND** the schema echoed in the system prompt → strict adherence (`{"hazard_type": "hurricane", "severity": "high", "confidence": 0.9}`).
 
-**Locked pattern for Phase 5:** Pydantic → derive JSON schema → pass schema in *both* `format=` AND system prompt → validate with Pydantic → retry once on validation failure with corrective feedback → escalate on second failure. Documented in [CLAUDE.md](../CLAUDE.md) LLM section.
+**Locked pattern for Phase 5:** Pydantic → derive JSON schema → pass schema in *both* `format=` AND system prompt → validate with Pydantic → retry once on validation failure with corrective feedback → escalate on second failure. Documented in CLAUDE.md (kept local, gitignored) LLM section.
 
 **Also lands in Phase 0:**
 - `ollama>=0.6.2` added to backend deps
@@ -232,13 +232,13 @@ User asked to swap from OpenAI to Ollama Cloud for the initial LLM integration. 
 - Did NOT integrate testcontainers-postgres yet — using the docker-compose Postgres directly for the dev-loop test. testcontainers is the plan for CI (added to dev deps already).
 - Did NOT wire the backend `/api/*` routes yet — they land in Phase 6 on top of the models built here.
 
-**Checkpoint:** [.claude/status.md](../.claude/status.md) has the full gate report + Phase 2+ scope reality. Recommending a commit here before starting Phase 2 — Phase 0 + Phase 1 together are a substantial, testable milestone.
+**Checkpoint:** .claude/status.md (kept local, gitignored) has the full gate report + Phase 2+ scope reality. Recommending a commit here before starting Phase 2 — Phase 0 + Phase 1 together are a substantial, testable milestone.
 
 ---
 
 ## 2026-07-17 — Phase 0 gate: PASS. Scaffold built end-to-end.
 
-Backend + frontend + Postgres+PostGIS all green. Full gate results in [.claude/status.md](../.claude/status.md).
+Backend + frontend + Postgres+PostGIS all green. Full gate results in .claude/status.md (kept local, gitignored).
 
 **Notable choices under time pressure:**
 - **Frontend TypeScript version:** Vite scaffold gave us TS 6.0.3 (newer than expected). Tests + build + typecheck all clean, so keeping.
@@ -278,7 +278,7 @@ Advancing to Phase 1.
 2. **LLM model: `gpt-5.6`.** User's call — the model name is past my January 2026 training cutoff so I'm trusting current-model knowledge. If the API rejects the model string at build time we swap it.
 
 **Files updated:**
-- [CLAUDE.md](../CLAUDE.md) — stack now names Postgres + PostGIS + SQLAlchemy 2 (async) + Alembic + asyncpg + testcontainers-postgres + geoalchemy2 + Shapely; data-engineering conventions section added; LLM model `gpt-5.6`
+- CLAUDE.md (kept local, gitignored) — stack now names Postgres + PostGIS + SQLAlchemy 2 (async) + Alembic + asyncpg + testcontainers-postgres + geoalchemy2 + Shapely; data-engineering conventions section added; LLM model `gpt-5.6`
 - [PLAN.md](../PLAN.md) — Build decisions table, repo target structure (added `backend/alembic/`, `backend/src/sgw_platform/db/`), Phase 0 (Alembic + PostGIS init), Phase 1 (Postgres schema with partitioning + triggers + materialised view + seed loader), Phase 3 (ingestion writes canonical data to Postgres), Phase 6 (audit log now Postgres append-only + trigger + hash chain)
 - [docker-compose.yml](../docker-compose.yml) — postgres (postgis/postgis:16-3.4) + backend + frontend with health checks; optional Prometheus + Grafana profile
 - [.env.example](../.env.example) — added `POSTGRES_*` + `DATABASE_URL`; consolidated `OPENAI_MODEL=gpt-5.6`; removed `AUDIT_DB_PATH`
@@ -293,7 +293,7 @@ Advancing to Phase 1.
 ## 2026-07-15 — Build scaffold + autonomous execution plan committed
 
 **New artefacts at repo root:**
-- [CLAUDE.md](../CLAUDE.md) — project instructions with locked stack, non-negotiable design principles, conventions, subagent usage, escalation triggers
+- CLAUDE.md (kept local, gitignored) — project instructions with locked stack, non-negotiable design principles, conventions, subagent usage, escalation triggers
 - [PLAN.md](../PLAN.md) — 10-phase execution plan, each with objective / deliverables / steps / tests / gate. Designed for autonomous execution without step-by-step user approval.
 - [.claude/agents/](../.claude/agents/) — three subagents:
   - `test-orchestrator` — runs test suites + model evals, reports structured pass/fail with metrics

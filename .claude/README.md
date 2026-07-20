@@ -19,12 +19,6 @@ capabilities, an audit trail.
     they're built into [demo/walkthrough.md](../demo/walkthrough.md).
     Writes to `demo/` only.
 
-- **[../CLAUDE.md](../CLAUDE.md)** — the engineering charter for the
-  repo: non-negotiable design principles, locked stack, coding
-  conventions, guardrails. Read by every AI-assisted session before
-  making non-trivial changes. This is *taste and judgement*, encoded
-  as a prompt.
-
 - **`skills/`** — skills the assistant has access to (e.g. `playwright-cli`
   for end-to-end verification). Referenced, not vendored.
 

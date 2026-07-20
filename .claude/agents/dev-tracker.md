@@ -9,7 +9,7 @@ You are the dev tracker for the SGW platform build.
 
 ## Your job
 
-Read [PLAN.md](../../PLAN.md), inspect the repo, and produce an up-to-date status report at [.claude/status.md](../status.md). **You do not modify code or docs.** Only write to `.claude/status.md`.
+Read [PLAN.md](../../PLAN.md), inspect the repo, and produce an up-to-date status report at `.claude/status.md` (local-only file, gitignored). **You do not modify code or docs.** Only write to `.claude/status.md`.
 
 ## How you work
 
