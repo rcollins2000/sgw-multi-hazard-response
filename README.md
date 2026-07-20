@@ -25,11 +25,13 @@ Full runbook (native dev, without Docker): [demo/README.md](demo/README.md).
 
 ## Deliverables
 
+All three deliverables — plus a short index — are collected in [deliverables/](deliverables/):
+
 | # | Deliverable | Where |
 |---|---|---|
-| 1 | **PRD** for the technical delivery team | [docs/03_prd.md](docs/03_prd.md) |
-| 2 | **Executive briefing** | [docs/04_exec_briefing.md](docs/04_exec_briefing.md) |
-| 3 | **Prototype + demo video** | Prototype runs via `docker compose`; video attached to the submission email (too large for GitHub's 100 MB file cap) |
+| 1 | **PRD** for the technical delivery team | [deliverables/1_PRD.md](deliverables/1_PRD.md) *(canonical source: [docs/03_prd.md](docs/03_prd.md))* |
+| 2 | **Executive briefing** | [deliverables/2_Executive_Briefing.pptx](deliverables/2_Executive_Briefing.pptx) *(reviewer-oriented markdown: [docs/04_exec_briefing.md](docs/04_exec_briefing.md))* |
+| 3 | **Prototype + demo video** | Prototype runs via `docker compose`; video shared via OneDrive link in the submission email |
 
 ---
 

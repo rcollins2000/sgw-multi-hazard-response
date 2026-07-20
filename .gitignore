@@ -66,10 +66,9 @@ docs/*.patch
 # ---- Demo narration script (kept local; final video is the deliverable) ----
 demo/walkthrough.md
 
-# ---- Video binaries: too large for GitHub (100 MB cap); delivered via email / cloud link ----
-demo/video/*.mp4
-demo/video/*.webm
-demo/video/*.mov
+# ---- Video folder: kept out of the repo entirely (100 MB cap + recording plumbing not useful public) ----
+# The finished video is delivered via a OneDrive link shared in the submission email.
+demo/video/
 
 # ---- Root-level scratch dumps (API JSON responses, ad-hoc screenshots) ----
 /*.json
