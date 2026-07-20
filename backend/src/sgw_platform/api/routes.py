@@ -44,9 +44,25 @@ class AssetSummary(BaseModel):
     criticality_rating: int
     service_population: int | None
     risk_score: float
+    """Base risk model output (LightGBM v2 regressor), NOT operator-aligned."""
     risk_level: str
     blast_radius_cluster: int | None
     within_hurricane_cone: bool
+    # Operator-alignment fields — populated when the alignment model is fitted.
+    # Zero when the layer is dormant. The frontend uses `aligned_score` for
+    # ranking + display when it is non-zero.
+    alignment_p_defer: float = 0.0
+    alignment_adjustment: float = 0.0
+    aligned_score: float = 0.0
+    """`risk_score + alignment_adjustment`, clamped to [0, 1]. Equals `risk_score`
+    when the alignment layer is dormant."""
+
+
+class CrosswalkEntry(BaseModel):
+    """One row of the fragmented-on-purpose source-system crosswalk."""
+
+    sys: str  # GIS | CMMS | SCADA | FieldOps
+    id: str
 
 
 class AssetDetail(AssetSummary):
@@ -57,14 +73,22 @@ class AssetDetail(AssetSummary):
     features: dict[str, Any]
     cascade: list[dict[str, Any]]
     evidence: dict[str, list[str]]
+    crosswalk: list[CrosswalkEntry] = []
+    """Real IDs from `asset_id_crosswalk` — the frontend used to synthesise
+    placeholders by hashing the asset_id; now the backend serves the truth."""
 
 
 class DecisionIn(BaseModel):
     prediction_id: int | None = None
     asset_id: str
-    action: str  # accept | override | comment
+    action: str  # accept | override | comment | defer
     reason: str | None = None
     user: str = "operator"
+    # The context the operator SAW at decision time — captured so the audit
+    # log records what was on the screen, not what the model would compute now.
+    base_score: float | None = None
+    aligned_score: float | None = None
+    alignment_adjustment: float | None = None
 
 
 # ------------------------------ helpers ------------------------------
@@ -121,6 +145,8 @@ async def list_assets(
         )
         rows = list(result.mappings())
 
+    from sgw_platform.alignment import predict_adjustments
+
     scores = STATE.scores
     clusters = STATE.blast_radius.cluster_assignment if STATE.blast_radius else {}
     features = STATE.features
@@ -131,11 +157,21 @@ async def list_assets(
     if scores is not None and features is not None:
         score_map = dict(zip(features["asset_id"], scores.astype(float), strict=True))
 
+    # Batch-fetch the alignment nudge for every asset in the response. Cost is
+    # 8 features × N assets on a fitted LR — negligible. Zero-adjustment when
+    # the layer is dormant.
+    all_ids = [r["asset_id"] for r in rows]
+    align_by_id = {p.asset_id: p for p in predict_adjustments(all_ids)}
+
     out: list[AssetSummary] = []
     for r in rows:
         s = float(score_map.get(r["asset_id"], 0.0))
         if s < min_risk:
             continue
+        adj = align_by_id.get(r["asset_id"])
+        adjustment = adj.adjustment if adj else 0.0
+        p_defer = adj.p_defer if adj else 0.0
+        aligned = max(0.0, min(1.0, s + adjustment))
         out.append(
             AssetSummary(
                 asset_id=r["asset_id"],
@@ -148,12 +184,18 @@ async def list_assets(
                 criticality_rating=r["criticality_rating"],
                 service_population=r["service_population"],
                 risk_score=s,
-                risk_level=_level_of(s),
+                risk_level=_level_of(aligned),
                 blast_radius_cluster=clusters.get(r["asset_id"]),
                 within_hurricane_cone=bool(cone_flags.get(r["asset_id"], False)),
+                alignment_p_defer=p_defer,
+                alignment_adjustment=adjustment,
+                aligned_score=aligned,
             )
         )
-    out.sort(key=lambda a: a.risk_score, reverse=True)
+    # Rank by the OPERATOR-ALIGNED score so the watchlist reflects the layer's
+    # learned preferences. Falls back to raw risk when the layer is dormant
+    # (adjustment is zero, so aligned_score == risk_score).
+    out.sort(key=lambda a: a.aligned_score, reverse=True)
     return out[:limit]
 
 
@@ -224,6 +266,27 @@ async def get_asset(asset_id: str) -> AssetDetail:
             raise HTTPException(status_code=404, detail="asset not found")
         evidence = await _gather_evidence(session, asset_id)
 
+        # Real source-system crosswalk from `asset_id_crosswalk`.
+        cw_row = (
+            await session.execute(
+                text(
+                    "SELECT gis_id, maintenance_id, scada_id, field_ops_id "
+                    "FROM asset_id_crosswalk WHERE canonical_asset_id = :id"
+                ),
+                {"id": asset_id},
+            )
+        ).mappings().first()
+        crosswalk: list[CrosswalkEntry] = []
+        if cw_row is not None:
+            if cw_row["gis_id"]:
+                crosswalk.append(CrosswalkEntry(sys="GIS", id=cw_row["gis_id"]))
+            if cw_row["maintenance_id"]:
+                crosswalk.append(CrosswalkEntry(sys="CMMS", id=cw_row["maintenance_id"]))
+            if cw_row["scada_id"]:
+                crosswalk.append(CrosswalkEntry(sys="SCADA", id=cw_row["scada_id"]))
+            if cw_row["field_ops_id"]:
+                crosswalk.append(CrosswalkEntry(sys="FieldOps", id=cw_row["field_ops_id"]))
+
     features = STATE.features
     scores = STATE.scores
     dep_graph = STATE.dep_graph
@@ -241,6 +304,11 @@ async def get_asset(asset_id: str) -> AssetDetail:
         c = dep_graph.cascade_from(asset_id, max_depth=3)
         cascade = [{"downstream": t, "depth": c.depth_map[t], "consequence": cons} for _, t, cons in c.edges]
 
+    from sgw_platform.alignment import predict_adjustments
+
+    adj_pred = predict_adjustments([asset_id])[0]
+    aligned = max(0.0, min(1.0, score + adj_pred.adjustment))
+
     return AssetDetail(
         asset_id=row["asset_id"],
         asset_name=row["asset_name"],
@@ -256,12 +324,16 @@ async def get_asset(asset_id: str) -> AssetDetail:
         ground_elevation_ft=row["ground_elevation_ft"],
         backup_power=row["backup_power"],
         risk_score=score,
-        risk_level=_level_of(score),
+        risk_level=_level_of(aligned),
         blast_radius_cluster=clusters.get(asset_id),
         within_hurricane_cone=bool(feat_row.get("within_hurricane_cone", 0)),
+        alignment_p_defer=adj_pred.p_defer,
+        alignment_adjustment=adj_pred.adjustment,
+        aligned_score=aligned,
         features={k: v for k, v in feat_row.items() if k != "asset_id"},
         cascade=cascade,
         evidence=evidence,
+        crosswalk=crosswalk,
     )
 
 
@@ -535,6 +607,33 @@ async def get_audit(limit: int = Query(100, le=500)) -> list[dict[str, Any]]:
         ]
 
 
+@router.get("/api/audit/verify")
+async def get_audit_verify() -> dict[str, Any]:
+    """Walk the SHA-256 audit chain end-to-end and confirm every row's
+    previous_hash + current_hash match what's expected from the payload.
+
+    Auditor-facing endpoint — the operator can trigger this from the Audit
+    page. `ok=false` returns the first row_id where the chain breaks so a
+    forensic investigation has a starting point.
+    """
+    from sgw_platform.audit.writer import verify_chain
+
+    async with session_scope() as session:
+        # Total row count for context in the response.
+        count_row = (
+            await session.execute(text("SELECT COUNT(*) AS n FROM audit_log"))
+        ).mappings().first()
+        total = int(count_row["n"]) if count_row else 0
+        ok, first_bad = await verify_chain(session)
+
+    return {
+        "ok": ok,
+        "rows_checked": total,
+        "first_bad_row_id": first_bad,
+        "algo": "SHA-256 chained per row (previous_hash || canonical_json(body))",
+    }
+
+
 @router.get("/api/governance/fairness")
 async def governance_fairness() -> dict[str, Any]:
     _ensure_ready()
@@ -690,6 +789,36 @@ async def briefing_generate() -> dict[str, Any]:
     }
 
 
+class BriefingSendIn(BaseModel):
+    """Payload for POST /api/briefing/send — record that the operator forwarded
+    a briefing (post any edits) to leadership. Just writes an audit_log row;
+    actual outbound delivery (email / Teams / SharePoint) is Phase 4."""
+
+    briefing_hash: str
+    edited_summary: str
+    distribution: str = "leadership"
+    user: str = "operator"
+
+
+@router.post("/api/briefing/send")
+async def briefing_send(payload: BriefingSendIn) -> dict[str, Any]:
+    """Record the operator forwarding a briefing draft (potentially edited).
+
+    Writes to `audit_log` as `briefing_sent`, chained off the same hash the
+    generate step returned. Downstream distribution to an email/Teams/SharePoint
+    channel is Phase 4 — the audit log entry IS the receipt for MVP.
+    """
+    async with session_scope() as session:
+        current_hash = await audit_append(
+            session,
+            user=payload.user,
+            action_type="briefing_sent",
+            subject_id="operational_picture",
+            payload=payload.model_dump(),
+        )
+    return {"ok": True, "audit_hash": current_hash}
+
+
 # ------------------------------ data source provenance ------------------------------
 
 
@@ -809,7 +938,7 @@ async def data_sources() -> dict[str, Any]:
                 "id": "risk_model",
                 "label": "Risk-scoring model",
                 "kind": "trained",
-                "provider": "LightGBM classifier + isotonic calibration · RF baseline",
+                "provider": "LightGBM regressor · RF baseline (isotonic calibration deferred to Phase 2 — requires real historical failure labels; see docs/00_working_notes.md)",
                 "detail": (
                     f"Version {(tr.get('risk', {}) or {}).get('model_version', 'unknown')}. "
                     "Metrics live on the Governance tab. Labels synthesised — no real historical "
@@ -1062,7 +1191,117 @@ async def scenarios_decide(scenario_id: str, decision: ScenarioDecisionIn) -> di
     return {"ok": True, "audit_hash": current_hash}
 
 
-# ---------- operator-alignment (preference-learning / RLHF-lite) -------------
+# ---------- crew planning (OR-Tools VRP) -------------
+
+
+@router.get("/api/crew/plan")
+async def crew_plan(top_n: int = Query(15, ge=3, le=50)) -> dict[str, Any]:
+    """Run the real OR-Tools VRP against the current crew + at-risk-asset state.
+
+    Picks the top-N highest-aligned assets as jobs, uses each crew's most recent
+    `crew_status` GPS ping as the starting location, and returns tours + total
+    weighted travel distance + improvement over a greedy nearest-neighbour baseline.
+    """
+    from sgw_platform.optimisation.vrp import VrpInputs, solve_vrp
+
+    _ensure_ready()
+
+    async with session_scope() as session:
+        # Latest position + name for every crew.
+        crews = list(
+            (
+                await session.execute(
+                    text(
+                        """
+                        SELECT DISTINCT ON (c.crew_id)
+                            c.crew_id, c.crew_name, c.capability, c.base_region,
+                            cs.latitude, cs.longitude
+                        FROM crews c
+                        LEFT JOIN crew_status cs ON cs.crew_id = c.crew_id
+                        ORDER BY c.crew_id, cs.timestamp DESC NULLS LAST
+                        """
+                    )
+                )
+            ).mappings()
+        )
+        if not crews:
+            return {"crews": [], "jobs": [], "tours": {}, "solver": None}
+
+    # Depot = centroid of crew positions with a valid ping; falls back to
+    # Charleston Harbor (32.78, -79.93) so the solver still runs on a fresh
+    # DB where crew_status hasn't been populated.
+    fixed_ids: list[str] = []
+    fixed_names: dict[str, str] = {}
+    fixed_positions: dict[str, tuple[float, float]] = {}
+    for c in crews:
+        fixed_ids.append(c["crew_id"])
+        fixed_names[c["crew_id"]] = c["crew_name"]
+        if c["latitude"] is not None and c["longitude"] is not None:
+            fixed_positions[c["crew_id"]] = (float(c["latitude"]), float(c["longitude"]))
+
+    if fixed_positions:
+        lats = [p[0] for p in fixed_positions.values()]
+        lngs = [p[1] for p in fixed_positions.values()]
+        depot = (sum(lats) / len(lats), sum(lngs) / len(lngs))
+    else:
+        depot = (32.78, -79.93)
+
+    # Job list = top-N aligned assets via list_assets (already sorted).
+    assets = await list_assets(region=None, limit=top_n, min_risk=0.0)
+    asset_locations = [(a.latitude, a.longitude) for a in assets]
+    asset_ids = [a.asset_id for a in assets]
+    asset_priorities = [a.aligned_score for a in assets]
+
+    try:
+        result = solve_vrp(
+            VrpInputs(
+                crew_ids=fixed_ids,
+                depot=depot,
+                asset_locations=asset_locations,
+                asset_ids=asset_ids,
+                asset_priorities=asset_priorities,
+                max_stops_per_crew=5,
+            ),
+            time_limit_s=5,
+        )
+    except Exception as exc:  # noqa: BLE001 — surface as 500 with detail
+        raise HTTPException(status_code=500, detail=f"VRP solver failed: {exc}") from exc
+
+    return {
+        "crews": [
+            {
+                "crew_id": c["crew_id"],
+                "crew_name": c["crew_name"],
+                "capability": c["capability"],
+                "base_region": c["base_region"],
+                "latitude": fixed_positions.get(c["crew_id"], depot)[0],
+                "longitude": fixed_positions.get(c["crew_id"], depot)[1],
+            }
+            for c in crews
+        ],
+        "jobs": [
+            {
+                "asset_id": a.asset_id,
+                "asset_name": a.asset_name,
+                "latitude": a.latitude,
+                "longitude": a.longitude,
+                "aligned_score": a.aligned_score,
+                "risk_score": a.risk_score,
+            }
+            for a in assets
+        ],
+        "tours": result.routes,
+        "solver": {
+            "family": "OR-Tools VRP · Guided Local Search",
+            "total_weighted_distance_m": result.total_weighted_distance_m,
+            "baseline_greedy_distance_m": result.baseline_greedy_distance_m,
+            "improvement_pct": result.improvement_pct,
+            "depot": {"latitude": depot[0], "longitude": depot[1]},
+        },
+    }
+
+
+# ---------- operator-alignment (supervised preference learning) -------------
 
 
 @router.get("/api/alignment")

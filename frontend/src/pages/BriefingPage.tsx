@@ -13,7 +13,9 @@ export function BriefingPage() {
   const [error, setError] = useState<string | null>(null);
   const [assets, setAssets] = useState<AssetSummary[]>([]);
   const [draft, setDraft] = useState("");
-  const [sent, setSent] = useState(false);
+  const [sentHash, setSentHash] = useState<string | null>(null);
+  const [sendError, setSendError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
 
   useEffect(() => {
     api.assets({ limit: 500 }).then(setAssets).catch(console.error);
@@ -22,7 +24,8 @@ export function BriefingPage() {
   async function generate() {
     setBusy(true);
     setError(null);
-    setSent(false);
+    setSentHash(null);
+    setSendError(null);
     try {
       const b = await api.generateBriefing();
       setBriefing(b);
@@ -31,6 +34,24 @@ export function BriefingPage() {
       setError(e instanceof Error ? e.message : String(e));
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function send() {
+    if (!briefing || sending) return;
+    setSending(true);
+    setSendError(null);
+    try {
+      const res = await api.sendBriefing({
+        briefing_hash: briefing.audit.current_hash,
+        edited_summary: draft,
+      });
+      setSentHash(res.audit_hash);
+    } catch (e) {
+      // Honest failure — never fabricate the audit hash. Operator must retry.
+      setSendError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setSending(false);
     }
   }
 
@@ -58,11 +79,25 @@ export function BriefingPage() {
     .filter((a) => a.risk_score >= 0.6)
     .reduce((acc, a) => acc + (a.service_population ?? 0), 0);
 
+  // Customer-hours at risk = sum(service_population × failure_prob) × 24h.
+  // Real computation from `/api/assets` rather than a stage-managed literal.
+  // 24h is a conservative outage-duration assumption; production would
+  // replace it with the operator's true SLA target per asset class.
+  const customerHoursAtRisk = assets.reduce(
+    (acc, a) => acc + (a.service_population ?? 0) * a.risk_score * 24,
+    0,
+  );
+  const formatBigNumber = (n: number): string => {
+    if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(2)}M`;
+    if (n >= 1_000) return `${Math.round(n / 1_000)}K`;
+    return String(Math.round(n));
+  };
+
   const kpis = [
     {
       label: "Customer-hours at risk",
-      value: briefing ? "1.24M" : "—",
-      sub: "72h projection",
+      value: assets.length > 0 ? formatBigNumber(customerHoursAtRisk) : "—",
+      sub: "Σ(pop × P(fail)) × 24h",
       color: "#e0245e",
     },
     { label: "Population at risk", value: populationAtRisk.toLocaleString(), sub: "affected service area", color: "#f5a524" },
@@ -202,7 +237,8 @@ export function BriefingPage() {
                 value={draft}
                 onChange={(e) => {
                   setDraft(e.target.value);
-                  setSent(false);
+                  setSentHash(null);
+                  setSendError(null);
                 }}
                 className="min-h-[132px] w-full resize-y rounded-lg border border-[color:var(--color-border)] bg-[#0a0a0d] p-3 font-[inherit] text-[13px] leading-[1.6] text-[#e5e5e5] outline-none"
               />
@@ -270,24 +306,34 @@ export function BriefingPage() {
 
               <div className="mt-3.5 flex items-center justify-between border-t border-[color:var(--color-border-2)] pt-3">
                 <span className="text-[10.5px] text-[color:var(--color-subtle)]">
-                  Edited draft is sent to leadership distribution &amp; logged as{" "}
-                  <span className="sgw-mono">briefing_generated</span>{" "}
-                  · hash{" "}
-                  <span className="sgw-mono">{briefing.audit.current_hash.slice(0, 12)}…</span>
+                  Send writes a{" "}
+                  <span className="sgw-mono">briefing_sent</span>{" "}
+                  row to the append-only audit log · chained off generation hash{" "}
+                  <span className="sgw-mono">{briefing.audit.current_hash.slice(0, 12)}…</span>{" "}
+                  · downstream delivery to email / Teams / SharePoint is Phase 4.
                 </span>
                 <button
-                  onClick={() => setSent(true)}
-                  disabled={sent}
+                  onClick={send}
+                  disabled={sending || sentHash !== null}
                   className="cursor-pointer rounded-md border px-3.5 py-1.5 text-[12px] font-semibold"
                   style={{
-                    borderColor: sent ? "#166534" : "#1e40af",
-                    background: sent ? "#0f2a19" : "var(--color-primary-2)",
-                    color: sent ? "#86efac" : "#fff",
+                    borderColor: sentHash ? "#166534" : "#1e40af",
+                    background: sentHash ? "#0f2a19" : "var(--color-primary-2)",
+                    color: sentHash ? "#86efac" : "#fff",
                   }}
                 >
-                  {sent ? "✓ Sent & logged" : "Send to leadership"}
+                  {sending
+                    ? "Sending…"
+                    : sentHash
+                      ? `✓ Sent & logged · ${sentHash.slice(0, 8)}`
+                      : "Send to leadership"}
                 </button>
               </div>
+              {sendError && (
+                <div className="mt-2 rounded border border-[color:var(--color-critical)] bg-[color:var(--color-critical)]/10 px-3 py-2 text-[11px] text-[color:var(--color-critical)]">
+                  Send failed — briefing was NOT logged. Please retry: {sendError}
+                </div>
+              )}
             </div>
           </div>
         )}

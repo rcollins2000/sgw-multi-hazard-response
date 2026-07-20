@@ -30,7 +30,7 @@ help:
 
 .PHONY: install
 install:
-	cd backend && uv sync
+	cd backend && uv sync --all-extras
 	cd frontend && pnpm install
 
 .PHONY: dev
@@ -97,7 +97,8 @@ db-reset:
 
 .PHONY: db-seed
 db-seed:
-	cd backend && uv run python -m sgw_platform.scripts.seed_from_raw
+	cd backend && uv run python -m scripts.seed_from_raw
+	cd backend && uv run python -m scripts.seed_noaa_fixtures
 
 .PHONY: db-shell
 db-shell:
@@ -105,16 +106,11 @@ db-shell:
 
 .PHONY: fixtures
 fixtures:
-	cd backend && uv run python scripts/pull_coops_charleston.py
-	cd backend && uv run python scripts/clip_digital_coast.py
-	cd backend && uv run python scripts/clip_nhc_slosh.py
-	cd backend && uv run python scripts/pull_nhc_tracks.py
-	cd backend && uv run python scripts/pull_spc_cpc.py
-	cd backend && uv run python scripts/pull_ncei_events.py
+	cd backend && uv run python -m scripts.pull_noaa_fixtures
 
 .PHONY: data-mock
 data-mock:
-	cd backend && uv run python -m data.generators.run_all
+	cd backend && uv run python -m scripts.generate_mock_data
 
 .PHONY: train
 train:
@@ -122,8 +118,8 @@ train:
 
 .PHONY: demo
 demo:
-	cd backend && uv run python -m demo.scenarios.debby
-	@echo "Demo state loaded. Open http://localhost:5173"
+	@echo "See demo/README.md for the full runbook and demo/walkthrough.md for the narration script."
+	@echo "Open http://localhost:5173 after 'make dev-backend' and 'make dev-frontend' in separate terminals."
 
 .PHONY: build
 build:

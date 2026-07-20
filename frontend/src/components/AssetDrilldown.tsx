@@ -16,22 +16,8 @@ import { AgentChat } from "./AgentChat";
 import { WaterLevelChart } from "./WaterLevelChart";
 import { ExplainPopover } from "./ExplainPopover";
 
-// Reverse-engineered from the canonical asset_id_crosswalk pattern so the UI
-// can show the fragmented-on-purpose source IDs without another API round-trip.
-function buildCrosswalk(assetId: string): { sys: string; id: string }[] {
-  const tail = assetId.slice(-4);
-  return [
-    { sys: "GIS", id: `GIS-${assetId.slice(4, 7)}-${tail}` },
-    { sys: "CMMS", id: `MAX-${Math.abs(hashCode(assetId)) % 900000 + 100000}` },
-    { sys: "SCADA", id: `SCADA-${assetId.slice(4)}` },
-    { sys: "FieldOps", id: `FO-${assetId.slice(4, 7)}-${tail}` },
-  ];
-}
-function hashCode(s: string): number {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-  return h;
-}
+// Real crosswalk now arrives on `detail.crosswalk` from `asset_id_crosswalk`.
+// The frontend-synthesised version (hashCode-based) was deleted 2026-07-19.
 
 // Curated selection of top features to render as signed attribution bars.
 // Value formatting matches the raw column names from the feature builder.
@@ -133,7 +119,7 @@ export function AssetDrilldown({
   const ciWidPct = Math.min(100 - ciLoPct, (ciWidth / 100) * 2 * 100);
   const scorePct = detail.risk_score * 100;
 
-  const crosswalk = buildCrosswalk(detail.asset_id);
+  const crosswalk = detail.crosswalk;
   const featureRows = buildFeatureContributions(detail.features, gov);
   const chain = buildCascadeChain(detail);
   const personaName = PERSONAS.find((p) => p.key === persona)?.name ?? "";
@@ -214,7 +200,7 @@ export function AssetDrilldown({
                 />
               </div>
               <div className="mt-1.5 text-[9.5px] text-[color:var(--color-faint)]">
-                80% confidence interval · isotonic-calibrated
+                ±.05 nominal band · v2 regressor · isotonic calibration deferred to Phase 2
               </div>
             </SectionCard>
             <SectionCard>

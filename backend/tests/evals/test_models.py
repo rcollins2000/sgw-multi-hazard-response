@@ -69,7 +69,11 @@ async def test_prophet_forecast_on_charleston_water() -> None:
     fc = forecaster.fit_and_forecast(history, horizon_hours=12, test_hours=24)
 
     assert fc.mape < 0.30, f"MAPE too high: {fc.mape}"  # tidal cycles → semi-diurnal
-    assert fc.coverage_80 >= 0.40, f"coverage too low: {fc.coverage_80}"
+    # Empirical coverage on held-out Debby data is ~0.54 — under-covers the 80%
+    # nominal band because Prophet's Gaussian likelihood underestimates the
+    # storm-surge tails. Threshold set at 0.50 so this stays disclosed rather
+    # than hidden; any regression below that trips the test.
+    assert fc.coverage_80 >= 0.50, f"coverage regressed: {fc.coverage_80}"
     assert len(fc.yhat) == 12
 
 

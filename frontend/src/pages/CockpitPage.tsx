@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   api,
-  alignmentApi,
-  type AlignmentAdjustment,
   type AssetDetail,
   type AssetSummary,
   type Explanation,
@@ -11,7 +9,7 @@ import {
 } from "../lib/api";
 import { usePoll } from "../lib/usePoll";
 import { fmtRelative, prettyAssetType, prettyRegion, riskColor, riskLevelOf } from "../lib/labels";
-import { buildCrosswalk, buildDrivers, type DriverRow } from "../lib/asset";
+import { buildDrivers, type DriverRow } from "../lib/asset";
 import {
   fallbackPreventativeRecommendation,
   rankByPreventative,
@@ -129,11 +127,12 @@ export function CockpitPage({ onExpandMap }: Readonly<{ onExpandMap: () => void 
     [forecastSource],
   );
 
-  // Two sort orders coexist:
-  //   · storm mode  → sort by hazard-conditional risk (as before)
-  //   · live  mode  → sort by preventative priority = P(failure) × consequence
-  // The watchlist + focus resolution consume `ranked`; the score displayed
-  // in the hero comes from `preventativeByAssetId` in live mode.
+  // Two sort orders coexist, both now incorporating the operator-alignment
+  // nudge (bounded ±β=0.15) so the watchlist reflects the layer's learned
+  // preferences — not just the base model output:
+  //   · storm mode → sort by aligned_score (= risk_score + alignment_adjustment)
+  //   · live  mode → sort by (preventative_priority + alignment_adjustment)
+  // Both reduce to the base sort when the alignment layer is dormant.
   const preventative = useMemo(() => rankByPreventative(assets), [assets]);
   const preventativeByAssetId = useMemo(() => {
     const map = new Map<string, PreventativeScore>();
@@ -143,7 +142,9 @@ export function CockpitPage({ onExpandMap }: Readonly<{ onExpandMap: () => void 
 
   const ranked = useMemo(() => {
     if (isLive) return preventative.map((p) => p.asset);
-    return [...assets].sort((a, b) => b.risk_score - a.risk_score);
+    // Storm mode: server already sorted /api/assets by aligned_score. Keep
+    // that order — no client-side re-sort needed.
+    return [...assets];
   }, [assets, isLive, preventative]);
 
   // Resolve which asset the cockpit is focused on. Falls back to the top-risk
@@ -339,14 +340,14 @@ function FocusLane({
   const [explanationLoading, setExplanationLoading] = useState(false);
   const [explanationError, setExplanationError] = useState<string | null>(null);
   const [decided, setDecided] = useState<{ action: string; hash: string } | null>(null);
+  const [decideError, setDecideError] = useState<string | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
-  const [alignAdj, setAlignAdj] = useState<AlignmentAdjustment | null>(null);
   const explanationCache = useRef<Map<string, Explanation>>(new Map());
 
   useEffect(() => {
     setDetail(null);
     setDecided(null);
-    setAlignAdj(null);
+    setDecideError(null);
     // Close the chat when the focused asset changes so the agent's memory
     // doesn't bleed across assets — the AgentChat is keyed by asset_id below
     // which forces a fresh conversation, but we also collapse the panel to
@@ -354,27 +355,11 @@ function FocusLane({
     setChatOpen(false);
     if (!asset) return;
     api.asset(asset.asset_id).then(setDetail).catch(console.error);
-    // Fetch the alignment nudge for THIS asset. Fails silently — the layer
-    // is dormant when the model isn't fitted and the badge already tells
-    // the operator that. Refetch is also triggered by the `decided` effect
-    // below so the priority updates after every operator decision.
-    alignmentApi
-      .adjustments([asset.asset_id])
-      .then((r) => setAlignAdj(r.adjustments[0] ?? null))
-      .catch(() => setAlignAdj(null));
+    // Alignment adjustment now comes directly on the AssetSummary from
+    // /api/assets — no separate fetch needed. The parent CockpitPage polls
+    // /api/assets on the ASSETS_POLL_MS cadence, which is how the aligned
+    // priority stays in sync after every retrain.
   }, [asset]);
-
-  // After every operator decision the alignment model may have retrained;
-  // re-fetch the adjustment so the operator sees the loop closing.
-  useEffect(() => {
-    if (!decided || !asset) return;
-    alignmentApi
-      .adjustments([asset.asset_id])
-      .then((r) => setAlignAdj(r.adjustments[0] ?? null))
-      .catch(() => {
-        /* silent */
-      });
-  }, [decided, asset]);
 
   // Only fetch the storm-response LLM recommendation in Debby replay mode.
   // In LIVE mode we render the preventative-maintenance fallback template
@@ -420,15 +405,20 @@ function FocusLane({
   // (crosswalk, forecast, cascade) is identical.
   const baseScore =
     isLive && preventativeScore ? preventativeScore.priority : asset.risk_score;
-  // Operator-alignment nudge — bounded by β (0.15) server-side. We clamp
-  // the final display to [0, 1] so the hero doesn't overflow the risk-level
+  // Operator-alignment nudge — comes directly on the AssetSummary now
+  // (bounded ±β=0.15 server-side, zero when the layer is dormant). We clamp
+  // the final display to [0, 1] so the hero never overflows the risk-level
   // colour ramp when a strongly-boosted asset ends up over 1.0.
-  const alignmentDelta = alignAdj ? alignAdj.adjustment : 0;
+  const alignmentDelta = asset.alignment_adjustment ?? 0;
+  const alignPDefer = asset.alignment_p_defer ?? 0;
   const displayScore = Math.max(0, Math.min(1, baseScore + alignmentDelta));
   const displayLevel = riskLevelOf(displayScore);
   const scoreColor = riskColor(displayLevel);
   const meter = meterLevelFromProbability(displayScore, 0.05);
-  const crosswalk = buildCrosswalk(asset.asset_id);
+  // Real crosswalk from /api/assets/{id} — arrives on `detail` when the
+  // parallel fetch completes. Empty until then, which is fine — the row
+  // renders `asset_id · <IDs>` and just omits the IDs before detail arrives.
+  const crosswalk = detail?.crosswalk ?? [];
   const modelDrivers = detail && gov
     ? buildDrivers(detail.features, gov.risk_model.top_features, 4)
     : [];
@@ -447,18 +437,31 @@ function FocusLane({
   const modelVersion = gov?.risk_model.version ?? "lgbm-cal-v1";
   const cluster = asset.blast_radius_cluster;
 
-  async function decide(action: "accept" | "override") {
-    if (!asset) return;
+  async function decide(action: "accept" | "override" | "defer"): Promise<boolean> {
+    if (!asset) return false;
+    setDecideError(null);
     try {
       const res = await api.decide({
         asset_id: asset.asset_id,
         action,
-        reason: action === "override" ? "Operator override from cockpit." : undefined,
+        reason:
+          action === "override"
+            ? "Operator override from cockpit."
+            : action === "defer"
+              ? "Operator deferred from cockpit."
+              : undefined,
+        base_score: baseScore,
+        aligned_score: displayScore,
+        alignment_adjustment: alignmentDelta,
       });
       setDecided({ action, hash: res.audit_hash });
+      return true;
     } catch (e) {
-      setDecided({ action, hash: `local-${Math.random().toString(16).slice(2, 14)}` });
-      console.error("decide failed, showing local hash for demo continuity", e);
+      // Honest failure state — the platform's whole thesis is auditability, so
+      // never fabricate a hash "for demo continuity". The operator MUST retry.
+      const msg = e instanceof Error ? e.message : String(e);
+      setDecideError(msg);
+      return false;
     }
   }
 
@@ -503,7 +506,7 @@ function FocusLane({
               diagnostic={
                 isLive && preventativeScore
                   ? `priority ${displayScore.toFixed(2)} = P(failure) ${preventativeScore.probability.toFixed(2)} × consequence ${preventativeScore.consequence.toFixed(2)}`
-                  : `${asset.risk_score.toFixed(2)} (${asset.risk_level}) ±0.05`
+                  : `${asset.risk_score.toFixed(2)} (${asset.risk_level}) · ±0.05 nominal (v2 regressor · calibration deferred)`
               }
             />
           </div>
@@ -516,11 +519,16 @@ function FocusLane({
               {displayScore.toFixed(2)}
             </span>
             {!isLive && (
-              <span className="sgw-mono text-[13px] text-[color:var(--color-subtle)]">±.05</span>
+              <span
+                className="sgw-mono text-[13px] text-[color:var(--color-subtle)]"
+                title="Nominal display band on the v2 regressor. Real per-prediction uncertainty (e.g. quantile regression) is Phase 2 — see docs/13_operator_alignment.md and the risk-score explainer popover."
+              >
+                ±.05 nom
+              </span>
             )}
           </div>
           {Math.abs(alignmentDelta) >= 0.005 && (
-            <AlignmentDeltaChip base={baseScore} delta={alignmentDelta} pDefer={alignAdj?.p_defer ?? null} />
+            <AlignmentDeltaChip base={baseScore} delta={alignmentDelta} pDefer={alignPDefer} />
           )}
           <div className="mt-2 flex items-center justify-end gap-2">
             <ConfidenceMeter level={meter} align="right" />
@@ -635,7 +643,9 @@ function FocusLane({
           <span className="sgw-mono flex items-center gap-2 text-[10px] text-[color:var(--color-signature)]">
             {forecast && (
               <>
-                <span>above 80% band · Prophet-residual anomalies</span>
+                <span title="80% nominal band · empirical held-out coverage 0.54 on Debby (see Governance). Anomalies use the rolling-median residual, independent of the band width.">
+                  above 80% nominal band · Prophet-residual anomalies
+                </span>
                 {forecastUpdatedAt && (
                   <span
                     className="text-[color:var(--color-faint)]"
@@ -652,6 +662,20 @@ function FocusLane({
           <WaterLevelChart forecast={forecast} compact height={120} />
         </div>
       </div>
+
+      {/* Honest decision-failure banner. The audit chain is the whole trust
+          story — if the POST fails we tell the operator, we don't fabricate
+          a hash and pretend the write happened. */}
+      {decideError && !decided && (
+        <div
+          className="mt-4 flex items-center gap-2.5 rounded-md border border-[color:var(--color-critical)] bg-[color:var(--color-critical)]/10 px-3 py-2 text-[12px] text-[color:var(--color-critical)]"
+          role="alert"
+          data-testid="cockpit-decide-error"
+        >
+          <span aria-hidden>⚠</span>
+          <span>Decision was NOT written to the audit log — {decideError}. Please retry.</span>
+        </div>
+      )}
 
       {/* action bar */}
       <div className="mt-5 flex flex-wrap items-center gap-2.5 border-t border-[color:var(--color-border)] pt-4.5">
@@ -681,7 +705,15 @@ function FocusLane({
               Override
             </button>
             <button
-              onClick={onDefer}
+              onClick={async () => {
+                // Defer is a REAL training signal for the alignment layer, so
+                // it must POST to /api/decisions before we refocus. If the
+                // POST fails, we surface the error (see the alert banner
+                // above) and DO NOT refocus — a decision that wasn't logged
+                // is a decision that didn't happen.
+                const ok = await decide("defer");
+                if (ok) onDefer();
+              }}
               className="cursor-pointer rounded-md border border-[color:var(--color-border)] bg-transparent px-4.5 py-2.5 text-[14px] text-[color:var(--color-subtle)]"
               data-testid="cockpit-defer"
             >

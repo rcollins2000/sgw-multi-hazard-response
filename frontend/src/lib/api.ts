@@ -20,7 +20,14 @@ export type AssetSummary = {
   risk_level: "low" | "moderate" | "high" | "critical";
   blast_radius_cluster: number | null;
   within_hurricane_cone: boolean;
+  // Operator-alignment layer nudge (see docs/13_operator_alignment.md).
+  // alignment_adjustment is zero when the layer is dormant.
+  alignment_p_defer: number;
+  alignment_adjustment: number;
+  aligned_score: number;
 };
+
+export type CrosswalkEntry = { sys: string; id: string };
 
 export type AssetDetail = AssetSummary & {
   condition_score: number | null;
@@ -30,6 +37,7 @@ export type AssetDetail = AssetSummary & {
   features: Record<string, unknown>;
   cascade: { downstream: string; depth: number; consequence: string }[];
   evidence: Record<string, string[]>;
+  crosswalk: CrosswalkEntry[];
 };
 
 export type Explanation = {
@@ -199,11 +207,31 @@ export const api = {
   waterLevelForecast: (source = "NOS_COOPS:debby_2024", horizonHours = 24) =>
     j<WaterLevelForecast>(`${API}/forecasts/water-level?source=${source}&horizon_hours=${horizonHours}`),
   audit: (limit = 25) => j<AuditEntry[]>(`${API}/audit?limit=${limit}`),
+  auditVerify: () =>
+    j<{ ok: boolean; rows_checked: number; first_bad_row_id: number | null; algo: string }>(
+      `${API}/audit/verify`,
+    ),
   fairness: () => j<FairnessReport>(`${API}/governance/fairness`),
   modelGovernance: () => j<ModelGovernance>(`${API}/governance/model`),
   generateBriefing: () =>
     j<Briefing>(`${API}/briefing/generate`, { method: "POST", headers: { "Content-Type": "application/json" } }),
-  decide: (body: { asset_id: string; action: string; reason?: string; user?: string }) =>
+  sendBriefing: (body: { briefing_hash: string; edited_summary: string; user?: string }) =>
+    j<{ ok: boolean; audit_hash: string }>(`${API}/briefing/send`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user: "operator", distribution: "leadership", ...body }),
+    }),
+  decide: (body: {
+    asset_id: string;
+    action: string;
+    reason?: string;
+    user?: string;
+    // Decision-time context — captured server-side so the audit log records
+    // what was on screen, not what the model would compute now.
+    base_score?: number;
+    aligned_score?: number;
+    alignment_adjustment?: number;
+  }) =>
     j<{ ok: boolean; audit_hash: string }>(`${API}/decisions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -308,6 +336,45 @@ export type AlignmentAdjustment = {
   asset_id: string;
   p_defer: number;
   adjustment: number;
+};
+
+// ------------------------------ crew planning (real OR-Tools VRP) ------------
+
+export type CrewPlanCrew = {
+  crew_id: string;
+  crew_name: string;
+  capability: string;
+  base_region: string;
+  latitude: number;
+  longitude: number;
+};
+
+export type CrewPlanJob = {
+  asset_id: string;
+  asset_name: string;
+  latitude: number;
+  longitude: number;
+  aligned_score: number;
+  risk_score: number;
+};
+
+export type CrewPlanSolver = {
+  family: string;
+  total_weighted_distance_m: number;
+  baseline_greedy_distance_m: number;
+  improvement_pct: number;
+  depot: { latitude: number; longitude: number };
+};
+
+export type CrewPlan = {
+  crews: CrewPlanCrew[];
+  jobs: CrewPlanJob[];
+  tours: Record<string, string[]>;
+  solver: CrewPlanSolver | null;
+};
+
+export const crewApi = {
+  plan: (topN = 15) => j<CrewPlan>(`${API}/crew/plan?top_n=${topN}`),
 };
 
 export const alignmentApi = {

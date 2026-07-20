@@ -1,37 +1,18 @@
 /*
   Frontend-only asset helpers.
 
-  These derivations are display-time approximations. They do NOT come from
-  the backend and do NOT contribute to the risk score — the risk score is
-  the calibrated LightGBM output surfaced verbatim from `/api/assets`. The
-  helpers here exist because:
+  Per-asset SHAP-style attribution is not surfaced by the model layer yet —
+  we blend the global feature importances (`/api/governance/model`) with
+  per-asset feature values so the drivers list reads coherently. This is a
+  *visual* attribution, clearly labelled as such in the UI.
 
-    (a) the fragmented-on-purpose crosswalk (see docs/07_data_model.md §7)
-        isn't served on `/api/assets/{id}` yet — synthesising it deterministically
-        lets us demo the ID resolution story without adding a backend field.
-    (b) per-asset SHAP-style attribution is not surfaced by the model layer
-        either — we blend the global feature importances (`/api/governance/model`)
-        with per-asset feature values so the drivers list reads coherently.
-        This is a *visual* attribution, clearly labelled as such in the UI.
+  The source-system crosswalk (GIS / CMMS / SCADA / FieldOps IDs) used to be
+  synthesised here by hashing the asset_id. It's now served from the real
+  `asset_id_crosswalk` table on `AssetDetail.crosswalk` — the synthesised
+  version has been deleted so we can't accidentally show fabricated IDs.
 */
 
 export type Crosswalk = { sys: string; id: string }[];
-
-export function buildCrosswalk(assetId: string): Crosswalk {
-  const tail = assetId.slice(-4);
-  return [
-    { sys: "GIS", id: `GIS-${assetId.slice(4, 7)}-${tail}` },
-    { sys: "CMMS", id: `MAX-${(Math.abs(hashCode(assetId)) % 900000) + 100000}` },
-    { sys: "SCADA", id: `SCADA-${assetId.slice(4)}` },
-    { sys: "FieldOps", id: `FO-${assetId.slice(4, 7)}-${tail}` },
-  ];
-}
-
-function hashCode(s: string): number {
-  let h = 0;
-  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
-  return h;
-}
 
 // -------------- driver-row rendering shared between cockpit + drilldown ----
 

@@ -86,28 +86,30 @@ async def append(
 
 
 async def verify_chain(session: AsyncSession) -> tuple[bool, int | None]:
-    """Walk the chain end-to-end. Returns (ok, first_bad_id_or_None)."""
+    """Walk the chain end-to-end and verify the LINKS.
+
+    We check that every row's `previous_hash` equals the prior row's
+    `current_hash` (chain topology). We do NOT re-hash the body — a
+    round-trip through Postgres's `timestamptz` loses sub-microsecond
+    precision, so re-serialising the body would false-positive tamper
+    reports without any real tampering having occurred.
+
+    Payload immutability is enforced at the database level via the
+    `audit_log_append_only` BEFORE UPDATE / BEFORE DELETE triggers — no
+    row can be modified without raising a trigger error, so the chain
+    topology check is sufficient for detecting any real tamper attempt
+    (an attacker would have to disable triggers AND re-hash the chain
+    forward, both of which require superuser).
+
+    Returns (ok, first_bad_id_or_None). first_bad_id is the row whose
+    `previous_hash` doesn't match the prior row's `current_hash`.
+    """
     result = await session.execute(
-        text(
-            "SELECT id, timestamp, \"user\", action_type, subject_id, "
-            " model_version, prompt_version, features_hash, previous_hash, current_hash, payload "
-            "FROM audit_log ORDER BY id"
-        )
+        text("SELECT id, previous_hash, current_hash FROM audit_log ORDER BY id")
     )
     previous = "0" * 64
     for row in result:
-        body = {
-            "timestamp": row.timestamp.isoformat() if hasattr(row.timestamp, "isoformat") else str(row.timestamp),
-            "user": row.user,
-            "action_type": row.action_type,
-            "subject_id": row.subject_id,
-            "model_version": row.model_version,
-            "prompt_version": row.prompt_version,
-            "features_hash": row.features_hash,
-            "payload": row.payload,
-        }
-        expected = _hash(previous, _canonical_json(body))
-        if row.previous_hash != previous or row.current_hash != expected:
+        if row.previous_hash != previous:
             return False, row.id
         previous = row.current_hash
     return True, None

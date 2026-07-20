@@ -1,54 +1,54 @@
 {
-  "trained_at": "2026-07-17T11:45:48.354399+00:00",
+  "trained_at": "2026-07-19T13:42:40.282176+00:00",
   "risk_model": {
     "model_family": "hazard_risk",
-    "model_version": "lgbm-cal-v1-hurricane",
-    "label_source": "synthetic_from_features_documented",
+    "model_version": "lgbm-reg-v2-hurricane",
+    "label_source": "synthetic_continuous_from_features_documented",
     "metrics": {
-      "brier_score": 0.17491377338346148,
-      "roc_auc": 0.8039314516129032,
-      "baseline_brier": 0.15474285714285718,
-      "baseline_roc_auc": 0.8674395161290324,
-      "positive_rate_train": 0.5034013605442177,
-      "positive_rate_test": 0.49206349206349204,
+      "mae": 0.05424128092952751,
+      "r2": 0.6396623113349529,
+      "baseline_mae": 0.0540216019635023,
+      "baseline_r2": 0.6333378479317351,
+      "target_mean": 0.49653405276619955,
+      "target_std": 0.12109976751751853,
       "n_train": 147,
       "n_test": 63
     },
     "top_features": {
-      "min_dist_to_surge_zone_m": 0.18816067653276955,
-      "condition_score": 0.1331923890063425,
-      "criticality_rating": 0.10993657505285412,
-      "ground_elevation_ft": 0.10782241014799154,
-      "min_dist_to_wildfire_zone_m": 0.09725158562367865,
-      "min_dist_to_heat_zone_m": 0.07822410147991543,
-      "service_population": 0.07610993657505286,
-      "avg_recent_condition": 0.07188160676532769
+      "min_dist_to_flood_zone_m": 0.1388888888888889,
+      "ground_elevation_ft": 0.12345679012345678,
+      "condition_score": 0.11419753086419752,
+      "min_dist_to_surge_zone_m": 0.11316872427983539,
+      "min_dist_to_wildfire_zone_m": 0.10802469135802469,
+      "criticality_rating": 0.09567901234567901,
+      "avg_recent_condition": 0.09053497942386832,
+      "service_population": 0.051440329218107
     }
   },
   "fairness": {
     "group_column": "region",
-    "demographic_parity_gap": 0.05714285714285716,
-    "equal_opportunity_gap": 0.11428571428571432,
+    "demographic_parity_gap": 0.08571428571428574,
+    "equal_opportunity_gap": 0.09375,
     "per_group": [
       {
         "group": "COAST_EAST",
-        "positive_rate": 0.5857142857142857,
-        "base_rate": 0.5571428571428572,
-        "tpr": 0.8974358974358975,
+        "positive_rate": 0.5571428571428572,
+        "base_rate": 0.5714285714285714,
+        "tpr": 0.875,
         "n": 70
       },
       {
         "group": "INLAND_NORTH",
-        "positive_rate": 0.6,
-        "base_rate": 0.44285714285714284,
-        "tpr": 1.0,
+        "positive_rate": 0.4714285714285714,
+        "base_rate": 0.45714285714285713,
+        "tpr": 0.96875,
         "n": 70
       },
       {
         "group": "LOWER_DELTA",
-        "positive_rate": 0.5428571428571428,
-        "base_rate": 0.5,
-        "tpr": 0.8857142857142857,
+        "positive_rate": 0.4857142857142857,
+        "base_rate": 0.4714285714285714,
+        "tpr": 0.8787878787878788,
         "n": 70
       }
     ]
@@ -58,80 +58,80 @@
     "train_size": 1656,
     "test_size": 24,
     "mape": 0.17851885891034114,
-    "coverage_80": 0.5833333333333334,
+    "coverage_80": 0.5416666666666666,
     "next_24h": [
       {
         "ds": "2024-08-10 22:30:00",
         "yhat": 1.7637371257853078,
-        "yhat_lower": 0.7079780550523362,
-        "yhat_upper": 2.93002023251903
+        "yhat_lower": 0.6367375114353302,
+        "yhat_upper": 2.994180198259072
       },
       {
         "ds": "2024-08-10 23:30:00",
         "yhat": 1.6859109199883027,
-        "yhat_lower": 0.5024526071755993,
-        "yhat_upper": 2.891617725106969
+        "yhat_lower": 0.48326838860014376,
+        "yhat_upper": 2.9382367270157355
       },
       {
         "ds": "2024-08-11 00:30:00",
         "yhat": 1.997758111120466,
-        "yhat_lower": 0.7624983868567965,
-        "yhat_upper": 3.3249503514024252
+        "yhat_lower": 0.6907018276567087,
+        "yhat_upper": 3.3038472685737346
       },
       {
         "ds": "2024-08-11 01:30:00",
         "yhat": 2.798221455524186,
-        "yhat_lower": 1.4610382025078648,
-        "yhat_upper": 4.199608168473287
+        "yhat_lower": 1.4022474883114433,
+        "yhat_upper": 4.151337379170034
       },
       {
         "ds": "2024-08-11 02:30:00",
         "yhat": 3.8020663361436187,
-        "yhat_lower": 2.4247578232191334,
-        "yhat_upper": 5.290992893832152
+        "yhat_lower": 2.384699470769006,
+        "yhat_upper": 5.280385791052908
       },
       {
         "ds": "2024-08-11 03:30:00",
         "yhat": 4.636772889859218,
-        "yhat_lower": 3.2044899299671123,
-        "yhat_upper": 6.1005782939396065
+        "yhat_lower": 3.1388748156688875,
+        "yhat_upper": 6.150480221511484
       }
     ]
   },
   "anomaly": {
     "n_points": 1680,
-    "n_anomalies": 24,
-    "max_score": 1.212751992661026,
+    "n_anomalies": 23,
+    "max_score": 1.2589914922830736,
     "example_flags": [
-      {
-        "ds": "2024-08-09 05:42:00",
-        "y": 4.102,
-        "yhat": 4.706214101531074,
-        "score": 1.0497441022771083
-      },
       {
         "ds": "2024-08-09 05:48:00",
         "y": 3.984,
         "yhat": 4.6073035165326015,
-        "score": 1.0198006380567315
+        "score": 1.0408126395317472
       },
       {
         "ds": "2024-08-09 05:54:00",
         "y": 3.856,
         "yhat": 4.505084389709426,
-        "score": 1.089788106687539
+        "score": 1.051105238321021
       },
       {
         "ds": "2024-08-09 06:00:00",
         "y": 3.765,
         "yhat": 4.399948428940751,
-        "score": 1.0653051891519423
+        "score": 1.1017835223800052
       },
       {
         "ds": "2024-08-09 06:06:00",
         "y": 3.65,
         "yhat": 4.292305285482497,
-        "score": 1.0848463061375724
+        "score": 1.11716074593677
+      },
+      {
+        "ds": "2024-08-09 06:12:00",
+        "y": 3.541,
+        "yhat": 4.182567991404614,
+        "score": 1.1511495684366873
       }
     ]
   },

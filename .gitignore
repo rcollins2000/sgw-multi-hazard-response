@@ -52,6 +52,15 @@ htmlcov/
 .playwright/
 .playwright-cli/
 **/.playwright-cli/
+# Playwright CLI page-snapshot YAMLs that occasionally get written to repo root
+/cockpit-*.yml
+/page-*.yml
+/snap*.yml
+
+# ---- One-off patch / diff artefacts (kept locally, not part of the repo) ----
+docs/*.patch
+*.patch
+*.diff
 
 # ---- Scratch / working dirs not intended for the public repo ----
 plan/

@@ -13,7 +13,7 @@ import { EXPLANATIONS, type SurfaceKey } from "../lib/explanations";
 describe("ExplainPopover", () => {
   it("renders the trigger with the surface title in its aria-label", () => {
     render(<ExplainPopover surface="risk_score" />);
-    const btn = screen.getByRole("button", { name: /Explain: Calibrated failure probability/i });
+    const btn = screen.getByRole("button", { name: /Explain: Hazard-conditional risk score/i });
     expect(btn).toHaveAttribute("aria-expanded", "false");
   });
 
@@ -59,7 +59,7 @@ describe("ExplainPopover", () => {
 
   it("renders the diagnostic string inside the Confidence section", () => {
     render(<ExplainPopover surface="risk_score" diagnostic="0.91 (critical) ±0.05" />);
-    fireEvent.click(screen.getByRole("button", { name: /Explain: Calibrated failure probability/i }));
+    fireEvent.click(screen.getByRole("button", { name: /Explain: Hazard-conditional risk score/i }));
     expect(screen.getByText(/0.91 \(critical\)/)).toBeInTheDocument();
   });
 });
@@ -81,6 +81,7 @@ describe("EXPLANATIONS catalog", () => {
     "dependency_cascade",
     "evidence_citations",
     "scenario_analysis",
+    "alignment_layer",
   ];
 
   it.each(KEYS)("has non-empty content for surface %s", (key) => {

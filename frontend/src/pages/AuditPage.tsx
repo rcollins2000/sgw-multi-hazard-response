@@ -9,14 +9,38 @@ const ACTION_STYLES: Record<string, { color: string; bg: string }> = {
   briefing_generated: { color: "#c4b5fd", bg: "#1e123a" },
 };
 
+type VerifyResult = {
+  ok: boolean;
+  rows_checked: number;
+  first_bad_row_id: number | null;
+  algo: string;
+};
+
 export function AuditPage() {
   const [entries, setEntries] = useState<AuditEntry[]>([]);
   const [filter, setFilter] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [verifying, setVerifying] = useState(false);
+  const [verify, setVerify] = useState<VerifyResult | null>(null);
+  const [verifyError, setVerifyError] = useState<string | null>(null);
 
   useEffect(() => {
     api.audit(500).then(setEntries).catch((e) => setError(e instanceof Error ? e.message : String(e)));
   }, []);
+
+  async function runVerify() {
+    setVerifying(true);
+    setVerify(null);
+    setVerifyError(null);
+    try {
+      const r = await api.auditVerify();
+      setVerify(r);
+    } catch (e) {
+      setVerifyError(e instanceof Error ? e.message : String(e));
+    } finally {
+      setVerifying(false);
+    }
+  }
 
   const filtered = useMemo(() => {
     if (!filter) return entries;
@@ -71,6 +95,14 @@ export function AuditPage() {
           </div>
           <div className="flex shrink-0 gap-2">
             <button
+              onClick={runVerify}
+              disabled={verifying}
+              className="cursor-pointer rounded-md border border-[color:var(--color-signature)]/40 bg-[color:var(--color-signature)]/10 px-3 py-1.5 text-[11.5px] font-semibold text-[color:var(--color-signature)] disabled:opacity-50"
+              data-testid="audit-verify"
+            >
+              {verifying ? "Verifying…" : "Verify chain"}
+            </button>
+            <button
               onClick={() => download("csv")}
               className="cursor-pointer rounded-md border border-[#2a2a2e] bg-[color:var(--color-border-3)] px-3 py-1.5 text-[11.5px] text-[#d4d4d4]"
             >
@@ -84,6 +116,30 @@ export function AuditPage() {
             </button>
           </div>
         </div>
+        {(verify || verifyError) && (
+          <div
+            className={`mt-3 rounded-md border px-3 py-2 text-[12px] ${
+              verify?.ok
+                ? "border-[color:var(--color-success)]/40 bg-[color:var(--color-success)]/10 text-[color:var(--color-success)]"
+                : "border-[color:var(--color-critical)] bg-[color:var(--color-critical)]/10 text-[color:var(--color-critical)]"
+            }`}
+            role="status"
+            data-testid="audit-verify-result"
+          >
+            {verifyError && `Verify failed to run: ${verifyError}`}
+            {verify?.ok && (
+              <>
+                ✓ Chain intact — verified {verify.rows_checked.toLocaleString()} rows via{" "}
+                <span className="sgw-mono">{verify.algo}</span>.
+              </>
+            )}
+            {verify && !verify.ok && (
+              <>
+                ✗ Chain broken at row #{verify.first_bad_row_id}. {verify.rows_checked.toLocaleString()} rows checked. Investigate immediately.
+              </>
+            )}
+          </div>
+        )}
 
         <div className="mt-4 flex items-center gap-2.5">
           <input

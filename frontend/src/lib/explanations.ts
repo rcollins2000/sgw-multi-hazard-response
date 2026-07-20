@@ -44,16 +44,16 @@ export type ExplanationCard = Readonly<{
 
 export const EXPLANATIONS: Record<SurfaceKey, ExplanationCard> = {
   risk_score: {
-    title: "Calibrated failure probability · 72h",
+    title: "Hazard-conditional risk score · 72h",
     model:
-      "LightGBM gradient-boosted classifier with isotonic calibration. Random Forest baseline kept for methodological comparison. See the Governance tab for training metrics.",
+      "LightGBM gradient-boosted regressor predicting a continuous 0..1 stress score, with a Random Forest baseline kept for methodological comparison. Trained against a synthetic label (deterministic non-linear formula over asset features + noise) because SGW is a fictional utility; production replaces the label with real historical failure joins.",
     purpose:
-      "Estimates the probability a single asset fails in the next 72 hours, conditional on hazard type, severity, and region. It is a ranking + prioritisation signal — the platform never actuates on it directly.",
+      "Estimates a hazard-conditional stress score for each asset — used as the primary ranking signal in storm mode and as one input to preventative priority in LIVE mode. It is advisory only; the platform never actuates on it directly.",
     howToRead:
-      "≥ 0.75 = critical (rose), 0.50–0.75 = high (orange), 0.30–0.50 = moderate (amber), < 0.30 = low (slate). The ± band is the isotonic-calibration confidence interval — a wider band means less certainty.",
+      "≥ 0.75 = critical (rose), 0.50–0.75 = high (orange), 0.30–0.50 = moderate (amber), < 0.30 = low (slate). The ±.05 label is a NOMINAL band on the v2 regressor output — a placeholder until real calibration (isotonic or Platt) lands with real labels.",
     confidence:
-      "Isotonic calibration makes the score a real probability: across N assets scored 0.80, ~80% will fail on average. Brier tracks calibration; ROC-AUC tracks discrimination. Both are live on the Governance tab.",
-    provenance: "models/risk.py · lgbm-cal-v1",
+      "Reported metrics on Governance are R² and MAE on a held-out split. Isotonic calibration is Phase 2 — it needs real binary failure labels, which don't exist for a fictional utility. Until then the confidence meter's five levels come from distance-from-0.5 on the regressor output, not from a calibration CI.",
+    provenance: "models/risk.py · lgbm-reg-v2-hurricane · calibration deferred to Phase 2",
   },
 
   preventative_priority: {
@@ -111,7 +111,7 @@ export const EXPLANATIONS: Record<SurfaceKey, ExplanationCard> = {
   water_forecast: {
     title: "Water-level forecast · Charleston Harbor 8665530",
     model:
-      "Meta Prophet with weather features as exogenous regressors + semi-diurnal (M2) tidal seasonality. The 80% forecast band is Prophet's uncertainty interval. Anomalies = residuals outside the band.",
+      "Meta Prophet with weather features as exogenous regressors + semi-diurnal (M2) tidal seasonality. The 80% band is Prophet's NOMINAL uncertainty interval; on held-out Debby data the empirical coverage is ~0.54 (see Governance), so the band under-covers in high-surge conditions and this is disclosed rather than hidden. Anomalies use a rolling-median residual rule, independent of the band width.",
     purpose:
       "Two AI capabilities in one chart: forecasting the next 24 h of water level, and Prophet-residual anomaly detection on live observations. Drives the SCADA-side risk uplift for coastal assets.",
     howToRead:

@@ -123,17 +123,24 @@ export function computePreventativeScore(
 }
 
 /**
- * Rank a set of assets by preventative priority. Returns a sorted copy
- * paired with each asset's score, so callers can drive lists + charts
- * from one array.
+ * Rank a set of assets by preventative priority + operator-alignment nudge.
+ * The alignment adjustment (per-asset, bounded ±0.15) is added to the base
+ * priority so the watchlist reflects the layer's learned preferences.
+ *
+ * When the alignment layer is dormant (`alignment_adjustment == 0`), this
+ * reduces to a pure preventative-priority sort — no behaviour change.
  */
 export function rankByPreventative(
   assets: AssetSummary[],
-): { asset: AssetSummary; score: PreventativeScore }[] {
+): { asset: AssetSummary; score: PreventativeScore; aligned: number }[] {
   const sizes = computeClusterSizes(assets);
   return assets
-    .map((asset) => ({ asset, score: computePreventativeScore(asset, sizes) }))
-    .sort((a, b) => b.score.priority - a.score.priority);
+    .map((asset) => {
+      const score = computePreventativeScore(asset, sizes);
+      const aligned = clamp01(score.priority + asset.alignment_adjustment);
+      return { asset, score, aligned };
+    })
+    .sort((a, b) => b.aligned - a.aligned);
 }
 
 /**
