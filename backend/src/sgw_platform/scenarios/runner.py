@@ -10,7 +10,7 @@ For the MVP the runner does not train a new model per scenario. Instead it:
 
 That gives the demo a defensible answer to "what would happen under this
 scenario" without paying the cost of proper counterfactual inference. The
-production upgrade path is documented in docs/11_scenario_agent.md.
+production upgrade path is documented in docs/08_scenario_agent.md.
 """
 
 from __future__ import annotations

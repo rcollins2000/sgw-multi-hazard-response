@@ -19,7 +19,7 @@ This is deliberately NOT reinforcement learning:
 The pattern is preference calibration (Christiano et al. 2017 lineage). It
 sits in the same family as RLHF but with orders of magnitude less data,
 simpler math, and a much narrower job — a bounded corrective nudge, not a
-policy replacement. See docs/13_operator_alignment.md for the full framing.
+policy replacement. See docs/09_operator_alignment.md for the full framing.
 
 For the demo the honest framing is: "the platform learns from your decisions,
 within safe bounds, and the alignment layer is inspectable in Governance."

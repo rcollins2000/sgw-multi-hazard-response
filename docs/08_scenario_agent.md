@@ -1,7 +1,7 @@
 # Scenario agent
 
 **Status:** Landed 2026-07-18.
-**Companion:** [docs/09_design_cockpit_v2.md](09_design_cockpit_v2.md), [docs/10_live_data_polling.md](10_live_data_polling.md)
+**Companion:** [docs/05_architecture.md](05_architecture.md)
 
 ## The question this answers
 
@@ -19,7 +19,7 @@ Three MVP directives cover the shape of the ask:
 Operator directive (free-text OR preset key)
        │
        ▼
-[Directive parser]        gpt-oss:120b structured output → typed ScenarioSpec
+[Directive parser]        LLM structured output → typed ScenarioSpec
        │                  (preset short-circuits the LLM call)
        ▼
 [Scenario runner]         Copy STATE.features → apply hazard perturbation →
@@ -28,7 +28,7 @@ Operator directive (free-text OR preset key)
 [Impact ranker]           delta = scenario − baseline; combine with
        │                  consequence + cascade depth
        ▼
-[Report generator]        gpt-oss:120b narrates over top-N impacts, cites
+[Report generator]        LLM narrates over top-N impacts, cites
        │                  ONLY asset IDs present in the ranked list
        ▼
 POST /api/scenarios/run   → ScenarioReport payload + audit_log entry

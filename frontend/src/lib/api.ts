@@ -20,7 +20,7 @@ export type AssetSummary = {
   risk_level: "low" | "moderate" | "high" | "critical";
   blast_radius_cluster: number | null;
   within_hurricane_cone: boolean;
-  // Operator-alignment layer nudge (see docs/13_operator_alignment.md).
+  // Operator-alignment layer nudge (see docs/09_operator_alignment.md).
   // alignment_adjustment is zero when the layer is dormant.
   alignment_p_defer: number;
   alignment_adjustment: number;
@@ -112,6 +112,12 @@ export type StatusResponse = {
   training_report: {
     risk?: { model_version: string; metrics: Record<string, number>; top_features: Record<string, number> };
     graph?: { n_nodes: number; n_edges: number; n_clusters: number; modularity: number };
+  };
+  llm: {
+    provider: "openai" | "ollama";
+    model: string;
+    /** Short display string — the actual model name, no chrome. */
+    label: string;
   };
 };
 

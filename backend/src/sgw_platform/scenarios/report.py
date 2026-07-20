@@ -105,7 +105,7 @@ async def generate(
     }
     try:
         result = await provider.chat_structured(
-            _LlmScenarioNarration, system, str(user_payload)
+            _LlmScenarioNarration, system, str(user_payload), capability="scenario_report"
         )
         assert isinstance(result, _LlmScenarioNarration)
         # Guard-rail: drop any evidence IDs the LLM invented.

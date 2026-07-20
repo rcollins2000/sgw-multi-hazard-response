@@ -1,7 +1,7 @@
 # Operator alignment · preference calibration + corrective nudges
 
 **Status:** Landed 2026-07-19.
-**Companion:** [docs/09_design_cockpit_v2.md](09_design_cockpit_v2.md), [docs/11_scenario_agent.md](11_scenario_agent.md)
+**Companion:** [docs/08_scenario_agent.md](08_scenario_agent.md)
 **Code:** [backend/src/sgw_platform/alignment/](../backend/src/sgw_platform/alignment/)
 
 ## The question this answers
@@ -42,7 +42,7 @@ Logistic regression on 8 features with tens of samples is at the safe edge of st
 
 ### 4. Regulatory + audit posture
 
-The AECOM PRD ([docs/04_prd.md](04_prd.md)) explicitly requires that every recommendation is advisory, explainable, and audit-logged. RL policies are notoriously hard to explain (why did the agent take this action?). A bounded logistic-regression nudge is trivially inspectable — you can point at the eight learned weights on the Governance page and describe exactly what the layer would do to any future asset.
+The AECOM PRD ([docs/03_prd.md](03_prd.md)) explicitly requires that every recommendation is advisory, explainable, and audit-logged. RL policies are notoriously hard to explain (why did the agent take this action?). A bounded logistic-regression nudge is trivially inspectable — you can point at the eight learned weights on the Governance page and describe exactly what the layer would do to any future asset.
 
 Shipping "reinforcement learning" that the operator cannot audit would break the design principles the whole platform stands on.
 
@@ -122,9 +122,9 @@ The demo does not hide these — the explain popover and Governance page both ca
 1. **Sample-size regime.** With ~10-30 decisions we can detect a directional preference; we cannot claim statistical significance. `fit_score` is training-set accuracy, which is optimistic. Production would need cross-validation.
 2. **No temporal decay.** An operator's decision from three months ago counts the same as one from this morning. Preferences shift over time; the layer currently does not.
 3. **Single-operator model.** All operators contribute to the same model. If two operators have different judgement, the model averages them — not what you want in a shared-tenancy production deployment.
-4. **Reason text is stored but unused for training.** The operator writes a reason (`"already inspected"`, `"cost prohibitive"`, `"seasonal"`) — the alignment model currently only reads the numerical asset features. LLM-classified reason buckets as additional categorical features are the obvious next step (deferred per [docs/00_working_notes.md](00_working_notes.md)).
+4. **Reason text is stored but unused for training.** The operator writes a reason (`"already inspected"`, `"cost prohibitive"`, `"seasonal"`) — the alignment model currently only reads the numerical asset features. LLM-classified reason buckets as additional categorical features are the obvious next step.
 5. **Gameable by an adversarial operator.** A determined operator could shift priorities in any direction by making biased decisions. Mitigation: the layer is bounded (β=0.15), auditable (every decision is in `audit_log`), and reversible (force retrain against corrected decisions).
-6. **Can amplify bias in operator judgement.** If the operator systematically defers assets in one region, the layer learns "that region gets deferred" and reinforces the bias. The fairness auditor ([docs/07_data_model.md](07_data_model.md) §fairness) is the counterweight — it evaluates the *base* model; a Phase-2 extension would evaluate the *aligned* model too.
+6. **Can amplify bias in operator judgement.** If the operator systematically defers assets in one region, the layer learns "that region gets deferred" and reinforces the bias. The fairness auditor ([docs/06_data_model.md](06_data_model.md) §fairness) is the counterweight — it evaluates the *base* model; a Phase-2 extension would evaluate the *aligned* model too.
 7. **Cold-start.** The layer is dormant until ≥ 8 decisions with mixed outcomes. In a fresh deployment the operator sees `ALIGN · DORMANT` for the first few sessions. This is honest but visually less compelling.
 
 ## Human-in-the-loop touch points
@@ -149,7 +149,7 @@ Framed for the AECOM reviewer + a utility operations manager.
 
 ## Where next (deferred)
 
-1. **LLM reason-bucketing** — pass the free-text reason through gpt-oss:120b's classifier to produce categorical labels (`already_inspected`, `cost_prohibitive`, `seasonal`, `not_critical`, `other`); one-hot into the LR feature vector.
+1. **LLM reason-bucketing** — pass the free-text reason through the platform's structured-output LLM to produce categorical labels (`already_inspected`, `cost_prohibitive`, `seasonal`, `not_critical`, `other`); one-hot into the LR feature vector.
 2. **Temporal decay** — exponential-decay weighting on training samples so recent decisions carry more weight.
 3. **Per-operator + per-persona models** — separate LR per operator OR per persona role (NOC / Emergency / Field / Maintenance).
 4. **Held-out evaluation** — track a rolling holdout set so `fit_score` is a real generalisation estimate, not a train-set optimism metric.

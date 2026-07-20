@@ -69,7 +69,7 @@ The brief explicitly asks for AI beyond LLMs. Portfolio scoped to techniques wit
 | **Dependency-graph cascading impact** | networkx traversal (BFS from flagged node) over `asset_dependencies` | Cascading-impact chains for a flagged asset (substation → pumping station → hospital) | Included because it's essential for situational awareness — labelled as symbolic reasoning to be honest about what's ML vs. what's a useful graph algorithm |
 | **Failure blast-radius clustering** | **Louvain community detection** on the dependency graph | Communities of assets that would fail together — a "blast-radius cluster" ID per asset that operators can filter and prioritise by | Rules can't discover community structure at scale; Louvain identifies clusters purely from the topology |
 | **Governance — regional fairness auditing** | Demographic-parity and equal-opportunity gap metrics across regions and utility domains | Monitoring signal: does the risk model systematically under-score inland assets vs. coastal, rural vs. urban, water vs. electrical? Feeds re-calibration and reviewer sign-off. | Regulated infrastructure demands verifiable fairness across served populations; ad-hoc spot-checks are not enough |
-| **Operator alignment — preference calibration** (see [docs/13_operator_alignment.md](13_operator_alignment.md)) | sklearn `LogisticRegression` + StandardScaler on `(asset features, was_deferred_or_overridden)`, bounded corrective nudge `\|Δ\| ≤ β = 0.15` | Closes the loop between operator Accept/Override/Defer decisions and the ranking model — assets matching a rejected pattern lose priority, assets matching an accepted pattern gain slightly | Deliberately NOT full reinforcement learning (no reward signal, no exploration, sample regime too small, audit posture demands interpretability). Frame as preference calibration / RLHF-lite. Bounded, interpretable, auditable, reversible — every learned weight visible on Governance. |
+| **Operator alignment — preference calibration** (see [docs/09_operator_alignment.md](09_operator_alignment.md)) | sklearn `LogisticRegression` + StandardScaler on `(asset features, was_deferred_or_overridden)`, bounded corrective nudge `\|Δ\| ≤ β = 0.15` | Closes the loop between operator Accept/Override/Defer decisions and the ranking model — assets matching a rejected pattern lose priority, assets matching an accepted pattern gain slightly | Deliberately NOT full reinforcement learning (no reward signal, no exploration, sample regime too small, audit posture demands interpretability). Frame as preference calibration / RLHF-lite. Bounded, interpretable, auditable, reversible — every learned weight visible on Governance. |
 | **Phase 2 stretch — hazard-onset classifier** | Multi-source signal fusion (GBM on SCADA anomaly features + weather + geography) | Inferred emerging hazard type from cross-source anomalies before upstream classification | Complements external NWS/NHC alerts; catches events before they're classified upstream |
 | **Phase 2 stretch — deep-learning forecasting upgrade** | **GRU with exogenous variables** as an alternative to Prophet where longer-range or higher-dimensional signals justify it | Same expected-trajectory + uncertainty outputs, but leveraging deep-sequence models when Prophet plateaus | Provides a defensible upgrade path without committing to it in MVP |
 
@@ -80,7 +80,7 @@ The brief explicitly asks for AI beyond LLMs. Portfolio scoped to techniques wit
 1. Operator opens dashboard → live map with weather overlay + asset risk heatmap
 2. Hurricane forecast + flash-flood alert enters the 72-hour horizon → risk scores update, top-20 at-risk assets surface
 3. Operator drills into a flagged pumping station → sees hazard-conditional score, contributing factors (age, flood-zone overlap, forecast surge, prior failures, overdue inspection), confidence, and dependency chain
-4. LLM-generated structured explanation cites the specific evidence (weather alert, work order, sensor reading, field report) — see [07_data_model.md §9](07_data_model.md#9-curated-operational-risk-view)
+4. LLM-generated structured explanation cites the specific evidence (weather alert, work order, sensor reading, field report) — see [06_data_model.md §9](06_data_model.md#9-curated-operational-risk-view)
 5. Optimiser proposes crew pre-positioning across the affected region
 6. Operator accepts two recommendations, overrides one with a comment → audit log records the decision
 7. Executive briefing view shows aggregate impact + response progress + one-paragraph summary the coordinator can send to leadership
@@ -117,8 +117,8 @@ Each step maps to a section of the PRD and to a bullet in the exec briefing.
 ## What ships in the prototype (Deliverable 3)
 
 Minimum viable:
-- Synthetic multi-source dataset per [07_data_model.md](07_data_model.md) — fragmented on purpose, ID crosswalk required
-- Real NOAA fixtures per [08_external_data_sources.md](08_external_data_sources.md) — Debby primary, Idalia validation
+- Synthetic multi-source dataset per [06_data_model.md](06_data_model.md) — fragmented on purpose, ID crosswalk required
+- Real NOAA fixtures per [07_external_data_sources.md](07_external_data_sources.md) — Debby primary, Idalia validation
 - One hurricane + flash-flood scenario (primary), one heatwave scenario, one wildfire scenario at reduced fidelity — enough to show hazard-conditional switching
 - Hazard-conditional risk scoring model (GBM, calibrated) with feature-importance surfacing + Random Forest baseline for methodological rigour
 - **Prophet time-series forecasting** for water levels at CO-OPS Charleston Harbor gauge with weather as exogenous regressor — uncertainty band surfaced in UI

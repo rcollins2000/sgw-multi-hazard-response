@@ -195,16 +195,22 @@ export function CockpitPage({ onExpandMap }: Readonly<{ onExpandMap: () => void 
                 <StatTile label="Preventative · critical" value={String(preventativeCounts.crit)} color="#e0245e" />
                 <StatTile label="Preventative · high" value={String(preventativeCounts.hi)} color="#f2711c" />
                 <StatTile
-                  label="Pop. served"
+                  label="Pop. under watch"
                   value={fmtCompactNumber(popAtRisk)}
                   color="#c8ccd2"
+                  tooltip="Σ(service_population) across assets scored ≥ 0.60. Service populations double-count across overlapping utility feeds — this is a proxy for reach, not a unique-person count."
                 />
               </>
             ) : (
               <>
                 <StatTile label="Critical" value={String(critical)} color="#e0245e" />
                 <StatTile label="High" value={String(high)} color="#f2711c" />
-                <StatTile label="Pop. at risk" value={fmtCompactNumber(popAtRisk)} color="#c8ccd2" />
+                <StatTile
+                  label="Pop. at risk"
+                  value={fmtCompactNumber(popAtRisk)}
+                  color="#c8ccd2"
+                  tooltip="Σ(service_population) across assets scored ≥ 0.60. Service populations double-count across overlapping utility feeds — this is a proxy for reach, not a unique-person count."
+                />
               </>
             )}
           </div>
@@ -305,9 +311,14 @@ function LiveBaseline({
   );
 }
 
-function StatTile({ label, value, color }: Readonly<{ label: string; value: string; color: string }>) {
+function StatTile({
+  label,
+  value,
+  color,
+  tooltip,
+}: Readonly<{ label: string; value: string; color: string; tooltip?: string }>) {
   return (
-    <div>
+    <div title={tooltip}>
       <div className="sgw-lbl">{label}</div>
       <div className="sgw-num mt-px text-[22px] font-normal" style={{ color }}>
         {value}
@@ -342,6 +353,7 @@ function FocusLane({
   const [decided, setDecided] = useState<{ action: string; hash: string } | null>(null);
   const [decideError, setDecideError] = useState<string | null>(null);
   const [chatOpen, setChatOpen] = useState(false);
+  const llmLabel = useAppStore((s) => s.llm?.label ?? "loading…");
   const explanationCache = useRef<Map<string, Explanation>>(new Map());
 
   const assetId = asset?.asset_id;
@@ -522,7 +534,7 @@ function FocusLane({
             {!isLive && (
               <span
                 className="sgw-mono text-[13px] text-[color:var(--color-subtle)]"
-                title="Nominal display band on the v2 regressor. Real per-prediction uncertainty (e.g. quantile regression) is Phase 2 — see docs/13_operator_alignment.md and the risk-score explainer popover."
+                title="Nominal display band on the v2 regressor. Real per-prediction uncertainty (e.g. quantile regression) is Phase 2 — see docs/09_operator_alignment.md and the risk-score explainer popover."
               >
                 ±.05 nom
               </span>
@@ -577,7 +589,7 @@ function FocusLane({
                 className="sgw-mono text-[11px] italic text-[color:var(--color-faint)]"
                 aria-live="polite"
               >
-                Generating recommendation with gpt-oss:120b…
+                Generating recommendation with {llmLabel}…
               </div>
             )}
             {explanationError && !explanation && (
@@ -737,7 +749,7 @@ function FocusLane({
         )}
         <div className="flex-1" />
         <span className="sgw-mono text-[10px] text-[color:var(--color-faint)]">
-          {modelVersion} · gpt-oss:120b{cluster !== null ? ` · ◆ cluster #${cluster}` : ""}
+          {modelVersion} · {llmLabel}{cluster !== null ? ` · ◆ cluster #${cluster}` : ""}
         </span>
       </div>
 

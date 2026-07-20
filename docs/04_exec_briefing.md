@@ -78,7 +78,7 @@ The MVP is one workflow in one region, but the chassis is deliberately general:
 - **"What happens when the AI is wrong?"** — Every recommendation is advisory. Confidence is visible. Overrides are logged and feed back into model improvement. Failure modes are documented in the PRD.
 - **"Why this workflow first?"** — Pre-storm gives the longest lead time, the highest decision leverage, and the most tractable data. It's where AI-enabled decision support beats current tools most clearly.
 - **"What if we don't have the data quality assumed?"** — The roadmap has an explicit data-foundation workstream. The pre-storm MVP degrades gracefully with lower-quality data (broader confidence bands, more human review) rather than failing.
-- **"Is the learning loop reinforcement learning?"** — Deliberately not. It is bounded preference calibration: interpretable, auditable, reversible, and capped so it can never flip a critical priority. Full RL is inappropriate here — no ethical exploration space, sparse decision volume, and an audit posture that demands explainability. (Technical detail: [docs/13_operator_alignment.md](13_operator_alignment.md).)
+- **"Is the learning loop reinforcement learning?"** — Deliberately not. It is bounded preference calibration: interpretable, auditable, reversible, and capped so it can never flip a critical priority. Full RL is inappropriate here — no ethical exploration space, sparse decision volume, and an audit posture that demands explainability. (Technical detail: [docs/09_operator_alignment.md](09_operator_alignment.md).)
 
 ---
 

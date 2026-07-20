@@ -2,7 +2,7 @@
 
 **Status:** Adopted as the primary landing UX. Replaces the v1 dense operator dashboard.
 **Source bundle:** [.claude/design/refres_v1/SGW Cockpit v2.dc.html](../.claude/design/refres_v1/) (exported from claude.ai/design)
-**Companion:** [CLAUDE.md](../CLAUDE.md) design principles, [docs/04_prd.md](04_prd.md) §5 LLM boundaries
+**Companion:** [CLAUDE.md](../CLAUDE.md) design principles, [docs/03_prd.md](03_prd.md) §5 LLM boundaries
 
 ## What changed and why
 
@@ -28,7 +28,7 @@ The brief is explicit: this is an **AI-enabled operational decision-support plat
 5. **"Defer to #2" is the concrete HITL story.** The AI has ranked all candidates, but the operator drives ordering.
 6. **Driver bars show the risk model is feature-attributed.** Governance narrative visible on the landing page.
 
-All 8 AI capabilities from [docs/04_prd.md §5](04_prd.md) still visible on the cockpit landing:
+All 8 AI capabilities from [docs/03_prd.md §5](03_prd.md) still visible on the cockpit landing:
 
 | Capability | Where it appears on the cockpit |
 |---|---|

@@ -114,10 +114,18 @@ def _ensure_ready() -> None:
 
 @router.get("/api/status")
 async def status() -> dict[str, Any]:
+    from sgw_platform.settings import get_settings
+
+    s = get_settings()
+    if s.llm_provider == "openai":
+        llm = {"provider": "openai", "model": s.openai_model, "label": s.openai_model}
+    else:
+        llm = {"provider": "ollama", "model": s.ollama_model, "label": s.ollama_model}
     return {
         "ready": STATE.ready,
         "error": STATE.error,
         "training_report": STATE.training_report,
+        "llm": llm,
     }
 
 
@@ -1298,6 +1306,29 @@ async def crew_plan(top_n: int = Query(15, ge=3, le=50)) -> dict[str, Any]:
             "improvement_pct": result.improvement_pct,
             "depot": {"latitude": depot[0], "longitude": depot[1]},
         },
+    }
+
+
+# ---------- LLM prompt-version registry -------------------------------------
+
+
+@router.get("/api/llm/prompts")
+async def llm_prompts() -> dict[str, Any]:
+    """Registry of every named prompt in the platform + its current version.
+
+    Every LLM call in the platform records `prompt_version` in the audit log
+    against one of these capability names. Bumping a version here is the
+    engineering axis for "did we ship a bad prompt?" — filter the audit log
+    by (capability, prompt_version) to isolate a regression.
+    """
+    from sgw_platform.explain.prompt_versions import PROMPT_VERSIONS
+    from sgw_platform.settings import get_settings
+
+    s = get_settings()
+    return {
+        "provider": s.llm_provider,
+        "model": s.openai_model if s.llm_provider == "openai" else s.ollama_model,
+        "prompts": PROMPT_VERSIONS,
     }
 
 

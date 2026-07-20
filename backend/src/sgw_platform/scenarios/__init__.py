@@ -17,7 +17,7 @@ Three scenario kinds are supported in the MVP:
                           (e.g. "what's our worst single-asset failure impact
                           this month?").
 
-See docs/11_scenario_agent.md for the full pipeline + data-flow diagram.
+See docs/08_scenario_agent.md for the full pipeline + data-flow diagram.
 """
 
 from sgw_platform.scenarios.spec import (

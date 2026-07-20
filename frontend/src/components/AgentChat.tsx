@@ -75,6 +75,7 @@ const CANNED_QUESTIONS = [
 
 export function AgentChat({ assetId }: Readonly<{ assetId: string | null }>) {
   const persona = useAppStore((s) => s.personaInfo());
+  const llmLabel = useAppStore((s) => s.llm?.label ?? "loading…");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -161,8 +162,11 @@ export function AgentChat({ assetId }: Readonly<{ assetId: string | null }>) {
   return (
     <div className="flex h-full flex-col">
       <div className="mb-2 flex items-center justify-end">
-        <span className="text-[10px] text-[color:var(--color-faint)]">
-          gpt-oss:120b · tool-calling · as {persona.abbr}
+        <span
+          className="text-[10px] text-[color:var(--color-faint)]"
+          title={`Copilot model: ${llmLabel} · asset-scoped memory · tool access to model + cascade + alerts`}
+        >
+          {llmLabel} · tool-calling
         </span>
       </div>
 

@@ -49,6 +49,7 @@ export function fmtRelative(iso: string): string {
   return `${d}d ago`;
 }
 
+/** Retained for backwards compatibility; new code should use `fmtLondonClock`. */
 export function fmtUtcClock(d: Date = new Date()): string {
   return (
     String(d.getUTCHours()).padStart(2, "0") +
@@ -57,4 +58,23 @@ export function fmtUtcClock(d: Date = new Date()): string {
     ":" +
     String(d.getUTCSeconds()).padStart(2, "0")
   );
+}
+
+/** Wall-clock in Europe/London — GMT in winter, BST in summer, DST handled by
+ *  Intl. Returned as HH:MM:SS. The suffix ("BST"/"GMT") is derived from
+ *  `Intl.DateTimeFormat` so it never diverges from the actual offset. */
+export function fmtLondonClock(d: Date = new Date()): { time: string; zone: "BST" | "GMT" } {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZoneName: "short",
+  }).formatToParts(d);
+  const map: Record<string, string> = {};
+  for (const p of parts) map[p.type] = p.value;
+  const time = `${map.hour ?? "00"}:${map.minute ?? "00"}:${map.second ?? "00"}`;
+  const zone = (map.timeZoneName === "BST" ? "BST" : "GMT") as "BST" | "GMT";
+  return { time, zone };
 }

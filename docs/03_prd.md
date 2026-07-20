@@ -6,7 +6,7 @@
 **Version:** 1.0 (first complete draft)
 **Author:** Reuben Collins
 **Date:** 2026-07-15
-**Companion documents:** [00_working_notes.md](00_working_notes.md), [01_assumptions.md](01_assumptions.md), [02_mvp_workflow.md](02_mvp_workflow.md), [06_architecture.md](06_architecture.md), [07_data_model.md](07_data_model.md), [08_external_data_sources.md](08_external_data_sources.md)
+**Companion documents:** [01_assumptions.md](01_assumptions.md), [02_mvp_workflow.md](02_mvp_workflow.md), [05_architecture.md](05_architecture.md), [06_data_model.md](06_data_model.md), [07_external_data_sources.md](07_external_data_sources.md)
 
 ---
 
@@ -48,17 +48,17 @@ An AI-enabled operational decision-support platform that:
 
 ## 2. Key assumptions & unknowns
 
-Full register in [01_assumptions.md](01_assumptions.md). The seven assumptions most load-bearing for technical scoping:
+Full register in [01_assumptions.md](01_assumptions.md). The assumptions most load-bearing for technical scoping:
 
 | # | Assumption | If wrong, this changes |
 |---|---|---|
-| A1 | Users are SGW operational staff, not the 8M residents. Residents are beneficiaries. | UX, auth, deployment model, accessibility scope all shift |
-| A5 | SGW reference footprint is SC/GA/NC (coastal + inland). | Different footprint uses the same adapters with region-specific hazard-layer fixtures; workflow unchanged |
-| A6 | NOAA is the reference federal data stack; adapter pattern isolates provider for non-US deployment. | Non-US (Met Office, ECMWF, JMA) requires adapter implementations only; no change to risk/optimisation/UI |
+| A1 | Personas are NOC / Emergency / Field / Maintenance — internal operational users, not the 8M residents. | Persona-specific workflows re-prioritise; a resident-facing product would be fundamentally different scope. |
+| A3 | SGW reference footprint is SC/GA/NC (coastal + inland). | Different footprint uses the same adapters with region-specific hazard-layer fixtures; workflow unchanged. |
+| A4 | NOAA is the reference federal data stack; adapter pattern isolates provider for non-US deployment. | Non-US (Met Office, ECMWF, JMA) requires adapter implementations only; no change to risk/optimisation/UI. |
 | C1 | Hybrid deployment — cloud for training/batch inference, on-prem edge appliance at NOC for real-time inference and continuity during outages. | Cloud-only fails FERC/NERC CIP and utility resilience credibility. If SGW is cloud-native with hardened redundant WAN this simplifies. |
-| D1 | All AI recommendations are advisory; a human in the appropriate role must accept, override or comment before action. | Regulatory posture and adoption depend on this; not negotiable for MVP |
-| E1 | MVP is the pre-event and early-onset phase for the four named hazards (hurricane, flood, heatwave, wildfire), coastal + inland. | Storm-only scope would under-serve inland exposure; during-event/post-event phases are Phase 2/3 |
-| E3 | Mock dataset is fragmented on purpose (multi-format, ID crosswalk, quality flags, freshness metadata). | If SGW's data is already unified in a lake/warehouse, ingestion workstream shrinks — AI portfolio and workflow unchanged |
+| D1 | All AI recommendations are advisory; a human in the appropriate role must accept, override or comment before action. | Regulatory posture and adoption depend on this; not negotiable for MVP. |
+| E1 | MVP is the pre-event and early-onset phase for the four named hazards (hurricane, flood, heatwave, wildfire), coastal + inland. | Storm-only scope would under-serve inland exposure; during-event/post-event phases are Phase 2/3. |
+| E3 | Mock dataset is fragmented on purpose (multi-format, ID crosswalk, quality flags, freshness metadata). | If SGW's data is already unified in a lake/warehouse, ingestion workstream shrinks — AI portfolio and workflow unchanged. |
 
 ### Unknowns that most affect scoping
 If a 15-minute conversation with an SGW operations director were available before build, we would prioritise:
@@ -152,7 +152,7 @@ Full workflow in [02_mvp_workflow.md](02_mvp_workflow.md).
 
 ## 5. Proposed AI capabilities
 
-Portfolio scoped to techniques with genuine prior applied work — see [00_working_notes.md](00_working_notes.md) *"AI portfolio scoped to defensible techniques"* for the evidence table. Full detail and per-capability rationale in [02_mvp_workflow.md](02_mvp_workflow.md).
+Portfolio scoped to techniques with genuine prior applied work. Full detail and per-capability rationale in [02_mvp_workflow.md](02_mvp_workflow.md).
 
 ### Portfolio at a glance
 
@@ -166,7 +166,7 @@ Portfolio scoped to techniques with genuine prior applied work — see [00_worki
 | 6 | Failure blast-radius clustering | Louvain community detection on the dependency graph | Does not decide priority; only groups by topology | Operator filters by cluster; clusters re-computed on dependency updates |
 | 7 | Regional fairness auditing (governance) | Demographic-parity + equal-opportunity gap metrics across region / domain / demographics | Does not mitigate bias directly; produces monitoring signal | Model-risk committee reviews monthly; gap thresholds trigger recalibration |
 | 8 | Copilot explanation layer | Structured-output LLM (`gpt-oss:120b` via Ollama Cloud, OpenAI fallback) | **Never produces risk scores, forecasts, or optimisation plans.** Narrates and cites only. | Operator reads and can request re-generation; drift monitored via canonical eval set |
-| 9 | Operator-preference alignment loop | Supervised preference learning — sklearn LogisticRegression + StandardScaler on `(asset features, was_deferred_or_overridden)` drawn from `audit_log`. Deliberately NOT reinforcement learning (no reward signal, no exploration on real infra, sample regime too small, audit posture demands interpretability). See [docs/13_operator_alignment.md](13_operator_alignment.md). | Does not replace the base ranking; adjustment bounded to \|Δ\| ≤ β=0.15. Cannot flip Critical to Low. Every learned weight is visible on Governance. | Every Accept/Override/Defer is HITL. Force-retrain requires operator action. Bounded correction preserves operator authority. |
+| 9 | Operator-preference alignment loop | Supervised preference learning — sklearn LogisticRegression + StandardScaler on `(asset features, was_deferred_or_overridden)` drawn from `audit_log`. Deliberately NOT reinforcement learning (no reward signal, no exploration on real infra, sample regime too small, audit posture demands interpretability). See [docs/09_operator_alignment.md](09_operator_alignment.md). | Does not replace the base ranking; adjustment bounded to \|Δ\| ≤ β=0.15. Cannot flip Critical to Low. Every learned weight is visible on Governance. | Every Accept/Override/Defer is HITL. Force-retrain requires operator action. Bounded correction preserves operator authority. |
 
 ### LLM boundaries (non-negotiable)
 The LLM narrates, cites evidence, drafts and answers questions over structured retrieval. It never produces the risk score, never produces the forecast, never produces the optimisation plan, never classifies hazards. This split is defensible under model-risk-management review and is what makes this a decision-support platform rather than an ops chatbot.
@@ -183,7 +183,7 @@ The LLM narrates, cites evidence, drafts and answers questions over structured r
 
 ## 6. High-level architecture & integrations
 
-Full detail in [06_architecture.md](06_architecture.md); source registry in [08_external_data_sources.md](08_external_data_sources.md).
+Full detail in [05_architecture.md](05_architecture.md); source registry in [07_external_data_sources.md](07_external_data_sources.md).
 
 ### Layered view
 
@@ -238,15 +238,15 @@ Hybrid — cloud (AWS or Azure GovCloud) for training, batch inference, feature 
 
 ### Prototype → production
 
-**The demo's Docker Compose stack maps 1:1 to the production shape** — the transition is a substitution exercise, not a rebuild. See the deployment diagram in [README.md](../README.md#production-deployment-architecture).
+**Target platform: AWS** — matches the utility ops team's existing skill set and NERC-CIP audit posture. The demo's Docker Compose stack maps 1:1 to the production shape; the transition is a substitution exercise, not a rebuild. See the deployment diagram in [README.md](../README.md#production-deployment-architecture).
 
-- **Same database** — the prototype already runs Postgres 16 + PostGIS 3.4 with declarative partitioning, materialised views, and append-only triggers. Production moves to a managed equivalent (RDS / CloudSQL / AlloyDB) with PITR, read replicas, and encryption at rest; the schema and application queries are untouched.
-- **Same containers** — [backend/Dockerfile](../backend/Dockerfile) and [frontend/Dockerfile](../frontend/Dockerfile) already produce production-shaped images (multi-stage frontend → nginx serving a static bundle; backend with an idempotent seed-on-startup entrypoint that maps cleanly to a Kubernetes Job). Autoscaling on request rate is a Helm chart, not new code.
-- **Same audit contract** — the SHA-256 hash-chained `audit_log` runs against the same table; production adds a write-once mirror (S3 Object Lock or QLDB) that regulators can inspect independently of the operator.
-- **Same LLM adapter pattern** — the backend implements an `LLMProvider` interface with Ollama Cloud and OpenAI concrete adapters. Swapping vendors is one env var; adding a self-hosted provider (llama.cpp, vLLM) is one adapter class.
-- **Same eval suite** — `tests/evals/` runs today as a CI gate on every push. Production layers continuous evaluation against production traffic samples on top of the same fixtures.
-- **Secrets managed differently** — `.env` for the demo, SecretsManager / SSM / Vault in production, injected via the K8s CSI driver. Same environment-variable names; the delta is one Helm value file, not application code.
-- **Observability hooks already emitted** — structlog JSON to stdout + Prometheus metrics counters wired throughout the code. Production adds a receiver: OpenTelemetry Collector → Prometheus + Grafana + Loki (or the cloud-managed equivalents CloudWatch / Cloud Monitoring).
+- **Same database** — the prototype already runs Postgres 16 + PostGIS 3.4 with declarative partitioning, materialised views, and append-only triggers. Production moves to **Amazon RDS PostgreSQL** with Multi-AZ, PITR, read replicas, and encryption at rest; the schema and application queries are untouched.
+- **Same containers, EC2 not Kubernetes** — [backend/Dockerfile](../backend/Dockerfile) produces a Docker image pushed to **ECR**; deployed via **CodeDeploy** to an **EC2 Auto Scaling Group behind an internal ALB** (multi-AZ, min 2 instances, scale on request rate + p95 latency). The frontend static bundle from [frontend/Dockerfile](../frontend/Dockerfile) is served from **S3 + CloudFront** with an OAC-restricted origin. K8s adds a platform layer that isn't needed for this workload shape — ~10 RPS peak, stateless backend, DB does the heavy lifting.
+- **Same audit contract** — the SHA-256 hash-chained `audit_log` runs against the same table; production adds an **S3 Object Lock** write-once mirror so regulators can inspect an immutable copy that the operator role cannot mutate, even by privilege-escalation.
+- **Same LLM adapter pattern, Bedrock in production** — the backend already implements an `LLMProvider` interface with Ollama Cloud and OpenAI concrete adapters. Production adds a **BedrockProvider** class of identical shape, calling `bedrock-runtime` via a **VPC endpoint (PrivateLink)** so LLM traffic never leaves the VPC. Model recommendation: **Claude 3.5 Sonnet on Bedrock** — best structured-output support in the Bedrock lineup, no prompt retention for model training (contractual), available in **AWS GovCloud (FedRAMP High / IL5)** for CIP-scoped workloads. Provider swap is `LLM_PROVIDER=bedrock` — one env var, no code changes to callers.
+- **Same eval suite** — `tests/evals/` runs today as a CI gate on every push through **CodePipeline + CodeBuild**. Production layers continuous evaluation against production traffic samples on top of the same fixtures.
+- **Secrets managed differently** — `.env` for the demo, **AWS SecretsManager + SSM Parameter Store** in production, injected via the EC2 **instance-profile IAM role**. No static LLM API keys anywhere: Bedrock authenticates by IAM, RDS by rotating passwords fetched at boot. Same environment-variable names; the delta is one Terraform module, not application code.
+- **Observability hooks already emitted** — structlog JSON to stdout + Prometheus metrics counters wired throughout the code. Production adds a receiver: **ADOT Collector → CloudWatch Logs + Metrics + X-Ray traces** (all AWS-native so ops can use the same dashboards they already have for the rest of the estate).
 
 **The one genuinely new workstream** in production is real data ingestion: replacing the deterministic mock generator ([`scripts/generate_mock_data.py`](../backend/scripts/generate_mock_data.py)) with adapters against SGW's real GIS / CMMS / SCADA. The six-adapter Hazard Data family already isolates provider choice, so this is a Phase-1 delivery — sequenced GIS → CMMS → SCADA → Field Ops — rather than an unknown. Each adapter lands behind the same `Fetcher` protocol used by the NOAA adapters today.
 
@@ -263,7 +263,7 @@ NOAA Open Data lives on anonymous public S3 (`noaa-nwm-pds`, `noaa-hrrr-bdp-pds`
 
 ## 7. Data requirements, dependencies & quality
 
-Full data spec in [07_data_model.md](07_data_model.md); source registry in [08_external_data_sources.md](08_external_data_sources.md).
+Full data spec in [06_data_model.md](06_data_model.md); source registry in [07_external_data_sources.md](07_external_data_sources.md).
 
 ### Data domains
 1. **Assets** (GIS) — asset registry, service areas, hazard zones. See §1 of data model.
@@ -379,7 +379,7 @@ Model-level metrics tracked for internal validation:
 - One primary demo scenario (Hurricane Debby, August 2024) + one validation reference (Hurricane Idalia, August 2023)
 - All nine AI capabilities in §5 (functional, may be simplified in the prototype)
 - Operator UI with accept/override + audit log
-- NOAA MVP source stack per [08_external_data_sources.md](08_external_data_sources.md)
+- NOAA MVP source stack per [07_external_data_sources.md](07_external_data_sources.md)
 
 **Out of scope for MVP (Phase 2/3 in roadmap):**
 - Live during-event incident triage
@@ -437,10 +437,9 @@ Ordered by dependency and value:
 
 - **A. Assumptions register** — [01_assumptions.md](01_assumptions.md)
 - **B. MVP workflow selection with alternatives considered** — [02_mvp_workflow.md](02_mvp_workflow.md)
-- **C. Data model** — [07_data_model.md](07_data_model.md)
-- **D. External data source registry** — [08_external_data_sources.md](08_external_data_sources.md)
-- **E. Architecture** — [06_architecture.md](06_architecture.md)
-- **F. Working notes & decision log** — [00_working_notes.md](00_working_notes.md)
+- **C. Data model** — [06_data_model.md](06_data_model.md)
+- **D. External data source registry** — [07_external_data_sources.md](07_external_data_sources.md)
+- **E. Architecture** — [05_architecture.md](05_architecture.md)
 
 ---
 

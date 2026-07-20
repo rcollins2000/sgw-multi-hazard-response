@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, type StatusResponse } from "./lib/api";
-import { fmtUtcClock } from "./lib/labels";
+import { fmtLondonClock } from "./lib/labels";
 import { CockpitPage } from "./pages/CockpitPage";
 import { OverviewPage } from "./pages/OverviewPage";
 import { CrewPage } from "./pages/CrewPage";
@@ -50,18 +50,26 @@ export default function App() {
   const mode = useAppStore((s) => s.mode);
   const setMode = useAppStore((s) => s.setMode);
   const [status, setStatus] = useState<StatusResponse | null>(null);
-  const [clock, setClock] = useState(fmtUtcClock());
+  const [clock, setClock] = useState(fmtLondonClock());
   const [showSources, setShowSources] = useState(false);
+  const setLlm = useAppStore((s) => s.setLlm);
 
   useEffect(() => {
-    const load = () => api.status().then(setStatus).catch(console.error);
+    const load = () =>
+      api
+        .status()
+        .then((s) => {
+          setStatus(s);
+          if (s.llm) setLlm(s.llm);
+        })
+        .catch(console.error);
     load();
     const t = setInterval(load, 5000);
     return () => clearInterval(t);
-  }, []);
+  }, [setLlm]);
 
   useEffect(() => {
-    const t = setInterval(() => setClock(fmtUtcClock()), 1000);
+    const t = setInterval(() => setClock(fmtLondonClock()), 1000);
     return () => clearInterval(t);
   }, []);
 
@@ -103,7 +111,7 @@ function CommandBar({
 }: Readonly<{
   screen: Screen;
   setScreen: (s: Screen) => void;
-  clock: string;
+  clock: { time: string; zone: "BST" | "GMT" };
   mode: "live" | "demo_debby";
   setMode: (m: "live" | "demo_debby") => void;
   status: StatusResponse | null;
@@ -195,14 +203,14 @@ function CommandBar({
           <AlignmentBadge />
           <div
             className="sgw-mono flex items-center gap-1.5 text-[12px] text-[color:var(--color-subtle)]"
-            aria-label={`UTC clock ${clock}`}
+            aria-label={`Europe/London clock ${clock.time} ${clock.zone}`}
           >
             <span
               className="h-1.5 w-1.5 rounded-full bg-[color:var(--color-success)]"
               style={{ animation: "sgwblink 1.6s infinite" }}
               aria-hidden
             />
-            {clock}Z
+            {clock.time} {clock.zone}
           </div>
         </div>
       </div>
@@ -221,7 +229,7 @@ function CommandBar({
         <StatusChip k="ROC-AUC" v={fmtMetric(risk?.metrics, "roc_auc")} />
         <StatusChip k="Brier" v={fmtMetric(risk?.metrics, "brier")} />
         <StatusChip k="graph mod." v={graph?.modularity?.toFixed(3) ?? "—"} />
-        <StatusChip k="copilot" v="gpt-oss:120b" />
+        <StatusChip k="copilot" v={status?.llm?.label ?? "—"} />
         <div className="ml-auto">
           <button
             onClick={openSources}

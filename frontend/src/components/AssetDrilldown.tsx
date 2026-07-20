@@ -9,6 +9,7 @@ import {
   type WaterLevelForecast,
 } from "../lib/api";
 import { prettyAssetType, prettyRegion, riskColor } from "../lib/labels";
+import { useAppStore } from "../stores/appStore";
 import type { SurfaceKey } from "../lib/explanations";
 import { RiskBadge } from "./RiskBadge";
 import { HITLPanel } from "./HITLPanel";
@@ -70,6 +71,7 @@ export function AssetDrilldown({
   persona,
   onClose,
 }: Readonly<{ assetId: string; persona: PersonaKey; onClose: () => void }>) {
+  const llmLabel = useAppStore((s) => s.llm?.label ?? "loading…");
   const [detail, setDetail] = useState<AssetDetail | null>(null);
   const [gov, setGov] = useState<ModelGovernance | null>(null);
   const [forecast, setForecast] = useState<WaterLevelForecast | null>(null);
@@ -326,7 +328,7 @@ export function AssetDrilldown({
                   AI copilot
                 </span>
                 <span className="sgw-mono text-[9.5px] text-[#8b8b8b]">
-                  gpt-oss:120b · structured
+                  {llmLabel} · structured
                 </span>
               </div>
               <span className="text-[9px] text-[#c4b5fd]">schema-validated</span>

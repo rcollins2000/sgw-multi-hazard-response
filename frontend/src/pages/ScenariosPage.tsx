@@ -8,6 +8,7 @@ import {
   type ScenarioReport,
 } from "../lib/api";
 import { prettyRegion, riskColor, riskLevelOf } from "../lib/labels";
+import { useAppStore } from "../stores/appStore";
 import { CopilotPullQuote } from "../components/CopilotPullQuote";
 import { ExplainPopover } from "../components/ExplainPopover";
 import { ScenariosMap } from "../components/ScenariosMap";
@@ -61,6 +62,7 @@ const PRESET_CHIPS: { key: PresetKey; label: string; blurb: string }[] = [
 ];
 
 export function ScenariosPage() {
+  const llmLabel = useAppStore((s) => s.llm?.label ?? "loading…");
   const [presets, setPresets] = useState<ScenarioPresets["presets"] | null>(null);
   const [directive, setDirective] = useState("");
   const [busy, setBusy] = useState(false);
@@ -302,7 +304,7 @@ export function ScenariosPage() {
                 <CopilotPullQuote
                   recommendation={report.recommendation}
                   evidence={report.evidence}
-                  modelLabel="scenario agent · gpt-oss:120b"
+                  modelLabel={`scenario agent · ${llmLabel}`}
                 />
                 <SummaryPanel summary={report.summary} />
                 <HitlPanel

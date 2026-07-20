@@ -27,9 +27,26 @@ Full runbook (native dev, without Docker): [demo/README.md](demo/README.md) · D
 
 | # | Deliverable | Where |
 |---|---|---|
-| 1 | **PRD** for the technical delivery team | [docs/04_prd.md](docs/04_prd.md) |
-| 2 | **Executive briefing** | [docs/05_exec_briefing.md](docs/05_exec_briefing.md) |
+| 1 | **PRD** for the technical delivery team | [docs/03_prd.md](docs/03_prd.md) |
+| 2 | **Executive briefing** | [docs/04_exec_briefing.md](docs/04_exec_briefing.md) |
 | 3 | **Prototype + demo video** | Prototype runs via `docker compose`; narration script + storyboard in [demo/walkthrough.md](demo/walkthrough.md) |
+
+---
+
+## Screenshots
+
+Captured against the OpenAI-backed running stack (`LLM_PROVIDER=openai`, `OPENAI_MODEL=gpt-5.6-terra`).
+
+| Surface | Screenshot |
+|---|---|
+| **Cockpit — LIVE mode** — real NWS alerts + preventative-priority watchlist + operator-alignment nudge on the hero card | ![](demo/screenshots/01_cockpit_live.png) |
+| **Cockpit — DEBBY 2024 REPLAY** — same UI conditioned on the historic storm; 54h countdown + timeline spine + real Charleston Harbor surge signal | ![](demo/screenshots/02_cockpit_debby.png) |
+| **Copilot chat** — asset-scoped, tool-calling, streaming markdown with the actual model (`gpt-5.6-terra`) surfaced in the header | ![](demo/screenshots/copilot_chat_openai.png) |
+| **Scenarios** — Debby preset with real NHC-shaped storm-path map + ranked impacts | ![](demo/screenshots/scenarios_debby.png) |
+| **Full map** — react-leaflet with hazard-zone + cone + risk-heatmap layers | ![](demo/screenshots/03_full_map.png) |
+| **Crew plan** — real OR-Tools VRP solver output (tours, distance, improvement vs greedy baseline) | ![](demo/screenshots/04_crew_plan.png) |
+| **Governance** — risk model + fairness auditor + operator-alignment layer with learned feature weights | ![](demo/screenshots/05_governance.png) |
+| **Audit** — SHA-256 hash-chained ledger with "Verify chain" button | ![](demo/screenshots/06_audit.png) |
 
 ---
 
@@ -65,7 +82,7 @@ flowchart TB
         GRAPH[Dependency graph<br/>networkx BFS + Louvain clusters]
         VRP[Crew optimisation<br/>OR-Tools VRP + GLS]
         FAIR[Fairness auditor<br/>DP + EO across regions]
-        LLM[Copilot<br/>gpt-oss:120b structured output]
+        LLM[Copilot<br/>structured output<br/>OpenAI or Ollama]
         ALIGN[Alignment layer<br/>LogReg preference calibration]
         SCEN[Scenario agent<br/>LLM → spec → runner → LLM narration]
     end
@@ -118,108 +135,115 @@ flowchart TB
     class UI,HITL op
 ```
 
-The dashed arrows are the **preference-learning loop** — every operator decision writes to `audit_log`, the alignment layer retrains every 3 decisions, and its bounded nudge (`|Δ| ≤ 0.15`) updates the ranking on subsequent `/api/assets` calls. Doc: [docs/13_operator_alignment.md](docs/13_operator_alignment.md).
+The dashed arrows are the **preference-learning loop** — every operator decision writes to `audit_log`, the alignment layer retrains every 3 decisions, and its bounded nudge (`|Δ| ≤ 0.15`) updates the ranking on subsequent `/api/assets` calls. Doc: [docs/09_operator_alignment.md](docs/09_operator_alignment.md).
 
 ---
 
 ## Production deployment architecture
 
-The same architecture at production scale. The demo's Docker Compose stack maps 1:1 to the shaded layers below — each local service has a named cloud equivalent so the transition is a substitution exercise, not a rebuild.
+The same architecture at production scale, targeted at **AWS** (native to the utility ops team's existing skill set and audit posture). The demo's Docker Compose stack maps 1:1 to the shaded layers below — each local service has a named AWS equivalent so the transition is a substitution exercise, not a rebuild.
 
 ```mermaid
 flowchart LR
     subgraph EDGE["Edge · CDN"]
-        CDN[CloudFront / Cloud CDN<br/>static bundle + long-cache assets]
+        CDN[CloudFront<br/>static bundle + long-cache assets<br/>OAC → S3 origin]
     end
 
     subgraph API["API gateway"]
-        WAF[WAF + Rate limit]
-        APIGW[API Gateway / ALB]
+        WAF[AWS WAF + Shield<br/>rate limit + OWASP rules]
+        ALB[Application Load Balancer<br/>internal, multi-AZ]
     end
 
-    subgraph K8S["Kubernetes cluster (private VPC)"]
-        FE_POD[frontend pods<br/>nginx serving dist]
-        BE_POD[backend pods<br/>FastAPI · autoscale on RPS]
-        WORKER[worker pods<br/>training + polling jobs]
-        MODEL[model server<br/>optional GPU node pool]
+    subgraph ASG["EC2 Auto Scaling Group (private VPC, multi-AZ)"]
+        BE1[backend EC2<br/>FastAPI · Docker · ECR image]
+        BE2[backend EC2<br/>min 2 · scale on RPS + p95]
+        WORKER[worker EC2 / ECS Fargate<br/>training + polling jobs]
     end
 
-    subgraph DATA["Managed data"]
-        RDS[(RDS / CloudSQL<br/>Postgres 16 + PostGIS<br/>PITR + read replicas)]
+    subgraph DATA["Managed data (VPC-private)"]
+        RDS[(Amazon RDS<br/>Postgres 16 + PostGIS<br/>Multi-AZ · PITR · read replicas)]
         S3[(S3 · raw fixtures<br/>+ trained artifacts)]
-        REG[MLflow / SageMaker<br/>model registry]
+        REG[SageMaker / MLflow<br/>model registry]
+    end
+
+    subgraph LLM["LLM (VPC-private, no data retention)"]
+        BEDROCK[AWS Bedrock<br/>Claude 3.5 Sonnet / Nova Pro<br/>VPC endpoint · IAM auth]
     end
 
     subgraph OBS["Observability"]
-        PROM[Prometheus / CloudWatch]
-        GRAF[Grafana / Managed Grafana]
-        OTEL[OpenTelemetry Collector]
+        CW[CloudWatch Logs + Metrics]
+        XRAY[X-Ray traces]
+        OTEL[ADOT Collector]
     end
 
     subgraph SEC["Secrets + audit"]
-        SM[SecretsManager / SSM<br/>LLM keys · DB creds]
-        WORM[(S3 Object Lock or QLDB<br/>audit_log mirror)]
-    end
-
-    subgraph EXT["External LLMs"]
-        OLLAMA[Ollama Cloud<br/>gpt-oss:120b]
-        OPENAI[OpenAI API<br/>fallback]
+        SM[SecretsManager + SSM<br/>DB creds · injected via IAM role]
+        WORM[(S3 Object Lock<br/>audit_log mirror — WORM)]
     end
 
     Browser --> CDN
     CDN --> WAF
-    WAF --> APIGW
-    APIGW --> FE_POD
-    APIGW --> BE_POD
-    BE_POD <--> RDS
-    BE_POD <--> MODEL
-    BE_POD -.-> OLLAMA
-    BE_POD -.-> OPENAI
+    WAF --> ALB
+    ALB --> BE1
+    ALB --> BE2
+    BE1 <--> RDS
+    BE2 <--> RDS
+    BE1 -.PrivateLink.-> BEDROCK
+    BE2 -.PrivateLink.-> BEDROCK
     WORKER --> RDS
     WORKER --> REG
-    MODEL --> REG
-    BE_POD --> S3
-    BE_POD --> OTEL
+    BE1 --> S3
+    BE2 --> S3
+    BE1 --> OTEL
+    BE2 --> OTEL
     WORKER --> OTEL
-    OTEL --> PROM
-    PROM --> GRAF
-    SM -.injects.-> BE_POD
-    SM -.injects.-> WORKER
+    OTEL --> CW
+    OTEL --> XRAY
+    SM -.instance profile.-> BE1
+    SM -.instance profile.-> BE2
+    SM -.instance profile.-> WORKER
     RDS -.replicates.-> WORM
 
     classDef edge fill:#0b1220,stroke:#38bdf8,color:#e5e5e5
     classDef api fill:#0e1a14,stroke:#3fd47a,color:#e5e5e5
-    classDef k8s fill:#33280a,stroke:#f5a524,color:#fafafa
+    classDef ec2 fill:#33280a,stroke:#f5a524,color:#fafafa
     classDef data fill:#1e123a,stroke:#c4b5fd,color:#e5e5e5
+    classDef llm fill:#082f49,stroke:#7dd3fc,color:#e5e5e5
     classDef obs fill:#2a0f0f,stroke:#e0245e,color:#fafafa
-    classDef sec fill:#082f49,stroke:#7dd3fc,color:#e5e5e5
-    classDef ext fill:#14171b,stroke:#8b9199,color:#d4d4d4
+    classDef sec fill:#0e1a14,stroke:#93c5fd,color:#e5e5e5
     class CDN edge
-    class WAF,APIGW api
-    class FE_POD,BE_POD,WORKER,MODEL k8s
+    class WAF,ALB api
+    class BE1,BE2,WORKER ec2
     class RDS,S3,REG data
-    class PROM,GRAF,OTEL obs
+    class BEDROCK llm
+    class CW,XRAY,OTEL obs
     class SM,WORM sec
-    class OLLAMA,OPENAI ext
 ```
 
-**Why this shape**: Postgres + PostGIS is already the prototype's source-of-truth, so a managed equivalent (RDS / CloudSQL / AlloyDB) needs no schema changes and gains PITR, replicas, and NERC-CIP-friendly encryption for free. The backend is stateless behind an ALB, autoscaling on request rate — trained model artifacts live in S3/MLflow rather than in-process, so pods are interchangeable. The static frontend behind CloudFront gives sub-100ms first paint globally with no compute cost. Secrets never live in `.env` in production — SecretsManager / SSM injects them via K8s CSI driver, and the SHA-256-chained `audit_log` is mirrored into a write-once store (S3 Object Lock or QLDB) so regulators get their own copy that the operator cannot mutate.
+**Why this shape**:
+
+- **EC2 ASG over Kubernetes** — utility ops teams already run VMs; K8s adds a platform layer that needs its own hiring plan and doesn't buy anything on the critical path for a stateless ~10 RPS workload. EC2 + ASG + ALB gives blue/green via CodeDeploy, straightforward AMI lineage for NERC-CIP auditors, and predictable Reserved-Instance / Savings-Plan cost modelling.
+- **AWS Bedrock over OpenAI/Ollama** — Bedrock keeps LLM calls inside the VPC via PrivateLink (no traffic over the public internet), doesn't retain prompts for model training (contractual), and authenticates via the EC2 instance-profile IAM role instead of a static API key in `.env`. Available in AWS GovCloud (FedRAMP High / IL5) which lines up with the CIP posture. Claude 3.5 Sonnet on Bedrock has strong structured-output support via the Converse API — the existing `LLMProvider` adapter interface adds a `BedrockProvider` class with the same shape as the OpenAI one.
+- **Postgres + PostGIS unchanged** — the prototype already targets Postgres 16 + PostGIS 3.4; RDS is a direct swap-in with Multi-AZ, PITR, and read replicas for the cost of a Terraform module.
+- **CloudFront + S3 for the frontend** — the static bundle from the Vite build is CDN-cacheable at the edge; sub-100ms first paint globally with no compute cost.
+- **No `.env` in production** — SecretsManager + SSM Parameter Store injected via IAM instance profile. The role assumes-into Bedrock, RDS, and S3 without any static credentials on disk.
+- **Audit + WORM** — the SHA-256-chained `audit_log` in RDS is replicated into S3 with Object Lock so regulators get an immutable mirror that the operator role cannot mutate, even by privilege-escalation.
 
 ---
 
 ## Prototype → production narrative
 
-Everything in the demo is already a step on the production path — nothing is throwaway:
+Everything in the demo is already a step on the production path — nothing is throwaway. Target platform is **AWS**:
 
-- **Same database** — Postgres 16 + PostGIS 3.4. Move to managed (RDS / CloudSQL / AlloyDB); no schema changes needed.
-- **Same containers** — the [backend/Dockerfile](backend/Dockerfile) and [frontend/Dockerfile](frontend/Dockerfile) already produce production-shaped images (multi-stage frontend build → nginx; backend with idempotent seed-on-startup for K8s Job compatibility).
-- **Same audit contract** — the SHA-256 hash chain runs against the same table; the production shape adds a write-once mirror (S3 Object Lock or QLDB) that regulators can inspect independently.
-- **Same LLM adapter pattern** — Ollama Cloud today, OpenAI as fallback, other providers behind the same `LLMProvider` interface. Zero code changes to swap.
-- **Same eval suite** — the `tests/evals/` model-quality tests run as a CI gate; production adds continuous evaluation against production traffic samples.
-- **Secrets managed differently** — `.env` today, SecretsManager/SSM in production. Same env-var names; the delta is one Helm value.
-- **Observability hooks are already emitted** — structlog JSON logs + Prometheus metrics counters exist in the code; production just adds a receiver (OpenTelemetry Collector → Prometheus + Grafana + Loki).
+- **Same database** — Postgres 16 + PostGIS 3.4. Move to **Amazon RDS** (Multi-AZ, PITR, read replicas); no schema changes needed.
+- **Same containers, EC2 not Kubernetes** — the [backend/Dockerfile](backend/Dockerfile) and [frontend/Dockerfile](frontend/Dockerfile) already produce production-shaped images. Backend image lands in **ECR** and deploys via **CodeDeploy** to an **EC2 Auto Scaling Group** behind an internal ALB; frontend static bundle serves from **S3 + CloudFront**. The idempotent seed-on-startup script means an ASG launch is safe to re-run.
+- **Same audit contract** — the SHA-256 hash chain runs against the same table; production adds an **S3 Object Lock** write-once mirror that regulators inspect independently.
+- **Same LLM adapter pattern, Bedrock in production** — the `LLMProvider` interface already has Ollama Cloud and OpenAI adapters. Production adds a `BedrockProvider` of identical shape, calling `bedrock-runtime` via a **VPC endpoint (PrivateLink)** so LLM traffic never leaves the VPC. Recommended model: **Claude 3.5 Sonnet on Bedrock** (no prompt retention, GovCloud-eligible). Provider swap is `LLM_PROVIDER=bedrock`.
+- **Same eval suite** — the `tests/evals/` model-quality + LLM-golden tests run as a CI gate via **CodePipeline + CodeBuild**; production adds continuous evaluation against production traffic samples.
+- **Secrets managed differently** — `.env` today, **SecretsManager + SSM Parameter Store** in production, injected via the **EC2 instance-profile IAM role**. Bedrock authenticates by IAM — no LLM API key on disk. Same env-var names; the delta is one Terraform module.
+- **Observability hooks are already emitted** — structlog JSON logs + Prometheus metrics counters exist in the code; production adds an **ADOT Collector → CloudWatch + X-Ray** receiver so the ops team uses the same dashboards as the rest of the AWS estate.
 
-The one genuinely new workstream in production is real data ingestion: replacing the deterministic mock generator with adapters against SGW's real GIS/CMMS/SCADA. That's a Phase-1 delivery, not an unknown. See [docs/06_architecture.md](docs/06_architecture.md) §7 for the sequenced rollout.
+The one genuinely new workstream in production is real data ingestion: replacing the deterministic mock generator with adapters against SGW's real GIS/CMMS/SCADA. That's a Phase-1 delivery, not an unknown. See [docs/05_architecture.md](docs/05_architecture.md) §7 for the sequenced rollout.
 
 ---
 
@@ -228,7 +252,7 @@ The one genuinely new workstream in production is real data ingestion: replacing
 Concrete next moves, prioritised by expected impact:
 
 1. **Real historical failure labels** — replace the synthetic training label with joins to SGW's incident history. Unlocks classification + real probability calibration (the current ±0.05 band becomes a real per-prediction CI).
-2. **LLM-classified defer reasons feed the alignment layer** — reason text is already captured; run it through a gpt-oss:120b bucketing prompt (`already_inspected` / `cost_prohibitive` / `seasonal` / `not_critical` / `other`) and one-hot into the alignment features. The layer moves from "operator prefers this shape of asset" to "operator prefers this shape of asset *for this reason*".
+2. **LLM-classified defer reasons feed the alignment layer** — reason text is already captured; run it through a structured-output bucketing prompt (`already_inspected` / `cost_prohibitive` / `seasonal` / `not_critical` / `other`) and one-hot into the alignment features. The layer moves from "operator prefers this shape of asset" to "operator prefers this shape of asset *for this reason*".
 3. **Per-operator alignment models** — replace the single global preference model with a per-operator model (or per-persona: NOC / Emergency / Field / Maintenance). Prevents one operator's judgement from dominating another's.
 4. **Local SHAP attributions** — today the driver bars use global feature importance × per-asset feature values. SHAP gives the mathematically-correct per-asset attribution and unlocks *"why THIS asset scored this way"* rather than *"which features matter across all assets"*.
 5. **Real-time CMMS write-back** — Accept currently writes to `audit_log`; add a Maximo / ServiceNow adapter so accepted recommendations become dispatched work orders on the operator's real queue.
@@ -252,17 +276,18 @@ Concrete next moves, prioritised by expected impact:
 
 ## Design docs (read in this order)
 
-- [docs/00_working_notes.md](docs/00_working_notes.md) — running scratchpad + decision log
-- [docs/01_assumptions.md](docs/01_assumptions.md) — explicit assumptions register
+- [docs/01_assumptions.md](docs/01_assumptions.md) — explicit assumptions register (each with an *if wrong* clause)
 - [docs/02_mvp_workflow.md](docs/02_mvp_workflow.md) — MVP workflow selection + alternatives considered
-- [docs/04_prd.md](docs/04_prd.md) — full PRD v1.0
-- [docs/05_exec_briefing.md](docs/05_exec_briefing.md) — leadership brief
-- [docs/06_architecture.md](docs/06_architecture.md) — prototype + production architecture
-- [docs/07_data_model.md](docs/07_data_model.md) — mock dataset spec (fragmented on purpose)
-- [docs/08_external_data_sources.md](docs/08_external_data_sources.md) — NOAA source registry
-- [docs/11_scenario_agent.md](docs/11_scenario_agent.md) — scenario agent internals
-- [docs/13_operator_alignment.md](docs/13_operator_alignment.md) — preference learning (not RL) explainer
-- [docs/14_mock_data_defensibility.md](docs/14_mock_data_defensibility.md) — data health check
+- [docs/03_prd.md](docs/03_prd.md) — full PRD v1.0 (Deliverable 1)
+- [docs/04_exec_briefing.md](docs/04_exec_briefing.md) — executive briefing (Deliverable 2)
+- [docs/05_architecture.md](docs/05_architecture.md) — prototype + production architecture
+- [docs/06_data_model.md](docs/06_data_model.md) — mock dataset spec (fragmented on purpose)
+- [docs/07_external_data_sources.md](docs/07_external_data_sources.md) — NOAA source registry
+- [docs/08_scenario_agent.md](docs/08_scenario_agent.md) — scenario agent internals
+- [docs/09_operator_alignment.md](docs/09_operator_alignment.md) — preference learning (not RL) explainer
+- [docs/10_mock_data_defensibility.md](docs/10_mock_data_defensibility.md) — mock data health check
+
+Build-process artifacts (working notes, mid-build design pivots, UI self-audit) are kept in [docs/internal/](docs/internal/) for auditability but are not part of the deliverable set.
 
 ## Guiding principles
 
@@ -277,10 +302,25 @@ Concrete next moves, prioritised by expected impact:
 
 - `make test-backend` — 42 tests (unit + integration + evals). Includes alignment invariants, Prophet coverage, risk-model fit, chain integrity.
 - `make test-frontend` — 32 tests (Vitest + RTL) covering app shell, ExplainPopover catalog, ScenariosPage.
-- Playwright e2e smoke tests documented in [docs/12_demo_ui_audit.md](docs/12_demo_ui_audit.md).
+- Playwright end-to-end smoke tests were run against the built stack during development; findings + fixes are captured in [docs/internal/12_demo_ui_audit.md](docs/internal/12_demo_ui_audit.md).
+
+## LLM engineering discipline
+
+The platform's LLM layer is built the same way the rest of the code is — with **versions, evals, and an audit trail**.
+
+- **Every LLM call writes to `audit_log`** with `action_type=llm_call` and a row for `(provider, model, prompt_version, prompt_hash, outcome)`. Filter by `(prompt_version)` to isolate a regression.
+- **Prompts are versioned** — [backend/src/sgw_platform/explain/prompt_versions.py](backend/src/sgw_platform/explain/prompt_versions.py) — with a short changelog per bump. Current registry: `GET /api/llm/prompts`.
+- **Golden-set eval** — [backend/tests/evals/test_llm_golden.py](backend/tests/evals/test_llm_golden.py) hits the real LLM with pinned prompts and asserts on schema stability + anti-hallucination invariants (every cited evidence ID must appear in the prompt).
+- **Provider swap is one env var** — `LLM_PROVIDER=openai` or `LLM_PROVIDER=ollama`, no code changes. The OpenAI provider auto-detects reasoning models (o1/o3/o4/gpt-5.x) and adjusts `temperature` + `reasoning_effort` accordingly, and post-processes Pydantic JSON schemas into OpenAI strict-mode form.
+
+## AI-assisted development, also as engineering
+
+This repo was built with AI assistance. It's included in the submission for auditability — see **[.claude/README.md](.claude/README.md)** for the framing:
+
+- **[.claude/agents/](.claude/agents/)** — three task-scoped subagents (`test-orchestrator`, `dev-tracker`, `demo-scribe`), each with defined tool policies and non-goals. Same pattern as the platform's copilot.
+- **[CLAUDE.md](CLAUDE.md)** — the engineering charter: locked stack, non-negotiable design principles, coding conventions. Read at the start of every session.
 
 ## Notes for reviewers
 
 - Docker path is the fastest route to a working stack; native `make dev-*` is documented in [demo/README.md](demo/README.md) if Docker Desktop isn't available.
 - NOAA data is redistributed under NOAA's open-data policy; only small clipped WGS84 fixtures are committed.
-- The `.claude/agents/` subagents and [CLAUDE.md](CLAUDE.md) are included to make the AI-assisted build methodology inspectable.

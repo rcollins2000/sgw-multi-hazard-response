@@ -109,7 +109,7 @@ Rough time budget: 30-40 seconds per numbered section.
 
 **Say:** "The amber-bordered pull-quote is the LLM's recommendation. Every evidence chip is an ID the operator can look up — alerts, work orders, sensor readings, field reports."
 
-**What it does.** Runs `gpt-oss:120b` (Ollama Cloud) under strict structured output — Pydantic schema in both the `format=` parameter AND the system prompt, verified in [Phase 0 smoke test](../docs/00_working_notes.md). Returns a JSON blob: `recommendation` + `evidence[]` + `confidence_reasoning`.
+**What it does.** Runs the copilot LLM (Ollama the copilot LLM default; OpenAI swappable) under strict structured output — Pydantic schema in both the `format=` parameter AND the system prompt (verified in Phase 0 smoke testing). Returns a JSON blob: `recommendation` + `evidence[]` + `confidence_reasoning`.
 
 **Why included.** The LLM is the only capability that can synthesise "here's how you should act on this" across disparate data types — an NWS alert, an asset registry, a work-order queue, a SCADA anomaly. That's a copilot job, not a ranker job.
 
@@ -157,7 +157,7 @@ Rough time budget: 30-40 seconds per numbered section.
 
 **Say:** "This is the preference-calibration layer — a corrective nudge that learns from every Accept, Override, and Defer. It is NOT full reinforcement learning, and I want to explain why."
 
-**What it does.** Fits a small logistic regression on `(asset features, was_deferred_or_overridden)` from the audit log. Outputs `P(operator defers | features)` and applies a **bounded** additive nudge to the base priority: `adjustment = -β · (2p − 1)` with `|Δ| ≤ β = 0.15`. Auto-retrains every 3 decisions. See [docs/13_operator_alignment.md](../docs/13_operator_alignment.md) for the full technical explanation.
+**What it does.** Fits a small logistic regression on `(asset features, was_deferred_or_overridden)` from the audit log. Outputs `P(operator defers | features)` and applies a **bounded** additive nudge to the base priority: `adjustment = -β · (2p − 1)` with `|Δ| ≤ β = 0.15`. Auto-retrains every 3 decisions. See [docs/09_operator_alignment.md](../docs/09_operator_alignment.md) for the full technical explanation.
 
 **Why included.** Without this loop, operator decisions are dead-ends — audit-logged but not learned from. The platform sees you Defer the same shape of asset five times and… does nothing next time. Closing that loop is table stakes for a platform that claims to be "AI-enabled".
 
@@ -197,7 +197,7 @@ Framing this as RL would be marketing over honesty. The pattern is **preference 
 
 **Say:** "The Discuss button opens a chat scoped to THIS asset. The agent has tool access to the trained model, the dependency graph, live NWS alerts, and the asset registry — memory resets when the focused asset changes."
 
-**What it does.** Streams responses from `gpt-oss:120b` via `POST /api/agent/chat/stream` with `asset_id` context. The agent can call tools: `lookup_asset`, `trace_cascade`, `fetch_alerts`, `explain_model`. Every tool call and result is shown inline as a badge.
+**What it does.** Streams responses from the copilot LLM via `POST /api/agent/chat/stream` with `asset_id` context. The agent can call tools: `lookup_asset`, `trace_cascade`, `fetch_alerts`, `explain_model`. Every tool call and result is shown inline as a badge.
 
 **Why included.** A single recommendation can't answer every operator question. Chat covers the long tail — *"why exactly is this asset flagged?"*, *"what's downstream if it fails?"*, *"how does the risk model work in plain English?"*.
 
@@ -230,11 +230,11 @@ Framing this as RL would be marketing over honesty. The pattern is **preference 
 **Say:** "The scenario agent answers the third operator question — *what would happen if?*. Four presets and a free-text directive. Every run uses the same trained risk model against a mutated feature frame."
 
 **What it does.** Three-stage pipeline:
-- **Parse** — free-text → `gpt-oss:120b` structured output → typed `ScenarioSpec`. Presets short-circuit the LLM.
+- **Parse** — free-text → the copilot LLM structured output → typed `ScenarioSpec`. Presets short-circuit the LLM.
 - **Run** — copy `STATE.features`, apply hazard perturbation (surge lift, cone ratio), `risk_model.predict_proba(mutated)`.
-- **Narrate** — `gpt-oss:120b` narrates the top-N impacts + drafts a recommendation citing ONLY asset IDs present in the ranked list.
+- **Narrate** — the copilot LLM narrates the top-N impacts + drafts a recommendation citing ONLY asset IDs present in the ranked list.
 
-See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
+See [docs/08_scenario_agent.md](../docs/08_scenario_agent.md).
 
 **Why included.** Live monitoring answers "what now?". Preventative priority answers "what next?". The scenario agent answers "what if?" — resilience planning, historic replay, stress test. Utilities need all three.
 
@@ -296,9 +296,9 @@ See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
 
 ## 15. Executive briefing — LLM structured output
 
-**Say:** "The Briefing tab is a two-paragraph situation summary the operations manager can forward to leadership. Structured JSON output from gpt-oss:120b, Pydantic-validated."
+**Say:** "The Briefing tab is a two-paragraph situation summary the operations manager can forward to leadership. Structured JSON output from the copilot LLM, Pydantic-validated."
 
-**What it does.** `POST /api/briefing/generate` calls `gpt-oss:120b` with a strict schema. Returns headline + situation summary + top risks + recorded operator actions + recommended actions + outlook. Fully-cited — every fact traces to a source row.
+**What it does.** `POST /api/briefing/generate` calls the copilot LLM with a strict schema. Returns headline + situation summary + top risks + recorded operator actions + recommended actions + outlook. Fully-cited — every fact traces to a source row.
 
 **Why included.** Utility operations managers spend a non-trivial fraction of their shift writing summaries for the C-suite. This drafts one in seconds.
 
@@ -380,5 +380,5 @@ See [docs/11_scenario_agent.md](../docs/11_scenario_agent.md).
   - Graph — networkx BFS + Louvain community detection. Modularity 0.90 across 26 clusters.
   - Fairness — demographic parity 0.086, equal opportunity 0.094 (target < 0.20).
   - **Alignment — sklearn LogisticRegression + StandardScaler, bounded corrective nudge β = 0.15, min 8 samples to fit.**
-- **LLM**: Ollama Cloud, `gpt-oss:120b`, structured output via schema-in-prompt-AND-format pattern, Pydantic validation with corrective retry.
+- **LLM**: Ollama the copilot LLM or OpenAI (swappable via `LLM_PROVIDER`), structured output via schema-in-prompt-AND-format pattern, Pydantic validation with corrective retry.
 - **Audit**: SHA-256 hash chain across every AI recommendation and operator action; UPDATE/DELETE blocked at trigger level.

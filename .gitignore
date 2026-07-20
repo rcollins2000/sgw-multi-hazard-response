@@ -41,12 +41,13 @@ htmlcov/
 *.swo
 *~
 
-# ---- Claude Code local config (agents + status.md are committed; the rest is local tooling) ----
+# ---- Claude Code local config (agents are committed; the rest is local tooling) ----
 .claude/design/
 .claude/skills/
 .claude/settings.local.json
 .claude/history/
 .claude/logs/
+CLAUDE.md
 
 # ---- Playwright CLI scratch (screenshots, YAML page snapshots, console logs) ----
 .playwright/
@@ -122,3 +123,6 @@ data/cache/
 # Large derived artefacts
 prototype/**/*.parquet
 prototype/**/*.feather
+
+# Build-time status snapshot written by the dev-tracker subagent
+.claude/status.md

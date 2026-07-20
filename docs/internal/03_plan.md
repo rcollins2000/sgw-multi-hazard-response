@@ -46,7 +46,7 @@ Working backwards from Monday 2026-07-20. Assumes ~4–6 focused hours per day; 
 ### Thursday 2026-07-16 — Exec briefing + prototype scaffold + NOAA fixtures (part 1)
 - [ ] Morning: draft executive briefing end-to-end (short — 2–3 pages)
 - [ ] Afternoon block 1: set up prototype repo, synthetic-data generation for internal sources (GIS assets, CMMS work orders, SCADA), environment
-- [ ] Afternoon block 2 (~3–4 h): **NOAA fixture wiring** — see [08_external_data_sources.md](08_external_data_sources.md)
+- [ ] Afternoon block 2 (~3–4 h): **NOAA fixture wiring** — see [07_external_data_sources.md](07_external_data_sources.md)
   - CO-OPS Charleston Harbor 8665530 water levels → `observations.csv` (~1 h)
   - Digital Coast flood exposure + NHC SLOSH MOM clipped to SC/GA/NC → `hazard_zones.geojson` (~2–3 h)
 - [ ] Choose UI stack (Streamlit if speed matters most; Next.js if the demo will suffer from Streamlit's map limitations)

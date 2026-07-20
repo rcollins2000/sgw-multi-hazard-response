@@ -10,10 +10,15 @@ def test_package_imports() -> None:
 
 
 def test_settings_load() -> None:
+    """Settings load + expose the required fields. Values are env-dependent
+    (LLM_PROVIDER / OPENAI_MODEL / OLLAMA_MODEL can all be overridden), so
+    assert on shape rather than defaults."""
     from sgw_platform.settings import get_settings
 
     settings = get_settings()
-    assert settings.openai_model == "gpt-5.6"
+    assert settings.llm_provider in {"ollama", "openai"}
+    assert settings.openai_model  # non-empty string
+    assert settings.ollama_model  # non-empty string
 
 
 def test_app_builds() -> None:

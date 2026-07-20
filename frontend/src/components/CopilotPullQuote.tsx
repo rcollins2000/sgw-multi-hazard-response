@@ -8,7 +8,7 @@
     - evidence chips beneath cite the source records the LLM used
 
   The design is deliberate about honesty: the LLM never produces the risk
-  score, forecast, or optimisation plan (see docs/04_prd.md §5 "LLM
+  score, forecast, or optimisation plan (see docs/03_prd.md §5 "LLM
   boundaries"). This component reinforces that split by never rendering
   numeric outputs — only prose + citations.
 */
@@ -20,12 +20,16 @@ type Props = Readonly<{
   modelLabel?: string;
 }>;
 
+import { useAppStore } from "../stores/appStore";
+
 export function CopilotPullQuote({
   recommendation,
   evidence = [],
   timestamp,
-  modelLabel = "gpt-oss:120b · structured",
+  modelLabel,
 }: Props) {
+  const storeLabel = useAppStore((s) => s.llm?.label);
+  const effectiveLabel = modelLabel ?? (storeLabel ? `${storeLabel} · structured` : "loading…");
   return (
     <div
       className="border-l-2 border-[color:var(--color-signature)] py-[2px] pl-[14px]"
@@ -54,7 +58,7 @@ export function CopilotPullQuote({
         </div>
       )}
       <div className="mt-2 text-[9.5px] text-[color:var(--color-faint)]">
-        <span className="sgw-mono">{modelLabel}</span> · advisory · schema-validated
+        <span className="sgw-mono">{effectiveLabel}</span> · advisory · schema-validated
       </div>
     </div>
   );

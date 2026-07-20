@@ -61,6 +61,8 @@ async def generate_explanation(
 ) -> AssetExplanation:
     provider = provider or get_provider()
     user = _format_context(ctx)
-    result = await provider.chat_structured(AssetExplanation, SYSTEM_PROMPT, user)
+    result = await provider.chat_structured(
+        AssetExplanation, SYSTEM_PROMPT, user, capability="explanation"
+    )
     assert isinstance(result, AssetExplanation)
     return result

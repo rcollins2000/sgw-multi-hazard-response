@@ -24,9 +24,9 @@ User asked for "reinforcement learning to improve model prioritisation". Conside
 
 **Endpoints:** `GET /api/alignment`, `POST /api/alignment/retrain`, `GET /api/alignment/adjustments?asset_ids=…`.
 
-**Frontend surfaces:** header badge (`ALIGN · v6ed50e63 · 11n`), cockpit `aligned ↑/↓` chip on the priority score, training-signal hint under the action bar, Governance page section with diverging feature-weight bars. All four have `?` explain popovers pointing at [docs/13_operator_alignment.md](13_operator_alignment.md).
+**Frontend surfaces:** header badge (`ALIGN · v6ed50e63 · 11n`), cockpit `aligned ↑/↓` chip on the priority score, training-signal hint under the action bar, Governance page section with diverging feature-weight bars. All four have `?` explain popovers pointing at [docs/09_operator_alignment.md](09_operator_alignment.md).
 
-**Full doc:** [docs/13_operator_alignment.md](13_operator_alignment.md) — explains why not full RL, what it is precisely, design principles, limitations, HITL touch points.
+**Full doc:** [docs/09_operator_alignment.md](09_operator_alignment.md) — explains why not full RL, what it is precisely, design principles, limitations, HITL touch points.
 
 **Demo framing:** [demo/walkthrough.md](../demo/walkthrough.md) §8 covers this capability with the "why RL is the wrong name" narrative.
 
@@ -283,8 +283,8 @@ Advancing to Phase 1.
 - [docker-compose.yml](../docker-compose.yml) — postgres (postgis/postgis:16-3.4) + backend + frontend with health checks; optional Prometheus + Grafana profile
 - [.env.example](../.env.example) — added `POSTGRES_*` + `DATABASE_URL`; consolidated `OPENAI_MODEL=gpt-5.6`; removed `AUDIT_DB_PATH`
 - [Makefile](../Makefile) — added `db-up`, `db-migrate`, `db-downgrade`, `db-reset`, `db-seed`, `db-shell`
-- [docs/06_architecture.md](06_architecture.md) — new Persistence layer section explaining Postgres + PostGIS rationale
-- [docs/04_prd.md](04_prd.md) §6 layered view — added `[Persistence]` layer
+- [docs/05_architecture.md](05_architecture.md) — new Persistence layer section explaining Postgres + PostGIS rationale
+- [docs/03_prd.md](03_prd.md) §6 layered view — added `[Persistence]` layer
 
 **What did not change:** the AI capability portfolio, the multi-hazard scope, the workflow, the six-adapter Hazard Data family, the LLM boundaries. Persistence is an implementation choice under the architecture, not an architectural rethink.
 
@@ -312,7 +312,7 @@ Advancing to Phase 1.
 - Docker-compose for local dev orchestration; no cloud infra in MVP
 - Dark mode default (NOC-friendly); WCAG 2.1 AA target
 
-**Exec briefing deferred to Phase 10** per user direction — drafted after the MVP demo exists so both artefacts tell the same story. [docs/05_exec_briefing.md](05_exec_briefing.md) header updated to flag this.
+**Exec briefing deferred to Phase 10** per user direction — drafted after the MVP demo exists so both artefacts tell the same story. [docs/04_exec_briefing.md](04_exec_briefing.md) header updated to flag this.
 
 **Plan calendar mapping** — Phases 0–9 land Wed–Sun; Phase 10 (exec briefing + video) lands Sunday; Monday for final review + submission. See [docs/03_plan.md](03_plan.md) for the calendar view.
 
@@ -320,7 +320,7 @@ Advancing to Phase 1.
 
 ## 2026-07-15 — PRD v1.0 drafted
 
-Full PRD in [04_prd.md](04_prd.md). Draws on every prior artefact:
+Full PRD in [03_prd.md](03_prd.md). Draws on every prior artefact:
 - Problem framing and business context from initial notes
 - 7 load-bearing assumptions with "if wrong" clauses from the register
 - Four primary personas + anchor pre-event workflow from MVP workflow doc
@@ -383,13 +383,13 @@ Portfolio in [02_mvp_workflow.md](02_mvp_workflow.md) updated. PRD §5 and §8 u
 
 ## 2026-07-14 — Storm scenario locked: Debby (primary) + Idalia (validation)
 
-**Primary demo scenario: Hurricane Debby (August 2024).** Cat 1 landfall FL Big Bend, slow-moving, historic multi-day rainfall over GA and SC. Chosen because it thematically justifies the multi-hazard framing — it's genuinely a hurricane *and* an inland flash-flood event, which matches the platform's whole thesis in one storm and mirrors the `hazard_type: flash_flood` example in [07_data_model.md §3](07_data_model.md). Slow-moving 72h+ evolution matches the demo window. Sets up Phase 2 NWM story naturally.
+**Primary demo scenario: Hurricane Debby (August 2024).** Cat 1 landfall FL Big Bend, slow-moving, historic multi-day rainfall over GA and SC. Chosen because it thematically justifies the multi-hazard framing — it's genuinely a hurricane *and* an inland flash-flood event, which matches the platform's whole thesis in one storm and mirrors the `hazard_type: flash_flood` example in [06_data_model.md §3](06_data_model.md). Slow-moving 72h+ evolution matches the demo window. Sets up Phase 2 NWM story naturally.
 
 **Validation reference: Hurricane Idalia (August 2023).** Cat 3 FL Big Bend landfall, tracked NE through GA into SC; Charleston Harbor gauge (8665530) recorded near-record surge. Referenced in the demo as a validation case — "here's how the platform would have scored Charleston substations during Idalia's surge; here's how it scores them under Debby." Costs almost nothing (one extra archived cone + one extra CO-OPS window) and adds the surge visual that Debby alone doesn't headline.
 
 **Rejected: Hurricane Ian (Sep 2022).** Genuine SC landfall as Cat 1, but public perception is a Florida storm; two-landfall track complicates the demo narrative; SC segment is a footnote in most reviewers' mental model.
 
-**Impact on wiring plan:** Friday's NOAA fixture block (Task 3 in [08_external_data_sources.md](08_external_data_sources.md)) pulls two NHC cones (Debby primary + Idalia validation) and two CO-OPS windows at Charleston Harbor 8665530. Total effort unchanged (~2 h across both storms).
+**Impact on wiring plan:** Friday's NOAA fixture block (Task 3 in [07_external_data_sources.md](07_external_data_sources.md)) pulls two NHC cones (Debby primary + Idalia validation) and two CO-OPS windows at Charleston Harbor 8665530. Total effort unchanged (~2 h across both storms).
 
 ---
 
@@ -416,7 +416,7 @@ Third correction of the day. Framing the external weather integration as just "N
 
 **Plan consequence:** 6–8 hours of NOAA fixture wiring inserted into Thursday afternoon / Friday morning slots — see [03_plan.md](03_plan.md). Doesn't displace anything; delivers real feeds into the mock in place of hand-drawn polygons.
 
-**Full source registry:** new doc [08_external_data_sources.md](08_external_data_sources.md).
+**Full source registry:** new doc [07_external_data_sources.md](07_external_data_sources.md).
 
 ---
 
@@ -432,7 +432,7 @@ The demo scenario stays a 72-hour hurricane + flash-flood on the coast (best nar
 
 **(2) Fragmentation-by-design in the mock dataset.** The brief's stated pain is data fragmentation across GIS, maintenance, weather, field-ops and control systems. A clean pre-joined mock would hide the integration problem. New assumption E3 in the register: the mock has multiple formats (GeoJSON, CSV, JSON), different asset IDs per source system (crosswalk table required), realistic sensor quality flags, free-text field-report notes. The prototype's ingestion + ID-resolution layer is a technical-maturity signal in its own right, before any AI is invoked.
 
-Data spec is now first-class: [07_data_model.md](07_data_model.md).
+Data spec is now first-class: [06_data_model.md](06_data_model.md).
 
 **Impact on plan:** no new day added — Wednesday's PRD draft leverages the data model directly (concrete field-level references make the requirements sharper), and Thursday's prototype scaffold uses the folder layout as-is.
 

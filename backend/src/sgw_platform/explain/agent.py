@@ -222,10 +222,19 @@ async def stream_agent(
       - {type: "tool_result", data: {name, result}}
       - {type: "final", data: {content}}
       - {type: "error", data: {message}}
+
+    Routes to Ollama or OpenAI based on LLM_PROVIDER. Both share the same
+    tool-spec shape, but the tool-call/tool-result message envelopes differ,
+    so the loops are separate.
     """
+    settings = get_settings()
+    if settings.llm_provider == "openai":
+        async for evt in _stream_agent_openai(messages, asset_context, max_tool_iterations):
+            yield evt
+        return
+
     from ollama import Client
 
-    settings = get_settings()
     client = Client(
         host=settings.ollama_host,
         headers={"Authorization": f"Bearer {settings.ollama_api_key or ''}"},
@@ -297,6 +306,110 @@ async def stream_agent(
                 {
                     "role": "tool",
                     "name": name,
+                    "content": json.dumps(result, default=str),
+                }
+            )
+
+    yield {"type": "error", "data": {"message": "tool-call loop exceeded max iterations"}}
+
+
+async def _stream_agent_openai(
+    messages: list[dict[str, Any]],
+    asset_context: dict[str, Any] | None,
+    max_tool_iterations: int,
+) -> AsyncIterator[dict[str, Any]]:
+    """OpenAI variant of the streaming agent — same tool-calling loop as
+    Ollama but with OpenAI's message + tool-call envelope shapes. Non-streaming
+    for now; we chunk the final content into pseudo-stream tokens so the UI
+    can render progressively without needing SSE-native OpenAI plumbing."""
+    from openai import OpenAI
+
+    from sgw_platform.explain.provider import _openai_supports_temperature
+
+    settings = get_settings()
+    client = OpenAI(api_key=settings.openai_api_key or "")
+    model = settings.openai_model
+
+    conversation: list[dict[str, Any]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+    if asset_context is not None:
+        conversation.append(
+            {
+                "role": "system",
+                "content": f"Current context — the user is looking at asset {json.dumps(asset_context)}",
+            }
+        )
+    conversation.extend(messages)
+
+    for iteration in range(max_tool_iterations + 1):
+        try:
+            kwargs: dict[str, Any] = {
+                "model": model,
+                "messages": conversation,
+            }
+            if iteration < max_tool_iterations:
+                kwargs["tools"] = TOOL_SPECS
+            if _openai_supports_temperature(model):
+                kwargs["temperature"] = 0.2
+            else:
+                # gpt-5.x reasoning models reject function tools unless
+                # reasoning is explicitly disabled — same class we detect
+                # via the temperature guard.
+                kwargs["reasoning_effort"] = "none"
+            resp = client.chat.completions.create(**kwargs)
+        except Exception as exc:  # noqa: BLE001
+            log.error("agent.openai.chat_failed", error=str(exc)[:400])
+            yield {"type": "error", "data": {"message": str(exc)[:400]}}
+            return
+
+        message = resp.choices[0].message
+        tool_calls = message.tool_calls or []
+        content = message.content or ""
+        openai_tokens_total.labels(direction="out", model=model).inc(len(content) // 4)
+
+        if not tool_calls:
+            for chunk in _chunk_stream(content):
+                yield {"type": "token", "data": chunk}
+            yield {"type": "final", "data": {"content": content}}
+            return
+
+        # Record the assistant tool-call turn — OpenAI needs the full tool_calls
+        # array back in the assistant message so tool responses can reference it.
+        conversation.append(
+            {
+                "role": "assistant",
+                "content": content or None,
+                "tool_calls": [
+                    {
+                        "id": tc.id,
+                        "type": "function",
+                        "function": {"name": tc.function.name, "arguments": tc.function.arguments},
+                    }
+                    for tc in tool_calls
+                ],
+            }
+        )
+        for tc in tool_calls:
+            name = tc.function.name
+            try:
+                args = json.loads(tc.function.arguments or "{}")
+            except json.JSONDecodeError:
+                args = {}
+            yield {"type": "tool_call", "data": {"name": name, "arguments": args}}
+            impl = TOOL_IMPL.get(name)
+            if impl is None:
+                result: dict[str, Any] = {"error": f"unknown tool: {name}"}
+            else:
+                try:
+                    result = await impl(**args)
+                except TypeError as exc:
+                    result = {"error": f"bad arguments for {name}: {exc}"}
+                except Exception as exc:  # noqa: BLE001
+                    result = {"error": str(exc)[:200]}
+            yield {"type": "tool_result", "data": {"name": name, "result": result}}
+            conversation.append(
+                {
+                    "role": "tool",
+                    "tool_call_id": tc.id,
                     "content": json.dumps(result, default=str),
                 }
             )

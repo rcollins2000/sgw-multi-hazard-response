@@ -20,7 +20,7 @@
 - **Migrations:** every schema change through Alembic; no hand-edits.
 
 ### Ingestion & ID resolution (first-class concern)
-The mock dataset is fragmented on purpose — see [07_data_model.md](07_data_model.md). External hazard/weather data is drawn from the full NOAA stack — see [08_external_data_sources.md](08_external_data_sources.md). The ingestion layer must:
+The mock dataset is fragmented on purpose — see [06_data_model.md](06_data_model.md). External hazard/weather data is drawn from the full NOAA stack — see [07_external_data_sources.md](07_external_data_sources.md). The ingestion layer must:
 - Handle **multiple formats** per source (GeoJSON, CSV, JSON, SCADA stream, GRIB2, NetCDF, WMS)
 - **Resolve identifiers** via the `asset_id_crosswalk.csv` (GIS ID ↔ Maintenance ID ↔ SCADA ID ↔ Field-Ops ID → canonical `asset_id`)
 - Honour **sensor quality flags** (Valid / Warning / Stale / Missing / Outlier / Sensor fault) — downstream scoring must know which readings to trust

@@ -4,7 +4,7 @@
 
 **NOAA is the reference federal data stack.** The platform integrates the entire NOAA geospatial estate, not just `api.weather.gov`. This is what a real US utility would do, and reflects the maturity a mixed-audience reviewer would expect.
 
-The ingestion layer isolates provider choice behind a **six-adapter Hazard Data family** (see [06_architecture.md](06_architecture.md)). Non-US deployment (Met Office, ECMWF, JMA, national grids) swaps adapter implementations without touching the risk scoring, optimisation or UI layers. This is stated as an assumption ([01_assumptions.md A6](01_assumptions.md)).
+The ingestion layer isolates provider choice behind a **six-adapter Hazard Data family** (see [05_architecture.md](05_architecture.md)). Non-US deployment (Met Office, ECMWF, JMA, national grids) swaps adapter implementations without touching the risk scoring, optimisation or UI layers. This is stated as an assumption ([01_assumptions.md A6](01_assumptions.md)).
 
 All sources below are public-domain federal data. Attribution recommended in the UI footer: *"Weather and geospatial data: NOAA (NWS, NHC, NOS CO-OPS, Digital Coast, SPC/CPC, NCEI). Wildfire perimeters: NIFC/InciWeb (Phase 2)."*
 
@@ -34,7 +34,7 @@ All sources below are public-domain federal data. Attribution recommended in the
 - **SLOSH MOM** (Maximum of Maximums) is a **static** inundation layer, always available, per basin — this is what MVP consumes for surge exposure.
 - **NHC real-time surge polygon** exists only while an active tropical cyclone is spun up. Advisories update on a fixed cadence (roughly 5-hourly during active storms).
 - **PRD must state explicitly:** "surge exposure is available continuously via SLOSH MOM; real-time NHC surge scenarios are only available during active advisories." This prevents anyone expecting live surge in a July demo when there's no active storm.
-- **For the demo scenario:** use **Debby (August 2024) as the primary reference storm** and **Idalia (August 2023) as a validation-case reference**. NHC keeps GIS archives — pull one cone per storm + one advisory each as static fixtures. Rationale in [00_working_notes.md](00_working_notes.md).
+- **For the demo scenario:** use **Debby (August 2024) as the primary reference storm** and **Idalia (August 2023) as a validation-case reference**. NHC keeps GIS archives — pull one cone per storm + one advisory each as static fixtures.
 
 ### NOS CO-OPS — water levels
 - **Anchor gauge for demo: Charleston Harbor (8665530).** Add one inland reference gauge for cross-check.
@@ -66,7 +66,7 @@ All sources below are public-domain federal data. Attribution recommended in the
 
 ## 6-day wiring plan (Thursday–Friday sprint)
 
-Ordered by ROI. Total budget ≈ 6–8 hours; fits within existing Thursday afternoon / Friday morning slots without displacing anything in [03_plan.md](03_plan.md).
+Ordered by ROI. Total budget ≈ 6–8 hours.
 
 | # | Task | Effort | Delivers |
 |---|---|---|---|

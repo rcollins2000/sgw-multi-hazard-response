@@ -85,7 +85,7 @@ export const EXPLANATIONS: Record<SurfaceKey, ExplanationCard> = {
   copilot_recommendation: {
     title: "Copilot recommendation",
     model:
-      "Ollama Cloud gpt-oss:120b with schema-validated Pydantic structured output. The LLM never produces risk scores, forecasts, or optimisation plans — it narrates over structured retrieval and cites evidence.",
+      "Structured-output LLM (provider swappable via LLM_PROVIDER env — Ollama Cloud gpt-oss:120b or OpenAI). Pydantic schema in both `format=` and the system prompt with retry-on-validation-fail. The LLM never produces risk scores, forecasts, or optimisation plans — it narrates over structured retrieval and cites evidence.",
     purpose:
       "Distills the ranked evidence + model outputs into an imperative recommendation the operator can Accept, Override, or Defer. Every recommendation is advisory — a human-in-the-loop must act on it.",
     howToRead:
@@ -228,7 +228,7 @@ export const EXPLANATIONS: Record<SurfaceKey, ExplanationCard> = {
   scenario_analysis: {
     title: "Scenario analysis · agent run",
     model:
-      "Multi-model composition: (1) the LLM (gpt-oss:120b) parses the operator's directive into a typed ScenarioSpec, (2) the same trained LightGBM risk model runs against a mutated feature frame, (3) networkx BFS supplies cascade depths, (4) the LLM narrates the ranked impacts + drafts a recommendation citing evidence IDs.",
+      "Multi-model composition: (1) the LLM (Ollama Cloud gpt-oss:120b or OpenAI, swappable via LLM_PROVIDER) parses the operator's directive into a typed ScenarioSpec, (2) the same trained LightGBM risk model runs against a mutated feature frame, (3) networkx BFS supplies cascade depths, (4) the LLM narrates the ranked impacts + drafts a recommendation citing evidence IDs.",
     purpose:
       "Answers 'what would happen if X?' with the same models that produce the live picture. Lets the operator stress-test resilience against a hypothetical hurricane, replay a historic event against today's asset registry, or find the worst single-asset cascade under baseline conditions.",
     howToRead:

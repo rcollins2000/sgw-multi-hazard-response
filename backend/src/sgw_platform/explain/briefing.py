@@ -89,6 +89,8 @@ async def generate_briefing(
 ) -> ExecutiveBriefing:
     provider = provider or get_provider()
     user = _format_context(ctx)
-    result = await provider.chat_structured(ExecutiveBriefing, SYSTEM_PROMPT, user)
+    result = await provider.chat_structured(
+        ExecutiveBriefing, SYSTEM_PROMPT, user, capability="briefing"
+    )
     assert isinstance(result, ExecutiveBriefing)
     return result

@@ -1,7 +1,7 @@
 # Live NOAA data polling
 
 **Status:** Landed 2026-07-17.
-**Companion:** [docs/08_external_data_sources.md](08_external_data_sources.md), [docs/09_design_cockpit_v2.md](09_design_cockpit_v2.md)
+**Companion:** [docs/07_external_data_sources.md](07_external_data_sources.md), [docs/09_design_cockpit_v2.md](09_design_cockpit_v2.md)
 
 ## The problem this fixes
 

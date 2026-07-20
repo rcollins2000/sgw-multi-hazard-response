@@ -135,7 +135,7 @@ Polygons representing known hazards:
 - Extreme-heat zones
 - Hurricane evacuation zones
 
-**Seeded from real NOAA / Digital Coast layers** clipped to the SGW footprint (SC / GA / NC), stored as offline fixtures — not hand-drawn. Each polygon carries `source` metadata (Digital Coast, NHC SLOSH MOM, SPC/CPC outlook, FEMA, …). See [08_external_data_sources.md](08_external_data_sources.md) for the full source registry.
+**Seeded from real NOAA / Digital Coast layers** clipped to the SGW footprint (SC / GA / NC), stored as offline fixtures — not hand-drawn. Each polygon carries `source` metadata (Digital Coast, NHC SLOSH MOM, SPC/CPC outlook, FEMA, …). See [07_external_data_sources.md](07_external_data_sources.md) for the full source registry.
 
 Enables queries like: *which critical assets fall within the predicted storm-surge area?*
 
@@ -170,7 +170,7 @@ Gives the AI evidence about **asset vulnerability**, not just exposure to a weat
 
 ## 3. External hazard & weather data
 
-Separated because observed weather, forecast weather, and issued alerts have different levels of certainty and different consumers. **Backed by the full NOAA stack, not just `api.weather.gov`** — NWS + NHC (hurricane track, SLOSH surge) + NOS CO-OPS (tide gauges) + Digital Coast (flood exposure) + SPC/CPC (severe-storm and heat outlooks) + NCEI (historical baseline). Phase 2 adds NWM (streamflow), HRRR (high-resolution gridded forecast), NGS imagery, nowCOAST. See [08_external_data_sources.md](08_external_data_sources.md).
+Separated because observed weather, forecast weather, and issued alerts have different levels of certainty and different consumers. **Backed by the full NOAA stack, not just `api.weather.gov`** — NWS + NHC (hurricane track, SLOSH surge) + NOS CO-OPS (tide gauges) + Digital Coast (flood exposure) + SPC/CPC (severe-storm and heat outlooks) + NCEI (historical baseline). Phase 2 adds NWM (streamflow), HRRR (high-resolution gridded forecast), NGS imagery, nowCOAST. See [07_external_data_sources.md](07_external_data_sources.md).
 
 **For the demo:** real Charleston Harbor (8665530) water-level observations + Digital Coast flood-exposure polygons + an archived NHC hurricane cone (e.g., Ian, Idalia, Debby) — not synthetic curves and hand-drawn polygons.
 
@@ -391,7 +391,7 @@ A four-week simulated period with one major simulated hazard event is enough.
 
 ## Demo scenario
 
-The demo scenario is a 72-hour hurricane + flash-flood event on the Coastal East region, grounded in **Hurricane Debby (August 2024)** as the primary reference storm and **Hurricane Idalia (August 2023)** as a validation case for the surge signal at Charleston Harbor gauge 8665530. See [00_working_notes.md](00_working_notes.md) for the rationale, and [08_external_data_sources.md](08_external_data_sources.md) for how the NOAA fixtures are pulled.
+The demo scenario is a 72-hour hurricane + flash-flood event on the Coastal East region, grounded in **Hurricane Debby (August 2024)** as the primary reference storm and **Hurricane Idalia (August 2023)** as a validation case for the surge signal at Charleston Harbor gauge 8665530. See [07_external_data_sources.md](07_external_data_sources.md) for how the NOAA fixtures are pulled.
 
 Debby's slow-moving 72h+ evolution and historic rainfall over GA/SC make it the strongest multi-hazard demo case (hurricane classification + flash-flood alerts + inland flooding). Idalia is referenced live as a validation moment — same platform, same assets, different storm — to show the surge visual at Charleston that Debby doesn't headline.
 

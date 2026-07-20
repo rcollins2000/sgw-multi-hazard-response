@@ -140,7 +140,9 @@ async def parse_directive(directive: str) -> ScenarioSpec:
     schema_str = ScenarioSpec.model_json_schema()
     system = SYSTEM_PROMPT.format(schema=schema_str)
     try:
-        result = await provider.chat_structured(ScenarioSpec, system, directive)
+        result = await provider.chat_structured(
+            ScenarioSpec, system, directive, capability="scenario_parser"
+        )
         assert isinstance(result, ScenarioSpec)
         log.info("scenarios.parse.ok", kind=result.kind, label=result.label)
         return result

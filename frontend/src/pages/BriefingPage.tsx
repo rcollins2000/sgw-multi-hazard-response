@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api, type AssetSummary, type Briefing } from "../lib/api";
+import { useAppStore } from "../stores/appStore";
 
 const REGION_ORDER: { key: string; label: string; hazard: string; hazBadge: { color: string; bg: string } }[] = [
   { key: "COAST_EAST", label: "Coastal East (SC)", hazard: "Surge + coastal flood", hazBadge: { color: "#38bdf8", bg: "#082f49" } },
@@ -8,6 +9,7 @@ const REGION_ORDER: { key: string; label: string; hazard: string; hazBadge: { co
 ];
 
 export function BriefingPage() {
+  const llmLabel = useAppStore((s) => s.llm?.label ?? "loading…");
   const [briefing, setBriefing] = useState<Briefing | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -127,7 +129,7 @@ export function BriefingPage() {
             disabled={busy}
             className="mt-6 cursor-pointer rounded-md bg-[color:var(--color-primary)] px-4 py-2 text-[13px] font-medium text-[color:var(--color-primary-foreground)] disabled:opacity-50"
           >
-            {busy ? "Generating with gpt-oss:120b…" : "Generate briefing (gpt-oss:120b)"}
+            {busy ? `Generating with ${llmLabel}…` : `Generate briefing (${llmLabel})`}
           </button>
         )}
         {error && (
@@ -217,7 +219,7 @@ export function BriefingPage() {
                   Copilot draft
                 </span>
                 <span className="sgw-mono text-[10px] text-[color:var(--color-subtle)]">
-                  gpt-oss:120b · schema-validated
+                  {llmLabel} · schema-validated
                 </span>
               </div>
               <button

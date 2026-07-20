@@ -15,15 +15,18 @@
 # The optional observability profile is opt-in:
 #   docker compose --profile obs up -d
 #
-# ------ Production mapping (referenced in docs/06_architecture.md) ---------
-# Local demo → Production equivalent:
-#   postgres  → managed Postgres (RDS / CloudSQL / AlloyDB) with PITR + replicas
-#   backend   → containerised on Kubernetes behind an internal ALB / Ingress,
-#               autoscaled on request rate + queue depth
-#   frontend  → static bundle on S3 + CloudFront (or equivalent CDN)
-#   secrets   → SecretsManager / SSM Parameter Store (never .env in prod)
+# ------ Production mapping (AWS-native — see README + docs/05_architecture.md)
+# Local demo → AWS production equivalent:
+#   postgres  → Amazon RDS PostgreSQL 16 + PostGIS (Multi-AZ, PITR, replicas)
+#   backend   → Docker image in ECR, deployed via CodeDeploy to an EC2 ASG
+#               behind an internal ALB (multi-AZ, autoscaled on RPS + p95)
+#   frontend  → static bundle on S3 + CloudFront (OAC-restricted origin)
+#   LLM       → AWS Bedrock (Claude 3.5 Sonnet) via VPC endpoint (PrivateLink),
+#               IAM-role auth — no LLM API key on disk
+#   secrets   → SecretsManager + SSM Parameter Store, injected via IAM
+#               instance profile (never .env in prod)
 #   data seed → replaced by real GIS / CMMS / SCADA ingestion adapters
-#   audit_log → same table, replicated to a write-once compliance store
+#   audit_log → same table in RDS, replicated to S3 Object Lock (WORM)
 # ---------------------------------------------------------------------------
 
 services:

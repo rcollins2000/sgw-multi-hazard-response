@@ -2,7 +2,7 @@
 
 **Status doc:** [.claude/status.md](.claude/status.md) (updated by the `dev-tracker` subagent)
 **Companion:** [CLAUDE.md](CLAUDE.md) — must-read for principles + stack + conventions
-**Guiding docs:** [docs/04_prd.md](docs/04_prd.md), [docs/02_mvp_workflow.md](docs/02_mvp_workflow.md), [docs/07_data_model.md](docs/07_data_model.md), [docs/08_external_data_sources.md](docs/08_external_data_sources.md)
+**Guiding docs:** [docs/03_prd.md](docs/03_prd.md), [docs/02_mvp_workflow.md](docs/02_mvp_workflow.md), [docs/06_data_model.md](docs/06_data_model.md), [docs/07_external_data_sources.md](docs/07_external_data_sources.md)
 
 ## How to use this plan
 
@@ -10,7 +10,7 @@
 - Each phase lists: **Objective → Deliverables → Steps → Tests → Gate**.
 - **Gate** = the exact commands + assertions that prove the phase is done. Automated.
 - Do not partially finish a phase. If blocked, write [.claude/blocked.md](.claude/blocked.md) and stop.
-- Log any material decision (framework, scope, model choice) in [docs/00_working_notes.md](docs/00_working_notes.md).
+- Log any material decision (framework, scope, model choice) in [docs/internal/00_working_notes.md](docs/internal/00_working_notes.md).
 - After each phase: invoke `dev-tracker` to update [.claude/status.md](.claude/status.md); after user-visible features: invoke `demo-scribe`.
 
 ## Build decisions (pre-made — no user approval needed)
@@ -178,7 +178,7 @@ All exit 0.
 ## Phase 1 — Mock data generation + Postgres schema  *(est. 5 h)*
 
 ### Objective
-A fragmented-on-purpose synthetic dataset matching [docs/07_data_model.md](docs/07_data_model.md), materialised both as raw files (representing the source systems) *and* as canonical Postgres tables (the platform's operational store). Enough volume + variety to run every AI capability. IDs deliberately inconsistent across source systems so ingestion has real work to do.
+A fragmented-on-purpose synthetic dataset matching [docs/06_data_model.md](docs/06_data_model.md), materialised both as raw files (representing the source systems) *and* as canonical Postgres tables (the platform's operational store). Enough volume + variety to run every AI capability. IDs deliberately inconsistent across source systems so ingestion has real work to do.
 
 ### Postgres schema (added in this phase — Alembic migration)
 - `assets` — PostGIS `Geometry(POINT|LINE|POLYGON, 4326)` column, attributes, condition, criticality
@@ -598,9 +598,9 @@ Every deliverable required by the brief present, cross-linked, and readable by a
 - `backend/README.md` — setup, run, test, environment vars
 - `frontend/README.md` — setup, run, test, design notes
 - `demo/README.md` — how to reproduce the demo
-- Update `docs/06_architecture.md` — refine diagrams based on what actually got built
+- Update `docs/05_architecture.md` — refine diagrams based on what actually got built
 - Update `docs/01_assumptions.md` — add any assumptions made during build
-- Update `docs/00_working_notes.md` — build-time decision log entries
+- Update `docs/internal/00_working_notes.md` — build-time decision log entries
 - `docs/adr/` — three ADRs for the most consequential build decisions
 
 ### Tests
@@ -618,7 +618,7 @@ Manual review + automated broken-link check.
 Runs **after Phase 8 gate passes**, per user direction — exec briefing waits until an MVP demo exists.
 
 ### Deliverables
-- `docs/05_exec_briefing.md` — final 2–3-page briefing, all sections drafted, aligned with what the demo actually shows
+- `docs/04_exec_briefing.md` — final 2–3-page briefing, all sections drafted, aligned with what the demo actually shows
 - 5–10 minute recorded video walkthrough
 - Cross-check: PRD, exec briefing, prototype README and demo tell the *same* story
 

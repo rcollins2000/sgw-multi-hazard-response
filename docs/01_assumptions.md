@@ -8,28 +8,20 @@ Assumptions are grouped by category. Keep this file living — add new ones as t
 
 ## A. Users, scope and business context
 
-### A1. Users are SGW operational staff, not the 8M residents
-- **Why:** The brief describes an "AI-enabled decision-support platform" for "infrastructure risk assessment, emergency-response coordination and real-time situational awareness." These are internal operational activities. Residents are beneficiaries of improved service, not users of the system.
-- **If wrong:** UX, auth model, accessibility requirements, deployment (public-facing vs. internal), and success metrics all shift materially. A resident-facing product would be a fundamentally different scope.
+### A1. Personas — NOC Operations Controller, Emergency Response Coordinator, Field Operations Supervisor, Maintenance Planner
+- **Why:** These four roles map cleanly onto the brief's three capability gaps (proactive risk assessment, emergency coordination, situational awareness) and the fourth (routine maintenance prioritisation) that keeps the platform earning its keep between storms. Regional managers, executives and data/GIS engineers are secondary (view-only in MVP).
+- **If wrong:** Persona-specific workflows in the PRD would be re-prioritised, not re-scoped. A materially different persona set (e.g. resident-facing) would be a fundamentally different product — the current UX, auth model, and deployment posture all assume internal operational users.
 
-### A2. Primary personas are NOC Operations Controllers, Emergency Response Coordinators, Field Operations Supervisors, and Maintenance Planners
-- **Why:** These four roles map cleanly to the three stated capability gaps (proactive risk assessment, emergency coordination, situational awareness). Regional managers, executives and data/GIS engineers are secondary.
-- **If wrong:** Persona-specific workflows in the PRD would be re-prioritised. Unlikely to invalidate the MVP.
-
-### A3. SGW has an existing GIS system (likely ESRI ArcGIS), a maintenance system (likely Maximo or equivalent CMMS), SCADA on grid assets, and consumes external weather feeds — but these are siloed
+### A2. SGW has an existing GIS system (likely ESRI ArcGIS), a maintenance system (likely Maximo or equivalent CMMS), SCADA on grid assets, and consumes external weather feeds — but these are siloed
 - **Why:** This is standard for a US utility of SGW's scale. The brief explicitly calls out fragmentation across "GIS systems, maintenance platforms, weather feeds, and field operations tools."
 - **If wrong:** If SGW is more mature than assumed (a data lake already exists), MVP scope shrinks and integration effort in the roadmap should shorten. If less mature, foundational data-engineering work has to precede any AI capability — the roadmap becomes 12–18 months not 6–9.
 
-### A4. Business context — rising operational costs, insurance premiums and regulatory pressure (climate resilience, emergency preparedness) — creates a real ROI story
-- **Why:** Stated directly in the brief.
-- **Financial anchors used in exec briefing (order-of-magnitude, not point estimates):** avoided outage cost per major storm event, reduced insurance premiums via demonstrable resilience posture, reduced overtime spend from better crew pre-positioning.
-
-### A5. SGW's reference footprint is SC / GA / NC (coastal + inland)
+### A3. SGW's reference footprint is SC / GA / NC (coastal + inland)
 - **Why:** The brief describes coastal + inland regions exposed to all four hazards. SC/GA/NC exemplifies all four in one contiguous footprint (Atlantic hurricane coast + Piedmont/Appalachian inland flood, heat and wildfire risk) with excellent NOAA data coverage (Digital Coast, NHC SLOSH, CO-OPS gauges including Charleston Harbor 8665530).
 - **If wrong:** The platform extends to other US regions using the same adapters with region-specific hazard-layer fixtures. The workflow, model portfolio and UI are unchanged.
 
-### A6. NOAA is the reference federal data stack; the ingestion layer's adapter pattern isolates provider choice for non-US deployment
-- **Why:** For a US utility, NOAA is the authoritative, free, no-key public data source spanning weather, hurricane, surge, streamflow, coastal exposure and historical events. Building on NOAA is what a real utility would do and signals domain awareness. The adapter pattern (six adapters — see [06_architecture.md](06_architecture.md)) means non-US deployment (Met Office, ECMWF, JMA, etc.) swaps adapter implementations without touching risk scoring, optimisation or UI.
+### A4. NOAA is the reference federal data stack; the ingestion layer's adapter pattern isolates provider choice for non-US deployment
+- **Why:** For a US utility, NOAA is the authoritative, free, no-key public data source spanning weather, hurricane, surge, streamflow, coastal exposure and historical events. Building on NOAA is what a real utility would do and signals domain awareness. The adapter pattern (six adapters — see [05_architecture.md](05_architecture.md)) means non-US deployment (Met Office, ECMWF, JMA, etc.) swaps adapter implementations without touching risk scoring, optimisation or UI.
 - **If wrong:** No material impact — the adapter interface is exactly the abstraction that makes provider choice a config concern.
 
 ## B. Data availability and quality
@@ -38,8 +30,8 @@ Assumptions are grouped by category. Keep this file living — add new ones as t
 - **MVP sources:** NWS API (alerts, forecasts, station obs) + NHC GIS (hurricane cone + SLOSH MOM surge) + NOS CO-OPS (real tide-gauge observations) + Digital Coast (coastal flood exposure) + SPC/CPC outlooks (severe-storm + heat) + NCEI Storm Events (historical baseline).
 - **Phase 2 additions:** NWM (streamflow), NCEP HRRR/GFS (gridded numerical weather), nowCOAST (OGC backup), NGS post-event imagery, NIFC/InciWeb (wildfire perimeters — non-NOAA).
 - **Why:** NOAA products are free, authoritative and standard practice for US utilities. Naming the specific NOAA sub-agencies signals domain awareness that a mixed-audience reviewer will value.
-- **If wrong:** If SGW has an existing commercial contract (Tomorrow.io, DTN), integrate via a commercial-adapter behind the same interface (see A6). No architectural change.
-- **Full source registry:** [08_external_data_sources.md](08_external_data_sources.md).
+- **If wrong:** If SGW has an existing commercial contract (Tomorrow.io, DTN), integrate via a commercial-adapter behind the same interface (see A4). No architectural change.
+- **Full source registry:** [07_external_data_sources.md](07_external_data_sources.md).
 
 ### B2. Asset data can be aligned to the IEC 61970 Common Information Model (CIM) for grid assets and a water-utility equivalent (or a custom schema) for water
 - **Why:** CIM is the North American utility standard for grid interoperability. Assuming CIM signals technical fluency and makes integration effort estimable.
@@ -54,7 +46,7 @@ Assumptions are grouped by category. Keep this file living — add new ones as t
 
 ## C. Technical architecture
 
-### C1. Hybrid deployment — cloud (AWS or Azure GovCloud) for training, batch inference, storage; on-prem edge appliances at NOC for real-time inference and continuity during outages
+### C1. Hybrid deployment — AWS (GovCloud for CIP-scoped workloads) for training, batch inference, storage; on-prem edge appliances at NOC for real-time inference and continuity during outages
 - **Why:** A utility whose *product* is resilience cannot have a decision-support platform that goes down when the internet does. FERC/NERC CIP compliance also pushes some workloads on-prem. Cloud-only would fail credibility.
 - **If wrong:** If SGW is cloud-native and has hardened redundant WAN, this simplifies significantly.
 
@@ -95,7 +87,7 @@ Assumptions are grouped by category. Keep this file living — add new ones as t
 
 ### E3. The mock dataset is fragmented on purpose — multiple formats (GeoJSON, CSV, JSON), different asset identifiers per source system, sensor quality flags, free-text field notes — and requires an ingestion + ID-resolution layer before AI can be applied
 - **Why:** SGW's stated problem is data fragmentation. Presenting a pre-joined clean dataset would hide the exact integration challenge the platform is designed to solve. Fragmentation-by-design also lets the prototype demonstrate technical maturity (schema handling, ID crosswalks, data-quality flags, freshness discipline) before the AI story even starts.
-- **If wrong:** if SGW's data is already unified in a lake/warehouse, the ingestion layer shrinks and the roadmap accelerates — the AI capabilities and workflow remain the same. See [07_data_model.md](07_data_model.md).
+- **If wrong:** if SGW's data is already unified in a lake/warehouse, the ingestion layer shrinks and the roadmap accelerates — the AI capabilities and workflow remain the same. See [06_data_model.md](06_data_model.md).
 
 ### E4. External hazard classification (hurricane, flood, heatwave, wildfire type + severity) is provided by upstream authoritative sources — NWS, NHC, USGS, state agencies — not invented by SGW's platform
 - **Why:** Reinventing NOAA's classifiers would be worse and slower than integrating them. The AI value-add is **hazard-conditional asset-risk scoring** given the hazard type — not classifying the hazard itself from raw weather.

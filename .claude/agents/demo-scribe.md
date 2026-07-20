@@ -24,7 +24,7 @@ The caller will tell you one of:
 
 ## How you work
 
-1. **Read PLAN.md, docs/02_mvp_workflow.md, and docs/04_prd.md** to know the intended workflow
+1. **Read PLAN.md, docs/02_mvp_workflow.md, and docs/03_prd.md** to know the intended workflow
 2. **Read the current `demo/walkthrough.md`** to preserve continuity
 3. **Inspect the relevant frontend components + backend endpoints** the scene touches (via Glob + Read) so the narrative is truthful to what actually exists
 4. **Write** the new / revised content
