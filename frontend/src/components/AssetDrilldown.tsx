@@ -200,7 +200,7 @@ export function AssetDrilldown({
                 />
               </div>
               <div className="mt-1.5 text-[9.5px] text-[color:var(--color-faint)]">
-                ±.05 nominal band · v2 regressor · isotonic calibration deferred to Phase 2
+                ±.05 nominal band · v2 regressor
               </div>
             </SectionCard>
             <SectionCard>

@@ -79,7 +79,7 @@ const LIVE_EVENTS: SpineEvent[] = [
   { t: -156, short: "Adv retire", title: "Last active NWS advisory expired", color: "#8b9199" },
   { t: -72, short: "Model fit", title: "Prophet re-fit on Charleston Harbor tide", color: "#38bdf8" },
   { t: -24, short: "Anomaly", title: "SCADA residual anomaly detected + cleared", color: "#f5a524" },
-  { t: -6, short: "Recalib.", title: "Isotonic recalibration run", color: "#93c5fd", shape: "1px" },
+  { t: -6, short: "Retrain", title: "Scheduled model retrain", color: "#93c5fd", shape: "1px" },
   { t: 48, short: "Sched. maint.", title: "Ashley River PS · scheduled preventative window", color: "#3fd47a", shape: "1px" },
   { t: 168, short: "Cluster #7 audit", title: "Louvain cluster #7 dependency review", color: "#c4b5fd", shape: "1px" },
   { t: 360, short: "Retrain", title: "Scheduled LightGBM retrain + fairness audit", color: "#93c5fd", shape: "1px" },
@@ -344,35 +344,36 @@ function FocusLane({
   const [chatOpen, setChatOpen] = useState(false);
   const explanationCache = useRef<Map<string, Explanation>>(new Map());
 
+  const assetId = asset?.asset_id;
   useEffect(() => {
     setDetail(null);
     setDecided(null);
     setDecideError(null);
-    // Close the chat when the focused asset changes so the agent's memory
-    // doesn't bleed across assets — the AgentChat is keyed by asset_id below
-    // which forces a fresh conversation, but we also collapse the panel to
-    // signal "context changed" to the operator.
+    // Close the chat when the focused asset CHANGES, not on every asset
+    // poll — the parent's ASSETS_POLL_MS refetch creates a new AssetSummary
+    // object with the same asset_id, so we depend on asset_id (the actual
+    // identity) rather than the object reference.
     setChatOpen(false);
-    if (!asset) return;
-    api.asset(asset.asset_id).then(setDetail).catch(console.error);
+    if (!assetId) return;
+    api.asset(assetId).then(setDetail).catch(console.error);
     // Alignment adjustment now comes directly on the AssetSummary from
     // /api/assets — no separate fetch needed. The parent CockpitPage polls
     // /api/assets on the ASSETS_POLL_MS cadence, which is how the aligned
     // priority stays in sync after every retrain.
-  }, [asset]);
+  }, [assetId]);
 
   // Only fetch the storm-response LLM recommendation in Debby replay mode.
   // In LIVE mode we render the preventative-maintenance fallback template
   // (see fallbackPreventativeRecommendation) — using the storm-flavoured LLM
   // output alongside a "No active severe hazards" headline would read as broken.
   useEffect(() => {
-    if (!asset || isLive) {
+    if (!assetId || isLive) {
       setExplanation(null);
       setExplanationError(null);
       setExplanationLoading(false);
       return;
     }
-    const cached = explanationCache.current.get(asset.asset_id);
+    const cached = explanationCache.current.get(assetId);
     if (cached) {
       setExplanation(cached);
       setExplanationError(null);
@@ -383,14 +384,14 @@ function FocusLane({
     setExplanationError(null);
     setExplanationLoading(true);
     api
-      .explanation(asset.asset_id)
+      .explanation(assetId)
       .then((res) => {
-        explanationCache.current.set(asset.asset_id, res.explanation);
+        explanationCache.current.set(assetId, res.explanation);
         setExplanation(res.explanation);
       })
       .catch((e) => setExplanationError(e instanceof Error ? e.message : String(e)))
       .finally(() => setExplanationLoading(false));
-  }, [asset, isLive]);
+  }, [assetId, isLive]);
 
   if (!asset) {
     return (
@@ -506,7 +507,7 @@ function FocusLane({
               diagnostic={
                 isLive && preventativeScore
                   ? `priority ${displayScore.toFixed(2)} = P(failure) ${preventativeScore.probability.toFixed(2)} × consequence ${preventativeScore.consequence.toFixed(2)}`
-                  : `${asset.risk_score.toFixed(2)} (${asset.risk_level}) · ±0.05 nominal (v2 regressor · calibration deferred)`
+                  : `${asset.risk_score.toFixed(2)} (${asset.risk_level}) · ±0.05 nominal band`
               }
             />
           </div>

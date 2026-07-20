@@ -1,4 +1,7 @@
 import { useCallback, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeSanitize from "rehype-sanitize";
 import { api, streamAgent, type AgentEvent } from "../lib/api";
 import { useAppStore } from "../stores/appStore";
 
@@ -11,6 +14,57 @@ type ChatMessage =
       recommendation?: string;
       audit_hash?: string;
     };
+
+// Tailwind-styled overrides for react-markdown so the streamed markdown
+// blends with the dark theme. Restricted to the elements gpt-oss:120b
+// actually emits (headings, lists, tables via remark-gfm, code, links) —
+// rehype-sanitize strips anything else, so raw HTML from the model can't
+// escape into the DOM.
+const AGENT_MD_COMPONENTS = {
+  p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
+    <p {...props} className="mb-2 last:mb-0" />
+  ),
+  strong: (props: React.HTMLAttributes<HTMLElement>) => (
+    <strong {...props} className="font-semibold text-[color:var(--color-signature)]" />
+  ),
+  em: (props: React.HTMLAttributes<HTMLElement>) => (
+    <em {...props} className="italic text-[color:var(--color-subtle)]" />
+  ),
+  ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
+    <ul {...props} className="mb-2 ml-4 list-disc space-y-0.5" />
+  ),
+  ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
+    <ol {...props} className="mb-2 ml-4 list-decimal space-y-0.5" />
+  ),
+  li: (props: React.HTMLAttributes<HTMLLIElement>) => <li {...props} className="leading-[1.5]" />,
+  code: (props: React.HTMLAttributes<HTMLElement>) => (
+    <code
+      {...props}
+      className="sgw-mono rounded bg-[color:var(--color-panel-3)] px-1 py-[1px] text-[11.5px] text-[color:var(--color-primary-ink)]"
+    />
+  ),
+  a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a {...props} className="text-[color:var(--color-primary-ink)] underline" target="_blank" rel="noreferrer" />
+  ),
+  table: (props: React.HTMLAttributes<HTMLTableElement>) => (
+    <table {...props} className="my-2 w-full border-collapse text-[11.5px]" />
+  ),
+  th: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <th {...props} className="border-b border-[color:var(--color-border-3)] px-2 py-1 text-left font-semibold" />
+  ),
+  td: (props: React.HTMLAttributes<HTMLTableCellElement>) => (
+    <td {...props} className="border-b border-[color:var(--color-border-3)] px-2 py-1" />
+  ),
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h1 {...props} className="mb-1 mt-2 text-[14px] font-bold" />
+  ),
+  h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h2 {...props} className="mb-1 mt-2 text-[13px] font-bold" />
+  ),
+  h3: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h3 {...props} className="mb-1 mt-2 text-[12.5px] font-semibold" />
+  ),
+} as const;
 
 const CANNED_QUESTIONS = [
   "Why is this asset flagged? Cite the top three factors.",
@@ -149,8 +203,14 @@ export function AgentChat({ assetId }: Readonly<{ assetId: string | null }>) {
                 <ToolEventBadge key={j} name={t.name} args={t.arguments} status={t.status} />
               ))}
               {m.content && (
-                <div className="rounded bg-[color:var(--color-panel)] px-2.5 py-2 text-[12.5px] leading-[1.55] text-[color:var(--color-foreground)]">
-                  {m.content}
+                <div className="agent-md rounded bg-[color:var(--color-panel)] px-2.5 py-2 text-[12.5px] leading-[1.55] text-[color:var(--color-foreground)]">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeSanitize]}
+                    components={AGENT_MD_COMPONENTS}
+                  >
+                    {m.content}
+                  </ReactMarkdown>
                   {busy && i === messages.length - 1 && <span className="ml-1 inline-block h-3 w-2 animate-pulse bg-[color:var(--color-primary-ink)]" />}
                 </div>
               )}

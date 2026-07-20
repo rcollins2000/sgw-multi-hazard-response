@@ -1,0 +1,28 @@
+# Repo-root dockerignore — applied because the backend build context is `.`
+# (see docker-compose.yml).
+
+# Frontend artifacts — the backend image doesn't need them.
+frontend/node_modules
+frontend/dist
+frontend/.vite
+
+# Backend artifacts (rebuilt inside the image)
+backend/.venv
+backend/__pycache__
+backend/**/__pycache__
+backend/.pytest_cache
+backend/.mypy_cache
+backend/.ruff_cache
+
+# Playwright + IDE
+.playwright-cli
+.vscode
+.idea
+
+# Env + secrets — never copy into the image
+.env
+.env.local
+
+# Git
+.git
+.gitignore

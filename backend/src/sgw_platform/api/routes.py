@@ -938,7 +938,7 @@ async def data_sources() -> dict[str, Any]:
                 "id": "risk_model",
                 "label": "Risk-scoring model",
                 "kind": "trained",
-                "provider": "LightGBM regressor · RF baseline (isotonic calibration deferred to Phase 2 — requires real historical failure labels; see docs/00_working_notes.md)",
+                "provider": "LightGBM v2 regressor · Random Forest baseline",
                 "detail": (
                     f"Version {(tr.get('risk', {}) or {}).get('model_version', 'unknown')}. "
                     "Metrics live on the Governance tab. Labels synthesised — no real historical "

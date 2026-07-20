@@ -50,10 +50,10 @@ export const EXPLANATIONS: Record<SurfaceKey, ExplanationCard> = {
     purpose:
       "Estimates a hazard-conditional stress score for each asset — used as the primary ranking signal in storm mode and as one input to preventative priority in LIVE mode. It is advisory only; the platform never actuates on it directly.",
     howToRead:
-      "≥ 0.75 = critical (rose), 0.50–0.75 = high (orange), 0.30–0.50 = moderate (amber), < 0.30 = low (slate). The ±.05 label is a NOMINAL band on the v2 regressor output — a placeholder until real calibration (isotonic or Platt) lands with real labels.",
+      "≥ 0.75 = critical (rose), 0.50–0.75 = high (orange), 0.30–0.50 = moderate (amber), < 0.30 = low (slate). The ±.05 is a NOMINAL display band on the raw regressor output — real per-prediction uncertainty is a Phase 2 upgrade tied to real failure history.",
     confidence:
-      "Reported metrics on Governance are R² and MAE on a held-out split. Isotonic calibration is Phase 2 — it needs real binary failure labels, which don't exist for a fictional utility. Until then the confidence meter's five levels come from distance-from-0.5 on the regressor output, not from a calibration CI.",
-    provenance: "models/risk.py · lgbm-reg-v2-hurricane · calibration deferred to Phase 2",
+      "Reported metrics on Governance are R² and MAE on a held-out split. The score is a raw stress signal, not a calibrated probability — turning it into one needs real failure history the fictional utility doesn't have. The confidence meter's five levels come from distance-from-0.5 on the regressor output.",
+    provenance: "models/risk.py · lgbm-reg-v2-hurricane",
   },
 
   preventative_priority: {

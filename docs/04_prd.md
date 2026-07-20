@@ -158,7 +158,7 @@ Portfolio scoped to techniques with genuine prior applied work — see [00_worki
 
 | # | Capability | Model family | What it does NOT do | Human validation |
 |---|---|---|---|---|
-| 1 | Hazard-conditional risk scoring | Gradient-boosted regressor (LightGBM v2) + Random Forest baseline. Classifier + isotonic calibration is Phase 2 (requires real historical failure labels). | Does not decide response; does not classify hazards from raw weather; does not emit calibrated probabilities (regressor output, not calibrated). | Operator accepts/overrides; monthly review of fit vs. hold-out |
+| 1 | Hazard-conditional risk scoring | Gradient-boosted regressor (LightGBM v2) + Random Forest baseline. Real calibration to a true failure probability is Phase 2 (needs historical failure joins). | Does not decide response; does not classify hazards from raw weather. Emits a raw stress score, not a calibrated probability. | Operator accepts/overrides; monthly review of fit vs. hold-out |
 | 2 | Time-series forecasting | Prophet with weather as exogenous regressor + M2 semi-diurnal seasonality; ARIMA/SARIMAX kept for stationary sub-series | Does not classify anomalies (residual anomaly is a separate capability); does not decide operational thresholds. 80% band is nominal; empirical coverage ~58% on held-out Debby data (disclosed on Governance). | Uncertainty band surfaced in UI; operator reviews flagged trajectories |
 | 3 | SCADA anomaly detection | Prophet-residual + rolling-median outlier ranking — flag observations with the largest residuals against the trend | Does not attribute causes; does not decide dispatch | Operator confirms or dismisses; feeds back into model recalibration |
 | 4 | Crew pre-positioning optimisation | OR-Tools VRP / Guided Local Search under coverage + travel-time + shift-hour constraints | Does not commit dispatch; does not decide objective weights | Operator adjusts weights + accepts/overrides plan |
@@ -235,6 +235,20 @@ Full detail in [06_architecture.md](06_architecture.md); source registry in [08_
 
 ### Deployment
 Hybrid — cloud (AWS or Azure GovCloud) for training, batch inference, feature store, storage; on-prem edge appliance at NOC for real-time inference, dashboard and audit-log write-through. Edge continues operating if cloud is unreachable. Justified by (a) NERC CIP obligations, (b) resilience credibility for a utility whose product *is* resilience.
+
+### Prototype → production
+
+**The demo's Docker Compose stack maps 1:1 to the production shape** — the transition is a substitution exercise, not a rebuild. See the deployment diagram in [README.md](../README.md#production-deployment-architecture).
+
+- **Same database** — the prototype already runs Postgres 16 + PostGIS 3.4 with declarative partitioning, materialised views, and append-only triggers. Production moves to a managed equivalent (RDS / CloudSQL / AlloyDB) with PITR, read replicas, and encryption at rest; the schema and application queries are untouched.
+- **Same containers** — [backend/Dockerfile](../backend/Dockerfile) and [frontend/Dockerfile](../frontend/Dockerfile) already produce production-shaped images (multi-stage frontend → nginx serving a static bundle; backend with an idempotent seed-on-startup entrypoint that maps cleanly to a Kubernetes Job). Autoscaling on request rate is a Helm chart, not new code.
+- **Same audit contract** — the SHA-256 hash-chained `audit_log` runs against the same table; production adds a write-once mirror (S3 Object Lock or QLDB) that regulators can inspect independently of the operator.
+- **Same LLM adapter pattern** — the backend implements an `LLMProvider` interface with Ollama Cloud and OpenAI concrete adapters. Swapping vendors is one env var; adding a self-hosted provider (llama.cpp, vLLM) is one adapter class.
+- **Same eval suite** — `tests/evals/` runs today as a CI gate on every push. Production layers continuous evaluation against production traffic samples on top of the same fixtures.
+- **Secrets managed differently** — `.env` for the demo, SecretsManager / SSM / Vault in production, injected via the K8s CSI driver. Same environment-variable names; the delta is one Helm value file, not application code.
+- **Observability hooks already emitted** — structlog JSON to stdout + Prometheus metrics counters wired throughout the code. Production adds a receiver: OpenTelemetry Collector → Prometheus + Grafana + Loki (or the cloud-managed equivalents CloudWatch / Cloud Monitoring).
+
+**The one genuinely new workstream** in production is real data ingestion: replacing the deterministic mock generator ([`scripts/generate_mock_data.py`](../backend/scripts/generate_mock_data.py)) with adapters against SGW's real GIS / CMMS / SCADA. The six-adapter Hazard Data family already isolates provider choice, so this is a Phase-1 delivery — sequenced GIS → CMMS → SCADA → Field Ops — rather than an unknown. Each adapter lands behind the same `Fetcher` protocol used by the NOAA adapters today.
 
 ### Integrations
 - **ESRI-shaped GIS** — read via ArcGIS REST + GeoJSON export

@@ -1,6 +1,30 @@
-# SGW platform — local dev orchestration.
-# Bring up: `make dev` (or `docker-compose up`).
-# Postgres data persists in the named volume `postgres_data`.
+# SGW platform — one-command reviewer stack.
+#
+#   cp .env.example .env       # set OLLAMA_API_KEY (or OPENAI_API_KEY)
+#   docker compose up --build -d
+#   open http://localhost:5173
+#
+# Three services on one shared network:
+#   · postgres  — Postgres 16 + PostGIS 3.4 (source of truth)
+#   · backend   — FastAPI + Pydantic + all AI capabilities. Seeds on first
+#                 boot via docker_entrypoint.sh (idempotent — checks the
+#                 assets table before running the seed step, so restarts
+#                 are instant).
+#   · frontend  — Vite build served by nginx, /api/* reverse-proxied to backend.
+#
+# The optional observability profile is opt-in:
+#   docker compose --profile obs up -d
+#
+# ------ Production mapping (referenced in docs/06_architecture.md) ---------
+# Local demo → Production equivalent:
+#   postgres  → managed Postgres (RDS / CloudSQL / AlloyDB) with PITR + replicas
+#   backend   → containerised on Kubernetes behind an internal ALB / Ingress,
+#               autoscaled on request rate + queue depth
+#   frontend  → static bundle on S3 + CloudFront (or equivalent CDN)
+#   secrets   → SecretsManager / SSM Parameter Store (never .env in prod)
+#   data seed → replaced by real GIS / CMMS / SCADA ingestion adapters
+#   audit_log → same table, replicated to a write-once compliance store
+# ---------------------------------------------------------------------------
 
 services:
   postgres:
@@ -26,33 +50,39 @@ services:
 
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      # NOTE: context is the repo root, not backend/, so the Dockerfile can
+      # COPY the top-level data/ directory into the image.
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: sgw_backend
     depends_on:
       postgres:
         condition: service_healthy
     environment:
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-sgw}:${POSTGRES_PASSWORD:-sgw_dev_only}@postgres:5432/${POSTGRES_DB:-sgw}
-      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      # LLM — default is Ollama Cloud gpt-oss:120b; OpenAI is a swap-in fallback.
+      LLM_PROVIDER: ${LLM_PROVIDER:-ollama}
+      OLLAMA_API_KEY: ${OLLAMA_API_KEY:-}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-gpt-oss:120b}
+      OLLAMA_HOST: ${OLLAMA_HOST:-https://ollama.com}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.6}
+      # Runtime knobs
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
       LOG_FORMAT: ${LOG_FORMAT:-json}
-      BACKEND_CORS_ORIGINS: http://localhost:5173
+      BACKEND_CORS_ORIGINS: http://localhost:5173,http://frontend:5173
       NOAA_CACHE_DIR: /data/cache/noaa
       FEATURE_LLM_ENABLED: ${FEATURE_LLM_ENABLED:-true}
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend:/app
-      - ./data:/data
-    command: uv run uvicorn sgw_platform.api.main:app --reload --host 0.0.0.0 --port 8000
+    # No bind-mounts — this is the production shape. Dev iteration uses
+    # `make dev-backend` outside Docker.
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/ready"]
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/status"]
       interval: 10s
       timeout: 5s
-      retries: 5
-      start_period: 15s
+      retries: 6
+      start_period: 60s  # first boot runs migrations + seed; grants ample slack
     networks:
       - sgw_net
 
@@ -64,18 +94,19 @@ services:
     depends_on:
       backend:
         condition: service_healthy
-    environment:
-      VITE_API_BASE_URL: http://localhost:8000
     ports:
       - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    command: pnpm dev --host 0.0.0.0
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5173/"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
     networks:
       - sgw_net
 
-  # Optional observability stack — enable with `docker-compose --profile obs up`
+  # ---- Optional observability stack -----------------------------------------
+  # Enable with: docker compose --profile obs up -d
   prometheus:
     image: prom/prometheus:latest
     container_name: sgw_prometheus

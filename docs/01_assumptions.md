@@ -61,7 +61,7 @@ Assumptions are grouped by category. Keep this file living — add new ones as t
 ### C2. AI model portfolio (not a single model):
 - **Forecasting:** gradient-boosted models (LightGBM/XGBoost) + probabilistic time-series (e.g., Prophet or a Temporal Fusion Transformer) for asset-level demand and stress forecasting
 - **Anomaly detection:** unsupervised (Isolation Forest, autoencoder reconstruction error) on SCADA streams, per-asset baselines
-- **Risk scoring:** supervised regression (LightGBM v2) blending forecast features, asset attributes, geospatial hazard layers, and (in production) historical failure joins. Classification + isotonic calibration is Phase 2 — requires real binary failure labels which don't exist for a fictional utility.
+- **Risk scoring:** supervised regression (LightGBM v2) blending forecast features, asset attributes, geospatial hazard layers, and (in production) historical failure joins. Real probability calibration is Phase 2 — needs real failure history the fictional utility can't provide.
 - **Optimisation:** MILP or heuristic (e.g., OR-Tools) for crew pre-positioning under coverage + travel-time constraints
 - **LLM layer:** structured-output LLM for explanation generation ("why is Asset #12345 flagged?"), operator Q&A over documents, and post-event report drafting — never the source of the risk score itself
 - **Why:** The brief explicitly asks for AI beyond LLMs. This is a defensible portfolio that shows I know when each family is right.
