@@ -16,7 +16,7 @@ capabilities, an audit trail.
     [PLAN.md](../PLAN.md), inspects repo state, updates `status.md`
     with phase progress. Cannot modify code.
   - **[demo-scribe.md](agents/demo-scribe.md)** — documents scenes as
-    they're built into [demo/walkthrough.md](../demo/walkthrough.md).
+    they're built into `demo/walkthrough.md` (local-only, gitignored).
     Writes to `demo/` only.
 
 - **`skills/`** — skills the assistant has access to (e.g. `playwright-cli`

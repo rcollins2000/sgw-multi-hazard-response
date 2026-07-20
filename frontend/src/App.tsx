@@ -226,8 +226,8 @@ function CommandBar({
           <span>{platformStatusLabel(status)}</span>
         </div>
         <StatusChip k="risk model" v={risk?.model_version ?? "—"} />
-        <StatusChip k="ROC-AUC" v={fmtMetric(risk?.metrics, "roc_auc")} />
-        <StatusChip k="Brier" v={fmtMetric(risk?.metrics, "brier")} />
+        <StatusChip k="risk MAE" v={fmtMetric(risk?.metrics, "mae")} />
+        <StatusChip k="risk R²" v={fmtMetric(risk?.metrics, "r2")} />
         <StatusChip k="graph mod." v={graph?.modularity?.toFixed(3) ?? "—"} />
         <StatusChip k="copilot" v={status?.llm?.label ?? "—"} />
         <div className="ml-auto">

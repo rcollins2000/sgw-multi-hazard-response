@@ -186,6 +186,10 @@ export type WaterLevelForecast = {
   is_live?: boolean;
   history_points: number;
   history_tail: { ds: string; y: number }[];
+  /** Only populated for archived-fixture (DEBBY/IDALIA) mode: the actual
+   *  observed water levels for the forecast window, so the chart can render
+   *  truth-vs-forecast side-by-side. Empty in LIVE mode. */
+  actual_continuation: { ds: string; y: number }[];
   forecast: { ds: string; yhat: number; yhat_lower: number; yhat_upper: number }[];
 };
 

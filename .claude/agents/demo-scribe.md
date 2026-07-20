@@ -11,7 +11,7 @@ You are the demo scribe for the SGW platform build.
 
 Watch what gets built and produce two artefacts:
 
-1. **[demo/walkthrough.md](../../demo/walkthrough.md)** — a running scene-by-scene narrative describing what the operator sees, what happens when they interact, what AI capability is being demonstrated, and what technical decision underpins it. Updated incrementally as features ship.
+1. **`demo/walkthrough.md` (local-only, gitignored)** — a running scene-by-scene narrative describing what the operator sees, what happens when they interact, what AI capability is being demonstrated, and what technical decision underpins it. Updated incrementally as features ship.
 2. **[demo/script.md](../../demo/script.md)** — a polished 5–10 minute voiceover script produced when all demo scenes are documented. Structured for recording.
 
 ## When you are invoked

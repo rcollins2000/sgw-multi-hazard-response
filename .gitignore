@@ -63,6 +63,20 @@ docs/*.patch
 *.patch
 *.diff
 
+# ---- Demo narration script (kept local; final video is the deliverable) ----
+demo/walkthrough.md
+
+# ---- Video binaries: too large for GitHub (100 MB cap); delivered via email / cloud link ----
+demo/video/*.mp4
+demo/video/*.webm
+demo/video/*.mov
+
+# ---- Root-level scratch dumps (API JSON responses, ad-hoc screenshots) ----
+/*.json
+/*.png
+!/package.json
+!/pnpm-lock.yaml
+
 # ---- Scratch / working dirs not intended for the public repo ----
 plan/
 

@@ -21,6 +21,10 @@ type ChartPoint = {
   yhat: number | null;
   band: [number, number] | null;
   anomaly: number | null;
+  /** Only populated in DEBBY/IDALIA replay mode: what the water level ACTUALLY
+   *  did during the forecast window, so the reader can see the surge exceed
+   *  the model's forecast in the same view. */
+  actual: number | null;
 };
 
 export function WaterLevelChart({
@@ -54,6 +58,9 @@ export function WaterLevelChart({
           <LegendPill color="#94a3b833" filled>
             80% band
           </LegendPill>
+          {forecast.actual_continuation.length > 0 && (
+            <LegendPill color="#e0245e">Actual (replay)</LegendPill>
+          )}
           <LegendPill color="#f5a524" dot>
             Anomaly
           </LegendPill>
@@ -117,6 +124,18 @@ export function WaterLevelChart({
             isAnimationActive={false}
             connectNulls={false}
           />
+          {/* Actual continuation (DEBBY/IDALIA replay only) — solid rose
+              line that overlays the forecast segment. In LIVE mode every
+              point on this series is null and Recharts renders nothing. */}
+          <Line
+            type="monotone"
+            dataKey="actual"
+            stroke="#e0245e"
+            strokeWidth={2}
+            dot={false}
+            isAnimationActive={false}
+            connectNulls={false}
+          />
           <Scatter dataKey="anomaly" fill="#f5a524" shape="circle" />
           <ReferenceLine
             x={data.find((d) => d.t === nowT)?.label}
@@ -161,6 +180,25 @@ function buildChartData(forecast: WaterLevelForecast): ChartPoint[] {
     for (const x of ranked) anomalyIdx.add(x.i);
   }
 
+  // Actual-continuation lookup keyed by minute so we can align it with the
+  // forecast rows even when the sample cadences differ (forecast is hourly,
+  // actual is sampled at ~30-min from the fixture).
+  const actualByMinute = new Map<number, number>();
+  for (const p of forecast.actual_continuation) {
+    const t = new Date(p.ds).getTime();
+    const bucket = Math.round(t / (60 * 1000));
+    actualByMinute.set(bucket, p.y);
+  }
+  const nearestActual = (dsIso: string): number | null => {
+    const bucket = Math.round(new Date(dsIso).getTime() / (60 * 1000));
+    // ±60 min tolerance so the ~30-min-sampled actual lines up with hourly fc
+    for (let d = 0; d <= 60; d++) {
+      if (actualByMinute.has(bucket + d)) return actualByMinute.get(bucket + d)!;
+      if (actualByMinute.has(bucket - d)) return actualByMinute.get(bucket - d)!;
+    }
+    return null;
+  };
+
   const points: ChartPoint[] = [];
   let idx = 0;
   for (let i = 0; i < history.length; i++) {
@@ -173,6 +211,7 @@ function buildChartData(forecast: WaterLevelForecast): ChartPoint[] {
       yhat: null,
       band: null,
       anomaly: anomalyIdx.has(i) ? p.y : null,
+      actual: null,
     });
   }
   for (const p of fc) {
@@ -184,6 +223,7 @@ function buildChartData(forecast: WaterLevelForecast): ChartPoint[] {
       yhat: p.yhat,
       band: [p.yhat_lower, p.yhat_upper],
       anomaly: null,
+      actual: nearestActual(p.ds),
     });
   }
   return points;

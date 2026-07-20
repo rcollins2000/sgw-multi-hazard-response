@@ -1,12 +1,5 @@
 # SGW Demo — how to run
 
-> **Looking for the demo narration script?** See [demo/walkthrough.md](walkthrough.md) — an
-> 18-scene end-to-end script covering every AI capability with the "what / why / worthwhile /
-> limitations / HITL touch point" framing for stakeholders. This README is the runbook that
-> gets the stack up so the walkthrough can be recorded.
-
-
-
 ## One-time setup (~3 min)
 
 ### PowerShell (Windows — recommended for this project)

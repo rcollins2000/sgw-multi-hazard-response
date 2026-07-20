@@ -19,7 +19,7 @@ Then open **http://localhost:5173**.
 
 The backend's entrypoint script waits for Postgres, runs migrations, and seeds the mock + NOAA fixtures **only if the database is empty** — so restarts (`docker compose restart`) are near-instant. See [backend/scripts/docker_entrypoint.sh](backend/scripts/docker_entrypoint.sh) for the boot sequence.
 
-Full runbook (native dev, without Docker): [demo/README.md](demo/README.md) · Demo narration script: [demo/walkthrough.md](demo/walkthrough.md).
+Full runbook (native dev, without Docker): [demo/README.md](demo/README.md).
 
 ---
 
@@ -29,7 +29,7 @@ Full runbook (native dev, without Docker): [demo/README.md](demo/README.md) · D
 |---|---|---|
 | 1 | **PRD** for the technical delivery team | [docs/03_prd.md](docs/03_prd.md) |
 | 2 | **Executive briefing** | [docs/04_exec_briefing.md](docs/04_exec_briefing.md) |
-| 3 | **Prototype + demo video** | Prototype runs via `docker compose`; narration script + storyboard in [demo/walkthrough.md](demo/walkthrough.md) |
+| 3 | **Prototype + demo video** | Prototype runs via `docker compose`; video attached to the submission email (too large for GitHub's 100 MB file cap) |
 
 ---
 

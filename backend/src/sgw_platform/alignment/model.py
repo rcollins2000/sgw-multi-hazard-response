@@ -176,9 +176,17 @@ class OperatorAlignmentModel:
             return [AlignmentPrediction(asset_id=a, p_defer=0.0, adjustment=0.0) for a in ids]
 
         X = features[ALIGNMENT_FEATURES].to_numpy(dtype=float)
-        col_means = np.nanmean(X, axis=0)
+        # Mean-impute NaN entries. When the whole batch is NaN for a column
+        # (common when predict_batch is called with a single asset whose one
+        # feature is missing), `np.nanmean` returns NaN — we belt-and-braces
+        # with `nan_to_num` to force any residual NaN to zero so sklearn's
+        # `predict_proba` doesn't blow up.
+        with np.errstate(all="ignore"):
+            col_means = np.nanmean(X, axis=0)
+        col_means = np.nan_to_num(col_means, nan=0.0)
         idx = np.where(np.isnan(X))
         X[idx] = np.take(col_means, idx[1])
+        X = np.nan_to_num(X, nan=0.0)
         Xs = self._scaler.transform(X)
 
         proba = self._model.predict_proba(Xs)[:, 1]

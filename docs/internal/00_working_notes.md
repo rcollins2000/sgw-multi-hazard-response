@@ -28,7 +28,7 @@ User asked for "reinforcement learning to improve model prioritisation". Conside
 
 **Full doc:** [docs/09_operator_alignment.md](09_operator_alignment.md) — explains why not full RL, what it is precisely, design principles, limitations, HITL touch points.
 
-**Demo framing:** [demo/walkthrough.md](../demo/walkthrough.md) §8 covers this capability with the "why RL is the wrong name" narrative.
+**Demo framing:** demo/walkthrough.md (kept local, gitignored) §8 covers this capability with the "why RL is the wrong name" narrative.
 
 ---
 

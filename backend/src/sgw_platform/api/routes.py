@@ -531,23 +531,46 @@ async def water_level_forecast(
     if history.empty:
         raise HTTPException(status_code=404, detail=f"no history for source {requested}")
 
-    forecaster = WaterLevelForecaster()
-    fc = forecaster.fit_and_forecast(history, horizon_hours=horizon_hours, test_hours=0)
-
-    # For LIVE we return a short trailing window (the rolling recent tide).
-    # For archived fixtures we centre the returned window on the peak so the
-    # operator actually sees the storm surge arc — otherwise the tail of the
-    # fixture (post-event recovery) looks indistinguishable from calm current
-    # tide, defeating the point of DEBBY replay mode.
     is_live = resolved == COOPS_LIVE_SOURCE
+    actual_continuation: list[dict[str, Any]] = []
+
     if is_live:
+        # LIVE mode — fit on everything, forecast ahead of the trailing window.
+        forecaster = WaterLevelForecaster()
+        fc = forecaster.fit_and_forecast(history, horizon_hours=horizon_hours, test_hours=0)
         tail = history.tail(48)
     else:
+        # ARCHIVED-fixture mode (Debby / Idalia replay). To make the "storm is
+        # coming!" visual dramatic AND honest we do a proper hold-out:
+        #   · Anchor on the ABSOLUTE peak of the fixture (that's the surge).
+        #   · History ends 12h BEFORE the peak so Prophet fits on TWO tidal
+        #     cycles of clean pre-surge data — and its tidal-seasonal
+        #     extrapolation will UNDERSHOOT the actual storm peak, which is
+        #     exactly the "Prophet-residual anomaly" story the platform tells.
+        #   · Prophet fits on the 24h window ending at that cutoff.
+        #   · The forecast covers the next 24h (spanning the surge peak).
+        #   · We ALSO return the actual observations for that same 24h window
+        #     as `actual_continuation` so the chart can render truth-vs-forecast
+        #     side-by-side — which makes the platform's Prophet
+        #     "80% nominal, ~54% empirical coverage" story visible.
         peak_idx = int(history["y"].idxmax())
-        half = 120  # ~12h either side at 6-min cadence
-        lo = max(0, peak_idx - half)
-        hi = min(len(history), peak_idx + half + 1)
-        tail = history.iloc[lo:hi]
+        pre_window = 720    # 72h train window (6 tidal cycles) at 6-min cadence
+        cutoff_lag = 60     # end history 6h before the surge peak
+        cutoff_idx = max(pre_window, peak_idx - cutoff_lag)
+        history_train = history.iloc[max(0, cutoff_idx - pre_window):cutoff_idx].reset_index(drop=True)
+        forecaster = WaterLevelForecaster()
+        fc = forecaster.fit_and_forecast(history_train, horizon_hours=horizon_hours, test_hours=0)
+        # Only show the last ~6h of history in the chart so the pre-storm
+        # training window doesn't visually dwarf the forecast window on the
+        # compact sparkline (ratio 60:24 = 2.5:1 history:forecast).
+        tail = history_train.tail(60).reset_index(drop=True)
+        # Actual continuation — the same 24h window past the cutoff, sampled
+        # at ~30-min cadence so the array stays small.
+        actual_hi = min(len(history), cutoff_idx + horizon_hours * 10)
+        actual_slice = history.iloc[cutoff_idx:actual_hi:5]  # every 5th row ≈ 30 min
+        actual_continuation = [
+            {"ds": str(r["ds"]), "y": float(r["y"])} for _, r in actual_slice.iterrows()
+        ]
 
     return {
         "source": resolved,
@@ -558,6 +581,7 @@ async def water_level_forecast(
             {"ds": str(r["ds"]), "y": float(r["y"])}
             for _, r in tail.iterrows()
         ],
+        "actual_continuation": actual_continuation,
         "forecast": [
             {"ds": str(ds), "yhat": yhat, "yhat_lower": lo, "yhat_upper": hi}
             for ds, yhat, lo, hi in zip(fc.ds, fc.yhat, fc.yhat_lower, fc.yhat_upper, strict=True)
